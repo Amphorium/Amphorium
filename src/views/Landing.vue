@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="main-wrapper">
     <landing-header></landing-header>
     <landing-main></landing-main>
     <landing-footer></landing-footer>

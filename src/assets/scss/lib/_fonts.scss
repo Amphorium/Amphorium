@@ -1,0 +1,20 @@
+@mixin font-face($font-name, $file-name) {
+  @font-face {
+    font-family: quote($font-name);
+    src: url($file-name + '.eot');
+    src: url($file-name + '.eot?#iefix') format('embedded-opentype'),
+    url($file-name + '.woff') format('woff'),
+    url($file-name + '.ttf') format('truetype'),
+    url($file-name + '.svg##{$font-name}') format('svg');
+  }
+}
+
+@include font-face('Montserrat-Bold', '~@/assets/fonts/Montserrat-Bold');
+@include font-face('Montserrat-Medium', '~@/assets/fonts/Montserrat-Medium');
+@include font-face('Montserrat-SemiBold', '~@/assets/fonts/Montserrat-SemiBold');
+@include font-face('Montserrat-Regular', '~@/assets/fonts/Montserrat-Regular');
+@include font-face('PTMono-Bold', '~@/assets/fonts/PTMono-Bold');
+@include font-face('Montserrat-Black', '~@/assets/fonts/Montserrat-Black');
+@include font-face('Montserrat-Light', '~@/assets/fonts/Montserrat-Light');
+@include font-face('Montserrat-Hairline', '~@/assets/fonts/Montserrat-Hairline');
+

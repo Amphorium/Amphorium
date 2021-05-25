@@ -1,0 +1,35 @@
+@import '../lib/mixins';
+@import '../lib/var';
+.my-btn{
+  background: linear-gradient(90deg, #FFC9B3 0%, #F67D75 100%);
+  border-radius: 180px;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  font-family: $black;
+  padding: 25px;
+  height: 80px;
+  width: 400px;
+  border: none;
+  transition: all .2s ease;
+  @include max-screen(lg){
+    height: 60px;
+    width: 350px;
+    padding: 15px
+  }
+  &:hover{
+    background: linear-gradient(90deg,#F67D75 0%,  #FFC9B3 100%);
+
+  }
+  &--border{
+    background: transparent;
+    border: 1px solid #F99B8D;
+    height: 50px;
+    width: 210px;
+    font-size: 14px;
+    line-height: 17px;
+    padding: 10px;
+  }
+}
