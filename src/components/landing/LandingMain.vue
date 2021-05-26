@@ -46,112 +46,65 @@
       </div>
     </section>
     <section class="calendar">
-      <div class="calendar-slider">
-        <div class="calendar-slider-img">
-          <div class="calendar-slider-img__item calendar-slider-img__item--one">
-            <img src="@/assets/img/coin-calendar-1.svg" alt="">
-          </div>
-          <div class="calendar-slider-img__item calendar-slider-img__item--two">
-            <img src="@/assets/img/coin-calendar-2.svg" alt="">
-          </div>
-          <div class="calendar-slider-img__item calendar-slider-img__item--three">
-            <img src="@/assets/img/coin-calendar-3.svg" alt="">
-          </div>
-          <div class="calendar-slider-img__item calendar-slider-img__item--four">
-            <img src="@/assets/img/coin-calendar-4.svg" alt="">
-          </div>
+      <div class="calendar-slider-img">
+        <div class="calendar-slider-img__item calendar-slider-img__item--one">
+          <img src="@/assets/img/coin-calendar-1.svg" alt="">
         </div>
-        <div class="container">
-          <div class="calendar-slider__circle">
-            <div class="calendar-slider__text">
-              <p><span>Roadmap</span>2022</p>
-            </div>
-            <div class="calendar-slider__img">
-              <img src="@/assets/img/calendar-circle-1.svg" alt="">
-              <div class="calendar-info calendar-info--one">
-                <button type="button" class="calendar-info__point"></button>
-                <div class="calendar-info__drop">
-                  <div class="calendar-item">
-                    <div class="calendar-item__wrap">
-                      <div class="date">
-                        <p>april, 2022</p>
-                      </div>
-                      <div class="calendar-item__title">
-                        <p>Lorem ipsum dolor sit
-                          amet, adipiscing elit</p>
-                      </div>
-                      <div class="calendar-item__text">
-                        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                          commodo consequat. </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+        <div class="calendar-slider-img__item calendar-slider-img__item--two">
+          <img src="@/assets/img/coin-calendar-2.svg" alt="">
+        </div>
+        <div class="calendar-slider-img__item calendar-slider-img__item--three">
+          <img src="@/assets/img/coin-calendar-3.svg" alt="">
+        </div>
+        <div class="calendar-slider-img__item calendar-slider-img__item--four">
+          <img src="@/assets/img/coin-calendar-4.svg" alt="">
+        </div>
+      </div>
+      <div class="calendar-slider">
+        <div class="calendar-slide"
+             v-for="(slide, slideIdx) in roadMap"
+             :class="{'active': slide.focus}"
+             :key="slideIdx"
+        >
+          <div class="container">
+            <div class="calendar-slide__circle-bg"></div>
+            <div class="calendar-slide__circle" @wheel.prevent="wheel">
+              <div class="calendar-slide__text">
+                <p><span>Roadmap</span>{{ slide.date.year }}</p>
               </div>
-              <div class="calendar-info calendar-info--two">
-                <button type="button" class="calendar-info__point"></button>
-                <div class="calendar-info__drop">
-                  <div class="calendar-item">
-                    <div class="calendar-item__wrap">
-                      <div class="date">
-                        <p>april, 2022</p>
-                      </div>
-                      <div class="calendar-item__title">
-                        <p>Lorem ipsum dolor sit
-                          amet, adipiscing elit</p>
-                      </div>
-                      <div class="calendar-item__text">
-                        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                          commodo consequat. </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="calendar-info calendar-info--three">
-                <button type="button" class="calendar-info__point"></button>
-                <div class="calendar-info__drop">
-                  <div class="calendar-item">
-                    <div class="calendar-item__wrap">
-                      <div class="date">
-                        <p>april, 2022</p>
-                      </div>
-                      <div class="calendar-item__title">
-                        <p>Lorem ipsum dolor sit
-                          amet, adipiscing elit</p>
-                      </div>
-                      <div class="calendar-item__text">
-                        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                          commodo consequat. </p>
+              <div class="calendar-slide__img" :class="'calendar-slide__img--' + (slideIdx+1)">
+                <div class="calendar-info "
+                     v-for="(item, idx) in quarters"
+                     :class="['calendar-info--' + (idx+1), {'active': slideIdx === idx}]"
+                     :key="idx"
+                >
+
+                  <button type="button"
+                          class="calendar-info__point"
+                          @click="toSlide(idx)"
+                  ></button>
+                  <div class="calendar-info__drop">
+                    <div class="calendar-item">
+                      <div class="calendar-item__wrap">
+                        <div class="date">
+                          <p>{{ item.date }}</p>
+                        </div>
+                        <div class="calendar-item__title">
+                          <p>{{ item.title }}</p>
+                        </div>
+                        <div class="calendar-item__text">
+                          <p>{{ item.text }} </p>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="calendar-info calendar-info--four">
-                <button type="button" class="calendar-info__point"></button>
-                <div class="calendar-info__drop">
-                  <div class="calendar-item">
-                    <div class="calendar-item__wrap">
-                      <div class="date">
-                        <p>april, 2022</p>
-                      </div>
-                      <div class="calendar-item__title">
-                        <p>Lorem ipsum dolor sit
-                          amet, adipiscing elit</p>
-                      </div>
-                      <div class="calendar-item__text">
-                        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                          commodo consequat. </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+
               </div>
             </div>
-          </div>
-          <div class="calendar-slider__title">
-            <p>april 2022</p>
+            <div class="calendar-slide__title">
+              <p>{{ slide.date.month }} {{ slide.date.year }}</p>
+            </div>
           </div>
         </div>
       </div>
@@ -396,11 +349,115 @@
         </div>
       </div>
     </section>
+
   </div>
 </template>
 
 <script>
+// import VueSlickCarousel from 'vue-slick-carousel'
+// import 'vue-slick-carousel/dist/vue-slick-carousel.css'
+
 export default {
-  name: 'LandingMain'
+  name: 'LandingMain',
+  // components: {VueSlickCarousel},
+  data() {
+    return {
+      initialCounter: 0,
+      roadMap: [
+        {
+          date: {
+            month: 'april',
+            year: '2022'
+          },
+          focus: false,
+        },
+        {
+          date: {
+            month: 'september',
+            year: '2023'
+          },
+          focus: false,
+        },
+        {
+          date: {
+            month: 'july',
+            year: '2024'
+          },
+          focus: false,
+        },
+        {
+          date: {
+            month: 'october',
+            year: '2025'
+          },
+          focus: false,
+        }
+      ],
+      quarters: [
+        {
+          date: 'april 2022',
+          title: 'Lorem ipsum dolor sit amet, adipiscing elit',
+          text: 'Lorem ipsum dolor sit amet, adipiscing elit Lorem ipsum dolor sit amet, adipiscing elit'
+        },
+        {
+          date: 'september 2023',
+          title: 'Lorem ipsum dolor sit amet, adipiscing elit',
+          text: 'Lorem ipsum dolor sit amet, adipiscing elit Lorem ipsum dolor sit amet, adipiscing elit'
+        },
+        {
+          date: 'july 2024',
+          title: 'Lorem ipsum dolor sit amet, adipiscing elit',
+          text: 'Lorem ipsum dolor sit amet, adipiscing elit Lorem ipsum dolor sit amet, adipiscing elit'
+        },
+        {
+          date: 'october 2025',
+          title: 'Lorem ipsum dolor sit amet, adipiscing elit',
+          text: 'Lorem ipsum dolor sit amet, adipiscing elit Lorem ipsum dolor sit amet, adipiscing elit'
+        }
+      ],
+      calendarSliderSettings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        infinite: false,
+        fade: true,
+        dots: false,
+        arrows: false,
+        draggable: false,
+        accessibility: false,
+        speed: 50,
+      }
+    }
+  },
+  methods: {
+    nextSlide() {
+      if (this.initialCounter === this.roadMap.length - 1) return false
+      this.initialCounter++;
+      this.setActiveSlide();
+    },
+    prevSlide() {
+      if (this.initialCounter === 0) return false
+      this.initialCounter--;
+      this.setActiveSlide();
+    },
+    toSlide(idx) {
+      this.initialCounter = idx;
+      this.setActiveSlide();
+    },
+    setActiveSlide() {
+      this.roadMap.forEach((item, idx) => {
+        item.focus = idx === this.initialCounter;
+      })
+    },
+    wheel(e) {
+      if (e.deltaY < 0) {
+        this.prevSlide();
+      } else {
+        this.nextSlide();
+      }
+    }
+  },
+  mounted() {
+    this.setActiveSlide();
+  }
 }
 </script>

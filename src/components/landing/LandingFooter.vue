@@ -1,11 +1,61 @@
 <template>
-  <div>
-    Footer
-  </div>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__wrap">
+        <div class="footer__content">
+          <div class="my-title">
+            <h2>Sign up for updates</h2>
+          </div>
+          <form action="" class="footer-form">
+            <div class="big-input">
+              <input type="text" class="big-input__input" placeholder="Your email">
+            </div>
+            <div class="footer-form__btn">
+              <button class="my-btn">Get updates</button>
+            </div>
+          </form>
+          <div class="footer__text">
+            <p>We won't share your email address or send you any spam.
+            </p>
+          </div>
+          <div class="social">
+            <ul class="social__list">
+              <li class="social__item">
+                <a href="#"><img src="@/assets/img/social-1.svg" alt=""></a>
+              </li>
+              <li class="social__item">
+                <a href="#"><img src="@/assets/img/social-2.svg" alt=""></a>
+              </li>
+              <li class="social__item">
+                <a href="#"><img src="@/assets/img/social-3.svg" alt=""></a>
+              </li>
+              <li class="social__item">
+                <a href="#"><img src="@/assets/img/social-4.svg" alt=""></a>
+              </li>
+              <li class="social__item">
+                <a href="#"><img src="@/assets/img/social-5.svg" alt=""></a>
+              </li>
+            </ul>
+          </div>
+          <nav class="rules-nav">
+            <ul class="rules-nav__list">
+              <li class="rules-nav__item"><a href="#">Terms and conditions</a></li>
+              <li class="rules-nav__item"><a href="#">Privacy policy  </a></li>
+              <li class="rules-nav__item"><a href="#">Legal opinion</a></li>
+            </ul>
+          </nav>
+          <div class="copyright">
+            <p>© 2021 Amphorium, Inc.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
 </template>
 
 <script>
-  export default {
-    name: 'LandingFooter'
-  }
+export default {
+  name: 'LandingFooter'
+}
 </script>
