@@ -47,6 +47,20 @@
     </section>
     <section class="calendar">
       <div class="calendar-slider">
+        <div class="calendar-slider-img">
+          <div class="calendar-slider-img__item calendar-slider-img__item--one">
+            <img src="@/assets/img/coin-calendar-1.svg" alt="">
+          </div>
+          <div class="calendar-slider-img__item calendar-slider-img__item--two">
+            <img src="@/assets/img/coin-calendar-2.svg" alt="">
+          </div>
+          <div class="calendar-slider-img__item calendar-slider-img__item--three">
+            <img src="@/assets/img/coin-calendar-3.svg" alt="">
+          </div>
+          <div class="calendar-slider-img__item calendar-slider-img__item--four">
+            <img src="@/assets/img/coin-calendar-4.svg" alt="">
+          </div>
+        </div>
         <div class="container">
           <div class="calendar-slider__circle">
             <div class="calendar-slider__text">
