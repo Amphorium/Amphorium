@@ -178,6 +178,12 @@ body {
     z-index: 5;
   }
 
+  &__info {
+    @include max-screen(xxl) {
+      max-width: 525px;
+    }
+  }
+
   &__title {
     font-size: 64px;
     line-height: 74px;
@@ -185,9 +191,9 @@ body {
     color: #FFFFFF;
     max-width: 695px;
     @include max-screen(xxl) {
-      font-size: 59px;
-      line-height: 71px;
-      max-width: 630px;
+      font-size: 48px;
+      line-height: 67px;
+      max-width: 545px;
     }
     @include max-screen(xl) {
       font-size: 48px;
@@ -398,10 +404,15 @@ body {
   text-align: center;
   color: #FFFFFF;
   margin-bottom: 45px;
+  @include max-screen(xxl) {
+    font-size: 53px;
+    line-height: 68px;
+  }
   @include max-screen(lg) {
     font-size: 45px;
     line-height: 50px;
   }
+
 
   &--left {
     text-align: left;
@@ -892,6 +903,7 @@ body {
 
 .calendar {
   margin-top: 200px;
+  position: relative;
 }
 
 .calendar-slider {
@@ -927,6 +939,9 @@ body {
   &:before {
     margin-top: 81px;
     margin-left: -841px;
+    @include max-screen(xxl) {
+      margin-left: -710px;
+    }
   }
 
   .slick-slide {
@@ -1008,6 +1023,9 @@ body {
     transform: translateX(-50%);
     white-space: nowrap;
     z-index: 1;
+    @include max-screen(xxl) {
+      font-size: 140px;
+    }
   }
 
   &__circle-bg {
@@ -1191,6 +1209,8 @@ body {
 .calendar-slider-img {
   position: absolute;
   width: 100%;
+  left: 0;
+  top: 0;
   height: 100%;
 
   &__item {
@@ -1211,6 +1231,9 @@ body {
       height: 203px;
       margin-top: -200px;
       margin-left: -800px;
+      @include max-screen(xxl) {
+        margin-left: -645px;
+      }
     }
 
     &--two {
@@ -1225,6 +1248,9 @@ body {
       height: 233px;
       margin-top: 280px;
       margin-left: 700px;
+      @include max-screen(xxl){
+        margin-left: 675px;
+      }
     }
 
     &--four {
@@ -1543,6 +1569,9 @@ body {
   &__content {
     margin-left: auto;
     max-width: 692px;
+    @include max-screen(xxl) {
+      max-width: 621px;
+    }
   }
 
   &__img {
@@ -1554,6 +1583,11 @@ body {
     transform: translate(-50%, -50%);
     margin-left: -470px;
     z-index: 2;
+    @include max-screen(xxl) {
+      width: 577px;
+      height: 585px;
+      margin-left: -392px;
+    }
 
     img {
       width: 100%;
@@ -1592,10 +1626,19 @@ body {
     margin-left: auto;
     margin-top: 26px;
     position: relative;
+    @include max-screen(xxl) {
+      width: 573px;
+      height: 590px;
+      margin-left: auto;
+      margin-top: 40px;
+    }
   }
 
   &__content {
     flex: 1;
+    @include max-screen(xxl) {
+      margin-right: 30px;
+    }
   }
 }
 
@@ -1703,6 +1746,10 @@ body {
     font-size: 48px;
     line-height: 60px;
     font-family: $black;
+    @include max-screen(xxl){
+      font-size: 42px;
+      line-height: 54px;
+    }
   }
 
   &__text {
@@ -1711,6 +1758,10 @@ body {
     font-family: $hair-line;
     margin-top: 15px;
     color: #FFFFFF;
+    @include max-screen(xxl){
+      font-size: 22px;
+      line-height: 34px;
+    }
   }
 
   &__img {
@@ -1718,6 +1769,11 @@ body {
     height: 445px;
     margin: 0 60px;
     flex: none;
+    @include max-screen(xxl) {
+      width: 550px;
+      height: 375px;
+      margin: 0 30px;
+    }
 
     img {
       width: 100%;
@@ -1758,6 +1814,10 @@ body {
     line-height: 44px;
     font-family: $semi-bold;
     color: #FFFFFF;
+    @include max-screen(xxl){
+      font-size: 22px;
+      line-height: 41px;
+    }
   }
 
   &__text {
@@ -1854,6 +1914,7 @@ body {
     height: 1px;
     background: #ffffff;
   }
+
   &.active--0 {
     margin-top: 160px;
     margin-left: -114px;
@@ -1867,14 +1928,23 @@ body {
       top: -162px;
       width: 420px;
       left: 88px;
+      @include max-screen(xxl){
+        top: -147px;
+        width: 391px;
+        left: 104px;
+      }
     }
 
     .tokenomics-step__marker {
       display: block;
       margin-top: -411px;
       margin-left: 120px;
+      @include max-screen(xxl){
+        margin-top: -380px;
+      }
     }
   }
+
   &.active--1 {
     margin-top: 160px;
     margin-left: -114px;
@@ -1888,14 +1958,24 @@ body {
       top: -139px;
       width: 389px;
       left: 130px;
+      @include max-screen(xxl){
+        top: -128px;
+        width: 365px;
+        left: 137px;
+      }
     }
 
     .tokenomics-step__marker {
       display: block;
       margin-top: -361px;
       margin-left: 307px;
+      @include max-screen(xxl){
+        margin-top: -342px;
+        margin-left: 303px;
+      }
     }
   }
+
   &.active--2 {
     margin-top: 160px;
     margin-left: -114px;
@@ -1919,6 +1999,7 @@ body {
       margin-left: 307px;
     }
   }
+
   &.active--3 {
     margin-top: 160px;
     margin-left: -114px;
@@ -1942,6 +2023,7 @@ body {
       margin-left: 333px;
     }
   }
+
   &.active--4 {
     margin-top: 160px;
     margin-left: -114px;
@@ -1965,6 +2047,7 @@ body {
       margin-left: 269px;
     }
   }
+
   &.active--5 {
     margin-top: 160px;
     margin-left: -114px;
@@ -1988,6 +2071,7 @@ body {
       margin-left: 150px;
     }
   }
+
   &.active--6 {
     margin-top: 160px;
     margin-left: -114px;
@@ -2011,11 +2095,13 @@ body {
       margin-left: 89px;
     }
   }
+
   &.active--7 {
     margin-top: 248px;
     margin-left: -14px;
     text-align: right;
     width: 300px;
+
     &:before {
       width: 317px;
     }
@@ -2027,19 +2113,32 @@ body {
       top: -58px;
       width: 219px;
       left: -80px;
+      @include max-screen(xxl){
+        transform: rotate(
+                        111.04deg
+        );
+        top: -55px;
+        width: 219px;
+        left: -70px;
+      }
     }
 
     .tokenomics-step__marker {
       display: block;
       margin-top: -198px;
       margin-left: -106px;
+      @include max-screen(xxl){
+        margin-left: -85px;
+      }
     }
   }
+
   &.active--8 {
     margin-top: 248px;
     margin-left: -14px;
     text-align: right;
     width: 300px;
+
     &:before {
       width: 317px;
     }
@@ -2051,12 +2150,23 @@ body {
       top: -47px;
       width: 189px;
       left: -87px;
+      @include max-screen(xxl){
+        transform: rotate(
+                        102.04deg
+        );
+        top: -45px;
+        width: 189px;
+        left: -75px;
+      }
     }
 
     .tokenomics-step__marker {
       display: block;
       margin-top: -178px;
       margin-left: -147px;
+      @include max-screen(xxl){
+        margin-left: -125px;
+      }
     }
   }
 }
