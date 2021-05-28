@@ -1,6 +1,7 @@
 @import '../lib/mixins';
 @import '../lib/var';
-.my-btn{
+
+.my-btn {
   background: linear-gradient(90deg, #FFC9B3 0%, #F67D75 100%);
   border-radius: 180px;
   font-size: 20px;
@@ -14,16 +15,23 @@
   width: 400px;
   border: none;
   transition: all .2s ease;
-  @include max-screen(lg){
+  @include max-screen(xl) {
+    padding: 20px;
+    height: 60px;
+    width: 365px;
+  }
+  @include max-screen(lg) {
     height: 60px;
     width: 350px;
     padding: 15px
   }
-  &:hover{
-    background: linear-gradient(90deg,#F67D75 0%,  #FFC9B3 100%);
+
+  &:hover {
+    background: linear-gradient(90deg, #F67D75 0%, #FFC9B3 100%);
 
   }
-  &--border{
+
+  &--border {
     background: transparent;
     border: 1px solid #F99B8D;
     height: 50px;
@@ -31,5 +39,15 @@
     font-size: 14px;
     line-height: 17px;
     padding: 10px;
+  }
+
+  &--white {
+    background: #FFFFFF;
+
+    span {
+      background: linear-gradient(to right, rgba(255, 201, 178, 1) 0%, rgba(246, 125, 117, 1) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
   }
 }

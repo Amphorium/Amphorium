@@ -50,6 +50,30 @@
       <div class="header__btn">
         <button class="my-btn my-btn--border">Get access</button>
       </div>
+      <button class="burger-btn"></button>
+      <div class="mobile-menu">
+        <div class="mobile-menu__wrap">
+          <div class="mobile-menu__logo">
+            <a class="logo" href=""><img src="@/assets/img/logo-white.svg" alt=""></a>
+          </div>
+          <div class="mobile-menu__close">
+            <button class="close"></button>
+          </div>
+        </div>
+        <ul class="mobile-menu__list">
+          <li><a href="#">About</a></li>
+          <li><a href="#">Overview</a></li>
+          <li><a href="#">Technology</a></li>
+          <li><a href="#">Technology</a></li>
+          <li><a href="#">Roadmap</a></li>
+          <li><a href="#">Tokenomics</a></li>
+          <li><a href="#">News</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="mobile-menu__btn">
+          <button class="my-btn my-btn--white"><span>Get access</span></button>
+        </div>
+      </div>
     </div>
   </div>
 </header>

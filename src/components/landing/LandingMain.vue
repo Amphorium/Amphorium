@@ -149,10 +149,9 @@
                 <p>%</p>
                 <p>Token AMH</p>
               </li>
-
-
               <li class="tokenomics-list__item"
                   v-for="(item,idx) in tokenInfo"
+                  :class="{'active':idx===activeStep}"
                   :key="idx"
                   @mouseover="changeStep(idx)"
               >
@@ -447,7 +446,6 @@
         </div>
       </div>
     </section>
-
   </div>
 </template>
 
