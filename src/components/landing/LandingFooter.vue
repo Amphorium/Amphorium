@@ -1,5 +1,19 @@
 <template>
   <footer class="footer">
+    <div class="page-shape">
+      <div class="page-shape__item page-shape__item--one">
+      </div>
+      <div class="page-shape__item page-shape__item--two">
+      </div>
+      <div class="page-shape__item page-shape__item--three">
+      </div>
+      <div class="page-shape__item page-shape__item--four">
+      </div>
+      <div class="page-shape__item page-shape__item--five">
+      </div>
+      <div class="page-shape__item page-shape__item--six">
+      </div>
+    </div>
     <div class="container">
       <div class="footer__wrap">
         <div class="footer__content">

@@ -45,6 +45,32 @@
         </div>
       </div>
     </section>
+    <section class="about">
+      <div class="container">
+        <div class="about__wrap">
+          <div class="about__img">
+            <img src="@/assets/img/earth.png" alt="">
+          </div>
+          <div class="about__content">
+            <div class="my-title my-title--left">
+              <h2>About Us</h2>
+            </div>
+            <div class="about__text">
+              <p>Мы независимая компания специалистов работающая в различных крупных компаниях по транспортиртировке
+                грузов различными путями
+                а именно (Авиа,судно,грузо и прочие виды карго перевозок по миру)
+              </p>
+              <p>Мы не по наслышке знаем о часто возникающих
+                проблемах этих компаний и постоянно потеряных посылок. И мы решили создать свою блокчейн компанию.
+              </p>
+              <p><span>В будущем каждый AMH токен это будет чьейто посылкой, которая будет записыватся в блокчейне, от куда и куда идёт.
+с дополнительным ключем доступа вы сможете просматривать на каком этапе находится ваша посылка и её местоположение.</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <section class="calendar">
       <div class="calendar-slider-img">
         <div class="calendar-slider-img__item calendar-slider-img__item--one">
@@ -105,6 +131,78 @@
             <div class="calendar-slide__title">
               <p>{{ slide.date.month }} {{ slide.date.year }}</p>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="tokenomics">
+      <div class="container">
+        <div class="tokenomics__wrap">
+          <div class="tokenomics__content">
+            <div class="my-title my-title--left">
+              <h2>Tokenomics <br>
+                Amphorium</h2>
+            </div>
+            <ul class="tokenomics-list">
+              <li class="tokenomics-list__head">
+                <p>Group</p>
+                <p>%</p>
+                <p>Token AMH</p>
+              </li>
+
+
+              <li class="tokenomics-list__item"
+                  v-for="(item,idx) in tokenInfo"
+                  :key="idx"
+                  @mouseover="changeStep(idx)"
+              >
+                <p>{{item.group}}</p>
+                <p>{{item.percent}}</p>
+                <p>{{item.amh}}</p>
+              </li>
+            </ul>
+          </div>
+          <div class="tokenomics__img">
+            <img src="@/assets/img/schedule.svg" alt="">
+            <div class="tokenomics-step" :class="`active--${activeStep}`">
+              <p>{{tokenInfo[activeStep].group}} {{tokenInfo[activeStep].percent}}</p>
+              <div class="tokenomics-step__marker"></div>
+            </div>
+          </div>
+        </div>
+        <div class="schedule-details">
+          <div class="schedule-details__info">
+            <div class="schedule-details__title">
+              <p>Release
+                Schedule
+              </p>
+            </div>
+            <div class="schedule-details__text">
+              <p>(not necessatily
+                circulating)</p>
+            </div>
+          </div>
+          <div class="schedule-details__img">
+            <img src="@/assets/img/schedule-2.svg" alt="">
+          </div>
+          <div class="schedule-details-explanation">
+            <ul class="schedule-details-explanation__list">
+              <li><span class="marker marker--1"></span>
+                <p class="schedule-details-explanation__title">Community: </p>
+                <p class="schedule-details-explanation__text">Network Usage Rewards</p>
+              </li>
+              <li><span class="marker marker--2"></span>
+                <p class="schedule-details-explanation__title">Community: </p>
+                <p class="schedule-details-explanation__text">Treasuru, Developers, Partners,
+                  liquidity Providers, and more</p>
+              </li>
+              <li><span class="marker marker--3"></span>
+                <p class="schedule-details-explanation__title">Seed Investors: </p>
+              </li>
+              <li><span class="marker marker--3"></span>
+                <p class="schedule-details-explanation__title">Team</p>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -354,12 +452,9 @@
 </template>
 
 <script>
-// import VueSlickCarousel from 'vue-slick-carousel'
-// import 'vue-slick-carousel/dist/vue-slick-carousel.css'
-
 export default {
   name: 'LandingMain',
-  // components: {VueSlickCarousel},
+
   data() {
     return {
       initialCounter: 0,
@@ -415,17 +510,54 @@ export default {
           text: 'Lorem ipsum dolor sit amet, adipiscing elit Lorem ipsum dolor sit amet, adipiscing elit'
         }
       ],
-      calendarSliderSettings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        infinite: false,
-        fade: true,
-        dots: false,
-        arrows: false,
-        draggable: false,
-        accessibility: false,
-        speed: 50,
-      }
+      activeStep: 0,
+      tokenInfo: [
+        {
+          group: 'Foundation Team',
+          percent: '10%',
+          amh: '100 000 000'
+        },
+        {
+          group: 'Seed',
+          percent: '10%',
+          amh: '100 000 000'
+        },
+        {
+          group: 'Private sale 1 (A)',
+          percent: '6.5 %',
+          amh: '65 000 000'
+        },
+        {
+          group: 'Private sale 2 (B)',
+          percent: '10%',
+          amh: '100 000 000'
+        },
+        {
+          group: 'Private sale 3 (C)',
+          percent: '3.5%',
+          amh: '35 000 000'
+        },
+        {
+          group: 'Advisors',
+          percent: '2%',
+          amh: '20 000 000'
+        },
+        {
+          group: 'Reserve',
+          percent: '5%',
+          amh: '50 000 000'
+        },
+        {
+          group: 'Staking revards',
+          percent: '3%',
+          amh: '30 000 000'
+        },
+        {
+          group: 'Ecosystem/ fire',
+          percent: '50%',
+          amh: '500 000 000'
+        },
+      ]
     }
   },
   methods: {
@@ -454,6 +586,9 @@ export default {
       } else {
         this.nextSlide();
       }
+    },
+    changeStep(idx) {
+      this.activeStep = idx;
     }
   },
   mounted() {
