@@ -39,6 +39,10 @@ body {
     width: 100%;
     padding: 0 30px;
   }
+  @include max-screen(xs) {
+    width: 100%;
+    padding: 0 15px;
+  }
 }
 
 * {
@@ -165,6 +169,12 @@ body {
       margin-left: -191px;
       margin-top: 710px;
     }
+    @include max-screen(xs) {
+      width: 126px;
+      height: 171px;
+      margin-left: -104px;
+      margin-top: 667px;
+    }
   }
 
   &:after {
@@ -201,6 +211,11 @@ body {
       margin-left: 58px;
       margin-top: 428px;
     }
+    @include max-screen(xs) {
+      height: 194px;
+      margin-left: 42px;
+      margin-top: 528px;
+    }
   }
 
   &__wrap {
@@ -213,11 +228,18 @@ body {
   }
 
   &__info {
+    max-width: 695px;
     @include max-screen(xxl) {
       max-width: 525px;
     }
+    @include max-screen(xl) {
+      max-width: 530px;
+    }
+    @include max-screen(lg) {
+      max-width: 496px;
+    }
     @include max-screen(md) {
-      max-width: 395px;
+      max-width: 100%;
     }
   }
 
@@ -249,6 +271,10 @@ body {
       font-size: 34px;
       line-height: 50px;
     }
+    @include max-screen(xs) {
+      font-size: 25px;
+      line-height: 40px;
+    }
   }
 
   &__btn {
@@ -258,14 +284,6 @@ body {
     }
   }
 
-  &__info {
-    @include max-screen(xl) {
-      max-width: 530px;
-    }
-    @include max-screen(lg) {
-      max-width: 100%;
-    }
-  }
 
   &__img {
     width: 863px;
@@ -300,6 +318,10 @@ body {
       transform: none;
       margin: 25px auto 0 auto;
     }
+    @include max-screen(xs) {
+      width: 270px;
+      height: 257px;
+    }
 
     img {
       width: 100%;
@@ -333,6 +355,10 @@ body {
         font-size: 14px;
         line-height: 22px;
       }
+      @include max-screen(xs) {
+        font-size: 12px;
+        line-height: 19px;
+      }
 
       span {
         font-size: 20px;
@@ -346,6 +372,9 @@ body {
         @include max-screen(sm) {
           font-size: 17px;
           line-height: 22px;
+        }
+        @include max-screen(xs) {
+          font-size: 15px;
         }
       }
     }
@@ -398,7 +427,8 @@ body {
       margin-top: -300px;
       margin-left: -811px;
       @include max-screen(xxl) {
-        margin-left: -648px;
+        margin-left: -715px;
+        margin-top: -305px;
       }
       @include max-screen(xl) {
         margin-left: 52px;
@@ -414,6 +444,12 @@ body {
       @include max-screen(sm) {
         margin-left: -265px;
       }
+      @include max-screen(xs) {
+        margin-left: -136px;
+        width: 74px;
+        height: 59px;
+        margin-top: 166px;
+      }
     }
 
     &--two {
@@ -422,7 +458,8 @@ body {
       margin-top: 237px;
       margin-left: -844px;
       @include max-screen(xxl) {
-        margin-left: -688px;
+        margin-left: -765px;
+
       }
       @include max-screen(xl) {
         margin-left: 512px;
@@ -440,6 +477,12 @@ body {
       }
       @include max-screen(sm) {
         margin-left: 209px
+      }
+      @include max-screen(xs) {
+        margin-left: 109px;
+        width: 110px;
+        height: 92px;
+        margin-top: 412px;
       }
     }
 
@@ -466,6 +509,13 @@ body {
       }
       @include max-screen(sm) {
         margin-left: -184px;
+        margin-top: 315px;
+      }
+      @include max-screen(xs) {
+        width: 78px;
+        height: 89px;
+        margin-left: -105px;
+        margin-top: 320px;
       }
     }
 
@@ -477,7 +527,7 @@ body {
       @include max-screen(xxl) {
         width: 200px;
         height: 203px;
-        margin-top: 237px;
+        margin-top: 165px;
         margin-left: 80px;
       }
       @include max-screen(xl) {
@@ -487,6 +537,11 @@ body {
         width: 162px;
         height: 164px;
         margin-top: 85px;
+      }
+      @include max-screen(xs) {
+        width: 112px;
+        height: 103px;
+        margin-top: 185px;
       }
     }
   }
@@ -519,6 +574,10 @@ body {
   @include max-screen(sm) {
     font-size: 33px;
     line-height: 33px;
+  }
+  @include max-screen(xs) {
+    font-size: 29px;
+    line-height: 26px;
   }
 
   &--left {
@@ -595,6 +654,10 @@ body {
     @include max-screen(xl) {
       font-size: 22px;
       line-height: 29px;
+    }
+    @include max-screen(xs) {
+      font-size: 20px;
+      line-height: 27px;
     }
   }
 
@@ -701,6 +764,10 @@ body {
       font-size: 30px;
       line-height: 39px;
     }
+    @include max-screen(xs) {
+      font-size: 24px;
+      line-height: 33px;
+    }
   }
 
   &:hover {
@@ -737,8 +804,20 @@ body {
     margin-top: 243px;
     margin-left: 527px;
     @include max-screen(lg) {
-      margin-top: 872px;
+      margin-top: 572px;
       margin-left: 227px;
+    }
+    @include max-screen(md) {
+      margin-top: 572px;
+    }
+
+    @include max-screen(sm) {
+      margin-top: 530px;
+    }
+    @include max-screen(xs) {
+      width: 345px;
+      height: 349px;
+      margin-left: 168px;
     }
   }
 
@@ -800,6 +879,9 @@ body {
   backdrop-filter: blur(6px);
   border-radius: 20px;
   padding: 0 60px 40px 60px;
+  @include max-screen(xs) {
+    padding: 0 15px 15px 15px;
+  }
 
   &:before {
     content: "";
@@ -822,6 +904,14 @@ body {
     width: 197px;
     height: 226px;
     margin-top: -90px;
+    @include max-screen(sm) {
+      width: 155px;
+      height: 190px;
+    }
+    @include max-screen(xs) {
+      width: 128px;
+      height: 158px;
+    }
 
     img {
       width: 100%;
@@ -856,6 +946,14 @@ body {
       font-size: 43px;
       line-height: 49px;
     }
+    @include max-screen(sm) {
+      font-size: 35px;
+      line-height: 39px;
+    }
+    @include max-screen(xs) {
+      font-size: 28px;
+      line-height: 31px;
+    }
   }
 
   &__text {
@@ -868,6 +966,10 @@ body {
       font-size: 19px;
       line-height: 32px;
     }
+    @include max-screen(xs) {
+      font-size: 14px;
+      line-height: 21px;
+    }
   }
 
   &__btn {
@@ -879,6 +981,15 @@ body {
       height: 70px;
       padding: 18px;
       font-size: 18px;
+      @include max-screen(xl) {
+        padding: 20px;
+        height: 60px;
+      }
+      @include max-screen(xs) {
+        padding: 9px;
+        height: 50px;
+        font-size: 14px;
+      }
     }
   }
 }
@@ -918,11 +1029,15 @@ body {
     line-height: 24px;
     font-family: $bold;
     color: #F67D75;
-    padding: 20px 30px;
+    padding: 20px 50px 20px 30px;
     position: relative;
     border: none;
     display: inline-block;
     text-align: left;
+    @include max-screen(xs) {
+      font-size: 15px;
+      line-height: 20px;
+    }
 
     &:before {
       content: "";
@@ -1008,6 +1123,12 @@ body {
     width: 33.333%;
     height: 140px;
   }
+  @include max-screen(sm) {
+    height: 115px;
+  }
+  @include max-screen(xs) {
+    height: 80px;
+  }
 
   img {
     width: 216px;
@@ -1020,6 +1141,14 @@ body {
     @include max-screen(lg) {
       width: 150px;
       height: 55px;
+    }
+    @include max-screen(sm) {
+      width: 120px;
+      height: 40px;
+    }
+    @include max-screen(xs) {
+      width: 76px;
+      height: 26px;
     }
   }
 
@@ -1058,11 +1187,14 @@ body {
 .calendar {
   margin-top: 200px;
   position: relative;
-  @include max-screen(md) {
+  @include max-screen(lg) {
     margin-top: 80px;
   }
   @include max-screen(sm) {
     margin-top: -85px;
+  }
+  @include max-screen(xs) {
+    margin: 10px 0 60px 0;
   }
 }
 
@@ -1070,6 +1202,9 @@ body {
   position: relative;
   z-index: 2;
   height: 750px;
+  @include max-screen(xs) {
+    height: 560px;
+  }
 
   .slick-list {
     overflow: visible !important;
@@ -1097,7 +1232,7 @@ body {
     @include max-screen(xl) {
       margin-left: 760px;
     }
-    @include max-screen(md) {
+    @include max-screen(lg) {
       margin-left: 507px;
       margin-top: 241px;
     }
@@ -1118,7 +1253,7 @@ body {
     @include max-screen(xl) {
       margin-left: -610px;
     }
-    @include max-screen(md) {
+    @include max-screen(lg) {
       margin-left: -510px;
     }
     @include max-screen(sm) {
@@ -1161,13 +1296,17 @@ body {
       width: 472px;
       height: 472px;
     }
-    @include max-screen(md) {
+    @include max-screen(lg) {
       width: 347px;
       height: 347px;
     }
     @include max-screen(sm) {
       width: 247px;
       height: 247px;
+    }
+    @include max-screen(xs) {
+      width: 255px;
+      height: 255px;
     }
 
     &:after {
@@ -1226,13 +1365,16 @@ body {
     @include max-screen(xl) {
       font-size: 118px;
     }
-    @include max-screen(md) {
+    @include max-screen(lg) {
       font-size: 77px;
       bottom: 106px;
     }
     @include max-screen(sm) {
       font-size: 61px;
       bottom: 145px;
+    }
+    @include max-screen(xs) {
+      display: none;
     }
   }
 
@@ -1249,13 +1391,17 @@ body {
       width: 840px;
       height: 841px;
     }
-    @include max-screen(md) {
+    @include max-screen(lg) {
       width: 540px;
       height: 541px;
     }
     @include max-screen(sm) {
       width: 440px;
       height: 441px;
+    }
+    @include max-screen(xs) {
+      margin-top: -72px;
+      width: 417px;
     }
   }
 
@@ -1276,7 +1422,7 @@ body {
       height: 472px;
       margin-top: 131px;
     }
-    @include max-screen(md) {
+    @include max-screen(lg) {
       width: 350px;
       height: 350px;
       margin-top: 193px;
@@ -1285,6 +1431,17 @@ body {
       width: 255px;
       height: 255px;
       margin-top: 239px;
+    }
+    @include max-screen(xs) {
+      width: 255px;
+      height: 255px;
+      position: relative;
+      top: auto;
+      left: auto;
+      bottom: auto;
+      right: auto;
+      transform: none;
+      margin: 80px auto 0 auto;
     }
   }
 
@@ -1302,7 +1459,7 @@ body {
         font-size: 112px;
         line-height: 126px;
       }
-      @include max-screen(md) {
+      @include max-screen(lg) {
         font-size: 79px;
         line-height: 79px;
       }
@@ -1310,6 +1467,7 @@ body {
         font-size: 58px;
         line-height: 66px;
       }
+
 
       span {
         font-size: 64px;
@@ -1322,7 +1480,7 @@ body {
           font-size: 57px;
           line-height: 66px;
         }
-        @include max-screen(md) {
+        @include max-screen(lg) {
           font-size: 38px;
           line-height: 31px;
         }
@@ -1330,6 +1488,7 @@ body {
           font-size: 29px;
           line-height: 26px;
         }
+
       }
     }
   }
@@ -1349,12 +1508,15 @@ body {
   transform: translate(-50%, -50%);
   z-index: 10;
 
+
   &__drop {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     display: none;
-
+    @include max-screen(xs) {
+      display: none;
+    }
   }
 
   &__point {
@@ -1368,9 +1530,13 @@ body {
       width: 40px;
       height: 40px;
     }
-    @include max-screen(md) {
+    @include max-screen(lg) {
       width: 25px;
       height: 25px;
+    }
+    @include max-screen(xs) {
+      width: 20px;
+      height: 20px;
     }
 
     &:before {
@@ -1387,9 +1553,13 @@ body {
         width: 19px;
         height: 19px;
       }
-      @include max-screen(md) {
+      @include max-screen(lg) {
         width: 10px;
         height: 10px;
+      }
+      @include max-screen(xs) {
+        width: 8px;
+        height: 8px;
       }
     }
   }
@@ -1399,17 +1569,20 @@ body {
     @include max-screen(xl) {
       margin-top: -210px;
     }
-    @include max-screen(md) {
+    @include max-screen(lg) {
       margin-top: -152px;
     }
     @include max-screen(sm) {
       margin-top: -108px;
     }
+    @include max-screen(xs) {
+      margin-top: -112px;
+    }
 
     .calendar-info__drop {
       margin-right: 30px;
       right: 100%;
-      @include max-screen(md) {
+      @include max-screen(lg) {
         margin-right: 5px;
       }
     }
@@ -1421,17 +1594,20 @@ body {
     @include max-screen(xl) {
       margin-left: -210px;
     }
-    @include max-screen(md) {
+    @include max-screen(lg) {
       margin-left: -152px;
     }
     @include max-screen(sm) {
       margin-left: -108px;
     }
+    @include max-screen(xs) {
+      margin-left: -112px;
+    }
 
     .calendar-info__drop {
       margin-right: 30px;
       right: 100%;
-      @include max-screen(md) {
+      @include max-screen(lg) {
         margin-right: 5px;
       }
     }
@@ -1442,17 +1618,20 @@ body {
     @include max-screen(xl) {
       margin-top: 210px;
     }
-    @include max-screen(md) {
+    @include max-screen(lg) {
       margin-top: 152px;
     }
     @include max-screen(sm) {
       margin-top: 108px;
     }
+    @include max-screen(xs) {
+      margin-top: 112px;
+    }
 
     .calendar-info__drop {
       margin-left: 30px;
       left: 100%;
-      @include max-screen(md) {
+      @include max-screen(lg) {
         margin-left: 5px;
       }
     }
@@ -1464,17 +1643,20 @@ body {
     @include max-screen(xl) {
       margin-left: 210px;
     }
-    @include max-screen(md) {
+    @include max-screen(lg) {
       margin-left: 152px;
     }
     @include max-screen(sm) {
       margin-left: 108px;
     }
+    @include max-screen(xs) {
+      margin-left: 112px;
+    }
 
     .calendar-info__drop {
       margin-left: 30px;
       left: 100%;
-      @include max-screen(md) {
+      @include max-screen(lg) {
         margin-left: 5px;
       }
     }
@@ -1484,6 +1666,9 @@ body {
     .calendar-info__drop {
       display: block;
       z-index: 7;
+      @include max-screen(xs) {
+        display: none;
+      }
     }
   }
 }
@@ -1498,7 +1683,7 @@ body {
   @include max-screen(xl) {
     width: 315px;
   }
-  @include max-screen(md) {
+  @include max-screen(lg) {
     width: 200px;
     padding: 15px 15px;
   }
@@ -1542,7 +1727,7 @@ body {
       font-size: 20px;
       line-height: 26px;
     }
-    @include max-screen(md) {
+    @include max-screen(lg) {
       font-size: 16px;
       line-height: 24px;
     }
@@ -1561,7 +1746,7 @@ body {
       font-size: 16px;
       line-height: 23px;
     }
-    @include max-screen(md) {
+    @include max-screen(lg) {
       font-size: 13px;
       line-height: 20px;
     }
@@ -1578,6 +1763,9 @@ body {
   left: 0;
   top: 0;
   height: 100%;
+  @include max-screen(xs) {
+    display: none;
+  }
 
   &__item {
     position: absolute;
@@ -1598,7 +1786,8 @@ body {
       margin-top: -200px;
       margin-left: -800px;
       @include max-screen(xxl) {
-        margin-left: -645px;
+        margin-left: -745px;
+        margin-top: -267px;
       }
       @include max-screen(xl) {
         margin-left: -570px
@@ -1617,6 +1806,10 @@ body {
       margin-left: -797px;
       @include max-screen(xl) {
         margin-left: -520px;
+      }
+      @include max-screen(lg) {
+        margin-top: 160px;
+        margin-left: -486px;
       }
       @include max-screen(sm) {
         margin-left: -233px;
@@ -1637,6 +1830,10 @@ body {
       @include max-screen(xl) {
         margin-left: 556px;
       }
+      @include max-screen(lg) {
+        margin-left: 256px;
+        margin-top: 217px;
+      }
       @include max-screen(sm) {
         margin-left: 156px;
         width: 140px;
@@ -1654,6 +1851,9 @@ body {
         width: 136px;
         height: 151px;
         margin-left: 549px;
+      }
+      @include max-screen(lg) {
+        margin-left: 349px;
       }
       @include max-screen(sm) {
         width: 107px;
@@ -1694,7 +1894,7 @@ body {
   &:after {
     margin-top: 315px;
     margin-left: 530px;
-    @include max-screen(md) {
+    @include max-screen(lg) {
       height: 196px;
     }
   }
@@ -1719,9 +1919,12 @@ body {
     margin: 0 auto;
     padding: 78px 135px 0 135px;
     z-index: 3;
-    @include max-screen(md) {
+    @include max-screen(lg) {
       width: 100%;
       padding: 40px 40px 0 40px;
+    }
+    @include max-screen(xs) {
+      padding: 15px 15px 0 15px;
     }
 
     &:after {
@@ -1750,6 +1953,10 @@ body {
     text-align: center;
     color: #747474;
     margin-top: 18px;
+    @include max-screen(sm) {
+      font-size: 15px;
+      line-height: 30px;
+    }
   }
 }
 
@@ -1757,10 +1964,18 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @include max-screen(sm) {
+    flex-direction: column;
+  }
 
   &__btn {
     width: 350px;
     margin-left: 30px;
+    @include max-screen(sm) {
+      width: 100%;
+      margin-left: 0;
+      margin-top: 20px;
+    }
 
     .my-btn {
       width: 100%;
@@ -1768,10 +1983,17 @@ body {
   }
 
   .big-input {
+    @include max-screen(sm) {
+      width: 100%;
+    }
+
     &__input {
       width: 520px;
       @include max-screen(md) {
         width: 320px;
+      }
+      @include max-screen(sm) {
+        width: 100%;
       }
     }
   }
@@ -1801,6 +2023,14 @@ body {
     @include max-screen(xl) {
       height: 60px;
     }
+    @include max-screen(xs) {
+      padding: 10px 25px;
+      font-size: 18px;
+      @include placeholder {
+        font-size: 18px;
+      }
+      height: 50px;
+    }
   }
 }
 
@@ -1823,16 +2053,27 @@ body {
       display: flex;
       align-items: center;
       justify-content: center;
+      @include max-screen(xs) {
+        width: 35px;
+        height: 35px;
+      }
 
       img {
         width: 25px;
         height: 25px;
         object-fit: contain;
+        @include max-screen(xs) {
+          width: 17px;
+          height: 17px;
+        }
       }
     }
 
     + .social__item {
       margin-left: 20px;
+      @include max-screen(xs) {
+        margin-left: 15px;
+      }
     }
   }
 }
@@ -2009,6 +2250,10 @@ body {
       width: 328px;
       height: 173px;
     }
+    @include max-screen(xs) {
+      width: 219px;
+      height: 146px;
+    }
   }
 
   &__wrap {
@@ -2026,6 +2271,9 @@ body {
     }
     @include max-screen(xl) {
       max-width: 528px;
+    }
+    @include max-screen(lg) {
+      max-width: 428px;
     }
     @include max-screen(md) {
       max-width: 100%;
@@ -2051,6 +2299,12 @@ body {
       height: 485px;
       margin-left: -303px;
     }
+    @include max-screen(lg) {
+      width: 434px;
+      height: 446px;
+      margin-left: -243px;
+      margin-top: -13px;
+    }
     @include max-screen(md) {
       position: relative;
       top: auto;
@@ -2065,6 +2319,10 @@ body {
     @include max-screen(sm) {
       width: 327px;
       height: 328px;
+    }
+    @include max-screen(xs) {
+      width: 232px;
+      height: 241px;
     }
 
     img {
@@ -2090,6 +2348,10 @@ body {
       font-size: 15px;
       line-height: 25px;
     }
+    @include max-screen(xs) {
+      font-size: 13px;
+      line-height: 21px;
+    }
 
     p {
       + p {
@@ -2110,6 +2372,9 @@ body {
   }
   @include max-screen(md) {
     margin-top: -45px
+  }
+  @include max-screen(xs) {
+    margin-top: 0;
   }
 
   &__wrap {
@@ -2137,6 +2402,10 @@ body {
     @include max-screen(sm) {
       width: 426px;
       height: 349px;
+    }
+    @include max-screen(xs) {
+      width: 260px;
+      height: 244px;
     }
   }
 
@@ -2198,6 +2467,9 @@ body {
       &:first-child {
         text-align: left;
         width: 200px;
+        @include max-screen(xs) {
+          width: 160px;
+        }
       }
 
       &:last-child {
@@ -2219,6 +2491,13 @@ body {
     cursor: pointer;
     position: relative;
     z-index: 2;
+    @include max-screen(lg) {
+      font-size: 12px;
+    }
+    @include max-screen(xs) {
+      font-size: 10px;
+      line-height: 20px;
+    }
 
     &.active {
       border-radius: 10px;
@@ -2229,6 +2508,9 @@ body {
       &:first-child {
         text-align: left;
         width: 200px;
+        @include max-screen(xs) {
+          width: 160px;
+        }
       }
 
       &:last-child {
@@ -2257,6 +2539,9 @@ body {
   @include max-screen(sm) {
     margin-top: 95px;
   }
+  @include max-screen(xs) {
+    margin-top: 75px;
+  }
 
   &__info {
     max-width: 265px;
@@ -2279,6 +2564,10 @@ body {
     @include max-screen(xl) {
       font-size: 34px;
       line-height: 45px;
+    }
+    @include max-screen(xs) {
+      font-size: 29px;
+      line-height: 35px;
     }
   }
 
@@ -2312,8 +2601,16 @@ body {
       width: 504px;
       height: 362px;
     }
+    @include max-screen(lg) {
+      width: 424px;
+      height: 295px;
+    }
     @include max-screen(md) {
       margin: 20px auto;
+    }
+    @include max-screen(xs) {
+      width: 291px;
+      height: 202px;
     }
 
     img {
@@ -2334,6 +2631,9 @@ body {
   max-width: 365px;
   @include max-screen(md) {
     max-width: 100%;
+  }
+  @include max-screen(xs) {
+    padding: 15px;
   }
 
   &:before {
@@ -2451,6 +2751,10 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  @include max-screen(xs) {
+    font-size: 15px;
+    line-height: 9px;
+  }
 
   &__marker {
     border: 7px solid #FFFFFF;
@@ -2461,6 +2765,11 @@ body {
     top: 50%;
     left: 50%;
     display: none;
+    @include max-screen(xs) {
+      border: 4px solid #FFFFFF;
+      width: 15px;
+      height: 15px;
+    }
   }
 
   &:before {
@@ -2482,11 +2791,22 @@ body {
   &.active--0 {
     margin-top: 160px;
     margin-left: -114px;
+    @include max-screen(lg) {
+      margin-top: 114px;
+      margin-left: -14px;
+    }
+    @include max-screen(xs) {
+      margin-top: 127px;
+      margin-left: -55px;
+    }
 
     &:before {
       width: 321px;
       @include max-screen(sm) {
         width: 309px;
+      }
+      @include max-screen(xs) {
+        width: 235px;
       }
     }
 
@@ -2500,10 +2820,34 @@ body {
         width: 391px;
         left: 104px;
       }
+      @include max-screen(lg) {
+        transform: rotate(
+                        71.04deg
+        );
+        top: -114px;
+        width: 391px;
+        left: 60px;
+      }
+      @include max-screen(md) {
+        top: -127px;
+        width: 373px;
+        left: 74px;
+      }
       @include max-screen(sm) {
-        top: -98px;
-        width: 291px;
-        left: 147px;
+        top: -59px;
+        width: 299px;
+        left: 88px;
+        transform: rotate(
+                        62.04deg
+        );
+      }
+      @include max-screen(xs) {
+        transform: rotate(
+                        70.04deg
+        );
+        top: -81px;
+        width: 238px;
+        left: 74px;
       }
     }
 
@@ -2514,8 +2858,20 @@ body {
       @include max-screen(xxl) {
         margin-top: -380px;
       }
+      @include max-screen(lg) {
+        margin-top: -351px;
+        margin-left: 48px;
+      }
+      @include max-screen(md) {
+        margin-top: -339px;
+        margin-left: 37px;
+      }
       @include max-screen(sm) {
-        margin-top: -280px;
+        margin-top: -240px;
+      }
+      @include max-screen(xs) {
+        margin-top: -210px;
+        margin-left: 57px;
       }
     }
   }
@@ -2529,6 +2885,9 @@ body {
       @include max-screen(sm) {
         width: 203px;
       }
+      @include max-screen(xs) {
+        width: 190px;
+      }
     }
 
     &:after {
@@ -2541,10 +2900,31 @@ body {
         width: 365px;
         left: 137px;
       }
+      @include max-screen(lg) {
+        transform: rotate(
+                        98.04deg
+        );
+        top: -136px;
+        width: 375px;
+        left: 107px;
+      }
+      @include max-screen(md) {
+        top: -134px;
+        width: 366px;
+        left: 114px;
+      }
       @include max-screen(sm) {
-        top: -82px;
+        top: -84px;
         width: 268px;
-        left: 106px;
+        left: 86px;
+      }
+      @include max-screen(xs) {
+        transform: rotate(
+                        99.04deg
+        );
+        top: -90px;
+        width: 249px;
+        left: 84px;
       }
     }
 
@@ -2556,9 +2936,20 @@ body {
         margin-top: -342px;
         margin-left: 303px;
       }
+      @include max-screen(lg) {
+        margin-top: -362px;
+        margin-left: 244px;
+      }
+      @include max-screen(md) {
+        margin-top: -352px;
+      }
       @include max-screen(sm) {
-        margin-top: -251px;
-        margin-left: 204px;
+        margin-top: -253px;
+        margin-left: 165px;
+      }
+      @include max-screen(xs) {
+        margin-top: -232px;
+        margin-left: 184px;
       }
     }
   }
@@ -2566,9 +2957,16 @@ body {
   &.active--2 {
     margin-top: 160px;
     margin-left: -114px;
+    @include max-screen(xs) {
+      margin-top: 140px;
+      margin-left: -57px;
+    }
 
     &:before {
       width: 271px;
+      @include max-screen(xs) {
+        width: 241px;
+      }
     }
 
     &:after {
@@ -2578,10 +2976,31 @@ body {
       top: -108px;
       width: 363px;
       left: 183px;
+      @include max-screen(lg) {
+        transform: rotate(
+                        115.04deg
+        );
+        top: -121px;
+        width: 371px;
+        left: 165px;
+      }
+      @include max-screen(md) {
+        top: -112px;
+        width: 353px;
+        left: 169px;
+      }
       @include max-screen(sm) {
-        top: -66px;
+        top: -72px;
         width: 266px;
-        left: 206px;
+        left: 194px;
+      }
+      @include max-screen(xs) {
+        transform: rotate(
+                        93.04deg
+        );
+        top: -68px;
+        width: 203px;
+        left: 145px;
       }
     }
 
@@ -2589,9 +3008,21 @@ body {
       display: block;
       margin-top: -301px;
       margin-left: 307px;
+      @include max-screen(lg) {
+        margin-top: -327px;
+        margin-left: 283px;
+      }
+      @include max-screen(md) {
+        margin-top: -306px;
+        margin-left: 273px;
+      }
       @include max-screen(sm) {
-        margin-top: -217px;
-        margin-left: 263px;
+        margin-top: -227px;
+        margin-left: 233px;
+      }
+      @include max-screen(xs) {
+        margin-top: -187px;
+        margin-left: 159px;
       }
     }
   }
@@ -2599,9 +3030,16 @@ body {
   &.active--3 {
     margin-top: 160px;
     margin-left: -114px;
+    @include max-screen(xs) {
+      margin-top: 138px;
+      margin-left: -60px;
+    }
 
     &:before {
       width: 271px;
+      @include max-screen(lg) {
+        width: 315px;
+      }
     }
 
     &:after {
@@ -2611,21 +3049,71 @@ body {
       top: -80px;
       width: 324px;
       left: 209px;
+      @include max-screen(lg) {
+        transform: rotate(
+                        108.04deg
+        );
+        top: -101px;
+        width: 316px;
+        left: 202px;
+      }
+      @include max-screen(md) {
+        top: -88px;
+        width: 288px;
+        left: 214px;
+      }
+      @include max-screen(sm) {
+        top: -56px;
+        width: 218px;
+        left: 239px;
+      }
+      @include max-screen(xs) {
+        transform: rotate(
+                        82.04deg
+        );
+        top: -61px;
+        width: 190px;
+        left: 163px;
+      }
     }
 
     .tokenomics-step__marker {
       display: block;
       margin-top: -247px;
       margin-left: 333px;
+      @include max-screen(lg) {
+        margin-top: -285px;
+        margin-left: 264px;
+      }
+      @include max-screen(md) {
+        margin-top: -262px;
+        margin-left: 257px;
+      }
+      @include max-screen(sm) {
+        margin-top: -195px;
+        margin-left: 236px;
+      }
+      @include max-screen(xs) {
+        margin-top: -170px;
+        margin-left: 155px;
+      }
     }
   }
 
   &.active--4 {
     margin-top: 160px;
     margin-left: -114px;
+    @include max-screen(xs) {
+      margin-top: 130px;
+      margin-left: -59px;
+    }
+
 
     &:before {
       width: 305px;
+      @include max-screen(sm) {
+        width: 268px;
+      }
     }
 
     &:after {
@@ -2635,21 +3123,76 @@ body {
       top: -58px;
       width: 241px;
       left: 240px;
+      @include max-screen(lg) {
+        transform: rotate(
+                        104.04deg
+        );
+        top: -83px;
+        width: 271px;
+        left: 202px;
+      }
+      @include max-screen(md) {
+        top: -67px;
+        width: 235px;
+        left: 216px;
+      }
+      @include max-screen(sm) {
+        top: -35px;
+        width: 185px;
+        left: 219px;
+        transform: rotate(
+                        117.04deg
+        );
+      }
+      @include max-screen(xs) {
+        transform: rotate(
+                        71.04deg
+        );
+        top: -45px;
+        width: 166px;
+        left: 158px;
+      }
     }
 
     .tokenomics-step__marker {
       display: block;
       margin-top: -201px;
       margin-left: 269px;
+      @include max-screen(lg) {
+        margin-top: -253px;
+        margin-left: 226px;
+      }
+      @include max-screen(md) {
+        margin-top: -218px;
+        margin-left: 218px;
+      }
+      @include max-screen(sm) {
+        margin-top: -157px;
+        margin-left: 209px;
+      }
+      @include max-screen(xs) {
+        margin-top: -142px;
+        margin-left: 122px;
+      }
     }
   }
 
   &.active--5 {
     margin-top: 160px;
     margin-left: -114px;
+    @include max-screen(xs) {
+      margin-top: 117px;
+      margin-left: -84px;
+    }
 
     &:before {
       width: 305px;
+      @include max-screen(sm) {
+        width: 295px;
+      }
+      @include max-screen(xs) {
+        width: 201px;
+      }
     }
 
     &:after {
@@ -2659,21 +3202,48 @@ body {
       top: -43px;
       width: 189px;
       left: 182px;
+      @include max-screen(sm) {
+        top: -27px;
+        width: 157px;
+        left: 193px;
+      }
+      @include max-screen(xs) {
+        top: -36px;
+        width: 143px;
+        left: 108px;
+      }
     }
 
     .tokenomics-step__marker {
       display: block;
       margin-top: -175px;
       margin-left: 150px;
+      @include max-screen(sm) {
+        margin-top: -137px;
+      }
+      @include max-screen(xs) {
+        margin-top: -120px;
+        margin-left: 104px;
+      }
     }
   }
 
   &.active--6 {
     margin-top: 160px;
     margin-left: -114px;
+    @include max-screen(xs) {
+      margin-top: 115px;
+      margin-left: -91px;
+    }
 
     &:before {
       width: 258px;
+      @include max-screen(sm) {
+        width: 243px;
+      }
+      @include max-screen(xs) {
+        width: 189px;
+      }
     }
 
     &:after {
@@ -2683,12 +3253,29 @@ body {
       top: -32px;
       width: 175px;
       left: 133px;
+      @include max-screen(sm) {
+        top: -19px;
+        width: 147px;
+        left: 138px;
+      }
+      @include max-screen(xs) {
+        top: -26px;
+        width: 129px;
+        left: 97px;
+      }
     }
 
     .tokenomics-step__marker {
       display: block;
       margin-top: -149px;
       margin-left: 89px;
+      @include max-screen(sm) {
+        margin-top: -120px;
+      }
+      @include max-screen(xs) {
+        margin-top: -101px;
+        margin-left: 80px;
+      }
     }
   }
 
@@ -2697,9 +3284,25 @@ body {
     margin-left: -14px;
     text-align: right;
     width: 300px;
+    @include max-screen(lg) {
+      margin-top: 172px;
+      margin-left: -1px;
+    }
+    @include max-screen(sm) {
+      margin-top: 207px;
+      margin-left: -15px;
+    }
+    @include max-screen(xs) {
+      margin-top: 115px;
+    }
 
     &:before {
       width: 317px;
+      @include max-screen(xs) {
+        width: 251px;
+        right: 0;
+        left: auto;
+      }
     }
 
     &:after {
@@ -2717,6 +3320,24 @@ body {
         width: 219px;
         left: -70px;
       }
+      @include max-screen(md) {
+        top: -37px;
+        width: 180px;
+        left: -57px;
+      }
+      @include max-screen(sm) {
+        transform: rotate(
+                        125.04deg
+        );
+        top: -32px;
+        width: 196px;
+        left: -43px;
+      }
+      @include max-screen(xs) {
+        top: -24px;
+        width: 134px;
+        left: 22px;
+      }
     }
 
     .tokenomics-step__marker {
@@ -2726,6 +3347,18 @@ body {
       @include max-screen(xxl) {
         margin-left: -85px;
       }
+      @include max-screen(md) {
+        margin-top: -157px;
+        margin-left: -94px;
+      }
+      @include max-screen(sm) {
+        margin-left: -55px;
+        margin-top: -148px;
+      }
+      @include max-screen(xs) {
+        margin-left: -29px;
+        margin-top: -93px;
+      }
     }
   }
 
@@ -2734,9 +3367,25 @@ body {
     margin-left: -14px;
     text-align: right;
     width: 300px;
+    @include max-screen(lg) {
+      margin-top: 172px;
+      margin-left: -1px;
+    }
+    @include max-screen(sm) {
+      margin-top: 207px;
+      margin-left: -15px;
+    }
+    @include max-screen(xs) {
+      margin-top: 107px;
+    }
 
     &:before {
       width: 317px;
+      @include max-screen(xs) {
+        width: 255px;
+        left: auto;
+        right: 0;
+      }
     }
 
     &:after {
@@ -2754,6 +3403,27 @@ body {
         width: 189px;
         left: -75px;
       }
+      @include max-screen(md) {
+        top: -28px;
+        width: 156px;
+        left: -62px;
+      }
+      @include max-screen(sm) {
+        transform: rotate(
+                        113.04deg
+        );
+        top: -33px;
+        width: 177px;
+        left: -55px;
+      }
+      @include max-screen(xs) {
+        transform: rotate(
+                        123.04deg
+        );
+        top: -14px;
+        width: 115px;
+        left: 18px;
+      }
     }
 
     .tokenomics-step__marker {
@@ -2762,6 +3432,18 @@ body {
       margin-left: -147px;
       @include max-screen(xxl) {
         margin-left: -125px;
+      }
+      @include max-screen(md) {
+        margin-top: -139px;
+        margin-left: -132px;
+      }
+      @include max-screen(sm) {
+        margin-left: -89px;
+        margin-top: -144px;
+      }
+      @include max-screen(xs) {
+        margin-left: -49px;
+        margin-top: -79px;
       }
     }
   }
@@ -2844,4 +3526,146 @@ body {
   border: none;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.calendar-mobile-drop {
+  display: none;
+  margin-top: -130px;
+  @include max-screen(xs) {
+    display: block;
+  }
+
+  .calendar-item {
+    padding-top: 150px;
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+  }
+
+  &__btns {
+    border: 1px solid #F67D75;
+    border-radius: 130px;
+    width: 100%;
+    display: flex;
+    position: relative;
+    margin-top: 20px;
+
+    &:after {
+      content: "";
+      width: 1px;
+      height: 100%;
+      background: #F67D75;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+.calendar-btn {
+  width: 100%;
+  font-size: 18px;
+  line-height: 24px;
+  font-family: $black;
+  color: #FFFFFF;
+  border: none;
+  padding: 15px 25px 15px 15px;
+  position: relative;
+
+  &:before {
+    content: "";
+    top: 50%;
+    transform: translateY(-50%);
+    width: 15px;
+    height: 15px;
+    background-color: transparent;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+  }
+
+  &--prev {
+    text-align: right;
+
+    &:before {
+      background-image: url("assets/img/arrow-prev.svg");
+      left: 45px;
+    }
+  }
+
+  &--next {
+    text-align: left;
+
+    &:before {
+      background-image: url("assets/img/arrow-next.svg");
+      right: 45px;
+    }
+  }
+}
+
+.scroll-btn {
+
+  height: 53px;
+  width: 37px;
+  border: none;
+  position: absolute;
+  bottom: 195px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  background: url("assets/img/frame.svg") no-repeat center / contain;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 12px;
+  @include max-screen(lg) {
+    bottom: 262px;
+  }
+  @include max-screen(md) {
+    display: none;
+  }
+
+
+  &__circle + &__circle {
+    margin-top: 3px;
+  }
+
+  &__circle {
+
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #F9968A;
+    opacity: 0;
+    animation: scrollDown 2s infinite linear;
+
+    &:nth-child(2) {
+      animation-delay: .1s;
+    }
+
+    &:nth-child(3) {
+      animation-delay: .2s;
+    }
+  }
+
+  &__arrow {
+    margin-top: 2px;
+    width: 16px;
+    height: 11px;
+    background: url("assets/img/arrow.svg") no-repeat center / contain;
+    opacity: 0;
+    animation: scrollDown 2s infinite linear;
+    animation-delay: 1s;
+  }
+}
+
+
+@keyframes scrollDown {
+  0%, 100% {
+    opacity: 0;
+  }
+  20%, 80% {
+    opacity: 1;
+  }
 }

@@ -25,6 +25,12 @@
     width: 350px;
     padding: 15px
   }
+  @include max-screen(xs){
+    width: 100%;
+    font-size: 14px;
+    height: 50px;
+    padding: 10px;
+  }
 
   &:hover {
     background: linear-gradient(90deg, #F67D75 0%, #FFC9B3 100%);

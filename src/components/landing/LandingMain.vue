@@ -2,16 +2,16 @@
   <div class="main">
     <section class="main-banner">
       <div class="main-banner-img">
-        <div class="main-banner-img__item main-banner-img__item--one">
+        <div class="main-banner-img__item main-banner-img__item--one flying-el-reverse">
           <img src="@/assets/img/coin-1.svg" alt="">
         </div>
-        <div class="main-banner-img__item main-banner-img__item--two">
+        <div class="main-banner-img__item main-banner-img__item--two flying-el">
           <img src="@/assets/img/coin-2.svg" alt="">
         </div>
-        <div class="main-banner-img__item main-banner-img__item--three">
+        <div class="main-banner-img__item main-banner-img__item--three flying-el">
           <img src="@/assets/img/coin-3.svg" alt="">
         </div>
-        <div class="main-banner-img__item main-banner-img__item--four">
+        <div class="main-banner-img__item main-banner-img__item--four flying-el-reverse">
           <img src="@/assets/img/coin-4.svg" alt="">
         </div>
       </div>
@@ -73,16 +73,16 @@
     </section>
     <section class="calendar">
       <div class="calendar-slider-img">
-        <div class="calendar-slider-img__item calendar-slider-img__item--one">
+        <div class="calendar-slider-img__item calendar-slider-img__item--one flying-el-reverse">
           <img src="@/assets/img/coin-calendar-1.svg" alt="">
         </div>
-        <div class="calendar-slider-img__item calendar-slider-img__item--two">
+        <div class="calendar-slider-img__item calendar-slider-img__item--two flying-el">
           <img src="@/assets/img/coin-calendar-2.svg" alt="">
         </div>
-        <div class="calendar-slider-img__item calendar-slider-img__item--three">
+        <div class="calendar-slider-img__item calendar-slider-img__item--three flying-el-reverse">
           <img src="@/assets/img/coin-calendar-3.svg" alt="">
         </div>
-        <div class="calendar-slider-img__item calendar-slider-img__item--four">
+        <div class="calendar-slider-img__item calendar-slider-img__item--four flying-el-reverse">
           <img src="@/assets/img/coin-calendar-4.svg" alt="">
         </div>
       </div>
@@ -130,6 +130,33 @@
             </div>
             <div class="calendar-slide__title">
               <p>{{ slide.date.month }} {{ slide.date.year }}</p>
+            </div>
+            <div class="calendar-slide__btn">
+              <span class="scroll-btn">
+                <span class="scroll-btn__circle"></span>
+                <span class="scroll-btn__circle"></span>
+                <span class="scroll-btn__circle"></span>
+                <span class="scroll-btn__arrow"></span>
+              </span>
+            </div>
+            <div class="calendar-mobile-drop">
+              <div class="calendar-item">
+                <div class="calendar-item__wrap">
+                  <div class="date">
+                    <p>{{roadMap[initialCounter].date.month}} , {{roadMap[initialCounter].date.year}}</p>
+                  </div>
+                  <div class="calendar-item__title">
+                    <p>{{quarters[initialCounter].title}}</p>
+                  </div>
+                  <div class="calendar-item__text">
+                    <p>{{quarters[initialCounter].text}}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="calendar-mobile-drop__btns">
+                <button @click="prevSlide" class="calendar-btn calendar-btn--prev">Prev</button>
+                <button @click="nextSlide" class="calendar-btn calendar-btn--next">Next</button>
+              </div>
             </div>
           </div>
         </div>
