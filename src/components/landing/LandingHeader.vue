@@ -50,14 +50,14 @@
       <div class="header__btn">
         <button class="my-btn my-btn--border">Get access</button>
       </div>
-      <button class="burger-btn"></button>
-      <div class="mobile-menu">
+      <button class="burger-btn" @click="isOpenMobMenu=!isOpenMobMenu"></button>
+      <div class="mobile-menu" :class="{active:isOpenMobMenu}">
         <div class="mobile-menu__wrap">
           <div class="mobile-menu__logo">
             <a class="logo" href=""><img src="@/assets/img/logo-white.svg" alt=""></a>
           </div>
           <div class="mobile-menu__close">
-            <button class="close"></button>
+            <button class="close" @click="isOpenMobMenu=false"></button>
           </div>
         </div>
         <ul class="mobile-menu__list">
@@ -82,6 +82,35 @@
 
 <script>
   export default {
-    name: 'LandingHeader'
+    name: 'LandingHeader',
+    data(){
+      return {
+        isOpenMobMenu: false
+      }
+    },
+    watch: {
+      isOpenMobMenu(val){
+        if (val===true){
+          document.body.style.overflow='hidden';
+        }else{
+          document.body.style.overflow='auto';
+        }
+      }
+    },
+    mounted(){
+      document.body.addEventListener('click', (e)=>{
+        if ( (!!e.target.closest('.mobile-menu') && !e.target.closest('.mobile-menu__list a') && !e.target.closest('.mobile-menu button') ) ||
+         e.target.closest('.burger-btn')) {
+          return
+        }
+        this.isOpenMobMenu=false;
+      })
+    }
   }
 </script>
+<style lang="scss">
+  .mobile-menu{
+    max-height: 100vh;
+    overflow: auto;
+  }
+</style> 

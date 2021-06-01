@@ -19,7 +19,7 @@ new Vue({
       const xReverse = (window.innerWidth / 2 - e.pageX) / 70;
       const yReverse = (window.innerHeight / 2 - e.pageY) / 70;
 
-      console.log(x, xReverse)
+      // console.log(x, xReverse)
       flyingElements.forEach(function (item){
         item.style.transform = `translate(${x}px, ${y}px)`;
       });
