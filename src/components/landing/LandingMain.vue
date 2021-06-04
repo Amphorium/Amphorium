@@ -56,15 +56,9 @@
               <h2>About Us</h2>
             </div>
             <div class="about__text">
-              <p>Мы независимая компания специалистов работающая в различных крупных компаниях по транспортиртировке
-                грузов различными путями
-                а именно (Авиа,судно,грузо и прочие виды карго перевозок по миру)
-              </p>
-              <p>Мы не по наслышке знаем о часто возникающих
-                проблемах этих компаний и постоянно потеряных посылок. И мы решили создать свою блокчейн компанию.
-              </p>
-              <p><span>В будущем каждый AMH токен это будет чьейто посылкой, которая будет записыватся в блокчейне, от куда и куда идёт.
-с дополнительным ключем доступа вы сможете просматривать на каком этапе находится ваша посылка и её местоположение.</span>
+              <p>We are an independent company working in various large companies for the transportation of goods by various ways (Aviation, shipping, cargo and other types of cargo transportation around the world)</p>
+              <p>We are aware of the frequent problems of these companies and the ever-lost parcels. And we decided to create our own blockchain company.</p>
+              <p><span>In the future, each of AMH token will be someone's parcel, which will be on the blockchain (from where and where the parcel goes). With an additional access key, you will be able to view at what stage your parcel and its location are located.</span>
               </p>
             </div>
           </div>
