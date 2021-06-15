@@ -16,8 +16,12 @@ body {
   font-size: 14px;
   line-height: 1.3;
   color: #e1e1e1;
-  background: #15121D;
+  background: #070609;
+}
 
+.white-background {
+  background: #FFFFFF;
+  color: #15121D;
 }
 
 .main-wrapper {
@@ -73,7 +77,7 @@ body {
 }
 
 .header {
-  padding: 95px 0;
+  padding: 55px 0;
   position: relative;
   @include max-screen(xl) {
     padding: 45px 0;
@@ -114,7 +118,7 @@ body {
       font-size: 14px;
       line-height: 24px;
       color: #FFFFFF;
-      font-family: $black;
+      font-family: $extra-bold;
       text-decoration: none;
       transition: all .2s ease;
       @include max-screen(lg) {
@@ -140,6 +144,7 @@ body {
 
 .main-banner {
   position: relative;
+  margin-top: 80px;
   @include max-screen(xl) {
     margin-top: 40px;
   }
@@ -170,10 +175,7 @@ body {
       margin-top: 710px;
     }
     @include max-screen(xs) {
-      width: 126px;
-      height: 171px;
-      margin-left: -104px;
-      margin-top: 667px;
+ display: none;
     }
   }
 
@@ -219,7 +221,6 @@ body {
   }
 
   &__wrap {
-    display: flex;
     position: relative;
     z-index: 5;
     @include max-screen(md) {
@@ -228,7 +229,7 @@ body {
   }
 
   &__info {
-    max-width: 695px;
+    max-width: 770px;
     @include max-screen(xxl) {
       max-width: 525px;
     }
@@ -244,11 +245,10 @@ body {
   }
 
   &__title {
-    font-size: 64px;
-    line-height: 74px;
-    font-family: $black;
+    font-size: 72px;
+    line-height: 80px;
+    font-family: $extra-bold;
     color: #FFFFFF;
-    max-width: 695px;
     @include max-screen(xxl) {
       font-size: 48px;
       line-height: 67px;
@@ -286,7 +286,7 @@ body {
 
 
   &__img {
-    width: 863px;
+    width: 823px;
     height: 780px;
     position: absolute;
     top: 0;
@@ -294,6 +294,10 @@ body {
     transform: translateX(-50%);
     margin-left: 439px;
     z-index: 2;
+    margin-top: -23px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
     @include max-screen(xxl) {
       width: 663px;
       height: 680px;
@@ -328,11 +332,40 @@ body {
       height: 100%;
       object-fit: contain;
     }
+
+    &--0 {
+      background-image: url("assets/img/amphor-1.png");
+    }
+
+    &--1 {
+      background-image: url("assets/img/amphor-2.png");
+    }
+
+    &--2 {
+      background-image: url("assets/img/amphor-3.png");
+    }
+
+    &--3 {
+      background-image: url("assets/img/amphor-4.png");
+    }
+
+    &--4 {
+      background-image: url("assets/img/amphor-5.png");
+    }
+
+    &--5 {
+      background-image: url("assets/img/amphor-6.png");
+    }
+
+    &--6 {
+      background-image: url("assets/img/amphor-7.png");
+    }
+
   }
 }
 
 .my-list {
-  padding-top: 40px;
+  padding-top: 29px;
   @include max-screen(sm) {
     padding-top: 20px;
   }
@@ -363,7 +396,7 @@ body {
       span {
         font-size: 20px;
         line-height: 29px;
-        font-family: $black;
+        font-family: $extra-bold;
         color: #FFFFFF;
         @include max-screen(xl) {
           font-size: 19px;
@@ -425,13 +458,14 @@ body {
       width: 99px;
       height: 93px;
       margin-top: -300px;
-      margin-left: -811px;
+      margin-left: -860px;
       @include max-screen(xxl) {
         margin-left: -715px;
         margin-top: -305px;
       }
       @include max-screen(xl) {
         margin-left: 52px;
+        margin-top: -260px;
       }
       @include max-screen(lg) {
         margin-left: 80px;
@@ -472,8 +506,8 @@ body {
         height: 128px;
       }
       @include max-screen(md) {
-        margin-left: 309px;
-        margin-top: 455px;
+        margin-left: 209px;
+        margin-top: 255px;
       }
       @include max-screen(sm) {
         margin-left: 209px
@@ -489,13 +523,14 @@ body {
     &--three {
       width: 160px;
       height: 195px;
-      margin-top: -245px;
-      margin-left: 685px;
+      margin-top: -326px;
+      margin-left: 587px;
       @include max-screen(xxl) {
         margin-left: 630px;
       }
       @include max-screen(xl) {
         margin-left: 506px;
+        margin-top: -220px;
       }
       @include max-screen(lg) {
         margin-left: 416px;
@@ -505,7 +540,7 @@ body {
       }
       @include max-screen(md) {
         margin-left: -284px;
-        margin-top: 415px;
+        margin-top: 215px;
       }
       @include max-screen(sm) {
         margin-left: -184px;
@@ -522,7 +557,8 @@ body {
     &--four {
       width: 240px;
       height: 253px;
-      margin-top: 275px;
+      margin-top: 145px;
+      margin-left: -66px;
       z-index: 6;
       @include max-screen(xxl) {
         width: 200px;
@@ -548,9 +584,9 @@ body {
 }
 
 .my-title {
-  font-size: 64px;
+  font-size: 72px;
   line-height: 74px;
-  font-family: $black;
+  font-family: $extra-bold;
   text-align: center;
   color: #FFFFFF;
   margin-bottom: 45px;
@@ -587,6 +623,26 @@ body {
 
 .news {
   margin-top: 200px;
+  position: relative;
+
+  &:after {
+    content: "";
+    position: absolute;
+    width: 465px;
+    height: 270px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    background-color: transparent;
+    background-image: url("assets/img/calendar-bg.svg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+    margin-top: -67px;
+    margin-left: 1048px;
+  }
+
   @include max-screen(xl) {
     margin-top: 140px;
   }
@@ -597,9 +653,11 @@ body {
   &__wrap {
     display: flex;
     justify-content: space-between;
-    @include max-screen(md) {
-      flex-direction: column;
-    }
+    width: calc(100% + 250px);
+    white-space: nowrap;
+    overflow-x: auto;
+    position: relative;
+    z-index: 5;
   }
 
   &__link {
@@ -618,13 +676,20 @@ body {
   border-style: solid;
   position: relative;
   border-radius: 20px;
+  width: 420px;
+  flex: none;
   @include max-screen(lg) {
     padding: 20px 30px;
+  }
+
+  * {
+    white-space: normal;
   }
 
   &__info {
     position: relative;
     z-index: 3;
+
   }
 
   &:before {
@@ -674,10 +739,6 @@ body {
 
   + .news-card {
     margin-left: 20px;
-    @include max-screen(md) {
-      margin-left: 0;
-      margin-top: 25px;
-    }
   }
 }
 
@@ -695,24 +756,8 @@ body {
 }
 
 .more {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 180px;
-  border-radius: 50px;
-  height: 50px;
   position: relative;
-  text-decoration: none;
-  background: linear-gradient(to right, rgba(255, 201, 178, 1) 0%, rgba(246, 125, 117, 1) 100%);
-
-  &:before {
-    content: "";
-    background: #07060A;
-    @include center-absolute;
-    width: calc(100% - 2px);
-    height: calc(100% - 2px);
-    border-radius: 50px;
-  }
+  padding-right: 30px;
 
   &:after {
     content: "";
@@ -724,24 +769,19 @@ body {
     width: 12px;
     height: 10px;
     position: absolute;
-    right: 35px;
+    right: 0;
     top: 50%;
     transform: translateY(-50%);
   }
 
-  span {
-    padding-right: 25px;
-    position: relative;
-    z-index: 2;
-    border-radius: 50px;
+  &__text {
     font-size: 16px;
-    display: inline-block;
-    text-decoration: none;
     line-height: 44px;
     font-family: $black;
     background: linear-gradient(to right, rgba(255, 201, 178, 1) 0%, rgba(246, 125, 117, 1) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    display: inline-block;
   }
 }
 
@@ -1164,11 +1204,15 @@ body {
   }
 
   &:nth-child(3) {
-    border-radius: 0 20px 0 0;
+    @include max-screen(md) {
+      border-radius: 0 20px 0 0;
+    }
   }
 
   &:nth-child(13) {
-    border-radius: 0 0 0 20px;
+    @include max-screen(md) {
+      border-radius: 0 0 0 20px;
+    }
   }
 
   &:nth-child(11) {
@@ -1185,8 +1229,11 @@ body {
 }
 
 .calendar {
-  margin-top: 200px;
+  margin-top: 290px;
   position: relative;
+  @include max-screen(xl) {
+    margin-top: 190px;
+  }
   @include max-screen(lg) {
     margin-top: 80px;
   }
@@ -2003,7 +2050,6 @@ body {
   &__input {
     border: 2px solid rgba(#FFFFFF, .2);
     box-sizing: border-box;
-    border-radius: 110px;
     padding: 20px 45px;
     font-size: 20px;
     line-height: 24px;
@@ -2048,23 +2094,39 @@ body {
     a {
       width: 60px;
       height: 60px;
-      border: 1px solid rgba(#FFFFFF, .2);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
+      transition: all .2s ease;
       @include max-screen(xs) {
         width: 35px;
         height: 35px;
       }
 
       img {
-        width: 25px;
-        height: 25px;
+        width: 60px;
+        height: 60px;
         object-fit: contain;
-        @include max-screen(xs) {
-          width: 17px;
-          height: 17px;
+        transition: all .2s ease;
+
+        &.hover {
+          display: none;
+        }
+      }
+
+      &:hover {
+        img {
+          &.default {
+            display: none;
+          }
+
+          &.hover {
+            display: block;
+          }
+          &.dark{
+            display: none;
+          }
         }
       }
     }
@@ -2095,6 +2157,30 @@ body {
       font-family: $light;
       color: #FFFFFF;
       text-decoration: none;
+      position: relative;
+      padding-bottom: 5px;
+      transition: all .2s ease;
+
+      &:before {
+        content: "";
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(to right, rgba(255, 201, 178, 1) 0%, rgba(246, 125, 117, 1) 100%);
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        display: none;
+        transition: all .2s ease;
+      }
+
+      &:hover {
+        color: rgba(255, 201, 178, 1);
+
+        &:before {
+          display: block;
+        }
+      }
     }
 
     + .rules-nav__item {
@@ -2367,11 +2453,14 @@ body {
 
 .tokenomics {
   margin-top: 200px;
+  padding-top: 250px;;
   @include max-screen(xl) {
     margin-top: 140px;
+    padding-top: 100px;
   }
   @include max-screen(md) {
-    margin-top: -45px
+    margin-top: 55px;
+    padding-top: 60px;
   }
   @include max-screen(xs) {
     margin-top: 0;
@@ -2418,13 +2507,16 @@ body {
       margin-right: 0;
     }
   }
+
+  .my-title {
+    color: #15121D;
+  }
 }
 
 .tokenomics-list {
   max-width: 575px;
-  background: rgba(7, 6, 10, 0.7);
-  box-shadow: 0px 4px 234px #000000;
-  backdrop-filter: blur(6px);
+  background: #FEFEFE;
+  box-shadow: 0px 4px 60px rgba(0, 0, 0, 0.05);
   border-radius: 20px;
   padding: 17px 20px;
   position: relative;
@@ -2432,22 +2524,6 @@ body {
     max-width: 100%;
   }
 
-  &:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: 20px;
-    padding: 2px;
-    background: linear-gradient(to bottom, #39383B, #060509);
-    -webkit-mask: linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-    -webkit-mask-composite: destination-out;
-    mask-composite: exclude;
-    z-index: 1;
-  }
 
   &__head {
     background: linear-gradient(to right, rgba(255, 201, 178, 1) 0%, rgba(246, 125, 117, 1) 100%);
@@ -2482,8 +2558,8 @@ body {
     padding: 10px 10px;
     font-size: 14px;
     line-height: 24px;
-    font-family: $black;
-    color: #FFFFFF;
+    font-family: $extra-bold;
+    color: #15121D;
     text-align: center;
     display: flex;
     align-items: center;
@@ -2519,7 +2595,7 @@ body {
     }
 
     + .tokenomics-list__item {
-      border-top: 1px solid #262626;
+      border-top: 1px solid #EDEDED;
     }
 
     &:hover {
@@ -2532,7 +2608,7 @@ body {
 
 .schedule-details {
   display: flex;
-  margin-top: 50px;
+  margin-top: 95px;
   @include max-screen(md) {
     flex-direction: column;
   }
@@ -2556,7 +2632,7 @@ body {
     -webkit-text-fill-color: transparent;
     font-size: 48px;
     line-height: 60px;
-    font-family: $black;
+    font-family: $extra-bold;
     @include max-screen(xxl) {
       font-size: 42px;
       line-height: 54px;
@@ -2574,9 +2650,9 @@ body {
   &__text {
     font-size: 24px;
     line-height: 36px;
-    font-family: $hair-line;
+    font-family: $light;
     margin-top: 15px;
-    color: #FFFFFF;
+    color: #15121D;
     @include max-screen(xxl) {
       font-size: 22px;
       line-height: 34px;
@@ -2623,9 +2699,8 @@ body {
 
 .schedule-details-explanation {
   padding: 35px 40px 60px 40px;
-  background: rgba(7, 6, 10, 0.7);
-  box-shadow: 0px 4px 234px #000000;
-  backdrop-filter: blur(6px);
+  background: #FEFEFE;
+  box-shadow: 0px 4px 60px rgba(0, 0, 0, 0.05);
   border-radius: 20px;
   position: relative;
   max-width: 365px;
@@ -2636,28 +2711,11 @@ body {
     padding: 15px;
   }
 
-  &:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: 20px;
-    padding: 2px;
-    background: linear-gradient(to bottom, #39383B, #060509);
-    -webkit-mask: linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-    -webkit-mask-composite: destination-out;
-    mask-composite: exclude;
-    z-index: 1;
-  }
-
   &__title {
     font-size: 24px;
     line-height: 44px;
     font-family: $semi-bold;
-    color: #FFFFFF;
+    color: #15121D;
     @include max-screen(xxl) {
       font-size: 22px;
       line-height: 41px;
@@ -2672,7 +2730,7 @@ body {
     font-size: 16px;
     line-height: 36px;
     font-family: $light;
-    color: #FFFFFF;
+    color: #15121D;
     @include max-screen(xl) {
       font-size: 14px;
       line-height: 30px;
@@ -2717,7 +2775,7 @@ body {
     height: 15px;
     position: absolute;
     @include center-absolute;
-    background: #15121D;
+    background: #ffffff;
     border-radius: 50%;
     @include max-screen(xl) {
       width: 10px;
@@ -2746,8 +2804,8 @@ body {
   position: absolute;
   font-size: 24px;
   line-height: 24px;
-  font-family: $black;
-  color: #FFFFFF;
+  font-family: $extra-bold;
+  color: #15121D;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -2854,7 +2912,7 @@ body {
     .tokenomics-step__marker {
       display: block;
       margin-top: -411px;
-      margin-left: 120px;
+      margin-left: 128px;
       @include max-screen(xxl) {
         margin-top: -380px;
       }
@@ -3667,5 +3725,649 @@ body {
   }
   20%, 80% {
     opacity: 1;
+  }
+}
+
+.logo-section {
+  margin-top: 275px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include max-screen(xl) {
+    margin-top: 100px;
+  }
+  @include max-screen(md) {
+    margin-top: 0px;
+  }
+  @include max-screen(xs){
+    padding-bottom: 40px;
+  }
+
+  &--padding {
+    padding-bottom: 187px;
+    @include max-screen(md) {
+      margin-top: 85px;
+      padding-bottom: 87px;
+    }
+    @include max-screen(xs){
+      margin-top: 50px;
+      padding-bottom: 50px;
+    }
+  }
+
+  img {
+    width: 80px;
+    height: 80px;
+    @include max-screen(xs){
+      width: 60px;
+      height: 60px;
+    }
+  }
+}
+
+.token-emission {
+  display: flex;
+  margin-top: 150px;
+  @include max-screen(md) {
+    margin-top: 50px;
+  }
+  @include max-screen(sm) {
+    flex-direction: column;
+  }
+
+  &__info {
+    margin-right: -17px;
+    @include max-screen(sm) {
+      margin-right: 0;
+    }
+  }
+
+  &__img {
+    width: 1060px;
+    height: 565px;
+    margin-left: auto;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    @include max-screen(xl) {
+      width: 960px;
+    }
+    @include max-screen(lg) {
+      height: 440px;
+      width: 780px;
+    }
+    @include max-screen(md) {
+      width: 580px;
+    }
+    @include max-screen(sm) {
+      width: 100%;
+    }
+    @include max-screen(xs){
+      height: 240px;
+    }
+  }
+}
+
+.token-filter {
+  margin-top: 30px;
+
+  li {
+    position: relative;
+
+    p {
+      font-size: 18px;
+      line-height: 24px;
+      font-family: $extra-bold;
+      color: #15121D;
+      padding-left: 33px;
+      @include max-screen(md) {
+        font-size: 16px;
+      }
+    }
+
+    + li {
+      margin-top: 20px;
+      @include max-screen(md) {
+        margin-top: 15px;
+      }
+    }
+  }
+}
+
+.small-marker {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: red;
+  position: absolute;
+  top: 5px;
+  left: 0;
+  @include max-screen(xl) {
+    width: 15px;
+    height: 15px;
+    top: 9px;
+  }
+
+  &:before {
+    content: "";
+    width: 9px;
+    height: 9px;
+    position: absolute;
+    @include center-absolute;
+    background: #ffffff;
+    border-radius: 50%;
+    @include max-screen(xl) {
+      width: 5px;
+      height: 5px;
+    }
+  }
+
+  &--1 {
+    background: #F5776A;
+  }
+
+  &--2 {
+    background: #FFEBE2;
+  }
+
+  &--3 {
+    background: #FA9C8A;
+  }
+
+  &--4 {
+    background: #FF783E;
+  }
+
+  &--5 {
+    background: #DA8B69;
+  }
+
+  &--6 {
+    background: #F0554B;
+  }
+
+  &--7 {
+    background: #FFCAB3;
+  }
+
+  &--8 {
+    background: #F0554B;
+  }
+
+  &--9 {
+    background: #EC0F00;
+  }
+}
+
+.history {
+  position: relative;
+  padding-top: 240px;
+  @include max-screen(md) {
+    padding-top: 109px;
+  }
+
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 150px;
+    @include max-screen(xxl) {
+      margin: 0 45px;
+    }
+    @include max-screen(lg) {
+      margin: 0;
+    }
+    @include max-screen(sm) {
+      flex-direction: column;
+    }
+  }
+}
+
+.history-card {
+  position: relative;
+
+  &__wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 75px;
+    @include max-screen(md) {
+      margin-top: 50px;
+    }
+  }
+
+  &__title {
+    font-size: 24px;
+    line-height: 31px;
+    text-align: center;
+    color: #FFFFFF;
+    font-family: $black;
+    max-width: 270px;
+    min-height: 110px;
+    @include max-screen(md) {
+      max-width: 223px;
+      font-size: 20px;
+    }
+    @include max-screen(sm) {
+      max-width: 100%;
+      min-height: auto;
+      padding-bottom: 10px;
+    }
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: #FFFFFF;
+    max-width: 285px;
+    @include max-screen(md) {
+      font-size: 14px;
+      line-height: 21px;
+      max-width: 220px;
+    }
+    @include max-screen(sm) {
+      max-width: 100%;
+    }
+  }
+
+  + .history-card {
+    @include max-screen(sm) {
+      margin-top: 20px;
+    }
+
+    &:before {
+      content: "";
+      background: #FFC9B2;
+      width: 245px;
+      height: 3px;
+      position: absolute;
+      top: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      margin-left: -200px;
+      @include max-screen(lg) {
+        margin-left: -165px;
+        width: 210px;
+      }
+      @include max-screen(md) {
+        margin-left: -122px;
+        width: 169px;
+        top: 20px;
+      }
+      @include max-screen(sm) {
+        display: none;
+      }
+    }
+  }
+}
+
+.history-marker {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, #FFC9B3 0%, #F67D75 100%);
+  @include max-screen(md) {
+    width: 45px;
+    height: 45px;
+  }
+
+  &:before {
+    content: "";
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    @include center-absolute;
+    background: #ffffff;
+    border-radius: 50%;
+    @include max-screen(md) {
+      width: 15px;
+      height: 15px;
+    }
+  }
+}
+
+.facts {
+  margin-top: 180px;
+  position: relative;
+  @include max-screen(md) {
+    margin-top: 100px;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: 465px;
+    height: 270px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    background-color: transparent;
+    background-image: url("assets/img/calendar-bg.svg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+    margin-top: -100px;
+    margin-left: -954px;
+  }
+
+  &__wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    @include max-screen(sm){
+      flex-direction: column;
+    }
+  }
+
+  .my-title {
+    max-width: 950px;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  &__subtitle {
+    font-size: 24px;
+    line-height: 30px;
+    text-align: center;
+    font-family: $light;
+    color: #747474;
+    margin: 35px auto 0 auto;
+    max-width: 740px;
+    @include max-screen(sm){
+      font-size: 18px;
+      line-height: 26px;
+    }
+  }
+}
+
+.facts-card {
+  position: relative;
+  padding: 40px 50px;
+  @include max-screen(lg) {
+    padding: 20px 20px
+  }
+
+  &__wrap {
+    position: relative;
+    z-index: 5;
+
+  }
+
+  &_img {
+    width: 72px;
+    height: 75px;
+
+    img {
+      object-fit: contain;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__title {
+    font-size: 24px;
+    line-height: 32px;
+    font-family: $extra-bold;
+    color: #FFFFFF;
+    margin: 20px 0 15px 0;
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 24px;
+    font-family: $light;
+    color: #FFFFFF;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 20px;
+    padding: 2px;
+    background: linear-gradient(to bottom, #39383B, #060509);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    z-index: 1;
+  }
+
+  + .facts-card {
+    margin-left: 20px;
+  }
+}
+
+.history-bg {
+  background-color: transparent;
+  background-image: url("assets/img/map-img.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  width: 1439px;
+  height: 746px;
+  left: 50%;
+  top: 94px;
+  transform: translateX(-50%);
+  filter: opacity(0.3);
+
+}
+
+.audit {
+  margin-top: 205px;
+  @include max-screen(md) {
+    margin-top: 105px;
+  }
+
+  &__info {
+    max-width: 395px;
+    margin-right: 80px;
+    @include max-screen(xxl) {
+      max-width: 350px;
+      margin-right: 30px;
+    }
+    @include max-screen(md) {
+      max-width: 100%;
+      margin-right: 0;
+      margin-bottom: 25px;
+    }
+  }
+
+  &__wrap {
+    display: flex;
+    @include max-screen(md) {
+      flex-direction: column;
+    }
+  }
+
+  &__subtitle {
+    font-size: 16px;
+    line-height: 24px;
+    font-family: $light;
+    color: #FFFFFF;
+
+    p {
+      + p {
+        margin-top: 20px;
+      }
+    }
+  }
+
+  &__links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+
+    .audit-link {
+      + .audit-link {
+        margin-left: 20px;
+      }
+    }
+  }
+}
+
+.audit-link {
+  display: inline-block;
+  max-height: 40px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.audit-card {
+  position: relative;
+  padding: 45px 40px;
+
+  &__wrap {
+    position: relative;
+    z-index: 5;
+  }
+
+  &__img {
+    width: 42px;
+    height: 52px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__title {
+    font-size: 24px;
+    line-height: 30px;
+    font-family: $extra-bold;
+    color: #FFFFFF;
+    margin-top: 10px;
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 24px;
+    font-family: $light;
+    color: #747474;
+    margin-top: 7px;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 20px;
+    padding: 2px;
+    background: linear-gradient(to bottom, #39383B, #060509);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    z-index: 1;
+  }
+}
+
+.audit-grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -10px;
+
+  &__item {
+    width: 33.333%;
+    padding: 0 10px;
+    margin-bottom: 20px;
+    @include max-screen(lg) {
+      width: 50%;
+    }
+    @include max-screen(sm){
+      width: 100%;
+    }
+  }
+}
+
+.side-menu {
+  width: 40px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: fixed;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 9;
+  @include max-screen(md) {
+    display: none;
+  }
+
+  .social {
+    margin-top: 0;
+    margin-bottom: 81px;
+
+    &__list {
+      flex-direction: column;
+    }
+
+    &__item {
+      a {
+        width: 40px;
+        height: 40px;
+
+        img {
+          width: 40px;
+          height: 40px;
+          &.dark{
+            display: none;
+          }
+        }
+      }
+
+      + .social__item {
+        margin-left: 0;
+        margin-top: 10px;
+      }
+    }
+  }
+  &--dark{
+    .social{
+      &__item{
+        a{
+          img{
+            &.dark{
+              display: block;
+            }
+            &.default{
+              display: none;
+            }
+          }
+          &:hover{
+           img{
+             &.dark{
+               display: none;
+             }
+           }
+          }
+        }
+      }
+    }
   }
 }

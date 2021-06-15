@@ -7,7 +7,7 @@
         <ul class="main-nav__list">
           <li class="main-nav__item">
             <a target="_blank" href="">
-              Main
+              About
             </a>
           </li>
           <li class="main-nav__item">
@@ -22,11 +22,6 @@
           </li>
           <li class="main-nav__item">
             <a target="_blank" href="">
-              Github
-            </a>
-          </li>
-          <li class="main-nav__item">
-            <a target="_blank" href="">
               Roadmap
             </a>
           </li>
@@ -37,7 +32,7 @@
           </li>
           <li class="main-nav__item">
             <a target="_blank" href="">
-              FAQ
+              News
             </a>
           </li>
           <li class="main-nav__item">
@@ -48,7 +43,7 @@
         </ul>
       </nav>
       <div class="header__btn">
-        <button class="my-btn my-btn--border">Get access</button>
+        <button class="my-btn-border">Get access</button>
       </div>
       <button class="burger-btn" @click="isOpenMobMenu=!isOpenMobMenu"></button>
       <div class="mobile-menu" :class="{active:isOpenMobMenu}">
@@ -64,14 +59,13 @@
           <li><a href="#">About</a></li>
           <li><a href="#">Overview</a></li>
           <li><a href="#">Technology</a></li>
-          <li><a href="#">Technology</a></li>
           <li><a href="#">Roadmap</a></li>
           <li><a href="#">Tokenomics</a></li>
           <li><a href="#">News</a></li>
           <li><a href="#">Contact</a></li>
         </ul>
         <div class="mobile-menu__btn">
-          <button class="my-btn my-btn--white"><span>Get access</span></button>
+          <button class="my-btn-border my-btn-border--white"><span>Get access</span></button>
         </div>
       </div>
     </div>

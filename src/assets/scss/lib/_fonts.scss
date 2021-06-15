@@ -9,12 +9,13 @@
   }
 }
 
-@include font-face('Montserrat-Bold', '~@/assets/fonts/Montserrat-Bold');
-@include font-face('Montserrat-Medium', '~@/assets/fonts/Montserrat-Medium');
-@include font-face('Montserrat-SemiBold', '~@/assets/fonts/Montserrat-SemiBold');
-@include font-face('Montserrat-Regular', '~@/assets/fonts/Montserrat-Regular');
-@include font-face('PTMono-Bold', '~@/assets/fonts/PTMono-Bold');
-@include font-face('Montserrat-Black', '~@/assets/fonts/Montserrat-Black');
-@include font-face('Montserrat-Light', '~@/assets/fonts/Montserrat-Light');
-@include font-face('Montserrat-Hairline', '~@/assets/fonts/Montserrat-Hairline');
+@include font-face('Inter-Black', '~@/assets/fonts/Inter-Black');
+@include font-face('Inter-Bold', '~@/assets/fonts/Inter-Bold');
+@include font-face('Inter-ExtraBold', '~@/assets/fonts/Inter-ExtraBold');
+@include font-face('Inter-ExtraLight', '~@/assets/fonts/Inter-ExtraLight');
+@include font-face('Inter-Light', '~@/assets/fonts/Inter-Light');
+@include font-face('Inter-Medium', '~@/assets/fonts/Inter-Medium');
+@include font-face('Inter-Regular', '~@/assets/fonts/Inter-Regular');
+@include font-face('Inter-SemiBold', '~@/assets/fonts/Inter-SemiBold');
+@include font-face('Inter-Thin', '~@/assets/fonts/Inter-Thin');
 

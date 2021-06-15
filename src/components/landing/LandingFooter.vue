@@ -25,7 +25,7 @@
               <input type="text" class="big-input__input" placeholder="Your email">
             </div>
             <div class="footer-form__btn">
-              <button class="my-btn">Get updates</button>
+              <button class="my-btn"><span class="my-btn__arrow"></span> <span class="my-btn__content">Get updates</span></button>
             </div>
           </form>
           <div class="footer__text">
@@ -35,19 +35,32 @@
           <div class="social">
             <ul class="social__list">
               <li class="social__item">
-                <a href="#"><img src="@/assets/img/social-1.svg" alt=""></a>
+                <a href="#">
+                  <img class="default" src="@/assets/img/social-1.svg" alt="">
+                  <img class="hover" src="@/assets/img/social-1-hover.svg" alt="">
+                </a>
               </li>
               <li class="social__item">
-                <a href="#"><img src="@/assets/img/social-2.svg" alt=""></a>
+                <a href="#">
+                  <img class="default" src="@/assets/img/social-2.svg" alt="">
+                  <img class="hover" src="@/assets/img/social-2-hover.svg" alt="">
+                </a>
               </li>
               <li class="social__item">
-                <a href="#"><img src="@/assets/img/social-3.svg" alt=""></a>
+                <a href="#"><img class="default" src="@/assets/img/social-3.svg" alt="">
+                  <img class="hover" src="@/assets/img/social-3-hover.svg" alt=""></a>
               </li>
               <li class="social__item">
-                <a href="#"><img src="@/assets/img/social-4.svg" alt=""></a>
+                <a href="#">
+                  <img class="default" src="@/assets/img/social-4.svg" alt="">
+                  <img class="hover" src="@/assets/img/social-4-hover.svg" alt="">
+                </a>
               </li>
               <li class="social__item">
-                <a href="#"><img src="@/assets/img/social-5.svg" alt=""></a>
+                <a href="#">
+                  <img class="default" src="@/assets/img/social-5.svg" alt="">
+                  <img class="hover" src="@/assets/img/social-5-hover.svg" alt="">
+                </a>
               </li>
             </ul>
           </div>
