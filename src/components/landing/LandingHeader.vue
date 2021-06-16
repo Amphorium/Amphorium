@@ -1,5 +1,5 @@
 <template>
-<header class="header">
+<header class="header" id="header">
   <div class="container">
     <div class="header__wrap">
       <a class="logo" href=""><img src="@/assets/img/logo.svg" alt=""></a>

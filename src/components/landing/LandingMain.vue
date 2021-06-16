@@ -39,11 +39,11 @@
           </li>
         </ul>
       </div>
-        <button class="up-btn">
+        <a href="#header" class="up-btn">
           <span>ВВЕРХ</span>
           <img class="default" src="@/assets/img/up-btn.svg" alt="">
           <img class="hover" src="@/assets/img/up-btn-hover.svg" alt="">
-        </button>
+        </a>
     </div>
     <section class="main-banner">
       <div class="main-banner-img">
@@ -92,14 +92,16 @@
     <section class="about">
       <div class="container">
         <div class="about__wrap">
-          <div class="about__img">
+          <div class="about__img" >
             <img src="@/assets/img/earth.png" alt="">
           </div>
           <div class="about__content">
-            <div class="my-title my-title--left">
+            <div class="my-title my-title--left" data-aos="fade-up"
+                 data-aos-duration="1500">
               <h2>About Us</h2>
             </div>
-            <div class="about__text">
+            <div class="about__text" data-aos="fade-up"
+                 data-aos-duration="1500">
               <p>We are an independent company working in various large companies for the transportation of goods by various ways (Aviation, shipping, cargo and other types of cargo transportation around the world)</p>
               <p>We are aware of the frequent problems of these companies and the ever-lost parcels. And we decided to create our own blockchain company.</p>
               <p><span>In the future, each of AMH token will be someone's parcel, which will be on the blockchain (from where and where the parcel goes). With an additional access key, you will be able to view at what stage your parcel and its location are located.</span>
@@ -109,7 +111,8 @@
         </div>
       </div>
     </section>
-    <section class="calendar">
+    <section class="calendar" data-aos="fade"
+             data-aos-duration="1500">
       <div class="calendar-slider-img">
         <div class="calendar-slider-img__item calendar-slider-img__item--one flying-el-reverse">
           <img src="@/assets/img/coin-calendar-1.svg" alt="">
@@ -208,11 +211,13 @@
         <div class="container">
           <div class="tokenomics__wrap">
             <div class="tokenomics__content">
-              <div class="my-title my-title--left">
+              <div class="my-title my-title--left" data-aos="fade-up"
+                   data-aos-duration="1500">
                 <h2>Tokenomics <br>
                   Amphorium</h2>
               </div>
-              <ul class="tokenomics-list">
+              <ul class="tokenomics-list" data-aos="fade-up"
+                  data-aos-duration="1500">
                 <li class="tokenomics-list__head">
                   <p>Group</p>
                   <p>%</p>
@@ -240,12 +245,14 @@
           </div>
           <div class="schedule-details">
             <div class="schedule-details__info">
-              <div class="schedule-details__title">
+              <div class="schedule-details__title" data-aos="fade-up"
+                   data-aos-duration="1500">
                 <p>Release
                   Schedule
                 </p>
               </div>
-              <div class="schedule-details__text">
+              <div class="schedule-details__text" data-aos="fade-up"
+                   data-aos-duration="1500">
                 <p>(not necessatily
                   circulating)</p>
               </div>
@@ -254,7 +261,8 @@
               <img src="@/assets/img/schedule-2.svg" alt="">
             </div>
             <div class="schedule-details-explanation">
-              <ul class="schedule-details-explanation__list">
+              <ul class="schedule-details-explanation__list" data-aos="fade-up"
+                  data-aos-duration="1500">
                 <li><span class="marker marker--1"></span>
                   <p class="schedule-details-explanation__title">Community: </p>
                   <p class="schedule-details-explanation__text">Network Usage Rewards</p>
@@ -275,12 +283,14 @@
           </div>
           <div class="token-emission">
             <div class="token-emission__info">
-              <div class="schedule-details__title">
+              <div class="schedule-details__title" data-aos="fade-up"
+                   data-aos-duration="1500">
                 <p>Token
                   Emission
                 </p>
               </div>
-              <ul class="token-filter">
+              <ul class="token-filter" data-aos="fade-up"
+                  data-aos-duration="1500">
                <li>
                  <span class="small-marker small-marker--1"></span>
                  <p>Ecosystem</p>
@@ -325,19 +335,28 @@
           </div>
         </div>
       </section>
-      <div class="logo-section logo-section--padding">
-        <img src="@/assets/img/logo-img-white.svg" alt="">
-      </div>
+        <div class="logo-section logo-section--padding">
+          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="40" cy="40" r="40" fill="#15121D"/>
+            <path d="M46.4324 28.1H33.5676L31.6 23H48.4L46.4324 28.1Z" fill="white"/>
+            <path d="M46.4324 29.2333H33.5676L26 42.5157H54L46.4324 29.2333Z" fill="white"/>
+            <path d="M33.5676 57H46.4324L54 43.7177H26L33.5676 57Z" fill="white"/>
+            <path d="M51.6157 35.2094L48.3111 29.4442L53.9946 29.4681L51.6157 35.2094Z" fill="white"/>
+            <path d="M31.6998 29.4445L28.3869 35.2241L26.002 29.4684L31.6998 29.4445Z" fill="white"/>
+          </svg>
+        </div>
     </div>
     <section class="history">
       <div class="history-bg">
         <img src="@/assets/img/map-img.png" alt="">
       </div>
       <div class="container">
-        <div class="my-title">
+        <div class="my-title" data-aos="fade-up"
+             data-aos-duration="1500">
           <h2>Fundraising History</h2>
         </div>
-        <div class="history__wrap">
+        <div class="history__wrap" data-aos="fade"
+             data-aos-duration="1500">
           <div class="history-card">
             <span class="history-marker"></span>
             <div class="history-card__wrap">
@@ -390,148 +409,156 @@
     </section>
     <section class="news">
       <div class="container">
-        <div class="my-title">
+        <div class="my-title" data-aos="fade-up"
+             data-aos-duration="1500">
           <h2>Our News</h2>
         </div>
-        <vue-scroll :ops="ops">
+
         <div class="news__wrap">
-          <div class="news-card">
-            <div class="news-card__info">
-              <div class="date">
-                <p>21 april, 2022</p>
+          <vue-scroll :ops="ops">
+          <div class="news__wrap-content">
+            <div class="news-card">
+              <div class="news-card__info">
+                <div class="date">
+                  <p>21 april, 2022</p>
+                </div>
+                <div class="news-card__title">
+                  <p>Lorem ipsum dolor sit
+                    amet, adipiscing elit</p>
+                </div>
+                <div class="news-card__text">
+                  <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. </p>
+                </div>
+                <div class="news-card__link">
+                  <a href="#" class="more">
+                    <span class="more__text">Read more</span>
+                  </a>
+                </div>
               </div>
-              <div class="news-card__title">
-                <p>Lorem ipsum dolor sit
-                  amet, adipiscing elit</p>
+            </div>
+            <div class="news-card">
+              <div class="news-card__info">
+                <div class="date">
+                  <p>21 april, 2022</p>
+                </div>
+                <div class="news-card__title">
+                  <p>Lorem ipsum dolor sit
+                    amet, adipiscing elit</p>
+                </div>
+                <div class="news-card__text">
+                  <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. </p>
+                </div>
+                <div class="news-card__link">
+                  <a href="#" class="more">
+                    <span class="more__text">Read more</span>
+                  </a>
+                </div>
               </div>
-              <div class="news-card__text">
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                  consequat. </p>
+            </div>
+            <div class="news-card">
+              <div class="news-card__info">
+                <div class="date">
+                  <p>21 april, 2022</p>
+                </div>
+                <div class="news-card__title">
+                  <p>Lorem ipsum dolor sit
+                    amet, adipiscing elit</p>
+                </div>
+                <div class="news-card__text">
+                  <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. </p>
+                </div>
+                <div class="news-card__link">
+                  <a href="#" class="more">
+                    <span class="more__text">Read more</span>
+                  </a>
+                </div>
               </div>
-              <div class="news-card__link">
-                <a href="#" class="more">
-                  <span class="more__text">Read more</span>
-                </a>
+            </div>
+            <div class="news-card">
+              <div class="news-card__info">
+                <div class="date">
+                  <p>21 april, 2022</p>
+                </div>
+                <div class="news-card__title">
+                  <p>Lorem ipsum dolor sit
+                    amet, adipiscing elit</p>
+                </div>
+                <div class="news-card__text">
+                  <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. </p>
+                </div>
+                <div class="news-card__link">
+                  <a href="#" class="more">
+                    <span class="more__text">Read more</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="news-card">
+              <div class="news-card__info">
+                <div class="date">
+                  <p>21 april, 2022</p>
+                </div>
+                <div class="news-card__title">
+                  <p>Lorem ipsum dolor sit
+                    amet, adipiscing elit</p>
+                </div>
+                <div class="news-card__text">
+                  <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. </p>
+                </div>
+                <div class="news-card__link">
+                  <a href="#" class="more">
+                    <span class="more__text">Read more</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="news-card">
+              <div class="news-card__info">
+                <div class="date">
+                  <p>21 april, 2022</p>
+                </div>
+                <div class="news-card__title">
+                  <p>Lorem ipsum dolor sit
+                    amet, adipiscing elit</p>
+                </div>
+                <div class="news-card__text">
+                  <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. </p>
+                </div>
+                <div class="news-card__link">
+                  <a href="#" class="more">
+                    <span class="more__text">Read more</span>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
-          <div class="news-card">
-            <div class="news-card__info">
-              <div class="date">
-                <p>21 april, 2022</p>
-              </div>
-              <div class="news-card__title">
-                <p>Lorem ipsum dolor sit
-                  amet, adipiscing elit</p>
-              </div>
-              <div class="news-card__text">
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                  consequat. </p>
-              </div>
-              <div class="news-card__link">
-                <a href="#" class="more">
-                  <span class="more__text">Read more</span>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="news-card">
-            <div class="news-card__info">
-              <div class="date">
-                <p>21 april, 2022</p>
-              </div>
-              <div class="news-card__title">
-                <p>Lorem ipsum dolor sit
-                  amet, adipiscing elit</p>
-              </div>
-              <div class="news-card__text">
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                  consequat. </p>
-              </div>
-              <div class="news-card__link">
-                <a href="#" class="more">
-                  <span class="more__text">Read more</span>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="news-card">
-            <div class="news-card__info">
-              <div class="date">
-                <p>21 april, 2022</p>
-              </div>
-              <div class="news-card__title">
-                <p>Lorem ipsum dolor sit
-                  amet, adipiscing elit</p>
-              </div>
-              <div class="news-card__text">
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                  consequat. </p>
-              </div>
-              <div class="news-card__link">
-                <a href="#" class="more">
-                  <span class="more__text">Read more</span>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="news-card">
-            <div class="news-card__info">
-              <div class="date">
-                <p>21 april, 2022</p>
-              </div>
-              <div class="news-card__title">
-                <p>Lorem ipsum dolor sit
-                  amet, adipiscing elit</p>
-              </div>
-              <div class="news-card__text">
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                  consequat. </p>
-              </div>
-              <div class="news-card__link">
-                <a href="#" class="more">
-                  <span class="more__text">Read more</span>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="news-card">
-            <div class="news-card__info">
-              <div class="date">
-                <p>21 april, 2022</p>
-              </div>
-              <div class="news-card__title">
-                <p>Lorem ipsum dolor sit
-                  amet, adipiscing elit</p>
-              </div>
-              <div class="news-card__text">
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                  consequat. </p>
-              </div>
-              <div class="news-card__link">
-                <a href="#" class="more">
-                  <span class="more__text">Read more</span>
-                </a>
-              </div>
-            </div>
-          </div>
+          </vue-scroll>
         </div>
-        </vue-scroll>
-        <div class="news__link">
+        <div class="news__link" data-aos="fade-up"
+             data-aos-duration="1500">
           <a href="#" class="read-all"><span>Read All News</span></a>
         </div>
       </div>
     </section>
     <section class="facts">
       <div class="container">
-        <div class="my-title">
+        <div class="my-title" data-aos="fade-up"
+             data-aos-duration="1500">
           <h2>Duis aute irure dolor in
             reprehenderit in voluptate</h2>
         </div>
-        <div class="facts__subtitle">
+        <div class="facts__subtitle" data-aos="fade-up"
+             data-aos-duration="1500">
           <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
         </div>
-        <div class="facts__wrap">
+        <div class="facts__wrap" data-aos="fade"
+             data-aos-duration="1500">
           <div class="facts-card">
             <div class="facts-card__wrap">
               <div class="facts-card__img">
@@ -591,10 +618,12 @@
     </section>
     <section class="partners">
       <div class="container">
-        <div class="my-title">
+        <div class="my-title" data-aos="fade-up"
+             data-aos-duration="1500">
           <h2>Our Partners</h2>
         </div>
-        <div class="partners-grid">
+        <div class="partners-grid" data-aos="fade"
+             data-aos-duration="1500">
           <a href="#" class="partners-item">
             <img src="@/assets/img/partner-1.svg" alt="">
           </a>
@@ -647,22 +676,26 @@
       <div class="container">
         <div class="audit__wrap">
           <div class="audit__info">
-            <div class="my-title my-title--left">
+            <div class="my-title my-title--left" data-aos="fade-up"
+                 data-aos-duration="1500">
               <h2>Audit</h2>
             </div>
-            <div class="audit__subtitle">
+            <div class="audit__subtitle" data-aos="fade-up"
+                 data-aos-duration="1500">
               <p>Two of the most prominent leaders in blockchain security have lent their expertise to audit $CQT. We have been able to fix all high - level issues and acknowledged that $CQT’s smart contract contains the Centralization of Power (“COP”).
               </p>
               <p>As of Oct 22, 2020 we are Quantstamp verified.
                 As of Oct 6, 2020 we are CertiK Very High Confidence security level.</p>
             </div>
-            <div class="audit__links">
+            <div class="audit__links" data-aos="fade-up"
+                 data-aos-duration="1500">
               <a class="audit-link" href="#"><img src="@/assets/img/audit-link.png" alt=""></a>
               <a class="audit-link" href="#"><img src="@/assets/img/audit-lnk-2.svg" alt=""></a>
             </div>
           </div>
           <div class="audit__content">
-            <div class="audit-grid">
+            <div class="audit-grid" data-aos="fade"
+                 data-aos-duration="1500">
               <div class="audit-grid__item">
                 <div class="audit-card">
                   <div class="audit-card__wrap">
@@ -748,7 +781,6 @@
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </div>
@@ -793,6 +825,14 @@
 <!--      </div>-->
 <!--    </section>-->
 
+
+    <div class="cursor">
+      <div class="cursor__point"></div>
+      <div class="cursor__point"></div>
+      <div class="cursor__point"></div>
+      <div class="cursor__point"></div>
+    </div>
+    <div class="title-shape"></div>
   </div>
 </template>
 

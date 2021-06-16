@@ -20,7 +20,7 @@
     font-family: $black;
     z-index: 3;
     position: relative;
-    @include max-screen(sm){
+    @include max-screen(sm) {
       font-size: 16px;
     }
   }
@@ -50,7 +50,7 @@
     transform: translateY(-50%);
     transition: all .2s ease;
     z-index: 3;
-    @include max-screen(sm){
+    @include max-screen(sm) {
       width: 39px;
       right: -11px;
     }
@@ -92,12 +92,14 @@
     &:before {
       display: block;
     }
-    &:after{
+
+    &:after {
       background: linear-gradient(90deg, #F67D75 0%, #F55B51 100%);
     }
+
     .my-btn__arrow {
       transform: translate(24px, -50%);
-      @include max-screen(sm){
+      @include max-screen(sm) {
         transform: translate(10px, -50%);
       }
     }
@@ -118,6 +120,11 @@
   text-transform: uppercase;
   font-family: $black;
   color: #FFFFFF;
+  transition: all .2s ease;
+
+  &:hover {
+    background: #F99B8D;
+  }
 
   &--white {
     background: #FFFFFF;
@@ -126,7 +133,9 @@
     font-size: 20px;
     line-height: 24px;
     letter-spacing: 5px;
-
+    &:hover {
+      background: #ffffff;
+    }
     span {
       background: linear-gradient(to right, rgba(255, 201, 178, 1) 0%, rgba(246, 125, 117, 1) 100%);
       -webkit-background-clip: text;
@@ -141,6 +150,7 @@
   align-items: center;
   justify-content: center;
   transform: rotate(-90deg);
+  text-decoration: none;
 
   img {
     width: 40px;
@@ -156,6 +166,7 @@
   }
 
   span {
+
     font-size: 19px;
     line-height: 23px;
     letter-spacing: 5px;

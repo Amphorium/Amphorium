@@ -3,6 +3,9 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import vuescroll from 'vuescroll'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
 
 Vue.config.productionTip = false
 Vue.component('vue-scroll', vuescroll);
@@ -16,8 +19,11 @@ new Vue({
         const flyingElementsReverse = document.querySelectorAll('.flying-el-reverse');
         const whiteSection = document.getElementById('white-section');
         const mainImage = document.getElementById('main-img');
-        const sideMenu = document.getElementById('side-menu')
+        const sideMenu = document.getElementById('side-menu');
+        const points = document.querySelectorAll('.cursor__point');
+        const shape = document.querySelector('.title-shape');
         let counter = 0;
+
 
 
 
@@ -26,13 +32,10 @@ new Vue({
                 if (counter === 0) return false;
                 counter--;
                 mainImage.className = `main-banner__img main-banner__img--${counter}`;
-
-                console.log('scroll up')
             } else {
                 if (counter === 7) return false;
                 counter++;
                 mainImage.className = `main-banner__img main-banner__img--${counter}`;
-                console.log('scroll down')
 
             }
         }
@@ -78,8 +81,6 @@ new Vue({
         });
         window.addEventListener('scroll', ()=> {
             const isWhiteSection = elementInViewport(whiteSection);
-
-
             if (isWhiteSection) {
                 sideMenu.classList.add('side-menu--dark')
             }else{
@@ -88,6 +89,28 @@ new Vue({
         })
         window.addEventListener('mousemove', (e) => {
             fly(e)
+
+            const cx = e.clientX;
+            const cy = e.clientY;
+
+
+            if (
+                e.target.parentNode.classList.contains('my-title')
+                ||
+                e.target.parentNode.classList.contains('main-banner__title')
+            ){
+                shape.classList.add('active')
+                shape.style.transform = `translate(${cx}px, ${cy}px)`;
+            }else{
+                shape.classList.remove('active');
+            }
+
+            points.forEach((item, idx)=> {
+                setTimeout(()=>{
+                    item.style.transform = `matrix(1, 0, 0, 1, ${cx}, ${cy})`;
+                },70 * idx)
+            })
+            console.log(cx,cy)
         });
 
 
