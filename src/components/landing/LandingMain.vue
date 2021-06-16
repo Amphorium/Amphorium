@@ -111,6 +111,16 @@
         </div>
       </div>
     </section>
+    <section>
+      <div id="cont" data-pct="100" ref="cont">
+        <svg id="svg" width="200" height="200" viewPort="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+          <circle r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0"></circle>
+          <circle id="bar" ref="bar" r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0"></circle>
+        </svg>
+      </div>
+      <label for="percent">Type a percent!</label>
+      <input id="percent" name="percent" ref="percent">
+    </section>
     <section class="calendar" data-aos="fade"
              data-aos-duration="1500">
       <div class="calendar-slider-img">
@@ -203,11 +213,11 @@
         </div>
       </div>
     </section>
-    <div class="logo-section">
-      <img src="@/assets/img/logo-icon.svg" alt="">
+    <div class="logo-section" ref="logoSection" >
+      <img src="@/assets/img/logo-icon1.svg" alt="">
     </div>
-    <div class="white-background" id="white-section">
-      <section class="tokenomics">
+    <div class="white-background" id="white-section" >
+      <section class="tokenomics"  ref="nextSection">
         <div class="container">
           <div class="tokenomics__wrap">
             <div class="tokenomics__content">
@@ -335,18 +345,19 @@
           </div>
         </div>
       </section>
-        <div class="logo-section logo-section--padding">
-          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <div class="logo-section" ref="logoSectionTwo">
+          <!-- <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="40" cy="40" r="40" fill="#15121D"/>
             <path d="M46.4324 28.1H33.5676L31.6 23H48.4L46.4324 28.1Z" fill="white"/>
             <path d="M46.4324 29.2333H33.5676L26 42.5157H54L46.4324 29.2333Z" fill="white"/>
             <path d="M33.5676 57H46.4324L54 43.7177H26L33.5676 57Z" fill="white"/>
             <path d="M51.6157 35.2094L48.3111 29.4442L53.9946 29.4681L51.6157 35.2094Z" fill="white"/>
             <path d="M31.6998 29.4445L28.3869 35.2241L26.002 29.4684L31.6998 29.4445Z" fill="white"/>
-          </svg>
+          </svg> -->
+          <img src="@/assets/img/logo-icon2.svg" alt="">
         </div>
     </div>
-    <section class="history">
+    <section class="history" ref="nextSectionTwo">
       <div class="history-bg">
         <img src="@/assets/img/map-img.png" alt="">
       </div>
@@ -1033,10 +1044,112 @@ export default {
     },
     changeStep(idx) {
       this.activeStep = idx;
+    },
+    overlay(){
+      let logoDiv = this.$refs.logoSection; 
+      let logoDivTwo = this.$refs.logoSectionTwo;
+      let next = this.$refs.nextSection;
+      let nextTwo = this.$refs.nextSectionTwo;
+      // console.log(document.documentElement.clientHeight,'documentElement.clientHeight');
+      let screenHeight = document.documentElement.clientHeight;
+      // console.log(logoDiv);
+      
+      overlayLogo(logoDiv,next)
+      overlayLogo(logoDivTwo,nextTwo)
+
+      function overlayLogo(logo, nextSection){
+        document.addEventListener('scroll',()=>{
+          let logoDivTop=logo.offsetTop;
+          let nextTop = nextSection.offsetTop
+          if ((window.pageYOffset + screenHeight )> logoDivTop
+          && window.pageYOffset<nextTop){
+            let k = 0.05 
+            let pos = window.pageYOffset + screenHeight - logoDivTop -150; //150 - bottom offset
+            if (k*pos<1) pos=1/k;
+            logo.style.transform=`scale(${pos*k}) translateY(${pos*0.02}%)`
+          }else{
+            logo.style.transform=`unset`
+          }
+
+          // console.log('scroll',pageYOffset )
+        })
+      }
+    },
+    initSlider(){
+      let bar=  this.$refs.bar;
+        this.$refs.percent.addEventListener('change',()=>{
+        // var val = parseInt(this.value);
+        // console.log(this.value,'value');
+        var val = 38;
+        var $circle = bar;
+        console.log($circle);
+        if (isNaN(val)) {
+        val = 100; 
+        }
+        else{
+          var r = $circle.getAttribute('r');
+          var c = Math.PI*(r*2);
+        
+          if (val < 0) { val = 0;}
+          if (val > 100) { val = 100;}
+          
+          var pct = ((100-val)/100)*c;
+          
+          $circle.style.strokeDashoffset= pct;
+          
+           this.$refs.cont.setAttribute('data-pct',val);
+        }
+      });
     }
   },
   mounted() {
     this.setActiveSlide();
+    setTimeout(() => {
+      this.overlay()
+    }, 800);
+    setTimeout(() => {
+      this.initSlider()
+    }, 500);
   }
 }
 </script>
+<style>
+  #svg circle {
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 1s linear;
+  stroke: #262528;
+  stroke-width: 1em;
+}
+#svg #bar {
+  stroke: #DE8176;
+}
+#cont {
+  display: block;
+  height: 200px;
+  width: 200px;
+  margin: 2em auto;
+  box-shadow: 0 0 1em black;
+  border-radius: 100%;
+  position: relative;
+}
+#cont:after {
+  position: absolute;
+  display: block;
+  height: 160px;
+  width: 160px;
+  left: 50%;
+  top: 50%;
+  box-shadow: inset 0 0 1em black;
+  content: attr(data-pct)"%";
+  margin-top: -80px;
+  margin-left: -80px;
+  border-radius: 100%;
+  line-height: 160px;
+  font-size: 2em;
+  text-shadow: 0 0 0.5em black;
+}
+
+input {
+  color: #000;
+}
+</style>

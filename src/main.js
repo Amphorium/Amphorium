@@ -95,9 +95,9 @@ new Vue({
 
 
             if (
-                e.target.parentNode.classList.contains('my-title')
+                e.target.parentNode && e.target.parentNode.classList?.contains('my-title')
                 ||
-                e.target.parentNode.classList.contains('main-banner__title')
+                e.target.parentNode && e.target.parentNode.classList?.contains('main-banner__title')
             ){
                 shape.classList.add('active')
                 shape.style.transform = `translate(${cx}px, ${cy}px)`;
@@ -110,7 +110,7 @@ new Vue({
                     item.style.transform = `matrix(1, 0, 0, 1, ${cx}, ${cy})`;
                 },70 * idx)
             })
-            console.log(cx,cy)
+            // console.log(cx,cy)
         });
 
 
