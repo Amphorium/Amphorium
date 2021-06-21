@@ -111,19 +111,75 @@
         </div>
       </div>
     </section>
-    <section>
-      <div id="cont" data-pct="100" ref="cont">
-        <svg id="svg" width="200" height="200" viewPort="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg">
-          <circle r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0"></circle>
-          <circle id="bar" ref="bar" r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0"></circle>
+    <section class="calendar" data-aos="fade"
+             data-aos-duration="1500">
+      <div id="cont" data-pct="100" ref="cont" @wheel.prevent="wheel" >
+        <svg @load="slider()" id="svg" width="200" height="200" viewPort="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin meet">
+          <circle ref="barBg" r="275" cx="282.5" cy="282.5" fill="transparent" stroke-dasharray="0" stroke-dashoffset="0"></circle>
+          <!-- <circle id="bar" ref="bar" r="48%" cx="50%" cy="50%" fill="transparent" stroke-dasharray="1728" stroke-dashoffset="0"></circle> -->
+          <circle id="bar" ref="bar" r="275" cx="282.5" cy="282.5" fill="transparent" stroke-dasharray="1728" stroke-dashoffset="0"></circle>
+          <!-- <div class="year"  >
+            {{point.date.year}}
+          </div> -->
+        
         </svg>
+        <svg ref="point" v-for="(point,index) of roadMap" :key="index+'road'" class="point-circle" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="20" cy="20" r="20" fill="white"/>
+          <circle cx="20.0003" cy="20" r="9.14286" fill="#FAA091"/>
+        </svg>
+          <p class="roadmap-title">Roadmap</p>
+          <div class="year" v-for="(point,index) of roadMap" :key="index+'year'">
+            <p v-if="point.focus">{{point.date.year}}</p>
+          </div>
+          <div class="calendar-slide__btn">
+              <span class="scroll-btn">
+                <span class="scroll-btn__circle"></span>
+                <span class="scroll-btn__circle"></span>
+                <span class="scroll-btn__circle"></span>
+                <span class="scroll-btn__arrow"></span>
+              </span>
+           </div>
+           <div class="slider-content"
+           v-for="(road,index) of roadMap" :key="index+'roadM'">
+
+            <div class="calendar-info__drop"
+            :class="{active: road.focus}">
+                <div class="calendar-item">
+                  <div class="calendar-item__wrap">
+                    <div class="date">
+                      <p>{{ quarters[index].date }}</p>
+                    </div>
+                    <div class="calendar-item__title">
+                      <p>{{ quarters[index].title }}</p>
+                    </div>
+                    <div class="calendar-item__text">
+                      <p>{{ quarters[index].text }} </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+           </div>
+            
+        <!-- <svg ref="point" class="point-circle" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="20" cy="20" r="20" fill="white"/>
+          <circle cx="20.0003" cy="20" r="9.14286" fill="#FAA091"/>
+        </svg>
+        <svg ref="point" class="point-circle" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="20" cy="20" r="20" fill="white"/>
+          <circle cx="20.0003" cy="20" r="9.14286" fill="#FAA091"/>
+        </svg>
+        <svg ref="point" class="point-circle" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="20" cy="20" r="20" fill="white"/>
+          <circle cx="20.0003" cy="20" r="9.14286" fill="#FAA091"/>
+        </svg> -->
+
       </div>
-      <label for="percent">Type a percent!</label>
-      <input id="percent" name="percent" ref="percent">
+      <!-- <label for="percent">Type a percent!</label>
+      <input id="percent" name="percent" ref="percent"> -->
     </section>
     <section class="calendar" data-aos="fade"
              data-aos-duration="1500">
-      <div class="calendar-slider-img">
+      <!-- <div class="calendar-slider-img">
         <div class="calendar-slider-img__item calendar-slider-img__item--one flying-el-reverse">
           <img src="@/assets/img/coin-calendar-1.svg" alt="">
         </div>
@@ -142,7 +198,7 @@
              v-for="(slide, slideIdx) in roadMap"
              :class="{'active': slide.focus}"
              :key="slideIdx"
-        >
+          >
           <div class="container">
             <div class="calendar-slide__circle-bg"></div>
             <div class="calendar-slide__circle" @wheel.prevent="wheel">
@@ -160,7 +216,7 @@
                           class="calendar-info__point"
                           @click="toSlide(idx)"
                   ></button>
-                  <div class="calendar-info__drop">
+                  <div class="calendar-info__drop" ref="title">
                     <div class="calendar-item">
                       <div class="calendar-item__wrap">
                         <div class="date">
@@ -211,7 +267,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </section>
     <div class="logo-section" ref="logoSection" >
       <img src="@/assets/img/logo-icon1.svg" alt="">
@@ -882,9 +938,64 @@ export default {
             year: '2025'
           },
           focus: false,
-        }
+        },
+        {
+          date: {
+            month: 'month',
+            year: '2026'
+          },
+          focus: false,
+        },
+        {
+          date: {
+            month: 'july',
+            year: '2027'
+          },
+          focus: false,
+        },
+         {
+          date: {
+            month: 'july',
+            year: '2028'
+          },
+          focus: false,
+        },
+          {
+          date: {
+            month: 'october',
+            year: '2028'
+          },
+          focus: false,
+        },
+          {
+          date: {
+            month: 'july',
+            year: '2029'
+          },
+          focus: false,
+        },
+        {
+        date: {
+          month: 'september',
+          year: '2029'
+        },
+        focus: false,
+      },
+        {
+        date: {
+          month: 'july',
+          year: '2030'
+        },
+        focus: false,
+      },
       ],
       faq: [
+        {
+          title: 'Lorem ipsum dolor sit amet, adipiscing elit',
+          text1: 'Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+          text2: 'Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+          isShow: false
+        },
         {
           title: 'Lorem ipsum dolor sit amet, adipiscing elit',
           text1: 'Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
@@ -913,24 +1024,59 @@ export default {
       quarters: [
         {
           date: 'april 2022',
-          title: 'Lorem ipsum dolor sit amet, adipiscing elit',
+          title: '1Lorem ipsum dolor sit amet, adipiscing elit',
           text: 'Lorem ipsum dolor sit amet, adipiscing elit Lorem ipsum dolor sit amet, adipiscing elit'
         },
         {
           date: 'september 2023',
-          title: 'Lorem ipsum dolor sit amet, adipiscing elit',
+          title: '2Lorem ipsum dolor sit amet, adipiscing elit',
           text: 'Lorem ipsum dolor sit amet, adipiscing elit Lorem ipsum dolor sit amet, adipiscing elit'
         },
         {
           date: 'july 2024',
-          title: 'Lorem ipsum dolor sit amet, adipiscing elit',
+          title: '3Lorem ipsum dolor sit amet, adipiscing elit',
           text: 'Lorem ipsum dolor sit amet, adipiscing elit Lorem ipsum dolor sit amet, adipiscing elit'
         },
         {
           date: 'october 2025',
-          title: 'Lorem ipsum dolor sit amet, adipiscing elit',
+          title: '4Lorem ipsum dolor sit amet, adipiscing elit',
           text: 'Lorem ipsum dolor sit amet, adipiscing elit Lorem ipsum dolor sit amet, adipiscing elit'
-        }
+        },
+        {
+          date: 'april 2026',
+          title: '5Lorem ipsum dolor sit amet, adipiscing elit',
+          text: 'Lorem ipsum dolor sit amet, adipiscing elit Lorem ipsum dolor sit amet, adipiscing elit'
+        },
+        {
+          date: 'july 2027',
+          title: '6Lorem ipsum dolor sit amet, adipiscing elit',
+          text: 'Lorem ipsum dolor sit amet, adipiscing elit Lorem ipsum dolor sit amet, adipiscing elit'
+        },
+        {
+          date: 'july 2024',
+          title: '7Lorem ipsum dolor sit amet, adipiscing elit',
+          text: 'Lorem ipsum dolor sit amet, adipiscing elit Lorem ipsum dolor sit amet, adipiscing elit'
+        },
+         {
+          date: 'october 2025',
+          title: '84Lorem ipsum dolor sit amet, adipiscing elit',
+          text: 'Lorem ipsum dolor sit amet, adipiscing elit Lorem ipsum dolor sit amet, adipiscing elit'
+        },
+        {
+          date: 'april 2028',
+          title: '9Lorem ipsum dolor sit amet, adipiscing elit',
+          text: 'Lorem ipsum dolor sit amet, adipiscing elit Lorem ipsum dolor sit amet, adipiscing elit'
+        },
+        {
+          date: 'september 2029',
+          title: '10Lorem ipsum dolor sit amet, adipiscing elit',
+          text: 'Lorem ipsum dolor sit amet, adipiscing elit Lorem ipsum dolor sit amet, adipiscing elit'
+        },
+        {
+          date: 'july 2030',
+          title: '7Lorem ipsum dolor sit amet, adipiscing elit',
+          text: 'Lorem ipsum dolor sit amet, adipiscing elit Lorem ipsum dolor sit amet, adipiscing elit'
+        },
       ],
       activeStep: 0,
       tokenInfo: [
@@ -1020,11 +1166,91 @@ export default {
       if (this.initialCounter === this.roadMap.length - 1) return false
       this.initialCounter++;
       this.setActiveSlide();
+      this.slider()
     },
     prevSlide() {
       if (this.initialCounter === 0) return false
       this.initialCounter--;
       this.setActiveSlide();
+      this.slider()
+    },
+    slider(){
+      let bar=  this.$refs.bar;
+      let barBg=  this.$refs.barBg;
+      let maxStep = this.roadMap.length;
+      let step = 100/maxStep;
+      let barWidth = this.$refs.cont.offsetWidth;
+        var val = step*(this.initialCounter+1);
+        var $circle = bar;
+          
+        if (window.innerWidth< 600){
+          bar.setAttribute('r',barWidth/2-7);
+          bar.setAttribute('cx',barWidth/2);
+          bar.setAttribute('cy',barWidth/2);
+          barBg.setAttribute('r',barWidth/2-7);
+          barBg.setAttribute('cx',barWidth/2);
+          barBg.setAttribute('cy',barWidth/2);
+          bar.setAttribute('stroke-dasharray',(2 * Math.PI * bar.getAttribute('r')));
+        }
+        // }
+        // else{
+          var r = $circle.getAttribute('r');
+          var c = Math.PI*(r*2);
+        
+          if (val < 0) { val = 0;}
+          if (val > 100) { val = 100;}
+          
+          var pct = ((100-val)/100)*c;
+            $circle.style.strokeDashoffset= pct;
+          // }
+          
+          let points = document.querySelectorAll('.point-circle');//count length from roadmap
+         let centerX = barWidth/2;
+          points[0].style.left=centerX -points[0].getBoundingClientRect().width/2+'px'; 
+          let pointWidth = points[0].getBoundingClientRect().width;
+          if (points.length){
+            for (let i = 1; i< points.length; i++){
+              setPoint(step*i,i);
+             
+            }
+          }
+          function setPoint(value, i){
+              let a = percentToRad(value)
+              let leftPos =  2*barWidth/2 * Math.pow(Math.cos((Math.PI - ( (Math.PI/2) -a) )/2 ),2); 
+              let topPos =  2*barWidth/2 * Math.cos((Math.PI-a)/2) * Math.cos( ( (Math.PI-a)/2 ) );
+            points[i].style.left = leftPos +'px';
+             points[i].style.top =topPos + 'px';
+             const title = document.body.querySelectorAll('.calendar-info__drop');
+             if (value<25){
+                points[i].style.left = leftPos - Math.sqrt(2*pointWidth*pointWidth)/4+'px';
+                points[i].style.top = topPos - Math.sqrt(2*pointWidth*pointWidth)/4 +'px';
+                // console.log( pointWidth);
+                title[i-1].style.transform= `translate(-100%, -100%)`
+             }else if (value<50){
+
+                points[i].style.left = leftPos - Math.sqrt(2*pointWidth*pointWidth)/4+'px';
+                points[i].style.top = topPos - Math.sqrt(2*pointWidth*pointWidth)/2  +'px';
+                title[i-1].style.transform= `translate(-80%, 80%)`
+             }else if (value<75){
+
+              points[i].style.left = leftPos - Math.sqrt(2*pointWidth*pointWidth)/2+'px';
+                points[i].style.top = topPos - Math.sqrt(2*pointWidth*pointWidth)/2 +'px';
+                 title[i-1].style.transform= `translate(100%, 100%)`;
+             }else if (value<100){
+                points[i].style.left = leftPos - (Math.sqrt(2*pointWidth*pointWidth)/2 )-7+'px';
+                points[i].style.top = topPos - (Math.sqrt(2*pointWidth*pointWidth)/2) +7 +'px';
+
+                title[i-1].style.transform= `translate(120%, -150%)`;
+             }
+            
+             if(val===100){
+                title[i].style.transform= `translate(40%, -220%)`;
+             }
+          }
+          function percentToRad(perc){
+            return (perc*2*Math.PI)/100
+          }
+      // });
     },
     toSlide(idx) {
       this.initialCounter = idx;
@@ -1059,80 +1285,37 @@ export default {
 
       function overlayLogo(logo, nextSection){
         document.addEventListener('scroll',()=>{
-          let logoDivTop=logo.offsetTop;
-          let nextTop = nextSection.offsetTop
+          let logoDivTop=logo?.offsetTop;
+          let nextTop = nextSection?.offsetTop
           if ((window.pageYOffset + screenHeight )> logoDivTop
           && window.pageYOffset<nextTop){
             let k = 0.05 
             let pos = window.pageYOffset + screenHeight - logoDivTop -150; //150 - bottom offset
             if (k*pos<1) pos=1/k;
-            logo.style.transform=`scale(${pos*k}) translateY(${pos*0.02}%)`
+            if(logo) logo.style.transform=`scale(${pos*k}) translateY(${pos*0.02}%)`
           }else{
-            logo.style.transform=`unset`
+           if (logo) logo.style.transform=`unset`
           }
 
           // console.log('scroll',pageYOffset )
         })
       }
     },
-    initSlider(){
-      let bar=  this.$refs.bar;
-        this.$refs.percent.addEventListener('change',()=>{
-        // var val = parseInt(this.value);
-        // console.log(this.value,'value');
-        var val = 38;
-        var $circle = bar;
-        console.log($circle);
-        if (isNaN(val)) {
-        val = 100; 
-        }
-        else{
-          var r = $circle.getAttribute('r');
-          var c = Math.PI*(r*2);
-        
-          if (val < 0) { val = 0;}
-          if (val > 100) { val = 100;}
-          
-          var pct = ((100-val)/100)*c;
-          
-          $circle.style.strokeDashoffset= pct;
-          
-           this.$refs.cont.setAttribute('data-pct',val);
-        }
-      });
-    }
+    
   },
   mounted() {
-    this.setActiveSlide();
-    setTimeout(() => {
-      this.overlay()
-    }, 800);
-    setTimeout(() => {
-      this.initSlider()
-    }, 500);
+     this.$nextTick(() => {
+         this.setActiveSlide();
+         setTimeout(() => {
+            this.overlay()
+            this.slider()
+         }, 30);
+      });
   }
 }
 </script>
 <style>
-  #svg circle {
-  stroke-dashoffset: 0;
-  transition: stroke-dashoffset 1s linear;
-  stroke: #262528;
-  stroke-width: 1em;
-}
-#svg #bar {
-  stroke: #DE8176;
-}
-#cont {
-  display: block;
-  height: 200px;
-  width: 200px;
-  margin: 2em auto;
-  box-shadow: 0 0 1em black;
-  border-radius: 100%;
-  position: relative;
-}
-#cont:after {
+    /* #cont:after {//show percentage
   position: absolute;
   display: block;
   height: 160px;
@@ -1147,9 +1330,6 @@ export default {
   line-height: 160px;
   font-size: 2em;
   text-shadow: 0 0 0.5em black;
-}
+} */
 
-input {
-  color: #000;
-}
 </style>
