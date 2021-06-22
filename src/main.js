@@ -21,7 +21,7 @@ new Vue({
         const mainImage = document.getElementById('main-img');
         const sideMenu = document.getElementById('side-menu');
         const points = document.querySelectorAll('.cursor__point');
-        const shape = document.querySelector('.title-shape');
+        // const shape = document.querySelector('.title-shape');
         let counter = 0;
 
 
@@ -99,10 +99,10 @@ new Vue({
                 ||
                 e.target.parentNode && e.target.parentNode.classList?.contains('main-banner__title')
             ){
-                shape.classList.add('active')
-                shape.style.transform = `translate(${cx}px, ${cy}px)`;
+                // shape.classList.add('active')
+                // shape.style.transform = `translate(${cx}px, ${cy}px)`;
             }else{
-                shape.classList.remove('active');
+                // shape.classList.remove('active');
             }
 
             points.forEach((item, idx)=> {

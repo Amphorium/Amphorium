@@ -63,8 +63,8 @@
       <div class="container">
         <div class="main-banner__wrap">
           <div class="main-banner__info">
-            <div class="main-banner__title">
-              <h1>Lorem ipsum dolor
+            <div class="main-banner__title"  @mousemove="textLighting" @mouseleave="resetTextLighting">
+              <h1 ref="textGradient">Lorem ipsum dolor
                 sit amet, adipiscing</h1>
             </div>
             <ul class="my-list">
@@ -899,7 +899,7 @@
       <div class="cursor__point"></div>
       <div class="cursor__point"></div>
     </div>
-    <div class="title-shape"></div>
+    <!-- <div class="title-shape"></div> -->
   </div>
 </template>
 
@@ -1162,6 +1162,18 @@ export default {
     }
   },
   methods: {
+    textLighting(e){
+      // console.log('ev',e);
+    this.$refs.textGradient.style.backgroundImage=`radial-gradient(circle at ${e.layerX}px ${e.layerY}px, rgb(209, 12, 12) 0%, #fff 6rem)`;
+    this.$refs.textGradient.style.color='transparent'
+      //  textGradient.style.backgroundImage='none'
+      //   textGradient.style.color='#fff'
+    },
+    resetTextLighting(){
+      this.$refs.textGradient.backgroundImage='none'
+      this.$refs.textGradient.style.color='#fff'
+
+    },
     nextSlide() {
       if (this.initialCounter === this.roadMap.length - 1) return false
       this.initialCounter++;
@@ -1314,7 +1326,14 @@ export default {
   }
 }
 </script>
-<style>
+<style lang="scss">
+  .main-banner__title{
+     h1{ 
+       color: #fff;    
+       background-clip: text;
+      //  background-image: radial-gradient(circle at 170px 40px, rgb(209, 12, 12) 0%, #fff 6rem);
+     }
+  }
     /* #cont:after {//show percentage
   position: absolute;
   display: block;
