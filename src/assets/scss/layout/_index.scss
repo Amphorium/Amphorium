@@ -610,8 +610,9 @@ body {
   text-align: center;
   color: #FFFFFF;
   margin-bottom: 45px;
-
   > * {
+  background-clip: text;
+  -webkit-background-clip: text;
     display: inline-block;
   }
 

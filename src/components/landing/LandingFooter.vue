@@ -18,7 +18,7 @@
       <div class="footer__wrap">
         <div class="footer__content">
           <div class="my-title">
-            <h2>Sign up for updates</h2>
+            <h2 @mousemove="textLighting" @mouseleave="resetTextLighting">Sign up for updates</h2>
           </div>
           <form action="" class="footer-form">
             <div class="big-input">
@@ -83,6 +83,14 @@
 
 <script>
 export default {
-  name: 'LandingFooter'
+  name: 'LandingFooter',
+  methods: {
+     textLighting(event){
+      this.$emit('mousemove',event)
+    },
+    resetTextLighting(){
+     this.$emit('mouseleave')
+    },
+  }
 }
 </script>

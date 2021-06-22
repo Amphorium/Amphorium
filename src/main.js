@@ -99,9 +99,11 @@ new Vue({
                 ||
                 e.target.parentNode && e.target.parentNode.classList?.contains('main-banner__title')
             ){
+                e.target.classList.add('text-gradient')
                 // shape.classList.add('active')
                 // shape.style.transform = `translate(${cx}px, ${cy}px)`;
             }else{
+                document.querySelector('.text-gradient')?.classList.remove('text-gradient')
                 // shape.classList.remove('active');
             }
 

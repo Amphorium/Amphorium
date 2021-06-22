@@ -63,8 +63,8 @@
       <div class="container">
         <div class="main-banner__wrap">
           <div class="main-banner__info">
-            <div class="main-banner__title"  @mousemove="textLighting" @mouseleave="resetTextLighting">
-              <h1 ref="textGradient">Lorem ipsum dolor
+            <div class="main-banner__title">
+              <h1 @mousemove="textLighting" @mouseleave="resetTextLighting">Lorem ipsum dolor
                 sit amet, adipiscing</h1>
             </div>
             <ul class="my-list">
@@ -97,8 +97,10 @@
           </div>
           <div class="about__content">
             <div class="my-title my-title--left" data-aos="fade-up"
-                 data-aos-duration="1500">
-              <h2>About Us</h2>
+                 data-aos-duration="1500"
+                 >
+              <h2
+               @mousemove="textLighting" @mouseleave="resetTextLighting">About Us</h2>
             </div>
             <div class="about__text" data-aos="fade-up"
                  data-aos-duration="1500">
@@ -477,8 +479,9 @@
     <section class="news">
       <div class="container">
         <div class="my-title" data-aos="fade-up"
-             data-aos-duration="1500">
-          <h2>Our News</h2>
+             data-aos-duration="1500" 
+           >
+          <h2 style="width:100%" @mousemove="textLighting" @mouseleave="resetTextLighting">Our News</h2>
         </div>
 
         <div class="news__wrap">
@@ -617,7 +620,7 @@
       <div class="container">
         <div class="my-title" data-aos="fade-up"
              data-aos-duration="1500">
-          <h2>Duis aute irure dolor in
+          <h2 @mousemove="textLighting" @mouseleave="resetTextLighting">Duis aute irure dolor in
             reprehenderit in voluptate</h2>
         </div>
         <div class="facts__subtitle" data-aos="fade-up"
@@ -687,7 +690,7 @@
       <div class="container">
         <div class="my-title" data-aos="fade-up"
              data-aos-duration="1500">
-          <h2>Our Partners</h2>
+          <h2 style="width:100%" @mousemove="textLighting" @mouseleave="resetTextLighting">Our Partners</h2>
         </div>
         <div class="partners-grid" data-aos="fade"
              data-aos-duration="1500">
@@ -745,7 +748,7 @@
           <div class="audit__info">
             <div class="my-title my-title--left" data-aos="fade-up"
                  data-aos-duration="1500">
-              <h2>Audit</h2>
+              <h2 @mousemove="textLighting" @mouseleave="resetTextLighting">Audit</h2>
             </div>
             <div class="audit__subtitle" data-aos="fade-up"
                  data-aos-duration="1500">
@@ -1162,16 +1165,11 @@ export default {
     }
   },
   methods: {
-    textLighting(e){
-      // console.log('ev',e);
-    this.$refs.textGradient.style.backgroundImage=`radial-gradient(circle at ${e.layerX}px ${e.layerY}px, rgb(209, 12, 12) 0%, #fff 6rem)`;
-    this.$refs.textGradient.style.color='transparent'
-      //  textGradient.style.backgroundImage='none'
-      //   textGradient.style.color='#fff'
+    textLighting(event){
+      this.$emit('mousemove',event)
     },
     resetTextLighting(){
-      this.$refs.textGradient.backgroundImage='none'
-      this.$refs.textGradient.style.color='#fff'
+     this.$emit('mouseleave')
 
     },
     nextSlide() {
