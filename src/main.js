@@ -27,17 +27,21 @@ new Vue({
 
 
 
-        function changeImage(e) {
-            if (e.deltaY < 0) {
-                if (counter === 0) return false;
-                counter--;
-                mainImage.className = `main-banner__img main-banner__img--${counter}`;
-            } else {
-                if (counter === 7) return false;
+        function changeImage() {
+            // if (e.deltaY < 0) {
+            //     if (counter === 0) return false;
+            //     counter--;
+            //     mainImage.className = `main-banner__img main-banner__img--${counter}`;
+            // }
+            //  else {
+                // const step= window.innerHeight/7;
+                counter =   (window.pageYOffset*7) / window.innerHeight;
+                // console.log(Math.round(counter));
+                if (counter > 7) return false;
                 counter++;
-                mainImage.className = `main-banner__img main-banner__img--${counter}`;
+                mainImage.className = `main-banner__img main-banner__img--${Math.round(counter)}`;
 
-            }
+            // }
         }
         function elementInViewport(el) {
             let top = el.offsetTop;
@@ -76,7 +80,7 @@ new Vue({
         }
 
 
-        document.addEventListener('wheel', function (e) {
+        document.addEventListener('scroll', function (e) {
             changeImage(e);
         });
         window.addEventListener('scroll', ()=> {
