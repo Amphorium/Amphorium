@@ -28,19 +28,16 @@ new Vue({
 
 
         function changeImage() {
-            // if (e.deltaY < 0) {
-            //     if (counter === 0) return false;
-            //     counter--;
-            //     mainImage.className = `main-banner__img main-banner__img--${counter}`;
-            // }
-            //  else {
-                // const step= window.innerHeight/7;
                 counter =   (window.pageYOffset*7) / window.innerHeight;
                 // console.log(Math.round(counter));
-                if (counter > 7) return false;
-                counter++;
-                mainImage.className = `main-banner__img main-banner__img--${Math.round(counter)}`;
-
+                if (counter >= 7){
+                     mainImage.className = `main-banner__img main-banner__img--${7}`
+                    //  console.log(counter);   
+                }else{
+                    mainImage.className = `main-banner__img main-banner__img--${Math.round(counter)}`;
+                    // console.log(counter);   
+                    counter++;
+                }
             // }
         }
         function elementInViewport(el) {
