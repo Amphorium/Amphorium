@@ -86,6 +86,15 @@
             </div>
           </div>
           <div class="main-banner__img main-banner__img--0" id="main-img"></div>
+          <!-- <div style="display:none"> -->
+            <div class="main-banner__img main-banner__img--1"></div>            
+            <div class="main-banner__img main-banner__img--2"></div>            
+            <div class="main-banner__img main-banner__img--3"></div>            
+            <div class="main-banner__img main-banner__img--4"></div>            
+            <div class="main-banner__img main-banner__img--5"></div>            
+            <div class="main-banner__img main-banner__img--6"></div>            
+            <div class="main-banner__img main-banner__img--7"></div>            
+          <!-- </div> -->
         </div>
       </div>
     </section>
@@ -271,8 +280,11 @@
         </div>
       </div> -->
     </section>
-    <div class="logo-section" ref="logoSection" >
-      <img src="@/assets/img/logo-icon1.svg" alt="">
+    <div class="logo-section" ref="logoSection" style="text-align: center; position:relative" >
+      <img style="position:absolute" src="@/assets/img/logo-icon1.svg" alt="">
+      <!-- <svg width="81" height="81" viewBox="0 0 81 81" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin none" x="0px" y="0px">
+      <path shape-rendering="geometricPrecision" fill-rule="evenodd" clip-rule="evenodd" d="M40.9375 80.5817C63.0289 80.5817 80.9375 62.6731 80.9375 40.5817C80.9375 18.4903 63.0289 0.581665 40.9375 0.581665C18.8461 0.581665 0.9375 18.4903 0.9375 40.5817C0.9375 62.6731 18.8461 80.5817 40.9375 80.5817ZM49.3375 23.5817L47.3699 28.6817H34.5051L32.5375 23.5817H49.3375ZM54.9375 43.0973L47.3699 29.815H34.5051L26.9375 43.0973H54.9375ZM54.9375 44.2993L47.3699 57.5817H34.5051L26.9375 44.2993H54.9375ZM52.5532 35.7911L49.2486 30.0258L54.9321 30.0498L52.5532 35.7911ZM29.3244 35.8058L32.6373 30.0261L26.9395 30.0501L29.3244 35.8058Z" fill="white"/>
+      </svg> -->
     </div>
     <div class="white-background" id="white-section" >
       <section class="tokenomics"  ref="nextSection">
@@ -403,7 +415,7 @@
           </div>
         </div>
       </section>
-        <div class="logo-section" ref="logoSectionTwo">
+        <div class="logo-section" ref="logoSectionTwo" style="position:relative">
           <!-- <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="40" cy="40" r="40" fill="#15121D"/>
             <path d="M46.4324 28.1H33.5676L31.6 23H48.4L46.4324 28.1Z" fill="white"/>
@@ -412,7 +424,7 @@
             <path d="M51.6157 35.2094L48.3111 29.4442L53.9946 29.4681L51.6157 35.2094Z" fill="white"/>
             <path d="M31.6998 29.4445L28.3869 35.2241L26.002 29.4684L31.6998 29.4445Z" fill="white"/>
           </svg> -->
-          <img src="@/assets/img/logo-icon2.svg" alt="">
+          <img style="position:absolute" src="@/assets/img/logo-icon2.svg" alt="">
         </div>
     </div>
     <section class="history" ref="nextSectionTwo">
@@ -1302,9 +1314,15 @@ export default {
             let k = 0.05 
             let pos = window.pageYOffset + screenHeight - logoDivTop -150; //150 - bottom offset
             if (k*pos<1) pos=1/k;
-            if(logo) logo.style.transform=`scale(${pos*k}) translateY(${pos*0.02}%)`
+            // if(logo) logo.style.transform=`scale(${pos*k}) translateY(${pos*0.02}%) translateZ(0)`
+            // console.log(logo.childNodes[0]);
+            // logo.childNodes[0].style.transform=`scale(${pos*k}) translateY(${pos*0.02}%) translateZ(0)`
+            logo.childNodes[0].style.transform=`translateY(${pos*0.02}%) translateZ(0)`
+            logo.childNodes[0].style.width=`${pos*k*100}px`
+            // if(logo) logo.childNodes[0].style.height=`auto`
           }else{
-           if (logo) logo.style.transform=`unset`
+          //  if (logo) logo.style.transform=`unset`
+           if (logo) logo.childNodes[0].style.width=`${100}px`
           }
 
           // console.log('scroll',pageYOffset )

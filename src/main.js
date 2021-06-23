@@ -28,13 +28,18 @@ new Vue({
 
 
         function changeImage() {
-                counter =   (window.pageYOffset*7) / window.innerHeight;
+                counter =   (window.pageYOffset*6) / (window.innerHeight/2);
                 // console.log(Math.round(counter));
-                if (counter >= 7){
-                     mainImage.className = `main-banner__img main-banner__img--${7}`
+                if (counter<0) counter = 0;
+                if (counter >= 6){
+                    //  mainImage.className = `main-banner__img main-banner__img--${6}`
+                     console.log(counter);
                     //  console.log(counter);   
                 }else{
-                    mainImage.className = `main-banner__img main-banner__img--${Math.round(counter)}`;
+                    document.querySelectorAll('.main-banner__img').forEach(item=>item.style.display="none")
+                    document.querySelector(`.main-banner__img.main-banner__img--${Math.round(counter)}`).style.display="block";
+                    console.log(mainImage);
+                    // mainImage.className = `main-banner__img main-banner__img--${Math.round(counter)}`;
                     // console.log(counter);   
                     counter++;
                 }
@@ -78,7 +83,9 @@ new Vue({
 
 
         document.addEventListener('scroll', function (e) {
-            changeImage(e);
+            if (window.innerWidth>=600){
+                changeImage(e);
+            }
         });
         window.addEventListener('scroll', ()=> {
             const isWhiteSection = elementInViewport(whiteSection);

@@ -37,9 +37,9 @@ body {
   color: #15121D;
   // position: relative; 
   z-index: -1;
-  padding-bottom: 200px;
+  padding-bottom: 150px;
   @include max-screen(md) {
-    padding-bottom: 55px;
+    padding-bottom: 30px;
     padding-top: 50px;
   }
 }
@@ -355,30 +355,37 @@ body {
 
     &--0 {
       background-image: url("assets/img/amphor-1.png");
+      display:  block;
     }
 
     &--1 {
       background-image: url("assets/img/amphor-2.png");
+      display:  none;
     }
 
     &--2 {
       background-image: url("assets/img/amphor-3.png");
+      display:  none;
     }
 
     &--3 {
       background-image: url("assets/img/amphor-4.png");
+      display:  none;
     }
 
     &--4 {
       background-image: url("assets/img/amphor-5.png");
+      display:  none;
     }
 
     &--5 {
       background-image: url("assets/img/amphor-6.png");
+      display:  none;
     }
 
     &--6 {
       background-image: url("assets/img/amphor-7.png");
+      display:  none;
     }
 
   }
@@ -3763,11 +3770,63 @@ body {
   margin-top: 100px;
   display: flex;
   align-items: center;
+  height:   100px;
   justify-content: center;
+  margin:   100px 0 50px;
   @include max-screen(md) {
-    margin-top: 0px;
-  }
+    // margin-top: 0px;
+      // img{
+        // background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFEAAABRCAYAAACqj0o2AAAD70lEQVR4nO2d7bGrIBCGU0JKsARLsISUkBJSgh1YgiVYgiWkBEqghOf+QKLXExNF3EXNO8OcjzlzWB4XWFgkl0tCAq5ABuTADbiPStGVTNvWJNQBK4ASaIEnYFkmAzTd/yi02ySiDty9g7YU2Fw1wF27rdGF87hmQ3CfgBba7Q8WzutuuG6qrSd7806c56UAb6z0YeJm1VaX0yy1pDbD47puhfyYt1YPbXaXy+VywcV1jTaNFWqBqybAgv153ztZINcA+OAYAIe6SQM8qu4/gHG0HUjOAdArPkjcmvdsKmICzDneJDJHcWZtXCBtdNuiKhMD4p4D6Vhq1gA800TyTctjSFw3PuM4OCUbArHStjpBVUsAFtrWJqxsLsTfZDKtOkUvNEC9spiNbRzrszd2Rklq+YD9v70aE+C0NyoZBCvWqbhkmLSmHzwuCa6h7+PMtM2tks33KYM0M3RZAMBc0d42NYPAjcW3hUU7ls3GELWXeBY3yy4p2iuqxxiiRGyY4yavYakJ3HKi7z3lm/8rMeE0Y4Mknmo9qtNnC+cvp/6C9A8/G/2+FmiPHVYoNR7aUUNbHMTgvC/O62DgFciGapmvVHLr/97V6btbGQpwAM2HZvnoZwndvBG1YKUG5ylP/30EiH733XQ/G8H2lN4I6Q2HuvsaLVlO35uk29J4A4xwxX3lEYXOYqHVhFhsAFFjH9T4yqUVHNLMACndna0GxFUhzQyI128GxG6PBsRyK4ADkJJranGIBoEDlcgeOBCHeN8a4ACk1ALiNbFILZGMcJHQ00OUiq8eLN8zDC1SW3uvOLEVqjA4DRDQnaVCndpXKDmbbX7AHNnkVeUrldz1eG4M0G9uSOm1iyOddtzslD7yaY5s+PQktSph/wGgdN7cjg0wgpXDBisX5PPmf3Is0ulHS8SXFHGvx0ln/8qxERrbSNFCHnROsmXvDDEKhqwOedA5j/M+ykDnRMHf4xjLIbYKdpdTxkjP0l7BIQ96JzeyT0Zp5CmCQh70jgJ+zg+hM76AG0rGlwl9K7WGoczJD3HuN6i+aV6WEj1v3IO+e+EAZKttbYJalivHrQB+6hX2xin6J1FTUvj1L6R505K0WtZkKfl162gvjp95to63gYxeYKup+NdgcS6Qmx26Okv8uB3AAcgjv8pbIXUBG8eMIbf3wDcgtV6ojC2L5g2f7P/ioSeSt9V9AHlln+Nkg+YFlO+E2yjdg1daUvC+TyLdScficjJped+UcGvuWhVZL4ubBDNtLsHCPX2jAM+wJ8+bI9xGRr0xOIsbTvJDwXunDmjJ+g9zsPSfhHF8cN9E/xksZVcq+guEqq48ur9JBtg/VyyxtK4MKrwAAAAASUVORK5CYII)
+        // no-repeat center;
+        // height:   81px;
+        // width: 81px;  
+      // }
+    will-change: unset;
+        -webkit-backface-visibility: hidden; 
+      -ms-transform: translateZ(0); /* IE 9 */
+      -webkit-transform: translateZ(0); /* Chrome, Safari, Opera */
+      transform: translateZ(0);
+       filter: none; 
+        -webkit-filter: blur(0px); 
+        -moz-filter: blur(0px); 
+        -ms-filter: blur(0px);
+        filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='0');
+      -ms-interpolation-mode: nearest-neighbor;
+      image-rendering: crisp-edges;
+      image-rendering: -webkit-optimize-contrast;
 
+        /* antialiasing */
+      outline: 1px solid transparent;
+      -webkit-backface-visibility: hidden;
+      transform: translateZ(0);
+      -webkit-perspective: 1000;
+      backface-visibility: hidden;
+      -webkit-font-smoothing: subpixel-antialiased;
+  }
+  img{
+    max-width: unset;
+    -webkit-font-smoothing: subpixel-antialiased;
+    will-change: unset;
+    backface-visibility: hidden;
+     -webkit-backface-visibility: hidden; 
+    -ms-transform: translateZ(0); /* IE 9 */
+    -webkit-transform: translateZ(0); /* Chrome, Safari, Opera */
+    transform: translateZ(0);
+     filter: none; 
+      -webkit-filter: blur(0px); 
+      -moz-filter: blur(0px); 
+      -ms-filter: blur(0px);
+      filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='0');
+    -ms-interpolation-mode: nearest-neighbor;
+    image-rendering: pixelated;
+
+        /* antialiasing */
+    outline: 1px solid transparent;
+    -webkit-backface-visibility: hidden;
+    transform: translateZ(0);
+    // will-change: transform;
+    -webkit-perspective: 1000;
+  }
   &--padding {
     padding-bottom: 200px;
     @include max-screen(md) {
