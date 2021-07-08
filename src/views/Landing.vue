@@ -22,19 +22,20 @@
     components: {LandingMain, LandingHeader, LandingFooter},
     methods: {
        textLighting(e){
+     
           // console.log('ev',e);
         // this.$refs.textGradient.style.backgroundImage=`radial-gradient(circle at ${e.layerX}px ${e.layerY}px, rgb(209, 12, 12) 0%, #fff 6rem)`;
         // this.$refs.textGradient.style.color='transparent'
-        if ( document.querySelector('.text-gradient') ){
-          document.querySelector('.text-gradient').style.backgroundImage=`radial-gradient(circle at ${e.offsetX}px ${e.offsetY}px, rgb(209, 12, 12) 0%, #fff 6rem)`;
-          document.querySelector('.text-gradient').style.color='transparent';
-          // document.querySelector('.text-gradient').style.backgroundClip = "text";
+        if ( e.target){
+         e.target.style.backgroundImage=`radial-gradient(circle at ${e.offsetX}px ${e.offsetY}px, rgb(209, 12, 12) 0%, #fff 6rem)`;
+         e.target.style.color='transparent';
+         e.target.style.backgroundClip = "text";
         }
       },
-      resetTextLighting(){
-        if ( document.querySelector('.text-gradient') ) {
-          document.querySelector('.text-gradient').style.backgroundImage='none';
-          document.querySelector('.text-gradient').style.color='#fff';
+      resetTextLighting(e){
+        if (e.target) {
+         e.target.style.backgroundImage='';
+         e.target.style.color='';
         }
 
       },

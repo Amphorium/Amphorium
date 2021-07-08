@@ -8,8 +8,10 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@mscalessio/vue2-swiper": "^1.0.3",
     "aos": "^2.3.4",
     "core-js": "^3.6.5",
+    "swiper": "^6.7.5",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
     "vue-slick-carousel": "^1.0.6",

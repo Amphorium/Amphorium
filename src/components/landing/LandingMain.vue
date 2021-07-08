@@ -323,7 +323,7 @@
               </div>
             </div>
           </div>
-          <div class="schedule-details">
+          <!-- <div class="schedule-details">
             <div class="schedule-details__info">
               <div class="schedule-details__title" data-aos="fade-up"
                    data-aos-duration="1500">
@@ -360,7 +360,7 @@
                 </li>
               </ul>
             </div>
-          </div>
+          </div> -->
           <div class="token-emission">
             <div class="token-emission__info">
               <div class="schedule-details__title" data-aos="fade-up"
@@ -493,138 +493,54 @@
         <div class="my-title" data-aos="fade-up"
              data-aos-duration="1500" 
            >
-          <h2 style="width:100%" @mousemove="textLighting" @mouseleave="resetTextLighting">Our News</h2>
+          <h2 @mousemove="textLighting" @mouseleave="resetTextLighting">Our News</h2>
         </div>
 
         <div class="news__wrap">
-          <vue-scroll :ops="ops">
+          <swiper
+            :slides-per-view="1"
+            :space-between="150"
+            :breakpoints="swiperOptions.breakpoints"
+          >
+            <swiper-slide v-for="(n,index) in news" :key="index">
+            <div class="news-card" >
+                  <div class="news-card__info">
+                    <div class="date">
+                      <p>{{n.date}}</p>
+                    </div>
+                    <div class="news-card__title">
+                      <p
+                       @mousemove="textLighting"
+                       @mouseleave="resetTextLighting">
+                       {{n.title}}
+                       </p>
+                    </div>
+                    <div class="news-card__text">
+                      <p>{{n.text}}</p>
+                    </div>
+                    <div class="news-card__link">
+                      <a href="#" class="more">
+                        <span class="more__text">Read more</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+            </swiper-slide>
+          </swiper>
+          <!-- <vue-scroll :ops="ops"> -->
           <div class="news__wrap-content">
-            <div class="news-card">
-              <div class="news-card__info">
-                <div class="date">
-                  <p>21 april, 2022</p>
-                </div>
-                <div class="news-card__title">
-                  <p>Lorem ipsum dolor sit
-                    amet, adipiscing elit</p>
-                </div>
-                <div class="news-card__text">
-                  <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. </p>
-                </div>
-                <div class="news-card__link">
-                  <a href="#" class="more">
-                    <span class="more__text">Read more</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="news-card">
-              <div class="news-card__info">
-                <div class="date">
-                  <p>21 april, 2022</p>
-                </div>
-                <div class="news-card__title">
-                  <p>Lorem ipsum dolor sit
-                    amet, adipiscing elit</p>
-                </div>
-                <div class="news-card__text">
-                  <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. </p>
-                </div>
-                <div class="news-card__link">
-                  <a href="#" class="more">
-                    <span class="more__text">Read more</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="news-card">
-              <div class="news-card__info">
-                <div class="date">
-                  <p>21 april, 2022</p>
-                </div>
-                <div class="news-card__title">
-                  <p>Lorem ipsum dolor sit
-                    amet, adipiscing elit</p>
-                </div>
-                <div class="news-card__text">
-                  <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. </p>
-                </div>
-                <div class="news-card__link">
-                  <a href="#" class="more">
-                    <span class="more__text">Read more</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="news-card">
-              <div class="news-card__info">
-                <div class="date">
-                  <p>21 april, 2022</p>
-                </div>
-                <div class="news-card__title">
-                  <p>Lorem ipsum dolor sit
-                    amet, adipiscing elit</p>
-                </div>
-                <div class="news-card__text">
-                  <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. </p>
-                </div>
-                <div class="news-card__link">
-                  <a href="#" class="more">
-                    <span class="more__text">Read more</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="news-card">
-              <div class="news-card__info">
-                <div class="date">
-                  <p>21 april, 2022</p>
-                </div>
-                <div class="news-card__title">
-                  <p>Lorem ipsum dolor sit
-                    amet, adipiscing elit</p>
-                </div>
-                <div class="news-card__text">
-                  <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. </p>
-                </div>
-                <div class="news-card__link">
-                  <a href="#" class="more">
-                    <span class="more__text">Read more</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="news-card">
-              <div class="news-card__info">
-                <div class="date">
-                  <p>21 april, 2022</p>
-                </div>
-                <div class="news-card__title">
-                  <p>Lorem ipsum dolor sit
-                    amet, adipiscing elit</p>
-                </div>
-                <div class="news-card__text">
-                  <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. </p>
-                </div>
-                <div class="news-card__link">
-                  <a href="#" class="more">
-                    <span class="more__text">Read more</span>
-                  </a>
-                </div>
-              </div>
-            </div>
+           
           </div>
-          </vue-scroll>
+          <!-- </vue-scroll> -->
         </div>
         <div class="news__link" data-aos="fade-up"
              data-aos-duration="1500">
-          <a href="#" class="read-all"><span>Read All News</span></a>
+          <a href="#" class="read-all"><span 
+            @mousemove="textLighting"
+            @mouseleave="resetTextLighting"
+            >Read All News
+            </span>
+          </a>
         </div>
       </div>
     </section>
@@ -919,9 +835,14 @@
 </template>
 
 <script>
+import { Swiper, SwiperSlide } from '@mscalessio/vue2-swiper';
+import 'swiper/swiper.scss';
 export default {
   name: 'LandingMain',
-
+  components: {
+      Swiper,
+      SwiperSlide,
+  },
   data() {
     return {
       initialCounter: 0,
@@ -1094,7 +1015,7 @@ export default {
         },
       ],
       activeStep: 0,
-      tokenInfo: [
+      tokensInfoUnsorted: [
         {
           group: 'Foundation Team',
           percent: '10%',
@@ -1136,9 +1057,41 @@ export default {
           amh: '30 000 000'
         },
         {
-          group: 'Ecosystem/ fire',
+          group: 'Ecosystem',
           percent: '50%',
           amh: '500 000 000'
+        },
+      ],
+      news: [
+        {
+          date: '21 april, 2022',
+          title: 'Lorem ipsum dolor sit amet, adipiscing elit',
+          text: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        },
+        {
+          date: '21 april, 2022',
+          title: 'Lorem ipsum dolor sit amet, adipiscing elit',
+          text: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        },
+        {
+          date: '21 april, 2022',
+          title: 'Lorem ipsum dolor sit amet, adipiscing elit',
+          text: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        },
+        {
+          date: '21 april, 2022',
+          title: 'Lorem ipsum dolor sit amet, adipiscing elit',
+          text: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        },
+        {
+          date: '21 april, 2022',
+          title: 'Lorem ipsum dolor sit amet, adipiscing elit',
+          text: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        },
+        {
+          date: '21 april, 2022',
+          title: 'Lorem ipsum dolor sit amet, adipiscing elit',
+          text: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
         },
       ],
       ops: {
@@ -1173,15 +1126,33 @@ export default {
           background: "#292929",
           opacity: 1
         }
+      },
+      swiperOptions: {
+        breakpoints: {
+          992:{
+            slidesPerView:2
+          },
+          1024:{
+            slidesPerView:3
+          }
+        }
       }
+    }
+  },
+  computed: {
+    tokenInfo(){
+      const tokens = this.tokensInfoUnsorted;
+      return tokens.sort((a,b)=>{
+        return parseFloat(b.percent)-parseFloat(a.percent)}
+        )
     }
   },
   methods: {
     textLighting(event){
       this.$emit('mousemove',event)
     },
-    resetTextLighting(){
-     this.$emit('mouseleave')
+    resetTextLighting(event){
+     this.$emit('mouseleave', event)
 
     },
     nextSlide() {

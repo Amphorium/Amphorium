@@ -88,8 +88,8 @@ export default {
      textLighting(event){
       this.$emit('mousemove',event)
     },
-    resetTextLighting(){
-     this.$emit('mouseleave')
+    resetTextLighting(e){
+     this.$emit('mouseleave',e)
     },
   }
 }

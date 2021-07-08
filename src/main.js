@@ -18,7 +18,7 @@ new Vue({
         const flyingElements = document.querySelectorAll('.flying-el');
         const flyingElementsReverse = document.querySelectorAll('.flying-el-reverse');
         const whiteSection = document.getElementById('white-section');
-        const mainImage = document.getElementById('main-img');
+        // const mainImage = document.getElementById('main-img');
         const sideMenu = document.getElementById('side-menu');
         const points = document.querySelectorAll('.cursor__point');
         // const shape = document.querySelector('.title-shape');
@@ -33,12 +33,12 @@ new Vue({
                 if (counter<0) counter = 0;
                 if (counter >= 6){
                     //  mainImage.className = `main-banner__img main-banner__img--${6}`
-                     console.log(counter);
+                    //  console.log(counter);
                     //  console.log(counter);   
                 }else{
                     document.querySelectorAll('.main-banner__img').forEach(item=>item.style.display="none")
                     document.querySelector(`.main-banner__img.main-banner__img--${Math.round(counter)}`).style.display="block";
-                    console.log(mainImage);
+                    // console.log(mainImage);
                     // mainImage.className = `main-banner__img main-banner__img--${Math.round(counter)}`;
                     // console.log(counter);   
                     counter++;
@@ -95,6 +95,8 @@ new Vue({
                 sideMenu.classList.remove('side-menu--dark')
             }
         })
+        let lastPointTime=0;
+        let now=0;
         window.addEventListener('mousemove', (e) => {
             fly(e)
 
@@ -108,20 +110,27 @@ new Vue({
                 e.target.parentNode && e.target.parentNode.classList?.contains('main-banner__title')
             ){
                 e.target.classList.add('text-gradient')
-                // shape.classList.add('active')
-                // shape.style.transform = `translate(${cx}px, ${cy}px)`;
             }else{
                 document.querySelector('.text-gradient')?.classList.remove('text-gradient')
                 // shape.classList.remove('active');
             }
-
+            
             points.forEach((item, idx)=> {
+                item.classList.remove('d-none')
                 setTimeout(()=>{
-                    item.style.transform = `matrix(1, 0, 0, 1, ${cx}, ${cy})`;
+                   
+                    item.style.transform = `matrix(1, 0, 0, 1, ${cx-8}, ${cy-8})`;
                 },70 * idx)
             })
-            // console.log(cx,cy)
-        });
+                lastPointTime = Date.now()
+                
+            });
+            setInterval(()=>{
+                now = Date.now()
+                if ( now - lastPointTime > 100){
+                    points.forEach(item=>item.classList.add('d-none'))
+                }
+                },60 )
 
 
     }

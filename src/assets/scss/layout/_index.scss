@@ -711,10 +711,12 @@ body {
   border-style: solid;
   position: relative;
   border-radius: 20px;
-  width: 420px;
   flex: none;
+  width: 420px;
   @include max-screen(lg) {
     padding: 20px 30px;
+  }@include max-screen(md) {
+   width: 100%;
   }
 
   * {
@@ -4435,6 +4437,7 @@ body {
           img {
             &.dark {
               display: block;
+              filter: brightness(40%);
             }
 
             &.default {
