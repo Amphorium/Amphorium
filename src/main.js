@@ -18,33 +18,27 @@ new Vue({
         const flyingElements = document.querySelectorAll('.flying-el');
         const flyingElementsReverse = document.querySelectorAll('.flying-el-reverse');
         const whiteSection = document.getElementById('white-section');
-        // const mainImage = document.getElementById('main-img');
         const sideMenu = document.getElementById('side-menu');
         const points = document.querySelectorAll('.cursor__point');
         // const shape = document.querySelector('.title-shape');
-        let counter = 0;
 
+        function fly(e) {
 
+            const x = -(window.innerWidth / 2 - e.pageX) / 70;
+            const y = -(window.innerHeight / 2 - e.pageY) / 70;
+            const xReverse = (window.innerWidth / 2 - e.pageX) / 70;
+            const yReverse = (window.innerHeight / 2 - e.pageY) / 70;
 
+            // console.log(x, xReverse)
+            flyingElements.forEach(function (item) {
+                item.style.transform = `translate(${x}px, ${y}px)`;
+            });
+            flyingElementsReverse.forEach(function (item) {
+                item.style.transform = `translate(${xReverse}px, ${yReverse}px)`;
+            });
 
-        function changeImage() {
-                counter =   (window.pageYOffset*6) / (window.innerHeight/2);
-                // console.log(Math.round(counter));
-                if (counter<0) counter = 0;
-                if (counter >= 6){
-                    //  mainImage.className = `main-banner__img main-banner__img--${6}`
-                    //  console.log(counter);
-                    //  console.log(counter);   
-                }else{
-                    document.querySelectorAll('.main-banner__img').forEach(item=>item.style.display="none")
-                    document.querySelector(`.main-banner__img.main-banner__img--${Math.round(counter)}`).style.display="block";
-                    // console.log(mainImage);
-                    // mainImage.className = `main-banner__img main-banner__img--${Math.round(counter)}`;
-                    // console.log(counter);   
-                    counter++;
-                }
-            // }
         }
+
         function elementInViewport(el) {
             let top = el.offsetTop;
             let left = el.offsetLeft;
@@ -64,29 +58,8 @@ new Vue({
                 (left + width) > window.pageXOffset
             );
         }
-        function fly(e) {
 
-            const x = -(window.innerWidth / 2 - e.pageX) / 70;
-            const y = -(window.innerHeight / 2 - e.pageY) / 70;
-            const xReverse = (window.innerWidth / 2 - e.pageX) / 70;
-            const yReverse = (window.innerHeight / 2 - e.pageY) / 70;
-
-            // console.log(x, xReverse)
-            flyingElements.forEach(function (item) {
-                item.style.transform = `translate(${x}px, ${y}px)`;
-            });
-            flyingElementsReverse.forEach(function (item) {
-                item.style.transform = `translate(${xReverse}px, ${yReverse}px)`;
-            });
-
-        }
-
-
-        document.addEventListener('scroll', function (e) {
-            if (window.innerWidth>=600){
-                changeImage(e);
-            }
-        });
+  
         window.addEventListener('scroll', ()=> {
             const isWhiteSection = elementInViewport(whiteSection);
             if (isWhiteSection) {

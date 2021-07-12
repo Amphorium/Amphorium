@@ -85,15 +85,68 @@
               <button class="my-btn"><span class="my-btn__arrow"></span> <span class="my-btn__content">Get updates</span></button>
             </div>
           </div>
-          <div class="main-banner__img main-banner__img--0" id="main-img"></div>
+          <div id="main-img">
+
+         
           <!-- <div style="display:none"> -->
-            <div class="main-banner__img main-banner__img--1"></div>            
-            <div class="main-banner__img main-banner__img--2"></div>            
-            <div class="main-banner__img main-banner__img--3"></div>            
-            <div class="main-banner__img main-banner__img--4"></div>            
-            <div class="main-banner__img main-banner__img--5"></div>            
-            <div class="main-banner__img main-banner__img--6"></div>            
-            <div class="main-banner__img main-banner__img--7"></div>            
+            <div class="main-banner__img main-banner__img--1">
+               <img src="@/assets/img/amphor/1.png" alt="">
+            </div>            
+            <div style="visibility: hidden" class="main-banner__img main-banner__img--2">
+               <img src="@/assets/img/amphor/2.png" alt="">
+            </div>            
+            <div style="visibility: hidden" class="main-banner__img main-banner__img--3">
+               <img src="@/assets/img/amphor/3.png" alt="">
+            </div>            
+            <div style="visibility: hidden" class="main-banner__img main-banner__img--4">
+               <img src="@/assets/img/amphor/4.png" alt="">
+            </div>            
+            <div style="visibility: hidden" class="main-banner__img main-banner__img--5">
+               <img src="@/assets/img/amphor/5.png" alt="">
+            </div>            
+            <div style="visibility: hidden" class="main-banner__img main-banner__img--6">
+               <img src="@/assets/img/amphor/6.png" alt="">
+            </div>            
+            <div style="visibility: hidden" class="main-banner__img main-banner__img--7">
+               <img src="@/assets/img/amphor/7.png" alt="">
+            </div>            
+            <div style="visibility: hidden" class="main-banner__img main-banner__img--8">
+               <img src="@/assets/img/amphor/8.png" alt="">
+            </div>            
+            <div style="visibility: hidden" class="main-banner__img main-banner__img--9">
+               <img src="@/assets/img/amphor/9.png" alt="">
+            </div>            
+            <div style="visibility: hidden" class="main-banner__img main-banner__img--10">
+               <img src="@/assets/img/amphor/10.png" alt="">
+            </div>            
+            <div style="visibility: hidden" class="main-banner__img main-banner__img--11">
+               <img src="@/assets/img/amphor/11.png" alt="">
+            </div>            
+            <div style="visibility: hidden" class="main-banner__img main-banner__img--12">
+               <img src="@/assets/img/amphor/12.png" alt="">
+            </div>            
+            <div style="visibility: hidden" class="main-banner__img main-banner__img--13">
+               <img src="@/assets/img/amphor/13.png" alt="">
+            </div>            
+            <div style="visibility: hidden" class="main-banner__img main-banner__img--14">
+               <img src="@/assets/img/amphor/14.png" alt="">
+            </div>            
+            <div style="visibility: hidden" class="main-banner__img main-banner__img--15">
+               <img src="@/assets/img/amphor/15.png" alt="">
+            </div>            
+            <div style="visibility: hidden" class="main-banner__img main-banner__img--16">
+               <img src="@/assets/img/amphor/16.png" alt="">
+            </div>            
+            <div style="visibility: hidden" class="main-banner__img main-banner__img--17">
+               <img src="@/assets/img/amphor/17.png" alt="">
+            </div>            
+            <div style="visibility: hidden" class="main-banner__img main-banner__img--18">
+               <img src="@/assets/img/amphor/18.png" alt="">
+            </div>            
+            <div style="visibility: hidden" class="main-banner__img main-banner__img--19">
+               <img src="@/assets/img/amphor/19.png" alt="">
+            </div> 
+          </div>           
           <!-- </div> -->
         </div>
       </div>
@@ -1300,6 +1353,56 @@ export default {
         })
       }
     },
+    amphorInit(){
+      
+        // const mainImage = document.getElementById('main-img');
+     
+        let counter = 0;
+
+        document.addEventListener('scroll', function (e) {
+            if (window.innerWidth>=600){
+                changeImage(e);
+            }
+        });
+
+
+      
+
+        function changeImage() {
+                const top = document.body.querySelector('#main-img').getBoundingClientRect().top;
+                // const bottom  = document.body.querySelector('#main-img').getBoundingClientRect().bottom 
+                // console.log(top,'top');
+                const quantityImages = 19;
+                // let step =   (bottom) / (quantityImages);
+                // let number = window.innerHeight - step; 
+                // console.log(number,'number');
+                // counter =   (top*quantityImages) / (window.innerHeight/2);
+
+                // counter = (window.pageYOffset) / (window.innerHeight);
+              
+                // console.log(Math.round(counter));
+                  counter =   (window.pageYOffset*quantityImages) / (top +500);
+                  document.querySelectorAll('.main-banner__img').forEach(item=>{
+                    item.style.display="none";
+                     
+                    })
+                if (counter<1) counter = 1;
+                if (counter >= quantityImages){
+                  counter = quantityImages
+                }
+                document.querySelector(`.main-banner__img.main-banner__img--${Math.round(counter)}`).style.display="block";
+                document.querySelector(`.main-banner__img.main-banner__img--${Math.round(counter)}`).style.visibility="visible";
+                
+                  // console.log(mainImage);
+                  // mainImage.className = `main-banner__img main-banner__img--${Math.round(counter)}`;
+                  // console.log(counter);   
+                // console.log(counter);
+            // }
+        }
+        // changeImage()
+
+        
+    }
     
   },
   mounted() {
@@ -1308,6 +1411,7 @@ export default {
          setTimeout(() => {
             this.overlay()
             this.slider()
+            this.amphorInit()
          }, 30);
       });
   }
