@@ -87,65 +87,16 @@
           </div>
           <div id="main-img">
 
-         
-          <!-- <div style="display:none"> -->
-            <div class="main-banner__img main-banner__img--1">
-               <img src="@/assets/img/amphor/1.png" alt="">
-            </div>            
-            <div style="visibility: hidden" class="main-banner__img main-banner__img--2">
-               <img src="@/assets/img/amphor/2.png" alt="">
-            </div>            
-            <div style="visibility: hidden" class="main-banner__img main-banner__img--3">
-               <img src="@/assets/img/amphor/3.png" alt="">
-            </div>            
-            <div style="visibility: hidden" class="main-banner__img main-banner__img--4">
-               <img src="@/assets/img/amphor/4.png" alt="">
-            </div>            
-            <div style="visibility: hidden" class="main-banner__img main-banner__img--5">
-               <img src="@/assets/img/amphor/5.png" alt="">
-            </div>            
-            <div style="visibility: hidden" class="main-banner__img main-banner__img--6">
-               <img src="@/assets/img/amphor/6.png" alt="">
-            </div>            
-            <div style="visibility: hidden" class="main-banner__img main-banner__img--7">
-               <img src="@/assets/img/amphor/7.png" alt="">
-            </div>            
-            <div style="visibility: hidden" class="main-banner__img main-banner__img--8">
-               <img src="@/assets/img/amphor/8.png" alt="">
-            </div>            
-            <div style="visibility: hidden" class="main-banner__img main-banner__img--9">
-               <img src="@/assets/img/amphor/9.png" alt="">
-            </div>            
-            <div style="visibility: hidden" class="main-banner__img main-banner__img--10">
-               <img src="@/assets/img/amphor/10.png" alt="">
-            </div>            
-            <div style="visibility: hidden" class="main-banner__img main-banner__img--11">
-               <img src="@/assets/img/amphor/11.png" alt="">
-            </div>            
-            <div style="visibility: hidden" class="main-banner__img main-banner__img--12">
-               <img src="@/assets/img/amphor/12.png" alt="">
-            </div>            
-            <div style="visibility: hidden" class="main-banner__img main-banner__img--13">
-               <img src="@/assets/img/amphor/13.png" alt="">
-            </div>            
-            <div style="visibility: hidden" class="main-banner__img main-banner__img--14">
-               <img src="@/assets/img/amphor/14.png" alt="">
-            </div>            
-            <div style="visibility: hidden" class="main-banner__img main-banner__img--15">
-               <img src="@/assets/img/amphor/15.png" alt="">
-            </div>            
-            <div style="visibility: hidden" class="main-banner__img main-banner__img--16">
-               <img src="@/assets/img/amphor/16.png" alt="">
-            </div>            
-            <div style="visibility: hidden" class="main-banner__img main-banner__img--17">
-               <img src="@/assets/img/amphor/17.png" alt="">
-            </div>            
-            <div style="visibility: hidden" class="main-banner__img main-banner__img--18">
-               <img src="@/assets/img/amphor/18.png" alt="">
-            </div>            
-            <div style="visibility: hidden" class="main-banner__img main-banner__img--19">
-               <img src="@/assets/img/amphor/19.png" alt="">
-            </div> 
+              <div :class="`main-banner__img main-banner__img--${img}`"
+               v-for="img in 19"
+               :key="img"
+               :style="{visibility: img===1?'visible':'hidden'}"
+               >
+                 <img 
+                 :src="require(`@/assets/img/amphor/${img}.png`)" 
+                 alt="">
+              </div>
+
           </div>           
           <!-- </div> -->
         </div>
@@ -155,7 +106,9 @@
       <div class="container">
         <div class="about__wrap">
           <div class="about__img" >
-            <img src="@/assets/img/earth.png" alt="">
+            <div :class="`about__img__img about__img__img--${img}`" v-for="img in 20" :key="img">
+              <img :src="require(`@/assets/img/earth/${img}.png`)" alt="">
+            </div>
           </div>
           <div class="about__content">
             <div class="my-title my-title--left" data-aos="fade-up"
@@ -1147,6 +1100,9 @@ export default {
           text: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
         },
       ],
+      // amphorImg: [
+      //   1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+      // ],
       ops: {
         vuescroll: {
           mode: "native",
@@ -1359,30 +1315,23 @@ export default {
      
         let counter = 0;
 
-        document.addEventListener('scroll', function (e) {
+        document.addEventListener('scroll', function () {
             if (window.innerWidth>=600){
-                changeImage(e);
+                changeImage(19,'#main-img', '.main-banner__img');
+                changeImage(20,'.about__img', '.about__img__img');
             }
         });
 
 
       
 
-        function changeImage() {
-                const top = document.body.querySelector('#main-img').getBoundingClientRect().top;
-                // const bottom  = document.body.querySelector('#main-img').getBoundingClientRect().bottom 
-                // console.log(top,'top');
-                const quantityImages = 19;
-                // let step =   (bottom) / (quantityImages);
-                // let number = window.innerHeight - step; 
-                // console.log(number,'number');
-                // counter =   (top*quantityImages) / (window.innerHeight/2);
+        function changeImage(quantityImages, imgWrapSelector, imgSelector) {
+               const wrapper = document.body.querySelector(imgWrapSelector);
 
-                // counter = (window.pageYOffset) / (window.innerHeight);
-              
-                // console.log(Math.round(counter));
-                  counter =   (window.pageYOffset*quantityImages) / (top +500);
-                  document.querySelectorAll('.main-banner__img').forEach(item=>{
+                const top =wrapper.getBoundingClientRect().top;
+                const height = wrapper.getBoundingClientRect().height;
+                  counter =   (window.pageYOffset*quantityImages) / (top + height*3||1000);
+                  wrapper.querySelectorAll(`${imgSelector}`).forEach(item=>{
                     item.style.display="none";
                      
                     })
@@ -1390,14 +1339,9 @@ export default {
                 if (counter >= quantityImages){
                   counter = quantityImages
                 }
-                document.querySelector(`.main-banner__img.main-banner__img--${Math.round(counter)}`).style.display="block";
-                document.querySelector(`.main-banner__img.main-banner__img--${Math.round(counter)}`).style.visibility="visible";
+                wrapper.querySelector(`${imgSelector}--${Math.round(counter)}`).style.display="block";
+                wrapper.querySelector(`${imgSelector}--${Math.round(counter)}`).style.visibility="visible";
                 
-                  // console.log(mainImage);
-                  // mainImage.className = `main-banner__img main-banner__img--${Math.round(counter)}`;
-                  // console.log(counter);   
-                // console.log(counter);
-            // }
         }
         // changeImage()
 
