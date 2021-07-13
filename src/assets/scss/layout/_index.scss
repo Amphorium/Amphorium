@@ -390,7 +390,12 @@ body {
 
   }
 }
-
+.about__img{
+  position: relative;
+  &>*{
+    position: absolute;
+  }
+}
 .my-list {
   padding-top: 29px;
   @include max-screen(sm) {

@@ -106,7 +106,11 @@
       <div class="container">
         <div class="about__wrap">
           <div class="about__img" >
-            <div :class="`about__img__img about__img__img--${img}`" v-for="img in 20" :key="img">
+            <div 
+            :class="`about__img__img about__img__img--${img}`" 
+            v-for="img in 20" 
+            :key="img"
+            :style="{visibility: img===1?'visible':'hidden'}">
               <img :src="require(`@/assets/img/earth/${img}.png`)" alt="">
             </div>
           </div>
