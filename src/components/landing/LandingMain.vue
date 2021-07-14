@@ -840,6 +840,7 @@
       <div class="cursor__point"></div>
       <div class="cursor__point"></div>
     </div>
+     <Preloader v-if="loading"/>
     <!-- <div class="title-shape"></div> -->
   </div>
 </template>
@@ -847,15 +848,19 @@
 <script>
 import { Swiper, SwiperSlide } from '@mscalessio/vue2-swiper';
 import 'swiper/swiper.scss';
+import Preloader from "../../components/preloader";
+
 export default {
   name: 'LandingMain',
   components: {
       Swiper,
       SwiperSlide,
+      Preloader,
   },
   data() {
     return {
       initialCounter: 0,
+      loading: true,
       roadMap: [
         {
           date: {
@@ -1355,6 +1360,7 @@ export default {
   },
   mounted() {
      this.$nextTick(() => {
+       
          this.setActiveSlide();
          setTimeout(() => {
             this.overlay()
@@ -1362,6 +1368,22 @@ export default {
             this.amphorInit()
          }, 30);
       });
+  },
+  created(){
+    window.addEventListener("load", ()=> {
+      if(performance.now()>7000){
+        this.loading=false;
+      }else {
+        const timer = setInterval(() => {
+          if (performance.now()>7000){
+             this.loading=false;
+            
+             clearInterval(timer)
+          }
+        }, 100);
+      }
+      
+    })
   }
 }
 </script>
