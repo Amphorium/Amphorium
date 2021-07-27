@@ -931,13 +931,13 @@ export default {
         },
         focus: false,
       },
-        {
-        date: {
-          month: 'july',
-          year: '2030'
-        },
-        focus: false,
-      },
+      //   {
+      //   date: {
+      //     month: 'july',
+      //     year: '2030'
+      //   },
+      //   focus: false,
+      // },
       ],
       faq: [
         {
@@ -973,60 +973,60 @@ export default {
       ],
       quarters: [
         {
-          date: 'april 2022',
-          title: '1Lorem ipsum dolor sit amet, adipiscing elit',
-          text: 'Lorem ipsum dolor sit amet, adipiscing elit Lorem ipsum dolor sit amet, adipiscing elit'
+          date: '2019',
+          title: 'Q3',
+          text: 'Initial forecasting of the idea implementation'
         },
         {
-          date: 'september 2023',
-          title: '2Lorem ipsum dolor sit amet, adipiscing elit',
-          text: 'Lorem ipsum dolor sit amet, adipiscing elit Lorem ipsum dolor sit amet, adipiscing elit'
+          date: '2020',
+          title: 'Q2',
+          text: 'First visible concept and team formation'
         },
         {
-          date: 'july 2024',
-          title: '3Lorem ipsum dolor sit amet, adipiscing elit',
-          text: 'Lorem ipsum dolor sit amet, adipiscing elit Lorem ipsum dolor sit amet, adipiscing elit'
+          date: '2020',
+          title: 'Q4',
+          text: 'First releases and whitepaper creation'
         },
         {
-          date: 'october 2025',
-          title: '4Lorem ipsum dolor sit amet, adipiscing elit',
-          text: 'Lorem ipsum dolor sit amet, adipiscing elit Lorem ipsum dolor sit amet, adipiscing elit'
+          date: '2021',
+          title: 'Q3',
+          text: 'Seed round (10% token\'s)'
         },
         {
-          date: 'april 2026',
-          title: '5Lorem ipsum dolor sit amet, adipiscing elit',
-          text: 'Lorem ipsum dolor sit amet, adipiscing elit Lorem ipsum dolor sit amet, adipiscing elit'
+          date: '2021',
+          title: 'Q4',
+          text: 'Release of the beta version Android / iOS application.'
         },
         {
-          date: 'july 2027',
-          title: '6Lorem ipsum dolor sit amet, adipiscing elit',
-          text: 'Lorem ipsum dolor sit amet, adipiscing elit Lorem ipsum dolor sit amet, adipiscing elit'
+          date: '2022',
+          title: 'Q1',
+          text: 'Round A/B/C Token sale (20% token\'s)'
         },
         {
-          date: 'july 2024',
-          title: '7Lorem ipsum dolor sit amet, adipiscing elit',
-          text: 'Lorem ipsum dolor sit amet, adipiscing elit Lorem ipsum dolor sit amet, adipiscing elit'
+          date: '2022',
+          title: 'Q3',
+          text: 'Public offering'
         },
          {
-          date: 'october 2025',
-          title: '84Lorem ipsum dolor sit amet, adipiscing elit',
-          text: 'Lorem ipsum dolor sit amet, adipiscing elit Lorem ipsum dolor sit amet, adipiscing elit'
+          date: '2022',
+          title: 'Q4',
+          text: 'Release of a completed platform for market relations between customers and companies'
         },
         {
-          date: 'april 2028',
-          title: '9Lorem ipsum dolor sit amet, adipiscing elit',
-          text: 'Lorem ipsum dolor sit amet, adipiscing elit Lorem ipsum dolor sit amet, adipiscing elit'
+          date: '2023',
+          title: 'Q2',
+          text: 'Moving to our own blockchain'
         },
         {
-          date: 'september 2029',
-          title: '10Lorem ipsum dolor sit amet, adipiscing elit',
-          text: 'Lorem ipsum dolor sit amet, adipiscing elit Lorem ipsum dolor sit amet, adipiscing elit'
+          date: '2024',
+          title: 'Q1',
+          text: 'Integration and contracts with various delivery services and transport companies. (Bringing them up to Blockchain)'
         },
-        {
-          date: 'july 2030',
-          title: '7Lorem ipsum dolor sit amet, adipiscing elit',
-          text: 'Lorem ipsum dolor sit amet, adipiscing elit Lorem ipsum dolor sit amet, adipiscing elit'
-        },
+        // {
+        //   date: 'july 2030',
+        //   title: '7Lorem ipsum dolor sit amet, adipiscing elit',
+        //   text: 'Lorem ipsum dolor sit amet, adipiscing elit Lorem ipsum dolor sit amet, adipiscing elit'
+        // },
       ],
       activeStep: 0,
       tokensInfoUnsorted: [
@@ -1149,8 +1149,9 @@ export default {
           992:{
             slidesPerView:2
           },
-          1024:{
-            slidesPerView:3
+          1125:{
+            slidesPerView:3,
+            spaceBetween:50
           }
         }
       }
@@ -1245,7 +1246,7 @@ export default {
 
               points[i].style.left = leftPos - Math.sqrt(2*pointWidth*pointWidth)/2+'px';
                 points[i].style.top = topPos - Math.sqrt(2*pointWidth*pointWidth)/2 +'px';
-                 title[i-1].style.transform= `translate(100%, 100%)`;
+                 title[i-1].style.transform= `translate(120%, 100%)`;
              }else if (value<100){
                 points[i].style.left = leftPos - (Math.sqrt(2*pointWidth*pointWidth)/2 )-7+'px';
                 points[i].style.top = topPos - (Math.sqrt(2*pointWidth*pointWidth)/2) +7 +'px';
@@ -1298,8 +1299,8 @@ export default {
           let logoDivTop=logo?.offsetTop;
           let nextTop = nextSection?.offsetTop
           if ((window.pageYOffset + screenHeight )> logoDivTop
-          && window.pageYOffset<nextTop){
-            let k = 0.05 
+          && window.pageYOffset<nextTop-500){
+            let k = 0.2 
             let pos = window.pageYOffset + screenHeight - logoDivTop -150; //150 - bottom offset
             if (k*pos<1) pos=1/k;
             // if(logo) logo.style.transform=`scale(${pos*k}) translateY(${pos*0.02}%) translateZ(0)`
@@ -1309,8 +1310,8 @@ export default {
             logo.childNodes[0].style.width=`${pos*k*100}px`
             // if(logo) logo.childNodes[0].style.height=`auto`
           }else{
-          //  if (logo) logo.style.transform=`unset`
-           if (logo) logo.childNodes[0].style.width=`${100}px`
+            // if (logo) logo.childNodes[0].style.width=`${100}px`
+            if (logo) logo.childNodes[0].style.width=`${0}px`
           }
 
           // console.log('scroll',pageYOffset )

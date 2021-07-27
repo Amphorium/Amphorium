@@ -22,18 +22,22 @@ import Preloader from "@/components/preloader";
     created(){
     window.addEventListener("load", ()=> {
       
-      if(performance.now()>5000){
-        this.loading=false;
-      }else {
-        const timer = setInterval(() => {
-          if (performance.now()>5000){
-             this.loading=false;
+      // if(performance.now()>5000){
+      //   this.loading=false;
+      // }else {
+      //   const timer = setInterval(() => {
+      //     if (performance.now()>5000){
+      //        this.loading=false;
             
-             clearInterval(timer)
-          }
-        }, 100);
-      }
-      
+      //        clearInterval(timer)
+      //     }
+      //   }, 100);
+      // }
+      setTimeout(() => {
+        this.loading=false
+        
+      }, 500);
+
     })
   }
   }
