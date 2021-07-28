@@ -1163,6 +1163,13 @@ export default {
       return tokens.sort((a,b)=>{
         return parseFloat(b.percent)-parseFloat(a.percent)}
         )
+    },
+    isMob(){
+       if (window.innerWidth<=768){
+         return true
+       }
+
+       return false
     }
   },
   methods: {
@@ -1326,7 +1333,7 @@ export default {
                 changeImage(19,'#main-img', '.main-banner__img');//first img
                 changeImage(20,'.about__img', '.about__img__img');//first img
         document.addEventListener('scroll', function () {
-            if (window.innerWidth>=769){
+            if (!this.isMob){
                 changeImage(19,'#main-img', '.main-banner__img');
                 changeImage(20,'.about__img', '.about__img__img');
             }
@@ -1364,7 +1371,9 @@ export default {
        
          this.setActiveSlide();
          setTimeout(() => {
-            this.overlay()
+           if (!this.isMob){
+             this.overlay()
+           }
             this.slider()
             this.amphorInit()
          }, 30);
