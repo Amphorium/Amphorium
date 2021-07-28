@@ -1332,12 +1332,12 @@ export default {
         let counter = 0;
                 changeImage(19,'#main-img', '.main-banner__img');//first img
                 changeImage(20,'.about__img', '.about__img__img');//first img
-        document.addEventListener('scroll', function () {
             if (!this.isMob){
+              document.addEventListener('scroll', function () {
                 changeImage(19,'#main-img', '.main-banner__img');
                 changeImage(20,'.about__img', '.about__img__img');
+              });
             }
-        });
 
 
       
