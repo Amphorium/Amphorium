@@ -4647,3 +4647,12 @@ body {
   }
   /* transform: translateX(-50%) translateY(-50%); */
 }
+
+
+// animation
+@media screen and (max-width:768px){
+  [data-aos] {
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+}

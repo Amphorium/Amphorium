@@ -1323,9 +1323,10 @@ export default {
         // const mainImage = document.getElementById('main-img');
      
         let counter = 0;
-
+                changeImage(19,'#main-img', '.main-banner__img');//first img
+                changeImage(20,'.about__img', '.about__img__img');//first img
         document.addEventListener('scroll', function () {
-            if (window.innerWidth>=600){
+            if (window.innerWidth>=769){
                 changeImage(19,'#main-img', '.main-banner__img');
                 changeImage(20,'.about__img', '.about__img__img');
             }
