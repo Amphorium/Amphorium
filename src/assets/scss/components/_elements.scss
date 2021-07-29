@@ -52,7 +52,12 @@
     z-index: 3;
     @include max-screen(sm) {
       width: 39px;
-      right: -11px;
+   //   right: -11px;
+      right: 20px;
+    }
+    @include max-screen(xs) {
+      width: 33px;
+      right: 18px;
     }
   }
 

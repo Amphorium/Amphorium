@@ -1042,7 +1042,7 @@ export default {
         },
         {
           group: 'Private sale 1 (A)',
-          percent: '6.5 %',
+          percent: '6.5%',
           amh: '65 000 000'
         },
         {
