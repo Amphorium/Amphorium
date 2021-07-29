@@ -93,7 +93,7 @@
                :style="{visibility: img===1?'visible':'hidden'}"
                >
                  <img 
-                 :src="require(`@/assets/img/amphor/${img}.png`)" 
+                 :src="require(`@/assets/img/amphor/${img}-min.png`)" 
                  alt="">
               </div>
 
@@ -111,7 +111,7 @@
             v-for="img in 20" 
             :key="img"
             :style="{visibility: img===1?'visible':'hidden'}">
-              <img :src="require(`@/assets/img/earth/${img}.png`)" alt="">
+              <img :src="require(`@/assets/img/earth/${img}-min.png`)" alt="">
             </div>
           </div>
           <div class="about__content">
