@@ -1,17 +1,52 @@
 <!DOCTYPE html>
 <html lang="">
   <head>
+    <!-- <script src="/node_modules/lottie-vuejs/src/LottieAnimation.vue"></script> -->
+    <script rel="preload" src="./tgs-player.js"></script>
+    <link rel="preload" href="./tgs-player.js" as="script">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title>Amphorium</title>
+    <style>
+        #preloader{
+            position: fixed;
+            display: flex;
+            justify-content: center;
+            align-items:center;
+            z-index: 1500000;
+
+            left: 0;top: 0;right: 0;bottom: 0;
+            background: rgba(0,0,0,0.95);
+        }
+        #preloader img {
+          background: black;
+          border: 10px solid #000000;
+          border-radius: 50%;
+          width: 265px;
+          height: 265px;
+          object-fit: none;
+        }
+    </style>
   </head>
   <body>
     <noscript>
       <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
+    <div id="preloader">
+      <lottie-player id="lottie-player" src="https://assets8.lottiefiles.com/private_files/lf30_mapud5ay.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
+    </div>
     <div id="app"></div>
     <!-- built files will be auto injected -->
+    <script>
+       window.addEventListener("load", ()=> {
+      
+      setTimeout(() => {
+        document.querySelector('#preloader').remove()
+      }, 500);
+
+    })
+    </script>
   </body>
 </html>

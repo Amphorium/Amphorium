@@ -1,22 +1,23 @@
 
 <template>
   <div id="preloader">
-     <LottieAnimation
+     <!-- <LottieAnimation
       path="./animationPreloader.json"
       background="transparent"
       :speed="1"
       :width="300"
       :height="300"
       :autoPlay="true"
-     />
+     /> -->
+    <!-- <lottie-player src="https://assets8.lottiefiles.com/private_files/lf30_mapud5ay.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player> -->
   </div>
 </template>
 <script>
-  import LottieAnimation from "lottie-vuejs/src/LottieAnimation.vue";
+  // import LottieAnimation from "lottie-vuejs/src/LottieAnimation.vue";
   export default {
     name: "Preloader",
     components: {
-        LottieAnimation
+        // LottieAnimation
     },
   }
 </script>

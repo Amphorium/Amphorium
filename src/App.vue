@@ -16,29 +16,18 @@ import Preloader from "@/components/preloader";
     },
     data(){
       return {
-        loading: true,
+        loading: false,
       }
     },
     created(){
-    window.addEventListener("load", ()=> {
+    // window.addEventListener("load", ()=> {
       
-      // if(performance.now()>5000){
-      //   this.loading=false;
-      // }else {
-      //   const timer = setInterval(() => {
-      //     if (performance.now()>5000){
-      //        this.loading=false;
-            
-      //        clearInterval(timer)
-      //     }
-      //   }, 100);
-      // }
-      setTimeout(() => {
-        this.loading=false
+    //   setTimeout(() => {
+    //     this.loading=false
         
-      }, 500);
+    //   }, 500);
 
-    })
+    // })
   }
   }
 </script>
