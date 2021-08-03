@@ -66,13 +66,13 @@
           </div>
           <nav class="rules-nav">
             <ul class="rules-nav__list">
-              <li class="rules-nav__item"><a href="#">Terms and conditions</a></li>
-              <li class="rules-nav__item"><a href="#">Privacy policy  </a></li>
-              <li class="rules-nav__item"><a href="#">Legal opinion</a></li>
+              <li class="rules-nav__item"><a href="https://amphorium.io/docs/terms_conditions" target="_blank">Terms and conditions</a></li>
+              <li class="rules-nav__item"><a href="https://amphorium.io/docs/privacy_policy" target="_blank">Privacy policy</a></li>
+              <li class="rules-nav__item"><a href="https://amphorium.io/docs/legal_opinion" target="_blank">Legal opinion</a></li>
             </ul>
           </nav>
           <div class="copyright">
-            <p>© 2021 Amphorium, Inc.
+            <p>© {{ new Date().getFullYear()}} Amphorium, Inc.
             </p>
           </div>
         </div>
