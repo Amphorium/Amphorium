@@ -1,18 +1,18 @@
 <template>
   <div id="app">
-     <Preloader v-if="loading"/>
+     <!-- <Preloader v-if="loading"/> -->
     <router-view/>
   </div>
 </template>
 
 
 <script>
-import Preloader from "@/components/preloader";
+// import Preloader from "@/components/preloader";
 
   export default {
     name: "App",
     components: {
-       Preloader,
+      //  Preloader,
     },
     data(){
       return {
