@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer">
+  <footer class="footer" id="footer">
     <div class="page-shape">
       <div class="page-shape__item page-shape__item--one">
       </div>

@@ -3,9 +3,15 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import vuescroll from 'vuescroll'
+import VueSmoothScroll from 'vue2-smooth-scroll'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 AOS.init();
+
+Vue.use(VueSmoothScroll, {
+    duration: 400,
+    updateHistory: false,
+})
 
 Vue.config.productionTip = false
 Vue.component('vue-scroll', vuescroll);

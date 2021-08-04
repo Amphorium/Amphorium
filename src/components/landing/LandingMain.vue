@@ -39,8 +39,8 @@
           </li>
         </ul>
       </div>
-        <a href="#header" class="up-btn">
-          <span>ВВЕРХ</span>
+        <a href="#header" class="up-btn" v-smooth-scroll>
+          <span>UP</span>
           <img class="default" src="@/assets/img/up-btn.svg" alt="">
           <img class="hover" src="@/assets/img/up-btn-hover.svg" alt="">
         </a>
@@ -102,7 +102,7 @@
         </div>
       </div>
     </section>
-    <section class="about">
+    <section class="about" id="about">
       <div class="container">
         <div class="about__wrap">
           <div class="about__img" >
@@ -132,7 +132,7 @@
         </div>
       </div>
     </section>
-    <section class="calendar" data-aos="fade"
+    <section class="calendar" id="roadmap" data-aos="fade"
              data-aos-duration="1500">
       <div id="cont" data-pct="100" ref="cont" @wheel.prevent="wheel" >
         <svg @load="slider()" id="svg" width="200" height="200" viewPort="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin meet">
@@ -198,8 +198,8 @@
       <!-- <label for="percent">Type a percent!</label>
       <input id="percent" name="percent" ref="percent"> -->
     </section>
-    <section class="calendar" data-aos="fade"
-             data-aos-duration="1500">
+    <!-- <section class="calendar" data-aos="fade"
+             data-aos-duration="1500"> -->
       <!-- <div class="calendar-slider-img">
         <div class="calendar-slider-img__item calendar-slider-img__item--one flying-el-reverse">
           <img src="@/assets/img/coin-calendar-1.svg" alt="">
@@ -289,7 +289,7 @@
           </div>
         </div>
       </div> -->
-    </section>
+    <!-- </section> -->
     <div class="logo-section" ref="logoSection" style="text-align: center; position:relative" >
       <img style="position:absolute" src="@/assets/img/logo-icon1.svg" alt="">
       <!-- <svg width="81" height="81" viewBox="0 0 81 81" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin none" x="0px" y="0px">
@@ -297,7 +297,7 @@
       </svg> -->
     </div>
     <div class="white-background" id="white-section" >
-      <section class="tokenomics"  ref="nextSection">
+      <section class="tokenomics" id="tokenomics" ref="nextSection">
         <div class="container">
           <div class="tokenomics__wrap">
             <div class="tokenomics__content">
@@ -437,7 +437,7 @@
           <img style="position:absolute" src="@/assets/img/logo-icon2.svg" alt="">
         </div>
     </div>
-    <section class="history" ref="nextSectionTwo">
+    <section class="history" id="history" ref="nextSectionTwo">
       <div class="history-bg">
         <img src="@/assets/img/map-img.png" alt="">
       </div>
@@ -498,7 +498,7 @@
         </div>
       </div>
     </section>
-    <section class="news">
+    <section class="news" id="news">
       <div class="container">
         <div class="my-title" data-aos="fade-up"
              data-aos-duration="1500" 
@@ -554,7 +554,7 @@
         </div>
       </div>
     </section>
-    <section class="facts">
+    <section class="facts" id="facts">
       <div class="container">
         <div class="my-title" data-aos="fade-up"
              data-aos-duration="1500">
@@ -624,7 +624,7 @@
         </div>
       </div>
     </section>
-    <section class="partners">
+    <section class="partners" id="partners">
       <div class="container">
         <div class="my-title" data-aos="fade-up"
              data-aos-duration="1500">
@@ -680,7 +680,7 @@
         </div>
       </div>
     </section>
-    <section class="audit">
+    <section class="audit" id="audit">
       <div class="container">
         <div class="audit__wrap">
           <div class="audit__info">

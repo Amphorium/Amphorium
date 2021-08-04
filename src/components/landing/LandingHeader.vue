@@ -2,41 +2,41 @@
 <header class="header" id="header">
   <div class="container">
     <div class="header__wrap">
-      <a class="logo" href=""><img src="@/assets/img/logo.svg" alt=""></a>
+      <a class="logo" href="#"><img src="@/assets/img/logo.svg" alt=""></a>
       <nav class="main-nav">
         <ul class="main-nav__list">
           <li class="main-nav__item">
-            <a target="_blank" href="">
+            <a href="#about" v-smooth-scroll>
               About
             </a>
           </li>
           <li class="main-nav__item">
-            <a target="_blank" href="">
+            <a href="#history" v-smooth-scroll>
               Overview
             </a>
           </li>
           <li class="main-nav__item">
-            <a target="_blank" href="">
+            <a href="#facts" v-smooth-scroll>
               Technology
             </a>
           </li>
           <li class="main-nav__item">
-            <a target="_blank" href="">
+            <a href="#roadmap" v-smooth-scroll>
               Roadmap
             </a>
           </li>
           <li class="main-nav__item">
-            <a target="_blank" href="">
+            <a href="#tokenomics" v-smooth-scroll>
               Tokenomics
             </a>
           </li>
           <li class="main-nav__item">
-            <a target="_blank" href="">
+            <a href="#news" v-smooth-scroll>
               News
             </a>
           </li>
           <li class="main-nav__item">
-            <a target="_blank" href="">
+            <a href="#footer" v-smooth-scroll>
               Contacts
             </a>
           </li>

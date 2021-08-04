@@ -1296,7 +1296,7 @@ body {
 }
 
 .calendar {
-  margin-top: 290px;
+ margin: 290px 0;
   position: relative;
   @include max-screen(xl) {
     margin-top: 190px;
