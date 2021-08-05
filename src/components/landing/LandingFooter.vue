@@ -69,6 +69,7 @@
               <li class="rules-nav__item"><a href="https://amphorium.io/docs/terms_conditions" target="_blank">Terms and conditions</a></li>
               <li class="rules-nav__item"><a href="https://amphorium.io/docs/privacy_policy" target="_blank">Privacy policy</a></li>
               <li class="rules-nav__item"><a href="https://amphorium.io/docs/legal_opinion" target="_blank">Legal opinion</a></li>
+              <li class="rules-nav__item"><a href="https://amphorium.io/docs/whitepaper" target="_blank">Whitepaper</a></li>
             </ul>
           </nav>
           <div class="copyright">
