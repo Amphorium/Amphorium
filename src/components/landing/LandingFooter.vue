@@ -20,14 +20,31 @@
           <div class="my-title">
             <h2 @mousemove="textLighting" @mouseleave="resetTextLighting">Sign up for updates</h2>
           </div>
-          <form action="" class="footer-form">
+          <div id="mc_embed_signup">
+            <form action="https://gmail.us5.list-manage.com/subscribe/post?u=a0d50844253560014af2f6314&amp;id=8d63ea082e" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate footer-form" target="_blank" novalidate>
+                <div id="mc_embed_signup_scroll" class="big-input">
+            <!-- <label for="mce-EMAIL">Subscribe</label> -->
+                  <input type="email" value="" name="EMAIL" class="big-input__input" id="mce-EMAIL" placeholder="Your email" required>
+                </div>
+                <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_a0d50844253560014af2f6314_8d63ea082e" tabindex="-1" value=""></div>
+                <div class="footer-form__btn">
+                  <button class="my-btn"><span class="my-btn__arrow"></span> <span class="my-btn__content">Get updates</span></button>
+                </div>
+                <!-- <div class="clear">
+                  <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+                  </div> -->
+                
+            </form>
+          </div>
+          <!-- <form action="" class="footer-form">
             <div class="big-input">
               <input type="text" class="big-input__input" placeholder="Your email">
             </div>
             <div class="footer-form__btn">
               <button class="my-btn"><span class="my-btn__arrow"></span> <span class="my-btn__content">Get updates</span></button>
             </div>
-          </form>
+          </form> -->
           <div class="footer__text">
             <p>We won't share your email address or send you any spam.
             </p>
