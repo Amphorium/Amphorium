@@ -43,7 +43,7 @@
         </ul>
       </nav>
       <div class="header__btn">
-        <button class="my-btn-border">Get access</button>
+        <a href="#footer" class="my-btn-border" v-smooth-scroll><span>Get updates</span></a>
       </div>
       <button class="burger-btn" @click="isOpenMobMenu=!isOpenMobMenu"></button>
       <div class="mobile-menu" :class="{active:isOpenMobMenu}">
@@ -65,7 +65,9 @@
           <li><a href="#footer" v-smooth-scroll>Contact</a></li>
         </ul>
         <div class="mobile-menu__btn">
-          <button class="my-btn-border my-btn-border--white"><span>Get access</span></button>
+          <a href="#footer" class="my-btn-border my-btn-border--white" v-smooth-scroll>
+            <span>Get updates</span>
+          </a>
         </div>
       </div>
     </div>

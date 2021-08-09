@@ -114,6 +114,10 @@
 }
 
 .my-btn-border {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   background: transparent;
   border: 1px solid #F99B8D;
   height: 40px;
