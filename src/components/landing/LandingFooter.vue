@@ -35,29 +35,30 @@
           <div class="social">
             <ul class="social__list">
               <li class="social__item">
-                <a href="#">
+                <a target="_blank" href="https://t.me/Amphorium">
                   <img class="default" src="@/assets/img/social-1.svg" alt="">
                   <img class="hover" src="@/assets/img/social-1-hover.svg" alt="">
                 </a>
               </li>
               <li class="social__item">
-                <a href="#">
+                <a target="_blank" href="https://twitter.com/Amphorium_io">
                   <img class="default" src="@/assets/img/social-2.svg" alt="">
                   <img class="hover" src="@/assets/img/social-2-hover.svg" alt="">
                 </a>
               </li>
               <li class="social__item">
-                <a href="#"><img class="default" src="@/assets/img/social-3.svg" alt="">
+                <a target="_blank" href="#">
+                  <img class="default" src="@/assets/img/social-3.svg" alt="">
                   <img class="hover" src="@/assets/img/social-3-hover.svg" alt=""></a>
               </li>
               <li class="social__item">
-                <a href="#">
+                <a target="_blank" href="https://www.reddit.com/r/Amphorium/">
                   <img class="default" src="@/assets/img/social-4.svg" alt="">
                   <img class="hover" src="@/assets/img/social-4-hover.svg" alt="">
                 </a>
               </li>
               <li class="social__item">
-                <a href="#">
+                <a target="_blank" href="https://discord.com/channels/873621728490827896/873621728490827901">
                   <img class="default" src="@/assets/img/social-5.svg" alt="">
                   <img class="hover" src="@/assets/img/social-5-hover.svg" alt="">
                 </a>

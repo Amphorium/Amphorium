@@ -148,8 +148,8 @@
           <circle cx="20" cy="20" r="20" fill="white"/>
           <circle cx="20.0003" cy="20" r="9.14286" fill="#FAA091"/>
         </svg>
-          <p class="roadmap-title">Roadmap</p>
-          <div class="year" v-for="(point,index) of roadMap" :key="index+'year'">
+          <p class="roadmap-title" style="pointer-events:none">Roadmap</p>
+          <div class="year" style="pointer-events:none" v-for="(point,index) of roadMap" :key="index+'year'">
             <p v-if="point.focus">{{point.date.year}}</p>
           </div>
           <div class="calendar-slide__btn">
@@ -181,115 +181,11 @@
               </div>
            </div>
             
-        <!-- <svg ref="point" class="point-circle" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="20" cy="20" r="20" fill="white"/>
-          <circle cx="20.0003" cy="20" r="9.14286" fill="#FAA091"/>
-        </svg>
-        <svg ref="point" class="point-circle" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="20" cy="20" r="20" fill="white"/>
-          <circle cx="20.0003" cy="20" r="9.14286" fill="#FAA091"/>
-        </svg>
-        <svg ref="point" class="point-circle" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="20" cy="20" r="20" fill="white"/>
-          <circle cx="20.0003" cy="20" r="9.14286" fill="#FAA091"/>
-        </svg> -->
 
       </div>
       <!-- <label for="percent">Type a percent!</label>
       <input id="percent" name="percent" ref="percent"> -->
     </section>
-    <!-- <section class="calendar" data-aos="fade"
-             data-aos-duration="1500"> -->
-      <!-- <div class="calendar-slider-img">
-        <div class="calendar-slider-img__item calendar-slider-img__item--one flying-el-reverse">
-          <img src="@/assets/img/coin-calendar-1.svg" alt="">
-        </div>
-        <div class="calendar-slider-img__item calendar-slider-img__item--two flying-el">
-          <img src="@/assets/img/coin-calendar-2.svg" alt="">
-        </div>
-        <div class="calendar-slider-img__item calendar-slider-img__item--three flying-el-reverse">
-          <img src="@/assets/img/coin-calendar-3.svg" alt="">
-        </div>
-        <div class="calendar-slider-img__item calendar-slider-img__item--four flying-el-reverse">
-          <img src="@/assets/img/coin-calendar-4.svg" alt="">
-        </div>
-      </div>
-      <div class="calendar-slider">
-        <div class="calendar-slide"
-             v-for="(slide, slideIdx) in roadMap"
-             :class="{'active': slide.focus}"
-             :key="slideIdx"
-          >
-          <div class="container">
-            <div class="calendar-slide__circle-bg"></div>
-            <div class="calendar-slide__circle" @wheel.prevent="wheel">
-              <div class="calendar-slide__text">
-                <p><span>Roadmap</span>{{ slide.date.year }}</p>
-              </div>
-              <div class="calendar-slide__img" :class="'calendar-slide__img--' + (slideIdx+1)">
-                <div class="calendar-info "
-                     v-for="(item, idx) in quarters"
-                     :class="['calendar-info--' + (idx+1), {'active': slideIdx === idx}]"
-                     :key="idx"
-                >
-
-                  <button type="button"
-                          class="calendar-info__point"
-                          @click="toSlide(idx)"
-                  ></button>
-                  <div class="calendar-info__drop" ref="title">
-                    <div class="calendar-item">
-                      <div class="calendar-item__wrap">
-                        <div class="date">
-                          <p>{{ item.date }}</p>
-                        </div>
-                        <div class="calendar-item__title">
-                          <p>{{ item.title }}</p>
-                        </div>
-                        <div class="calendar-item__text">
-                          <p>{{ item.text }} </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-            <div class="calendar-slide__title">
-              <p>{{ slide.date.month }} {{ slide.date.year }}</p>
-            </div>
-            <div class="calendar-slide__btn">
-              <span class="scroll-btn">
-                <span class="scroll-btn__circle"></span>
-                <span class="scroll-btn__circle"></span>
-                <span class="scroll-btn__circle"></span>
-                <span class="scroll-btn__arrow"></span>
-              </span>
-            </div>
-            <div class="calendar-mobile-drop">
-              <div class="calendar-item">
-                <div class="calendar-item__wrap">
-                  <div class="date">
-                    <p>{{roadMap[initialCounter].date.month}} , {{roadMap[initialCounter].date.year}}</p>
-                  </div>
-                  <div class="calendar-item__title">
-                    <p>{{quarters[initialCounter].title}}</p>
-                  </div>
-                  <div class="calendar-item__text">
-                    <p>{{quarters[initialCounter].text}}</p>
-                  </div>
-                </div>
-              </div>
-              <div class="calendar-mobile-drop__btns">
-                <button @click="prevSlide" class="calendar-btn calendar-btn--prev">Prev</button>
-                <button @click="nextSlide" class="calendar-btn calendar-btn--next">Next</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> -->
-    <!-- </section> -->
     <div class="logo-section" ref="logoSection" style="text-align: center; position:relative" >
       <img style="position:absolute" src="@/assets/img/logo-icon1.svg" alt="">
       <!-- <svg width="81" height="81" viewBox="0 0 81 81" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin none" x="0px" y="0px">
@@ -333,44 +229,6 @@
               </div>
             </div>
           </div>
-          <!-- <div class="schedule-details">
-            <div class="schedule-details__info">
-              <div class="schedule-details__title" data-aos="fade-up"
-                   data-aos-duration="1500">
-                <p>Release
-                  Schedule
-                </p>
-              </div>
-              <div class="schedule-details__text" data-aos="fade-up"
-                   data-aos-duration="1500">
-                <p>(not necessatily
-                  circulating)</p>
-              </div>
-            </div>
-            <div class="schedule-details__img">
-              <img src="@/assets/img/schedule-2.svg" alt="">
-            </div>
-            <div class="schedule-details-explanation">
-              <ul class="schedule-details-explanation__list" data-aos="fade-up"
-                  data-aos-duration="1500">
-                <li><span class="marker marker--1"></span>
-                  <p class="schedule-details-explanation__title">Community: </p>
-                  <p class="schedule-details-explanation__text">Network Usage Rewards</p>
-                </li>
-                <li><span class="marker marker--2"></span>
-                  <p class="schedule-details-explanation__title">Community: </p>
-                  <p class="schedule-details-explanation__text">Treasuru, Developers, Partners,
-                    liquidity Providers, and more</p>
-                </li>
-                <li><span class="marker marker--3"></span>
-                  <p class="schedule-details-explanation__title">Seed Investors: </p>
-                </li>
-                <li><span class="marker marker--3"></span>
-                  <p class="schedule-details-explanation__title">Team</p>
-                </li>
-              </ul>
-            </div>
-          </div> -->
           <div class="token-emission">
             <div class="token-emission__info">
               <div class="schedule-details__title" data-aos="fade-up"
@@ -793,45 +651,6 @@
         </div>
       </div>
     </section>
-<!--    <section class="faq">-->
-<!--      <div class="container">-->
-<!--        <div class="my-title my-title&#45;&#45;left">-->
-<!--          <h2>FAQ</h2>-->
-<!--        </div>-->
-<!--        <div class="faq__wrap">-->
-<!--          <div class="faq__content">-->
-<!--            <div v-for="(item, index) in faq" class="faq-item" :class="{active: item.isShow}" :key="index">-->
-<!--              <button class="faq-item__top" @click="item.isShow = !item.isShow">{{item.title}}</button>-->
-<!--              <div class="faq-item__content">-->
-<!--                <p>-->
-<!--                  {{item.text1}}-->
-<!--                </p>-->
-<!--                <p>{{item.text2}}</p>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--          <div class="faq__sidebar">-->
-<!--            <div class="faq-sidebar">-->
-<!--              <div class="faq-sidebar__content">-->
-<!--                <div class="faq-sidebar__img">-->
-<!--                  <img src="@/assets/img/faq-img.svg" alt="">-->
-<!--                </div>-->
-<!--                <div class="faq-sidebar__title">-->
-<!--                  <p>Still have-->
-<!--                    questions?</p>-->
-<!--                </div>-->
-<!--                <div class="faq-sidebar__text">-->
-<!--                  <p>Leave your contacts and we will answer them</p>-->
-<!--                </div>-->
-<!--                <div class="faq-sidebar__btn">-->
-<!--                  <button class="my-btn">Ask a Question</button>-->
-<!--                </div>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </section>-->
 
 
     <div class="cursor">
@@ -1192,6 +1011,18 @@ export default {
       this.setActiveSlide();
       this.slider()
     },
+    chooseSlide(e){
+     const points =  document.body.querySelectorAll('.point-circle');
+     for (let i = 0; i < points.length; i++){
+       if (e.target.closest('.point-circle') ===points[i]){
+         console.log(i);
+          this.initialCounter=i-1;
+          if (i === 0) this.initialCounter=points.length-1
+          this.setActiveSlide();
+          this.slider()
+       }
+     }
+    },
     slider(){
       let bar=  this.$refs.bar;
       let barBg=  this.$refs.barBg;
@@ -1376,6 +1207,8 @@ export default {
            }
             this.slider()
             this.amphorInit()
+
+            document.body.querySelector('#cont').addEventListener('click',this.chooseSlide)
          }, 30);
       });
   },
@@ -1389,6 +1222,9 @@ export default {
        background-clip: text;
       //  background-image: radial-gradient(circle at 170px 40px, rgb(209, 12, 12) 0%, #fff 6rem);
      }
+  }
+  .calendar-info__drop{
+    pointer-events: none;
   }
     /* #cont:after {//show percentage
   position: absolute;

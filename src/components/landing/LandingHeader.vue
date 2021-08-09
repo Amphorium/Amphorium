@@ -56,13 +56,13 @@
           </div>
         </div>
         <ul class="mobile-menu__list">
-          <li><a href="#">About</a></li>
-          <li><a href="#">Overview</a></li>
-          <li><a href="#">Technology</a></li>
-          <li><a href="#">Roadmap</a></li>
-          <li><a href="#">Tokenomics</a></li>
-          <li><a href="#">News</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="#about" v-smooth-scroll>About</a></li>
+          <li><a href="#history" v-smooth-scroll>Overview</a></li>
+          <li><a href="#facts" v-smooth-scroll>Technology</a></li>
+          <li><a href="#roadmap" v-smooth-scroll>Roadmap</a></li>
+          <li><a href="#tokenomics" v-smooth-scroll>Tokenomics</a></li>
+          <li><a href="#news" v-smooth-scroll>News</a></li>
+          <li><a href="#footer" v-smooth-scroll>Contact</a></li>
         </ul>
         <div class="mobile-menu__btn">
           <button class="my-btn-border my-btn-border--white"><span>Get access</span></button>

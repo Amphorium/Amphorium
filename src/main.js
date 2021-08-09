@@ -45,29 +45,40 @@ new Vue({
 
         }
 
-        function elementInViewport(el) {
-            let top = el.offsetTop;
-            let left = el.offsetLeft;
-            let width = el.offsetWidth;
-            let height = el.offsetHeight;
+        // function elementInViewport(el) {
+        //     let top = el.offsetTop;
+        //     let left = el.offsetLeft;
+        //     let width = el.offsetWidth;
+        //     let height = el.offsetHeight;
 
-            while(el.offsetParent) {
-                el = el.offsetParent;
-                top += el.offsetTop;
-                left += el.offsetLeft;
-            }
+        //     while(el.offsetParent) {
+        //         el = el.offsetParent;
+        //         top += el.offsetTop;
+        //         left += el.offsetLeft;
+        //     }
 
-            return (
-                top < (window.pageYOffset + window.innerHeight) &&
-                left < (window.pageXOffset + window.innerWidth) &&
-                (top + height) > window.pageYOffset &&
-                (left + width) > window.pageXOffset
-            );
-        }
+        //     return (
+        //         top < (window.pageYOffset + window.innerHeight) &&
+        //         left < (window.pageXOffset + window.innerWidth) &&
+        //         (top + height) > window.pageYOffset &&
+        //         (left + width) > window.pageXOffset
+        //     );
+        // }
 
   
         window.addEventListener('scroll', ()=> {
-            const isWhiteSection = elementInViewport(whiteSection);
+            // const isWhiteSection = elementInViewport(whiteSection);
+            const whiteSectionTop = whiteSection.getBoundingClientRect().top;
+            const whiteSectionBottom = whiteSection.getBoundingClientRect().bottom;
+            let isWhiteSection;
+            if (whiteSectionTop>0 && whiteSectionTop<window.innerHeight/2  ||
+                whiteSectionTop<0 && whiteSectionBottom>window.innerHeight/2
+                ){
+                isWhiteSection = true
+            }else{
+                isWhiteSection=false
+            }
+            console.log(whiteSectionTop,whiteSectionBottom,isWhiteSection);
             if (isWhiteSection) {
                 sideMenu.classList.add('side-menu--dark')
             }else{
