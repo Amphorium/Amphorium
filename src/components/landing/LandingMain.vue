@@ -491,49 +491,54 @@
         <div class="partners-grid" data-aos="fade"
              data-aos-duration="1500">
           <a href="#" class="partners-item">
-            <img src="@/assets/img/partner-1.svg" alt="">
+            <!-- <img src="@/assets/img/partner-1.svg" alt=""> -->
+            <img src="https://clover.finance/partner/graph.png" alt="">
           </a>
           <a href="#" class="partners-item">
-            <img src="@/assets/img/partner-2.svg" alt="">
+            <!-- <img src="@/assets/img/partner-2.svg" alt=""> -->
+            <img src="https://clover.finance/partner/chainlink.png" alt="">
           </a>
           <a href="#" class="partners-item">
-            <img src="@/assets/img/partner-3.svg" alt="">
+            <!-- <img src="@/assets/img/partner-3.svg" alt=""> -->
+            <img src="https://clover.finance/partner/prosper.png" alt="">
           </a>
           <a href="#" class="partners-item">
-            <img src="@/assets/img/partner-4.svg" alt="">
+            <!-- <img src="@/assets/img/partner-4.svg" alt=""> -->
+            <img src="https://clover.finance/partner/dodo.png" alt="">
           </a>
           <a href="#" class="partners-item">
-            <img src="@/assets/img/partner-5.svg" alt="">
+            <!-- <img src="@/assets/img/partner-5.svg" alt=""> -->
+            <img src="https://clover.finance/partner/polygon.png" alt="">
           </a>
           <a href="#" class="partners-item">
-            <img src="@/assets/img/partner-5.svg" alt="">
+            <img src="https://clover.finance/partner/litentry.png" alt="">
           </a>
           <a href="#" class="partners-item">
-            <img src="@/assets/img/partner-5.svg" alt="">
+            <img src="https://clover.finance/partner/boringdao.png" alt="">
           </a>
           <a href="#" class="partners-item">
-            <img src="@/assets/img/partner-2.svg" alt="">
+            <img src="https://clover.finance/partner/injective.png" alt="">
           </a>
           <a href="#" class="partners-item">
-            <img src="@/assets/img/partner-1.svg" alt="">
+            <img src="https://clover.finance/partner/crust.png" alt="">
           </a>
           <a href="#" class="partners-item">
-            <img src="@/assets/img/partner-3.svg" alt="">
+            <img src="https://clover.finance/partner/showcase.png" alt="">
           </a>
           <a href="#" class="partners-item">
-            <img src="@/assets/img/partner-1.svg" alt="">
+            <img src="https://clover.finance/partner/hedget.png" alt="">
           </a>
           <a href="#" class="partners-item">
-            <img src="@/assets/img/partner-2.svg" alt="">
+            <img src="https://clover.finance/partner/snowswap.png" alt="">
           </a>
           <a href="#" class="partners-item">
-            <img src="@/assets/img/partner-3.svg" alt="">
+            <img src="https://clover.finance/partner/etha_lend.png" alt="">
           </a>
           <a href="#" class="partners-item">
-            <img src="@/assets/img/partner-4.svg" alt="">
+            <img src="https://clover.finance/partner/unilend.png" alt="">
           </a>
           <a href="#" class="partners-item">
-            <img src="@/assets/img/partner-5.svg" alt="">
+            <img src="https://clover.finance/partner/alice.png" alt="">
           </a>
         </div>
       </div>

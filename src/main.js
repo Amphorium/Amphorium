@@ -78,7 +78,6 @@ new Vue({
             }else{
                 isWhiteSection=false
             }
-            console.log(whiteSectionTop,whiteSectionBottom,isWhiteSection);
             if (isWhiteSection) {
                 sideMenu.classList.add('side-menu--dark')
             }else{
