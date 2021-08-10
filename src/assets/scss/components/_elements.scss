@@ -2,7 +2,10 @@
 @import '../lib/var';
 
 .my-btn {
-
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
   padding: 25px;
   height: 80px;
   width: 335px;

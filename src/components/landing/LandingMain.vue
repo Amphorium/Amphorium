@@ -82,7 +82,11 @@
               </li>
             </ul>
             <div class="main-banner__btn">
-              <button class="my-btn"><span class="my-btn__arrow"></span> <span class="my-btn__content">Get updates</span></button>
+              <!-- <button class="my-btn"><span class="my-btn__arrow"></span> <span class="my-btn__content">Get updates</span></button> -->
+               <a href="https://amphorium.io/docs/whitepaper" target="_blank" class="my-btn">
+               <span class="my-btn__arrow"></span>
+                <span class="my-btn__content">Get updates</span>
+              </a>
             </div>
           </div>
           <div id="main-img">
