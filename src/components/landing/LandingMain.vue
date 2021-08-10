@@ -138,7 +138,7 @@
     </section>
     <section class="calendar" id="roadmap" data-aos="fade"
              data-aos-duration="1500">
-      <div id="cont" data-pct="100" ref="cont" @wheel.prevent="wheel" >
+      <div id="cont" data-pct="100" ref="cont" @wheel="wheel" >
         <svg @load="slider()" id="svg" width="200" height="200" viewPort="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin meet">
           <circle ref="barBg" r="275" cx="282.5" cy="282.5" fill="transparent" stroke-dasharray="0" stroke-dashoffset="0"></circle>
           <!-- <circle id="bar" ref="bar" r="48%" cx="50%" cy="50%" fill="transparent" stroke-dasharray="1728" stroke-dashoffset="0"></circle> -->
@@ -1008,14 +1008,16 @@ export default {
      this.$emit('mouseleave', event)
 
     },
-    nextSlide() {
+    nextSlide(e) {
       if (this.initialCounter === this.roadMap.length - 1) return false
+      e.preventDefault()
       this.initialCounter++;
       this.setActiveSlide();
       this.slider()
     },
-    prevSlide() {
+    prevSlide(e) {
       if (this.initialCounter === 0) return false
+       e.preventDefault()
       this.initialCounter--;
       this.setActiveSlide();
       this.slider()
@@ -1121,9 +1123,9 @@ export default {
     },
     wheel(e) {
       if (e.deltaY < 0) {
-        this.prevSlide();
+        this.prevSlide(e);
       } else {
-        this.nextSlide();
+        this.nextSlide(e);
       }
     },
     changeStep(idx) {
