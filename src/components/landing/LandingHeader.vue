@@ -43,7 +43,7 @@
         </ul>
       </nav>
       <div class="header__btn">
-        <a href="https://amphorium.io/docs/whitepaper" target="_blank" class="my-btn-border"><span>Get updates</span></a>
+        <a href="https://amphorium.io/docs/whitepaper" target="_blank" class="my-btn-border"><span>whitepaper</span></a>
       </div>
       <button class="burger-btn" @click="isOpenMobMenu=!isOpenMobMenu"></button>
       <div class="mobile-menu" :class="{active:isOpenMobMenu}">
@@ -66,7 +66,7 @@
         </ul>
         <div class="mobile-menu__btn">
           <a href="https://amphorium.io/docs/whitepaper" target="_blank" class="my-btn-border my-btn-border--white">
-            <span>Get updates</span>
+            <span>whitepaper</span>
           </a>
         </div>
       </div>

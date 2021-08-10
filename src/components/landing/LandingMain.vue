@@ -85,7 +85,7 @@
               <!-- <button class="my-btn"><span class="my-btn__arrow"></span> <span class="my-btn__content">Get updates</span></button> -->
                <a href="https://amphorium.io/docs/whitepaper" target="_blank" class="my-btn">
                <span class="my-btn__arrow"></span>
-                <span class="my-btn__content">Get updates</span>
+                <span class="my-btn__content">whitepaper</span>
               </a>
             </div>
           </div>
