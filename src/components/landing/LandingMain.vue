@@ -566,10 +566,9 @@ Join our community!</p>
             </div>
             <div class="audit__subtitle" data-aos="fade-up"
                  data-aos-duration="1500">
-              <p>Two of the most prominent leaders in blockchain security have lent their expertise to audit $CQT. We have been able to fix all high - level issues and acknowledged that $CQT’s smart contract contains the Centralization of Power (“COP”).
+              <p>One of the most prominent leaders in blockchain security has contributed his expertise to AMH auditing. We were able to fix all the high-level issues and recognized that the AMH smart contract doesn't contain centralization of power.
               </p>
-              <p>As of Oct 22, 2020 we are Quantstamp verified.
-                As of Oct 6, 2020 we are CertiK Very High Confidence security level.</p>
+              <!-- <p>As of August 1, 2021, we have passed the Ambisafe audit.</p> -->
             </div>
             <div class="audit__links" data-aos="fade-up"
                  data-aos-duration="1500">
@@ -580,7 +579,34 @@ Join our community!</p>
           <div class="audit__content">
             <div class="audit-grid" data-aos="fade"
                  data-aos-duration="1500">
-              <div class="audit-grid__item">
+              <!-- <div class="audit-grid__item">
+                <div class="audit-card">
+                  <div class="audit-card__wrap">
+                    <div class="audit-card__img">
+                      <img src="@/assets/img/audit-img.svg" alt="">
+                    </div>
+                    <div class="audit-card__title"><p>Lorem ipsum
+                      dolor sit amet</p></div>
+                    <div class="audit-card__text">
+                      <p>(10mB, pdf)</p>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+              <div class="audit-grid__item" style="width:auto">
+                <div class="audit-card">
+                  <div class="audit-card__wrap">
+                    <div class="audit-card__img">
+                      <img src="@/assets/img/audit-img.svg" alt="">
+                    </div>
+                    <div class="audit-card__title"><p>As of August 1, 2021, </p></div>
+                    <div class="audit-card__text">
+                      <p>we have passed the Ambisafe audit.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- <div class="audit-grid__item">
                 <div class="audit-card">
                   <div class="audit-card__wrap">
                     <div class="audit-card__img">
@@ -635,35 +661,7 @@ Join our community!</p>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="audit-grid__item">
-                <div class="audit-card">
-                  <div class="audit-card__wrap">
-                    <div class="audit-card__img">
-                      <img src="@/assets/img/audit-img.svg" alt="">
-                    </div>
-                    <div class="audit-card__title"><p>Lorem ipsum
-                      dolor sit amet</p></div>
-                    <div class="audit-card__text">
-                      <p>(10mB, pdf)</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="audit-grid__item">
-                <div class="audit-card">
-                  <div class="audit-card__wrap">
-                    <div class="audit-card__img">
-                      <img src="@/assets/img/audit-img.svg" alt="">
-                    </div>
-                    <div class="audit-card__title"><p>Lorem ipsum
-                      dolor sit amet</p></div>
-                    <div class="audit-card__text">
-                      <p>(10mB, pdf)</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
