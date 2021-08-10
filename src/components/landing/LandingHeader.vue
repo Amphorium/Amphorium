@@ -43,7 +43,7 @@
         </ul>
       </nav>
       <div class="header__btn">
-        <a href="#footer" class="my-btn-border" v-smooth-scroll><span>Get updates</span></a>
+        <a href="https://amphorium.io/docs/whitepaper" target="_blank" class="my-btn-border"><span>Get updates</span></a>
       </div>
       <button class="burger-btn" @click="isOpenMobMenu=!isOpenMobMenu"></button>
       <div class="mobile-menu" :class="{active:isOpenMobMenu}">
@@ -65,7 +65,7 @@
           <li><a href="#footer" v-smooth-scroll>Contact</a></li>
         </ul>
         <div class="mobile-menu__btn">
-          <a href="#footer" class="my-btn-border my-btn-border--white" v-smooth-scroll>
+          <a href="https://amphorium.io/docs/whitepaper" target="_blank" class="my-btn-border my-btn-border--white">
             <span>Get updates</span>
           </a>
         </div>
