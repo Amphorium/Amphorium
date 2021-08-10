@@ -2557,6 +2557,23 @@ body {
       font-family: $bold;
     }
   }
+  &__ul{
+    .my-list__item{
+
+      &+li{
+        margin-top: 5px;
+      }
+      &::before{
+        top:13px;
+        @include max-screen(md){
+          top:5px;
+        }
+      }
+      // &::marker{
+      //   lis
+      // }
+    }
+  }
 }
 
 .tokenomics {
