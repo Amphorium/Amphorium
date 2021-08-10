@@ -18,7 +18,7 @@
             </a>
           </li>
           <li class="social__item">
-            <a href="#"><img class="default" src="@/assets/img/social-3.svg" alt="">
+            <a target="_blank" href="https://medium.com/@Amphorium"><img class="default" src="@/assets/img/social-3.svg" alt="">
               <img class="hover" src="@/assets/img/social-3-hover.svg" alt="">
               <img class="dark" src="@/assets/img/social-3-dark.svg" alt="">
             </a>
