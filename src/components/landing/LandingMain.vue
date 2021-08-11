@@ -64,7 +64,9 @@
         <div class="main-banner__wrap">
           <div class="main-banner__info">
             <div class="main-banner__title">
-              <h1 @mousemove="textLighting" @mouseleave="resetTextLighting">MONITOR. PROTECT. CONTROL.</h1>
+              <h1 @mousemove="textLighting" @mouseleave="resetTextLighting">
+                <span>MONITOR.</span><span> PROTECT.</span><span> CONTROL.</span>
+              </h1>
             </div>
             <ul class="my-list">
               <li class="my-list__item">
@@ -401,11 +403,11 @@ Join our community!</p>
                     <div class="news-card__text">
                       <p>{{n.text}}</p>
                     </div>
-                    <div class="news-card__link">
+                    <!-- <div class="news-card__link">
                       <a href="#" class="more">
                         <span class="more__text">Read more</span>
                       </a>
-                    </div>
+                    </div> -->
                   </div>
                 </div>
             </swiper-slide>
@@ -416,7 +418,7 @@ Join our community!</p>
           </div>
           <!-- </vue-scroll> -->
         </div>
-        <div class="news__link" data-aos="fade-up"
+        <!-- <div class="news__link" data-aos="fade-up"
              data-aos-duration="1500">
           <a href="#" class="read-all"><span 
             @mousemove="textLighting"
@@ -424,7 +426,7 @@ Join our community!</p>
             >Read All News
             </span>
           </a>
-        </div>
+        </div> -->
       </div>
     </section>
     <section class="facts" id="facts">
@@ -593,7 +595,7 @@ Join our community!</p>
                   </div>
                 </div>
               </div> -->
-              <div class="audit-grid__item" style="width:auto">
+              <div class="audit-grid__item">
                 <div class="audit-card">
                   <div class="audit-card__wrap">
                     <div class="audit-card__img">
@@ -606,17 +608,16 @@ Join our community!</p>
                   </div>
                 </div>
               </div>
-              <!-- <div class="audit-grid__item">
+              <div class="audit-grid__item">
                 <div class="audit-card">
                   <div class="audit-card__wrap">
                     <div class="audit-card__img">
                       <img src="@/assets/img/audit-img.svg" alt="">
                     </div>
-                    <div class="audit-card__title"><p>Lorem ipsum
-                      dolor sit amet</p></div>
-                    <div class="audit-card__text">
-                      <p>(10mB, pdf)</p>
-                    </div>
+                    <div class="audit-card__title"><p>Comming soon</p></div>
+                    <!-- <div class="audit-card__text">
+                      <p>we have passed the Ambisafe audit.</p>
+                    </div> -->
                   </div>
                 </div>
               </div>
@@ -626,42 +627,13 @@ Join our community!</p>
                     <div class="audit-card__img">
                       <img src="@/assets/img/audit-img.svg" alt="">
                     </div>
-                    <div class="audit-card__title"><p>Lorem ipsum
-                      dolor sit amet</p></div>
-                    <div class="audit-card__text">
-                      <p>(10mB, pdf)</p>
-                    </div>
+                    <div class="audit-card__title"><p>Comming soon</p></div>
+                    <!-- <div class="audit-card__text">
+                      <p>we have passed the Ambisafe audit.</p>
+                    </div> -->
                   </div>
                 </div>
               </div>
-              <div class="audit-grid__item">
-                <div class="audit-card">
-                  <div class="audit-card__wrap">
-                    <div class="audit-card__img">
-                      <img src="@/assets/img/audit-img.svg" alt="">
-                    </div>
-                    <div class="audit-card__title"><p>Lorem ipsum
-                      dolor sit amet</p></div>
-                    <div class="audit-card__text">
-                      <p>(10mB, pdf)</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="audit-grid__item">
-                <div class="audit-card">
-                  <div class="audit-card__wrap">
-                    <div class="audit-card__img">
-                      <img src="@/assets/img/audit-img.svg" alt="">
-                    </div>
-                    <div class="audit-card__title"><p>Lorem ipsum
-                      dolor sit amet</p></div>
-                    <div class="audit-card__text">
-                      <p>(10mB, pdf)</p>
-                    </div>
-                  </div>
-                </div>
-              </div> -->
             </div>
           </div>
         </div>
