@@ -608,7 +608,7 @@ Join our community!</p>
                   </div>
                 </div>
               </div>
-              <div class="audit-grid__item">
+              <div class="audit-grid__item coming-soon">
                 <div class="audit-card">
                   <div class="audit-card__wrap">
                     <div class="audit-card__img">
@@ -621,7 +621,7 @@ Join our community!</p>
                   </div>
                 </div>
               </div>
-              <div class="audit-grid__item">
+              <div class="audit-grid__item coming-soon">
                 <div class="audit-card">
                   <div class="audit-card__wrap">
                     <div class="audit-card__img">

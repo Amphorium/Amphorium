@@ -4446,6 +4446,8 @@ body {
       }
     }
   }
+
+
 }
 
 .audit-link {
@@ -4522,11 +4524,30 @@ body {
     width: 33.333%;
     padding: 0 10px;
     margin-bottom: 20px;
+
     @include max-screen(lg) {
       width: 50%;
     }
     @include max-screen(sm) {
       width: 100%;
+    }
+
+    &.coming-soon {
+      position: relative;
+
+      z-index: 1;
+
+      &:before {
+        position: absolute;
+        content: "";
+        background: url("assets/img/soon.svg") no-repeat, rgba(7, 6, 10, 0.7);
+        background-position: center;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 17;
+      }
     }
   }
 }
