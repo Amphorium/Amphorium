@@ -21,21 +21,58 @@
             <h2 @mousemove="textLighting" @mouseleave="resetTextLighting">Sign up for updates</h2>
           </div>
           <div id="mc_embed_signup">
-            <form action="https://gmail.us5.list-manage.com/subscribe/post?u=a0d50844253560014af2f6314&amp;id=8d63ea082e" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate footer-form" target="_blank" novalidate>
-                <div id="mc_embed_signup_scroll" class="big-input">
-            <!-- <label for="mce-EMAIL">Subscribe</label> -->
-                  <input type="email" value="" name="EMAIL" class="big-input__input" id="mce-EMAIL" placeholder="Your email" required>
-                </div>
-                <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_a0d50844253560014af2f6314_8d63ea082e" tabindex="-1" value=""></div>
-                <div class="footer-form__btn">
-                  <button class="my-btn"><span class="my-btn__arrow"></span> <span class="my-btn__content">Get updates</span></button>
-                </div>
-                <!-- <div class="clear">
-                  <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
-                  </div> -->
-                
-            </form>
+            <mailchimp-subscribe
+                url="https://gmail.us5.list-manage.com/subscribe/post-json"
+                :user-id="'a0d50844253560014af2f6314'"
+                :list-id="'8d63ea082e'"
+                @error="err = true;"
+                @success="ok = true;"
+            >
+              <template v-slot="{ subscribe, setEmail, error }">
+                <form @submit.prevent="subscribe" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate footer-form" target="_blank" novalidate>
+                  <div id="mc_embed_signup_scroll" class="big-input">
+                    <input type="email" class="big-input__input" id="mce-EMAIL" placeholder="Your email" required @input="setEmail($event.target.value)">
+                  </div>
+                  <SuccessModal @close="ok = false;" v-if="ok"/>
+                  <ErrorModal @close="err = false;" v-if="err" :message="error"></ErrorModal>
+                  <div class="footer-form__btn">
+                    <button type="submit" class="my-btn"><span class="my-btn__arrow"></span> <span class="my-btn__content">Get updates</span></button>
+                  </div>
+                </form>
+<!--                <form @submit.prevent="subscribe" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" novalidate class="form">-->
+<!--                  <div class="default-input default-input&#45;&#45;padding" :class="{error: inputError}">-->
+<!--                    <input-->
+<!--                        id="mce-EMAIL"-->
+<!--                        @focus="inputFocus = true"-->
+<!--                        @blur="inputFocus = false"-->
+<!--                        @input="setEmail($event.target.value)"-->
+<!--                        type="email"-->
+<!--                        class="input"-->
+<!--                        placeholder="Enter your email"-->
+<!--                    >-->
+<!--                    <SuccessModal @close="ok = false;" v-if="ok"/>-->
+<!--                    <ErrorModal @close="err = false;" v-if="err" :message="error"></ErrorModal>-->
+<!--                    <p class="default-input__caption" v-if="inputFocus">Enter your email</p>-->
+<!--                    <button type="submit" class="default-input__btn page-btn" id="mc-embedded-subscribe">Subscribe</button>-->
+<!--                  </div>-->
+<!--                </form>-->
+              </template>
+            </mailchimp-subscribe>
+<!--            <form action="https://gmail.us5.list-manage.com/subscribe/post?u=a0d50844253560014af2f6314&amp;id=8d63ea082e" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate footer-form" target="_blank" novalidate>-->
+<!--                <div id="mc_embed_signup_scroll" class="big-input">-->
+<!--            &lt;!&ndash; <label for="mce-EMAIL">Subscribe</label> &ndash;&gt;-->
+<!--                  <input type="email" value="" name="EMAIL" class="big-input__input" id="mce-EMAIL" placeholder="Your email" required>-->
+<!--                </div>-->
+<!--                &lt;!&ndash; real people should not fill this in and expect good things - do not remove this or risk form bot signups&ndash;&gt;-->
+<!--                <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_a0d50844253560014af2f6314_8d63ea082e" tabindex="-1" value=""></div>-->
+<!--                <div class="footer-form__btn">-->
+<!--                  <button class="my-btn"><span class="my-btn__arrow"></span> <span class="my-btn__content">Get updates</span></button>-->
+<!--                </div>-->
+<!--                &lt;!&ndash; <div class="clear">-->
+<!--                  <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">-->
+<!--                  </div> &ndash;&gt;-->
+<!--                -->
+<!--            </form>-->
           </div>
           <!-- <form action="" class="footer-form">
             <div class="big-input">
@@ -101,8 +138,15 @@
 </template>
 
 <script>
+import MailchimpSubscribe from 'vue-mailchimp-subscribe'
+import SuccessModal from "../Modals/SuccessModal";
+import ErrorModal from "../Modals/ErrorModal";
 export default {
   name: 'LandingFooter',
+  data: () => ({
+    err: false,
+    ok: false
+  }),
   methods: {
      textLighting(event){
       this.$emit('mousemove',event)
@@ -110,6 +154,11 @@ export default {
     resetTextLighting(e){
      this.$emit('mouseleave',e)
     },
+  },
+  components: {
+    ErrorModal,
+    SuccessModal,
+    MailchimpSubscribe
   }
 }
 </script>

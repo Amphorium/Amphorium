@@ -12,7 +12,7 @@
             Success
           </div>
           <div class="popup__msg">
-            Lorem ipsum dolor sit amet
+            {{message}}
           </div>
           <div class="popup__btn">
             <button type="button" @click="closeWindow">
@@ -28,6 +28,12 @@
 <script>
 export default {
   name: "SuccessModal",
+  props: {
+    message: {
+      type: String,
+      default: () => 'Congratulations!'
+    }
+  },
   methods: {
     closeWindow() {
       this.$emit("close");
