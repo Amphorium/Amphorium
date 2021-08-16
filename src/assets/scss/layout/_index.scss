@@ -756,6 +756,12 @@ body {
   }
 }
 
+// .swiper-wrapper{
+//   align-items: stretch;
+// }
+div.swiper-slide{
+  height: auto
+}
 .news-card {
   background: #07060A;
   box-shadow: 0px 4px 130px #000000;
@@ -765,6 +771,7 @@ body {
   border-radius: 20px;
   flex: none;
   width: 350px;
+  height: 100%;
   @include max-screen(lg) {
     padding: 20px 30px;
   }@include max-screen(md) {
@@ -4284,7 +4291,7 @@ body {
 
   &__wrap {
     display: flex;
-    align-items: center;
+    // align-items: center;
     justify-content: center;
     margin-top: 50px;
     @include max-screen(sm) {
@@ -4316,6 +4323,8 @@ body {
 .facts-card {
   position: relative;
   padding: 40px 50px;
+  flex: 1 1;
+  height: auto;
   @include max-screen(lg) {
     padding: 20px 20px
   }

@@ -70,15 +70,15 @@
             </div>
             <ul class="my-list">
               <li class="my-list__item">
-                <p><span>Supply chain visibility and optimization through real-time cargo monitoring</span></p>
+                <p><span>The supply chain remains transparent and optimized through real-time cargo monitoring.</span></p>
                 <!-- <p>In voluptate esse cillum dolore eu fugiat nulla pariatur</p> -->
               </li>
               <li class="my-list__item">
-                <p><span>Safeguard your global cargo operations and your parcel</span></p>
+                <p><span>Your global cargo operations and your parcel are protected.</span></p>
                 <!-- <p>Cillum dolore eu fugiat nulla pariatur</p> -->
               </li>
               <li class="my-list__item">
-                <p><span>We give you the data and the tools to optimize your supply chain</span></p>
+                <p><span>All the necessary data and tools are provided to optimize your supply chain.</span></p>
                 <!-- <p>In voluptate esse cillum dolore eu fugiat nulla pariatur</p> -->
               </li>
             </ul>
@@ -124,16 +124,14 @@
                  data-aos-duration="1500"
                  >
               <h2
-               @mousemove="textLighting" @mouseleave="resetTextLighting">About Us</h2>
+               @mousemove="textLighting" @mouseleave="resetTextLighting">
+               About Us
+               </h2>
             </div>
             <div class="about__text" data-aos="fade-up"
                  data-aos-duration="1500">
-              <p>We are ready to help you transform your logistics processes.
-The market of goods is the most profitable niche that always requires improvements not only in the methods of transportation or sales improvements,
-but also optimization of financial processes between the customer and the company providing the services.
-We aim to optimize our blockchain to help process documentation through it,
-customs declaration, and certification of goods.</p>
-              <p><span>Amphorium's goal to improve industry data:</span></p>
+              <p>Amphorium’s blockchain technology will help you to transform the logistics processes. The transportation of goods is although one of the most profitable niches constantly requires improvements. These improvements include the methods and means of transportation, quick and trustworthy documentation, sales improvements, and optimization of financial processes between the customer and the company. Our main goal is to ensure that our blockchain technology will help customers and businesses quickly process the documentation, customs declaration, and certification of goods. With our system, all the information flow between the shipping port and the stakeholders involved is thoroughly and quickly analyzed and delivered without any errors.</p>
+              <p><span>Amphorium can help you with the following services:</span></p>
               <div class="row">
                 <ul class="about__ul col">
                   <li class="my-list__item">Multimodal transportation</li>
@@ -337,7 +335,7 @@ customs declaration, and certification of goods.</p>
                 <p>Implementation of the idea</p>
               </div>
               <div class="history-card__text">
-                <p>Own fundraising for the implementation of plans and team building</p>
+                <p>Establishing our own fundraising for the implementation of plans and team building.</p>
               </div>
             </div>
           </div>
@@ -351,7 +349,7 @@ customs declaration, and certification of goods.</p>
                 <p>Seed round</p>
               </div>
               <div class="history-card__text">
-                <p>A common vision gives a goal, a common goal gives a commitment, and we need people who are committed to our goal.</p>
+                <p>A common vision produces a common goal, which in turn gives a commitment. We need people who are committed to our goal.</p>
               </div>
             </div>
           </div>
@@ -365,8 +363,7 @@ customs declaration, and certification of goods.</p>
                 <p>Public round</p>
               </div>
               <div class="history-card__text">
-                <p>We want to partner with motivated people because when people feel motivated, they can contribute great ideas and strive to learn new things every day.
-Join our community!</p>
+                <p>We want to partner with motivated people because when people feel motivated, they can contribute great ideas and strive to learn new things every day. Join our community!</p>
               </div>
             </div>
           </div>
@@ -439,7 +436,7 @@ Join our community!</p>
         </div>
         <div class="facts__subtitle" data-aos="fade-up"
              data-aos-duration="1500">
-          <p>It is designed to ensure that all logistic tools and users of the world could work together on the same network.</p>
+          <p>It is designed to ensure a decentralized and credible system in logistics where all partners can work together on the same network. Customers and stakeholders are able to monitor all the processes</p>
         </div>
         <div class="facts__wrap" data-aos="fade"
              data-aos-duration="1500">
@@ -452,7 +449,7 @@ Join our community!</p>
                 <p>Voluptate velit esse</p>
               </div> -->
               <div class="facts-card__text">
-                <p>We are crypto enthusiasts who connect bridges between logistics and blockchain technology.</p>
+                <p>We are crypto enthusiasts who connect the bridge between logistics and blockchain technology. Hence, our blockchain technology ensures efficiency and security in logistics.</p>
               </div>
               <!-- <a href="#" class="more">
                 <span class="more__text">Read more</span>
@@ -469,7 +466,7 @@ Join our community!</p>
                 <p>Voluptate velit esse</p>
               </div> -->
               <div class="facts-card__text">
-                <p>This is a future technology on its own blockchain performing the mission of a transport expedition.</p>
+                <p>This is a future technology based on its own blockchain, performing the mission of optimization of transportation.</p>
               </div>
               <!-- <a href="#" class="more">
                 <span class="more__text">Read more</span>
@@ -619,7 +616,7 @@ Join our community!</p>
                       </svg>
 
                     </div>
-                    <div class="audit-card__title"><p>Ambisafe audit </p></div>
+                    <div class="audit-card__title"><p>As of August 1, 2021, we have passed the Ambisafe audit.</p></div>
                     <div class="audit-card__text">
                       <p>(10mB, pdf)</p>
                     </div>
@@ -917,32 +914,37 @@ export default {
       news: [
         {
           date: '21 april, 2022',
-          title: 'Lorem ipsum dolor sit amet, adipiscing elit',
-          text: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+          title: '',
+          text: 'Amphorium is a combination of simplicity and innovation in the world of logistics.',
         },
         {
           date: '21 april, 2022',
-          title: 'Lorem ipsum dolor sit amet, adipiscing elit',
-          text: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+          title: '',
+          text: 'It is designed to ensure a decentralized and credible system in logistics where all partners can work together on the same network. Customers and stakeholders are able to monitor all the processes.',
         },
         {
           date: '21 april, 2022',
-          title: 'Lorem ipsum dolor sit amet, adipiscing elit',
-          text: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+          title: '',
+          text: 'We are crypto enthusiasts who connect the bridge between logistics and blockchain technology. Hence, our blockchain technology ensures efficiency and security in logistics.',
         },
         {
           date: '21 april, 2022',
-          title: 'Lorem ipsum dolor sit amet, adipiscing elit',
-          text: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+          title: '',
+          text: 'We are crypto enthusiasts who connect the bridge between logistics and blockchain technology. Hence, our blockchain technology ensures efficiency and security in logistics.',
         },
         {
           date: '21 april, 2022',
-          title: 'Lorem ipsum dolor sit amet, adipiscing elit',
-          text: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+          title: '',
+          text: 'This is a future technology based on its own blockchain, performing the mission of optimization of transportation.',
         },
         {
           date: '21 april, 2022',
-          title: 'Lorem ipsum dolor sit amet, adipiscing elit',
+          title: '',
+          text: 'The world\'s first blockchain aimed at simplifying documentation and payment for services in the logistics sector.',
+        },
+        {
+          date: '21 april, 2022',
+          title: '',
           text: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
         },
       ],
