@@ -675,7 +675,6 @@
       <div class="cursor__point"></div>
       <div class="cursor__point"></div>
     </div>
-    
     <!-- <div class="title-shape"></div> -->
   </div>
 </template>
@@ -689,7 +688,6 @@ export default {
   components: {
       Swiper,
       SwiperSlide,
-     
   },
   data() {
     return {
