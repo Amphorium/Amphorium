@@ -34,7 +34,7 @@
                     <input type="email" class="big-input__input" id="mce-EMAIL" placeholder="Your email" required @input="setEmail($event.target.value)">
                   </div>
                   <SuccessModal @close="ok = false;" v-if="ok"/>
-                  <ErrorModal @close="err = false;" v-if="err" :message="error"></ErrorModal>
+                  <ErrorModal @close="err = false;" v-if="err" :message="error.split('<')[0]"></ErrorModal>
                   <div class="footer-form__btn">
                     <button type="submit" class="my-btn"><span class="my-btn__arrow"></span> <span class="my-btn__content">Get updates</span></button>
                   </div>
