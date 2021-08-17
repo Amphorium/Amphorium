@@ -23,23 +23,26 @@ img {
 }
 
 @media screen and (min-width: 992px){
-  h1{
+  h1, .h1{
     position: relative;
     white-space: nowrap;
     z-index: 5;
     // margin-bottom: 6rem;
-    height: 15rem;
-    width: 50rem;
+    height: 12rem;
+    // width: 50rem;
     span{
-      pointer-events: none;
+      // pointer-events: none;
       display: inline-block;
+      position: relative;
 
       // &:nth-child(1){}
       &:nth-child(2){
-        transform: translateY(100%);
+        top:4rem;
+        // transform: translateY(100%);
       }
       &:nth-child(3){
-        transform: translateY(200%);
+        // transform: translateY(200%);
+         top:8rem;
       }
     }
   }
@@ -304,7 +307,7 @@ body {
     @include max-screen(xxl) {
       font-size: 48px;
       line-height: 67px;
-      max-width: 545px;
+      // max-width: 545px;
     }
     @include max-screen(xl) {
       font-size: 48px;
