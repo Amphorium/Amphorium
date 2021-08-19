@@ -62,12 +62,15 @@
       </div>
       <div class="container">
         <div class="main-banner__wrap">
-          <div class="main-banner__info">
-            <div class="main-banner__title">
-              <h1 @mousemove="textLighting" @mouseleave="resetTextLighting">
-                <span>MONITOR.</span><span> PROTECT.</span><span> CONTROL.</span>
-              </h1>
+           <div class="main-banner__title">
+              <div class="h1">
+                <span @mousemove="textLighting" @mouseleave="resetTextLighting">MONITOR.</span>
+                <span @mousemove="textLighting" @mouseleave="resetTextLighting"> PROTECT.</span>
+                <span @mousemove="textLighting" @mouseleave="resetTextLighting"> CONTROL.</span>
+              </div>
             </div>
+          <div class="main-banner__info">
+           
             <ul class="my-list">
               <li class="my-list__item">
                 <p><span>The supply chain remains transparent and optimized through real-time cargo monitoring.</span></p>

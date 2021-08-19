@@ -29,7 +29,9 @@
         if ( e.target){
          e.target.style.backgroundImage=`radial-gradient(circle at ${e.offsetX}px ${e.offsetY}px, rgb(209, 12, 12) 0%, #fff 6rem)`;
          e.target.style.color='transparent';
+        //  -webkit-background-clip: text;
          e.target.style.backgroundClip = "text";
+         e.target.style.webkitBackgroundClip = "text";
         }
       },
       resetTextLighting(e){
