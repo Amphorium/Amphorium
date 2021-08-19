@@ -945,6 +945,31 @@ export default {
           title: '',
           text: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
         },
+        {
+          date: 'June 2021',
+          title: '',
+          text: 'Take a look at Aphorium’s second-quarter results report for the current year. Financial results show the progress made from 2017. Based on its blockchain technology and its ERC-20 tokens, Amphorium aims to lead the industry, helping all of the agents involved in global trading.'
+        },
+        {
+          date: 'May 2021',
+          title: '',
+          text: 'Amphorium expands collaborations. To provide the best possible service in optimizing the transportation process through decentralized blockchain technology, Amphorium expands its circle of collaboration with various business partners, such as Chainlink, Crust, Polygon, and UniLend.'
+        },
+        {
+          date: 'April 2021',
+          title: '',
+          text: 'Amphorium announces the release of beta versions of Android/iOS applications. This way Amphorium expands its accessibility both on the Web and on smartphones. Now Amphorium is available anywhere and anytime. This well-designed application version of our website can be used easily, quickly, and efficiently by our customers and partners.'
+        },
+        {
+          date: 'April 2020',
+          title: '',
+          text: 'Amphorium creates its first whitepaper. The first whitepaper, which explains the technology, introduces the company’s background, and provides essential guidelines for potential customers is set up by Amphorium. Have a look at our whitepaper for any additional thorough information.'
+        },
+        {
+          date: 'April 2017',
+          title: '',
+          text: 'Amphorium analyzes the current data and conducts research on the use of blockchain technology in logistics. According to the research, a blockchain-based system reduces human errors, fraud, and expenditure. Hence, it optimizes and facilitates the transportation process.'
+        },
       ],
       // amphorImg: [
       //   1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
