@@ -931,11 +931,6 @@ export default {
         {
           date: '21 april, 2022',
           title: '',
-          text: 'We are crypto enthusiasts who connect the bridge between logistics and blockchain technology. Hence, our blockchain technology ensures efficiency and security in logistics.',
-        },
-        {
-          date: '21 april, 2022',
-          title: '',
           text: 'This is a future technology based on its own blockchain, performing the mission of optimization of transportation.',
         },
         {
