@@ -5,7 +5,6 @@
     src: url($file-name + '.eot?#iefix') format('embedded-opentype'),
     url($file-name + '.woff') format('woff'),
     url($file-name + '.ttf') format('truetype'),
-    url($file-name + '.svg##{$font-name}') format('svg');
   }
 }
 
@@ -18,4 +17,5 @@
 @include font-face('Inter-Regular', '~@/assets/fonts/Inter-Regular');
 @include font-face('Inter-SemiBold', '~@/assets/fonts/Inter-SemiBold');
 @include font-face('Inter-Thin', '~@/assets/fonts/Inter-Thin');
+@include font-face('Kanit-Black', '~@/assets/fonts/Kanit-Black');
 
