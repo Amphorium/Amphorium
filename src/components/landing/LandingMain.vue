@@ -64,9 +64,9 @@
         <div class="main-banner__wrap">
            <div class="main-banner__title">
               <div class="h1">
-                <span @mousemove="textLighting" @mouseleave="resetTextLighting">MONITOR.</span>
-                <span @mousemove="textLighting" @mouseleave="resetTextLighting"> PROTECT.</span>
-                <span @mousemove="textLighting" @mouseleave="resetTextLighting"> CONTROL.</span>
+                <span @mousemove="textLighting" @mouseleave="resetTextLighting">Monitor.</span>
+                <span @mousemove="textLighting" @mouseleave="resetTextLighting">Protect.</span>
+                <span @mousemove="textLighting" @mouseleave="resetTextLighting">Control.</span>
               </div>
             </div>
           <div class="main-banner__info">
