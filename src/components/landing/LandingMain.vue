@@ -913,41 +913,41 @@ export default {
         },
       ],
       news: [
-        {
-          date: '21 april, 2022',
-          title: '',
-          text: 'Amphorium is a combination of simplicity and innovation in the world of logistics.',
-        },
-        {
-          date: '21 april, 2022',
-          title: '',
-          text: 'It is designed to ensure a decentralized and credible system in logistics where all partners can work together on the same network. Customers and stakeholders are able to monitor all the processes.',
-        },
-        {
-          date: '21 april, 2022',
-          title: '',
-          text: 'We are crypto enthusiasts who connect the bridge between logistics and blockchain technology. Hence, our blockchain technology ensures efficiency and security in logistics.',
-        },
-        {
-          date: '21 april, 2022',
-          title: '',
-          text: 'This is a future technology based on its own blockchain, performing the mission of optimization of transportation.',
-        },
-        {
-          date: '21 april, 2022',
-          title: '',
-          text: 'The world\'s first blockchain aimed at simplifying documentation and payment for services in the logistics sector.',
-        },
-        {
-          date: '21 april, 2022',
-          title: '',
-          text: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-        },
-        {
-          date: 'June 2021',
-          title: '',
-          text: 'Take a look at Aphorium’s second-quarter results report for the current year. Financial results show the progress made from 2017. Based on its blockchain technology and its ERC-20 tokens, Amphorium aims to lead the industry, helping all of the agents involved in global trading.'
-        },
+        // {
+        //   date: '21 april, 2022',
+        //   title: '',
+        //   text: 'Amphorium is a combination of simplicity and innovation in the world of logistics.',
+        // },
+        // {
+        //   date: '21 april, 2022',
+        //   title: '',
+        //   text: 'It is designed to ensure a decentralized and credible system in logistics where all partners can work together on the same network. Customers and stakeholders are able to monitor all the processes.',
+        // },
+        // {
+        //   date: '21 april, 2022',
+        //   title: '',
+        //   text: 'We are crypto enthusiasts who connect the bridge between logistics and blockchain technology. Hence, our blockchain technology ensures efficiency and security in logistics.',
+        // },
+        // {
+        //   date: '21 april, 2022',
+        //   title: '',
+        //   text: 'This is a future technology based on its own blockchain, performing the mission of optimization of transportation.',
+        // },
+        // {
+        //   date: '21 april, 2022',
+        //   title: '',
+        //   text: 'The world\'s first blockchain aimed at simplifying documentation and payment for services in the logistics sector.',
+        // },
+        // {
+        //   date: '21 april, 2022',
+        //   title: '',
+        //   text: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        // },
+        // {
+        //   date: 'June 2021',
+        //   title: '',
+        //   text: 'Take a look at Aphorium’s second-quarter results report for the current year. Financial results show the progress made from 2017. Based on its blockchain technology and its ERC-20 tokens, Amphorium aims to lead the industry, helping all of the agents involved in global trading.'
+        // },
         {
           date: 'May 2021',
           title: '',
