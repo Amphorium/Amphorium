@@ -342,7 +342,7 @@ body {
   &__title {
     font-size: 96px;
     line-height: 80px;
-    font-family: $title;
+    font-family: $extra-bold;
     color: #FFFFFF;
     @include max-screen(xxl) {
       font-size: 90px;
