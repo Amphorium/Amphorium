@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@mscalessio/vue2-swiper": "^1.0.3",
+    "@walletconnect/web3-provider": "^1.6.5",
     "aos": "^2.3.4",
     "core-js": "^3.6.5",
     "lottie-vuejs": "^0.4.0",
@@ -19,7 +20,9 @@
     "vue-slick-carousel": "^1.0.6",
     "vue2-smooth-scroll": "^1.5.0",
     "vuescroll": "^4.17.3",
-    "vuex": "^3.4.0"
+    "vuex": "^3.4.0",
+    "walletlink": "^2.1.9",
+    "web3": "^1.5.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
