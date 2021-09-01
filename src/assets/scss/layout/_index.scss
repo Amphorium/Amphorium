@@ -185,6 +185,7 @@ body {
   &__wrap {
     display: flex;
     align-items: center;
+    width: 100%;
   }
 
   &__btn {
@@ -222,10 +223,11 @@ body {
   line-height: 17px;
   text-transform: uppercase;
   width: 300px;
-  margin-left: auto;
+  margin-left: 15px;
 
   @include max-screen(lg) {
     display: none;
+    margin-left: 0;
   }
 
 
@@ -5000,4 +5002,255 @@ div.swiper-slide{
 .walletConnect {
   background: linear-gradient(90deg, #74B8FF 0%, #3A15CF 100%);
   margin-bottom: 20px;
+}
+
+.swap-page {
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+  padding-bottom: 100px;
+}
+
+.swap-wrap {
+  margin-top: 180px;
+  width: 695px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  background: rgba(7, 6, 10, 0.7);
+  box-shadow: 0px 4px 234px #000000;
+  border-radius: 20px;
+  padding: 40px 20px 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include max-screen(xxl) {
+   margin-top: 90px;
+  }
+  @include max-screen(xl) {
+    width: 595px;
+  }
+  @include max-screen(xs) {
+    padding: 20px 15px 35px;
+  }
+
+  .my-btn {
+    width: 100%;
+  }
+}
+
+.swap {
+  &__head {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding: 0 30px;
+
+
+
+    .title {
+      font-family: $extra-bold;
+      font-size: 30px;
+      line-height: 36px;
+
+      @include max-screen(lg) {
+        font-size: 24px;
+      }
+    }
+  }
+
+  &__coin {
+    position: relative;
+    width: 100%;
+
+    .arrow {
+      position: absolute;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      background: rgba(7, 6, 10, 0.7);
+      box-shadow: 0px 4px 234px #000000;
+      width: 60px;
+      height: 60px;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      @include max-screen(xs) {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+
+  &__amount {
+    font-family: $semi-bold;
+    font-size: 24px;
+    line-height: 36px;
+    margin: 27px 0 28px;
+
+    @include max-screen(xs) {
+      font-size: 21px;
+    }
+  }
+
+
+}
+
+
+.settings-btn {
+  border: none;
+  width: 30px;
+  height: 30px;
+  padding: 3px;
+}
+
+.coin {
+  width: 100%;
+  background: #161616;
+  border-radius: 20px;
+  height: 110px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+
+  @include max-screen(sm) {
+    height: 90px;
+  }
+  @include max-screen(xs) {
+   flex-direction: column;
+    height: auto;
+    justify-content: center;
+    padding: 15px 30px;
+  }
+
+  + .coin {
+    margin-top: 6px;
+  }
+
+  &__balance {
+    display: flex;
+    flex-direction: column;
+
+    @include max-screen(xs) {
+    align-items: center;
+    }
+
+    span {
+      font-family: $semi-bold;
+      font-size: 14px;
+      line-height: 36px;
+      color: #747474;
+
+      @include max-screen(sm) {
+        line-height: 18px;
+      }
+      @include max-screen(xs) {
+        font-size: 12px;
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  &__type {
+    display: flex;
+    align-items: center;
+    font-family: $extra-bold;
+    font-size: 24px;
+    line-height: 36px;
+
+    @include max-screen(sm) {
+      font-size: 20px;
+    }
+
+    @include max-screen(xs) {
+
+    }
+  }
+
+  &__icon {
+    width: 29px;
+    height: 29px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+  }
+
+  &__amount {
+    display: flex;
+    flex-direction: column;
+
+    font-family: $semi-bold;
+    font-size: 24px;
+    line-height: 36px;
+
+    @include max-screen(sm) {
+      font-size: 20px;
+      line-height: 24px;
+    }
+    @include max-screen(xs) {
+     align-items: center;
+    }
+  }
+
+  &__trans {
+    font-size: 14px;
+    color: #747474;
+    text-align: right;
+
+    @include max-screen(xs) {
+      font-size: 12px;
+    }
+  }
+
+  &__trans-green {
+    color: #517E58;
+  }
+}
+
+.eth-icon {
+  background: #5B73E4;
+
+}
+
+.amph-icon {
+  background: #F67D75;
+}
+
+.copy-btn, .view-btn {
+  display: flex;
+  align-items: center;
+  font-family: $semi-bold;
+  font-size: 12px;
+  line-height: 20px;
+  color: #747474;
+  border: none;
+
+  svg {
+    margin-right: 6px;
+  }
+}
+
+.change-btn {
+  width: 89px;
+  height: 30px;
+  border: 1px solid #F67D75;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: $semi-bold;
+  font-size: 12px;
+  line-height: 16px;
+  text-transform: uppercase;
+  color: #F67D75;
 }

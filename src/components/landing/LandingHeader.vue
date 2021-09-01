@@ -42,14 +42,14 @@
           </li>
         </ul>
       </nav>
-      <div v-if="!getCurrentConnectionInfo.walletName" class="header__btn">
-        <a href="https://amphorium.io/docs/whitepaper" target="_blank" class="my-btn-border"><span>whitepaper</span></a>
+      <div  class="header__btn">
+        <a v-if="$route.name==='Landing'" href="https://amphorium.io/docs/whitepaper" target="_blank" class="my-btn-border"><span>whitepaper</span></a>
 
-        <button v-if="!getCurrentConnectionInfo.walletName" class="my-btn" @click="setConnectWalletModalVisible(true)">
+        <router-link v-if="$route.name==='Landing'" tag="button" to="/swap" class="my-btn" >
           <span class="my-btn__content">buy amh</span>
-        </button>
+        </router-link>
       </div>
-      <div v-if="getCurrentConnectionInfo.walletName && getCurrentConnectionInfo.balance" class="header__account account">
+      <div v-if="$route.name==='Swap'" class="header__account account">
         <div class="account__amount">
           {{(Number(getCurrentConnectionInfo.balance) / Math.pow(10, 18)).toFixed(8)}} AMH
         </div>

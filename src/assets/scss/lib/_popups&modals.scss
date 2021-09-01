@@ -312,6 +312,31 @@
     }
   }
 
+  &__wrap {
+    background: #161616;
+    border-radius: 20px;
+   display: flex;
+    padding: 20px;
+
+    @include max-screen(sm) {
+     width: 100%;
+      justify-content: space-between;
+    }
+    @include max-screen(xs) {
+     position: relative;
+    }
+
+    .change-btn {
+      @include max-screen(xs) {
+        position: absolute;
+        right: 20px;
+        top: 25px;
+      }
+    }
+  }
+
+
+
   &__title {
     font-size: 30px;
     line-height: 36px;
@@ -341,3 +366,40 @@
   }
 }
 
+.popup-account {
+  padding: 40px 20px 20px;
+
+  @include max-screen(sm) {
+    padding: 40px 20px 20px;
+  }
+
+  .wrap-col {
+    text-align: left;
+  }
+
+  .wrap__title {
+    font-family: $semi-bold;
+    font-size: 14px;
+    line-height: 36px;
+    color: #747474;
+  }
+
+  .wrap__id {
+    display: flex;
+    align-items: center;
+      svg {
+        width: 29px;
+        height: 29px;
+        margin-right: 8px;
+      }
+  }
+
+  .wrap__btns {
+    display: flex;
+    margin-top: 17px;
+
+    .view-btn {
+      margin-left: 27px;
+    }
+  }
+}
