@@ -2,6 +2,7 @@
   <div id="app">
     <connect-wallet v-if="getConnectWalletModalVisible"
                     @close="setConnectWalletModalVisible(false)"></connect-wallet>
+    <error-modal v-if="isWrongChainId" :message="'Wrong chain network...'"></error-modal>
     <router-view/>
   </div>
 </template>
@@ -11,11 +12,13 @@
 
   import ConnectWallet from "@/components/Modals/ConnectWallet";
   import {mapActions, mapGetters, mapMutations} from "vuex";
+  import ErrorModal from "@/components/Modals/ErrorModal";
   export default {
     name: "App",
     computed: {
       ...mapGetters({
-        getConnectWalletModalVisible: 'wallet/getConnectWalletModalVisible'
+        getConnectWalletModalVisible: 'wallet/getConnectWalletModalVisible',
+        isWrongChainId: 'wallet/isWrongChainId'
       })
     },
     methods: {
@@ -30,7 +33,7 @@
       const walletName = localStorage.getItem('usedWalletName') || 'metamask';
       this.connectWallet(walletName)
     },
-    components: {ConnectWallet}
+    components: {ErrorModal, ConnectWallet}
   }
 </script>
 

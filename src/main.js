@@ -4,6 +4,7 @@ import router from './router'
 import store from './store'
 import vuescroll from 'vuescroll'
 import VueSmoothScroll from 'vue2-smooth-scroll'
+import VueClipboard from 'vue-clipboard2'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 AOS.init();
@@ -15,6 +16,7 @@ Vue.use(VueSmoothScroll, {
 
 Vue.config.productionTip = false
 Vue.component('vue-scroll', vuescroll);
+Vue.use(VueClipboard);
 
 new Vue({
     router,

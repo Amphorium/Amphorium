@@ -5,6 +5,7 @@
       <div class="popup popup-connect">
         <button @click="close" class="popup__close"></button>
         <div class="popup__content">
+          <error-modal v-if="error" :message="error" @close="error = null"></error-modal>
           <div class="popup-connect__title">
             Connect your wallet
           </div>
@@ -70,9 +71,14 @@
 
 <script>
   import {mapActions} from "vuex";
+  import ErrorModal from "@/components/Modals/ErrorModal";
 
   export default {
     name: 'ConnectWallet',
+    components: {ErrorModal},
+    data: () => ({
+      error: null
+    }),
     methods: {
       ...mapActions({
         connectWallet: 'wallet/connectWallet'
@@ -80,10 +86,11 @@
       async connect(wallet) {
         try {
           await this.connectWallet(wallet);
+          this.close();
         } catch (e) {
           console.log(e.message)
+          this.error = e.message;
         }
-        this.close();
       },
       close() {
         this.$emit('close')

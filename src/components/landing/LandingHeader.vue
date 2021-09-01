@@ -94,7 +94,7 @@
       </div>
       <div v-if="$route.name==='Swap' && getCurrentConnectionInfo.walletName" class="header__account account">
         <div class="account__amount">
-          {{(Number(getCurrentConnectionInfo.balance) / Math.pow(10, 18)).toFixed(8)}} AMH
+          {{(Number(getCurrentConnectionInfo.balance) / Math.pow(10, 18)).toFixed(8)}} ETH
         </div>
         <div class="account__id" @click="accountVisible = true">
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -135,14 +135,14 @@
 
           <div v-if="getCurrentConnectionInfo.walletName" class="account">
             <div class="account__amount">
-              0.006856 AMH
+              {{(Number(getCurrentConnectionInfo.balance) / Math.pow(10, 18)).toFixed(8)}} ETH
             </div>
-            <div class="account__id">
+            <div class="account__id" @click="isOpenMobMenu = false;accountVisible = true">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="10" cy="10" r="10" fill="#3B99FC"/>
                 <path d="M5.86537 7.56785C8.14789 5.49701 11.8486 5.49701 14.1311 7.56785L14.4058 7.81708C14.5199 7.92063 14.5199 8.0885 14.4058 8.19204L13.4661 9.04461C13.409 9.09638 13.3165 9.09638 13.2595 9.04461L12.8814 8.70164C11.2891 7.25697 8.70739 7.25697 7.11505 8.70164L6.71021 9.06893C6.65315 9.1207 6.56063 9.1207 6.50357 9.06893L5.56385 8.21636C5.44973 8.11282 5.44973 7.94495 5.56385 7.84141L5.86537 7.56785ZM16.0745 9.33104L16.9109 10.0898C17.025 10.1934 17.025 10.3612 16.9109 10.4648L13.1397 13.8862C13.0256 13.9898 12.8406 13.9898 12.7264 13.8862C12.7264 13.8862 12.7264 13.8862 12.7264 13.8862L10.0499 11.4579C10.0214 11.4321 9.97513 11.4321 9.9466 11.4579C9.9466 11.4579 9.9466 11.4579 9.9466 11.4579L7.27013 13.8862C7.15601 13.9898 6.97097 13.9898 6.85684 13.8862C6.85684 13.8862 6.85684 13.8862 6.85684 13.8862L3.08559 10.4647C2.97147 10.3612 2.97147 10.1933 3.08559 10.0898L3.92194 9.331C4.03607 9.22746 4.2211 9.22746 4.33523 9.331L7.0118 11.7593C7.04033 11.7852 7.08659 11.7852 7.11512 11.7593C7.11512 11.7593 7.11512 11.7593 7.11512 11.7593L9.79155 9.331C9.90567 9.22746 10.0907 9.22745 10.2048 9.33099C10.2048 9.33099 10.2048 9.33099 10.2048 9.331L12.8814 11.7593C12.9099 11.7852 12.9562 11.7852 12.9847 11.7593L15.6612 9.33104C15.7754 9.2275 15.9604 9.2275 16.0745 9.33104Z" fill="white"/>
               </svg>
-              0xF6 ... 1cb6
+              {{getCurrentConnectionInfo.account | cutHash}}
             </div>
           </div>
         </div>
