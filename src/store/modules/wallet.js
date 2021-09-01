@@ -4,6 +4,7 @@ import Web3 from "web3";
 export default {
     namespaced: true,
     state: {
+        connectWalletModalVisible: false,
         isMetamaskInstalled: true,
         currentConnectionInfo: {
             account: null,
@@ -13,6 +14,9 @@ export default {
         },
     },
     mutations: {
+        setConnectWalletModalVisible(state, payload) {
+            state.connectWalletModalVisible = payload;
+        },
         setIsMetamaskInstalled(state, payload) {
           state.isMetamaskInstalled = payload
         },
@@ -26,6 +30,7 @@ export default {
             }
         },
         unsetWallet(state) {
+            console.log('unset')
             state.currentConnectionInfo.walletName = null;
             state.currentConnectionInfo.chainId = null;
             state.currentConnectionInfo.account = null;
@@ -110,7 +115,7 @@ export default {
                         provider= window.ethereum;
                         dispatch('setChain', provider)
                     } catch(e){
-                        return e
+                        throw new Error('Check your wallet!')
                     }
                 }
             }
@@ -158,7 +163,8 @@ export default {
         }
     },
     getters: {
-        getCurrentConnectionInfo: state =>  state.currentConnectionInfo,// current connection
+        getConnectWalletModalVisible: state => state.connectWalletModalVisible,
+        getCurrentConnectionInfo: state =>  state.currentConnectionInfo,
         isWrongChainId: state=>{
            if (state.currentConnectionInfo.chainId){
                if ( (state.currentConnectionInfo.chainId!==56 && state.currentConnectionInfo.chainId !== '0x38')){

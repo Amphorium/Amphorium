@@ -1,34 +1,36 @@
 <template>
   <div id="app">
-     <!-- <Preloader v-if="loading"/> -->
+    <connect-wallet v-if="getConnectWalletModalVisible"
+                    @close="setConnectWalletModalVisible(false)"></connect-wallet>
     <router-view/>
   </div>
 </template>
 
 
 <script>
-// import Preloader from "@/components/preloader";
 
+  import ConnectWallet from "@/components/Modals/ConnectWallet";
+  import {mapActions, mapGetters, mapMutations} from "vuex";
   export default {
     name: "App",
-    components: {
-      //  Preloader,
+    computed: {
+      ...mapGetters({
+        getConnectWalletModalVisible: 'wallet/getConnectWalletModalVisible'
+      })
     },
-    data(){
-      return {
-        loading: false,
-      }
+    methods: {
+      ...mapActions({
+        connectWallet: 'wallet/connectWallet'
+      }),
+      ...mapMutations({
+        setConnectWalletModalVisible: 'wallet/setConnectWalletModalVisible'
+      })
     },
-    created(){
-    // window.addEventListener("load", ()=> {
-      
-    //   setTimeout(() => {
-    //     this.loading=false
-        
-    //   }, 500);
-
-    // })
-  }
+    mounted() {
+      const walletName = localStorage.getItem('usedWalletName') || 'metamask';
+      this.connectWallet(walletName)
+    },
+    components: {ConnectWallet}
   }
 </script>
 
