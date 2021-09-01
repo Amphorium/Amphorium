@@ -403,3 +403,67 @@
     }
   }
 }
+
+.popup-confirm {
+  padding: 50px 20px 40px;
+
+  .coin__balance {
+    align-items: flex-start;
+
+    @include max-screen(xs) {
+      align-items: center;
+      margin-bottom: 15px;
+      margin-top: 10px;
+    }
+    span {
+      font-family: $semi-bold;
+      font-size: 14px;
+
+      line-height: 24px;
+      color: #747474;
+
+      @include max-screen(xs) {
+       margin-bottom: 0;
+      }
+    }
+
+  }
+
+  .coin__amount {
+    @include max-screen(xs) {
+      margin-bottom: 15px;
+    }
+  }
+
+  .popup-connect__title {
+    margin-bottom: 25px;
+  }
+  .swap__coin{
+    .arrow {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 18px;
+    line-height: 36px;
+    margin: 12px 0 20px;
+    padding: 0 20px;
+
+    span {
+      display: block;
+      font-family: $semi-bold;
+      color: #747474;
+    }
+  }
+
+  .my-btn {
+    width: 90%;
+    margin: 0 20px;
+    height: 70px;
+  }
+}

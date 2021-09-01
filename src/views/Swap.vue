@@ -85,7 +85,7 @@
         <div class="swap__amount">1 AMH = 0.0030003 ETH </div>
 
         <div class="my-btn">
-          <span class="my-btn__content">BUY AMH</span>
+          <span class="my-btn__content" @click="buyConfirmVisible = true">BUY AMH</span>
         </div>
       </div>
     </div>
