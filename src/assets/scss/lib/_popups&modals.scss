@@ -467,3 +467,83 @@
     height: 70px;
   }
 }
+
+.popup-waiting {
+  padding: 50px 15px 30px;
+
+  @include max-screen(xs) {
+    padding: 50px 10px 30px;
+  }
+  &__text {
+    font-family: $semi-bold;
+    font-size: 18px;
+    line-height: 36px;
+
+    @include max-screen(xs) {
+      font-size: 16px;
+      line-height: 23px;
+      margin-bottom: 10px;
+    }
+  }
+
+  .popup-connect__title {
+    max-width: 300px;
+  }
+
+  .popup-connect__text {
+    font-family: $semi-bold;
+    line-height: 36px;
+
+    @include max-screen(xs) {
+      line-height: 23px;
+    }
+  }
+}
+
+.popup-preloader {
+  width: 160px;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 3px solid #39383B;
+ // border: 3px solid #F67D75;
+  position: relative;
+  margin-bottom: 25px;
+
+  &__img {
+    width: 154px;
+    height: 154px;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    border-radius: 50%;
+    background: black;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .line {
+    position: absolute;
+    background: url("assets/img/line.svg") no-repeat;
+    width: 160px;
+    height: 160px;
+    animation: circle 1.5s linear infinite;
+  }
+}
+
+@keyframes circle{
+  0%{
+    transform:rotate(0deg)
+    translate(1px)
+    rotate(0deg);
+
+  }
+  100%{
+    transform:rotate(360deg)
+ //   translate(-165px)
+    rotate(-360deg);
+  }
+}
+
