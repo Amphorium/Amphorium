@@ -3803,9 +3803,6 @@ div.swiper-slide{
   display: none;
   z-index: 10;
 
-  @include max-screen(lg) {
-    display: block;
-  }
 
   &.active {
     display: block;
