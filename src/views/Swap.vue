@@ -1,8 +1,7 @@
 <template>
 
   <div class="swap-page">
-    <LandingHeader  @connectWallet="connectWalletVisible = true;"
-                    @openAccount="accountVisible = true;"/>
+    <LandingHeader/>
 
     <div class="container">
       <div class="swap-wrap">
@@ -96,7 +95,6 @@
     <connect-wallet @close="connectWalletVisible = false;" v-if="connectWalletVisible"></connect-wallet>
     <wait-confirm @close="waitConfirmVisible = false;" v-if="waitConfirmVisible"></wait-confirm>
     <buy-confirm @close="buyConfirmVisible = false;" v-if="buyConfirmVisible"></buy-confirm>
-    <account @close="accountVisible = false;" v-if="accountVisible"></account>
 
   </div>
 </template>
@@ -105,7 +103,6 @@
   import ConnectWallet from "../components/Modals/ConnectWallet";
   import WaitConfirm from "../components/Modals/WaitConfirm";
   import BuyConfirm from "../components/Modals/BuyConfirm";
-  import Account from "../components/Modals/Account";
   import LandingHeader from "../components/landing/LandingHeader";
   export default {
     name: 'Swap',
@@ -116,6 +113,6 @@
       accountVisible: false,
 
     }),
-    components: {Account, BuyConfirm, WaitConfirm, ConnectWallet, LandingHeader}
+    components: {BuyConfirm, WaitConfirm, ConnectWallet, LandingHeader}
   }
 </script>
