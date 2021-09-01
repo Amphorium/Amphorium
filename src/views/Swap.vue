@@ -39,7 +39,7 @@
             </div>
 
             <div class="coin__amount">
-              <span>0.000300317</span>
+              <input type="number" class="coin__input" placeholder="0.000300317">
               <span class="coin__trans">$ 0.997661</span>
             </div>
           </div>
@@ -66,7 +66,7 @@
             </div>
 
             <div class="coin__amount">
-              <span>0.000300317</span>
+              <input type="number" class="coin__input" placeholder="0.000300317">
               <span class="coin__trans">$ 0.997661  <span class="coin__trans-green">(0.221%)</span></span>
             </div>
           </div>
