@@ -282,3 +282,62 @@
 }
 
 
+.popup-connect {
+  padding: 50px 75px;
+  background: #07060A;
+  box-shadow: 0px 4px 234px #000000;
+  border-radius: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+
+  font-family: $extra-bold;
+  font-size: 18px;
+  line-height: 48px;
+  text-align: center;
+  color: #FFFFFF;
+
+  @include max-screen(sm) {
+    padding: 50px 25px;
+  }
+
+  .popup__close {
+    width: 20px;
+    height: 20px;
+
+    @include max-screen(sm) {
+      top: 20px;
+      padding: 10px;
+      width: 15px;
+      height: 15px;
+      right: 15px;
+    }
+  }
+
+  &__title {
+    font-size: 30px;
+    line-height: 36px;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: #747474;
+    font-family: $base-font;
+    padding-bottom: 5px;
+  }
+
+  .link {
+    color: #F67D75;
+    text-decoration: none;
+    font-family: $base-font;
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  &__btns {
+    width: 100%;
+  }
+}
+

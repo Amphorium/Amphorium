@@ -42,14 +42,14 @@
           </li>
         </ul>
       </nav>
-      <div v-if=" false" class="header__btn">
+      <div v-if="isConnected === false" class="header__btn">
         <a href="https://amphorium.io/docs/whitepaper" target="_blank" class="my-btn-border"><span>whitepaper</span></a>
 
         <button  class="my-btn" @click="isConnect = true">
           <span class="my-btn__content">buy amh</span>
         </button>
       </div>
-      <div v-if="isConnected === false" class="header__account account">
+      <div v-if="isConnected" class="header__account account">
         <div class="account__amount">
           0.006856 AMH
         </div>
@@ -86,11 +86,11 @@
             <span>whitepaper</span>
           </a>
 
-          <button v-if="false" class="my-btn-border my-btn-border--white" @click="isConnect = true">
+          <button v-if="isConnected === false" class="my-btn-border my-btn-border--white" @click="isConnect = true">
             <span>buy amh</span>
           </button>
 
-          <div v-if="isConnected === false" class="account">
+          <div v-if="isConnected" class="account">
             <div class="account__amount">
               0.006856 AMH
             </div>
