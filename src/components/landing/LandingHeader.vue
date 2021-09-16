@@ -83,14 +83,14 @@
       <div  class="header__btn">
         <a v-if="$route.name==='Landing'" href="https://amphorium.io/docs/whitepaper" target="_blank" class="my-btn-border"><span>whitepaper</span></a>
 
-        <router-link v-if="$route.name==='Landing'" tag="button" to="/swap" class="my-btn" >
-          <span class="my-btn__content">buy amh</span>
-        </router-link>
+<!--        <router-link v-if="$route.name==='Landing'" tag="button" to="/swap" class="my-btn" >-->
+<!--          <span class="my-btn__content">buy amh</span>-->
+<!--        </router-link>-->
       </div>
       <div class="header__btn">
-        <button @click="setConnectWalletModalVisible(true)" v-if="$route.name==='Swap' && !getCurrentConnectionInfo.walletName" class="my-btn" >
-          <span class="my-btn__content">buy amh</span>
-        </button>
+<!--        <button @click="setConnectWalletModalVisible(true)" v-if="$route.name==='Swap' && !getCurrentConnectionInfo.walletName" class="my-btn" >-->
+<!--          <span class="my-btn__content">buy amh</span>-->
+<!--        </button>-->
       </div>
       <div v-if="$route.name==='Swap' && getCurrentConnectionInfo.walletName" class="header__account account">
         <div class="account__amount">
@@ -129,9 +129,9 @@
             <span>whitepaper</span>
           </a>
 
-          <button v-if="!getCurrentConnectionInfo.walletName" class="my-btn-border my-btn-border--white">
-            <span>buy amh</span>
-          </button>
+<!--          <button v-if="!getCurrentConnectionInfo.walletName" class="my-btn-border my-btn-border&#45;&#45;white">-->
+<!--            <span>buy amh</span>-->
+<!--          </button>-->
 
           <div v-if="getCurrentConnectionInfo.walletName" class="account">
             <div class="account__amount">

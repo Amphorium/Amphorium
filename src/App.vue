@@ -11,7 +11,7 @@
 <script>
 
   import ConnectWallet from "@/components/Modals/ConnectWallet";
-  import {mapActions, mapGetters, mapMutations} from "vuex";
+  import {mapGetters, mapMutations} from "vuex";
   import ErrorModal from "@/components/Modals/ErrorModal";
   export default {
     name: "App",
@@ -22,16 +22,9 @@
       })
     },
     methods: {
-      ...mapActions({
-        connectWallet: 'wallet/connectWallet'
-      }),
       ...mapMutations({
         setConnectWalletModalVisible: 'wallet/setConnectWalletModalVisible'
       })
-    },
-    mounted() {
-      const walletName = localStorage.getItem('usedWalletName') || 'metamask';
-      this.connectWallet(walletName)
     },
     components: {ErrorModal, ConnectWallet}
   }
