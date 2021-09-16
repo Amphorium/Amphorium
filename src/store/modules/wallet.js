@@ -41,11 +41,11 @@ export default {
     actions: {
         async setChain({commit}, provider) {
             const chainId = await window.web3.eth.getChainId();
-            if(chainId!==56 && chainId !== '0x38') {
+            if(chainId!==3 && chainId !== '0x3') {
                 try {
                     await provider.request({
                         method: 'wallet_switchEthereumChain',
-                        params: [{ chainId: '0x38' }],
+                        params: [{ chainId: '0x3' }],
                     });
                 } catch (switchError) {
                     // This error code indicates that the chain has not been added to MetaMask.
@@ -53,7 +53,7 @@ export default {
                         try {
                             await provider.request({
                                 method: 'wallet_addEthereumChain',
-                                params: [{ chainId: '0x38', rpcUrls: ['https://bsc-dataseed.binance.org/'], chainName: 'BNB' }]
+                                params: [{ chainId: '0x3', rpcUrls: ['https://bsc-dataseed.binance.org/'], chainName: 'BNB' }]
                             });
                             await provider.request({
                                 method: 'wallet_switchEthereumChain',
@@ -167,7 +167,8 @@ export default {
         getCurrentConnectionInfo: state =>  state.currentConnectionInfo,
         isWrongChainId: state=>{
            if (state.currentConnectionInfo.chainId){
-               if ( (state.currentConnectionInfo.chainId!==56 && state.currentConnectionInfo.chainId !== '0x38')){
+               console.log(state.currentConnectionInfo.chainId)
+               if ( (state.currentConnectionInfo.chainId!==3 && state.currentConnectionInfo.chainId !== '0x3')){
                    console.log('chain id', state.currentConnectionInfo.chainId);
                     return true
                 }else return false

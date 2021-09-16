@@ -83,7 +83,7 @@
           </div>
 
           <button class="my-btn">
-            <span class="my-btn__content">Confirm Buy</span>
+            <span class="my-btn__content" @click="confirm">Confirm Buy</span>
           </button>
         </div>
       </div>
@@ -97,6 +97,9 @@
     methods: {
       close() {
         this.$emit('close')
+      },
+      confirm() {
+        this.$emit('confirmed')
       }
     }
   }

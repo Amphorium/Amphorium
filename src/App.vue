@@ -2,7 +2,7 @@
   <div id="app">
     <connect-wallet v-if="getConnectWalletModalVisible"
                     @close="setConnectWalletModalVisible(false)"></connect-wallet>
-    <error-modal v-if="isWrongChainId" :message="'Wrong chain network...'"></error-modal>
+    <error-modal :can-close="false" v-if="isWrongChainId" :message="'Wrong chain network...'"></error-modal>
     <router-view/>
   </div>
 </template>

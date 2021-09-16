@@ -3,7 +3,7 @@
   <account @close="accountVisible = false;" v-if="accountVisible"></account>
   <div class="container">
     <div class="header__wrap">
-      <a class="logo" href="#"><img src="@/assets/img/logo.svg" alt=""></a>
+      <router-link class="logo" to="/"><img src="@/assets/img/logo.svg" alt="logo"></router-link>
       <nav class="main-nav">
         <ul v-if="$route.name==='Landing'" class="main-nav__list">
           <li class="main-nav__item">

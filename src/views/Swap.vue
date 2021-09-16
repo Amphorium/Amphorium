@@ -18,7 +18,7 @@
 
         <div class="swap__coin">
           <div class="coin">
-            <div class="coin__balance">
+            <div class="coin__balance" v-if="getCurrentConnectionInfo.balance">
               <div class="coin__type">
                 <div class="coin__icon eth-icon">
                   <svg width="12" height="19" viewBox="0 0 12 19" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -35,11 +35,11 @@
                 ETH
               </div>
 
-              <span>Balance: 0.006859 ETH</span>
+              <span>Balance: {{(Number(getCurrentConnectionInfo.balance) / Math.pow(10, 18)).toFixed(8)}} ETH</span>
             </div>
 
             <div class="coin__amount">
-              <input type="number" class="coin__input" placeholder="0.000300317">
+              <input type="number" v-model="ethCoin" class="coin__input" placeholder="0.000300317">
               <span class="coin__trans">$ 0.997661</span>
             </div>
           </div>
@@ -66,7 +66,7 @@
             </div>
 
             <div class="coin__amount">
-              <input type="number" class="coin__input" placeholder="0.000300317">
+              <input type="number" v-model="amhCoin" class="coin__input" placeholder="0.000300317">
               <span class="coin__trans">$ 0.997661  <span class="coin__trans-green">(0.221%)</span></span>
             </div>
           </div>
@@ -83,9 +83,9 @@
 
         <div class="swap__amount">1 AMH = 0.0030003 ETH </div>
 
-        <div class="my-btn">
+        <div class="my-btn" @click="buyConfirmVisible = true">
 
-          <span class="my-btn__content" @click="waitConfirmVisible = true">BUY AMH</span>
+          <span class="my-btn__content">BUY AMH</span>
         </div>
       </div>
     </div>
@@ -94,7 +94,8 @@
 
     <connect-wallet @close="connectWalletVisible = false;" v-if="connectWalletVisible"></connect-wallet>
     <wait-confirm @close="waitConfirmVisible = false;" v-if="waitConfirmVisible"></wait-confirm>
-    <buy-confirm @close="buyConfirmVisible = false;" v-if="buyConfirmVisible"></buy-confirm>
+    <buy-confirm @confirmed="buyTokens"
+                 @close="buyConfirmVisible = false;" v-if="buyConfirmVisible"></buy-confirm>
 
   </div>
 </template>
@@ -104,6 +105,7 @@
   import WaitConfirm from "../components/Modals/WaitConfirm";
   import BuyConfirm from "../components/Modals/BuyConfirm";
   import LandingHeader from "../components/landing/LandingHeader";
+  import {mapGetters} from "vuex";
   export default {
     name: 'Swap',
     data: () => ({
@@ -111,8 +113,20 @@
       waitConfirmVisible: false,
       buyConfirmVisible: false,
       accountVisible: false,
-
+      ethCoin: null,
+      amhCoin: null
     }),
+    computed: {
+      ...mapGetters({
+        getCurrentConnectionInfo: 'wallet/getCurrentConnectionInfo'
+      })
+    },
+    methods: {
+      buyTokens() {
+        this.buyConfirmVisible = false;
+        this.waitConfirmVisible = true;
+      }
+    },
     components: {BuyConfirm, WaitConfirm, ConnectWallet, LandingHeader}
   }
 </script>
