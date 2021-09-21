@@ -597,7 +597,7 @@
               </div> -->
               <div class="audit-grid__item">
                 <div class="audit-card">
-                  <a target="_blank" href="https://amphorium.io/docs/audit" class="audit-card__link"></a>
+<!--                  <a target="_blank" href="https://amphorium.io/docs/audit" class="audit-card__link"></a>-->
                   <div class="audit-card__wrap">
                     <div class="audit-card__img">
                       <svg width="188" height="48" viewBox="0 0 188 48" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
