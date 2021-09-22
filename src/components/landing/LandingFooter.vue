@@ -101,7 +101,7 @@
                 </a>
               </li>
               <li class="social__item">
-                <a target="_blank" href="https://medium.com/@Amphorium">
+                <a target="_blank" href="https://amphorium.medium.com/">
                   <img class="default" src="@/assets/img/social-3.svg" alt="">
                   <img class="hover" src="@/assets/img/social-3-hover.svg" alt=""></a>
               </li>
@@ -112,7 +112,7 @@
                 </a>
               </li>
               <li class="social__item">
-                <a target="_blank" href="https://discord.com/channels/873621728490827896/873621728490827901">
+                <a target="_blank" href="https://discord.gg/CS2KCXTS6W">
                   <img class="default" src="@/assets/img/social-5.svg" alt="">
                   <img class="hover" src="@/assets/img/social-5-hover.svg" alt="">
                 </a>
