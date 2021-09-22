@@ -4493,10 +4493,11 @@ div.swiper-slide{
     line-height: 32px;
     font-family: $extra-bold;
     color: #FFFFFF;
-    margin: 20px 0 15px 0;
+    margin-top: 20px;
   }
 
   &__text {
+    margin-top: 15px;
     font-size: 16px;
     line-height: 24px;
     font-family: $light;
@@ -4616,6 +4617,10 @@ div.swiper-slide{
   position: relative;
   padding: 45px 40px;
 
+  @include max-screen(xxl) {
+    padding: 35px 30px;
+  }
+
   &__link {
     position: absolute;
     left: 0;
@@ -4654,6 +4659,10 @@ div.swiper-slide{
     font-family: $extra-bold;
     color: #FFFFFF;
     margin-top: 20px;
+
+    @include max-screen(xl) {
+      font-size: 22px;
+    }
   }
 
   &__text {
@@ -4674,11 +4683,26 @@ div.swiper-slide{
     border-radius: 20px;
     padding: 2px;
     background: linear-gradient(to bottom, #39383B, #060509);
-    -webkit-mask: linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: destination-out;
     mask-composite: exclude;
     z-index: 1;
+  }
+
+  &__btn {
+    text-decoration: none;
+    font-family: $black;
+    font-size: 16px;
+    line-height: 44px;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(to right, #ffc9b2 0%, #f67d75 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    svg {
+      margin-left: 12px;
+    }
   }
 }
 
