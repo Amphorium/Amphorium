@@ -885,21 +885,21 @@ export default {
           percent: '10%',
           amh: '100 000 000'
         },
-        // {
-        //   group: 'Private sale 1 (A)',
-        //   percent: '6.5%',
-        //   amh: '65 000 000'
-        // },
-        // {
-        //   group: 'Private sale 2 (B)',
-        //   percent: '10%',
-        //   amh: '100 000 000'
-        // },
-        // {
-        //   group: 'Private sale 3 (C)',
-        //   percent: '3.5%',
-        //   amh: '35 000 000'
-        // },
+        {
+          group: 'Private sale 1',
+          percent: '6.5%',
+          amh: '65 000 000'
+        },
+        {
+          group: 'Private sale 2',
+          percent: '10%',
+          amh: '100 000 000'
+        },
+        {
+          group: 'Private sale 3',
+          percent: '3.5%',
+          amh: '35 000 000'
+        },
         {
           group: 'Advisors',
           percent: '2%',
