@@ -289,10 +289,10 @@
                   <span class="small-marker small-marker--7"></span>
                   <p>Private Sale 2</p>
                 </li>
-                <li>
-                  <span class="small-marker small-marker--8"></span>
-                  <p>Private Sale</p>
-                </li>
+<!--                <li>-->
+<!--                  <span class="small-marker small-marker&#45;&#45;8"></span>-->
+<!--                  <p>Private Sale</p>-->
+<!--                </li>-->
                 <li>
                   <span class="small-marker small-marker--9"></span>
                   <p>Seed</p>
@@ -911,7 +911,7 @@ export default {
           amh: '50 000 000'
         },
         {
-          group: 'Staking revards',
+          group: 'Stacking rewards',
           percent: '3%',
           amh: '30 000 000'
         },
