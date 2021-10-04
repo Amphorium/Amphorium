@@ -246,7 +246,7 @@
             <div class="tokenomics__img">
               <img src="@/assets/img/schedule.svg" alt="">
               <div class="tokenomics-step" :class="`active--${activeStep}`">
-                <p>{{tokenInfo[activeStep].group}} {{tokenInfo[activeStep].percent}}</p>
+                <p>{{tokenInfo[activeStep].group}} - {{tokenInfo[activeStep].percent}}</p>
                 <div class="tokenomics-step__marker"></div>
               </div>
             </div>
@@ -283,16 +283,16 @@
                 </li>
                 <li>
                   <span class="small-marker small-marker--6"></span>
-                  <p>Public Sale</p>
+                  <p>Public sale (round 1)</p>
                 </li>
                 <li>
                   <span class="small-marker small-marker--7"></span>
-                  <p>Private Sale 2</p>
+                  <p>Public sale (round 2)</p>
                 </li>
-<!--                <li>-->
-<!--                  <span class="small-marker small-marker&#45;&#45;8"></span>-->
-<!--                  <p>Private Sale</p>-->
-<!--                </li>-->
+                <li>
+                  <span class="small-marker small-marker--8"></span>
+                  <p>Public sale (round 3)</p>
+                </li>
                 <li>
                   <span class="small-marker small-marker--9"></span>
                   <p>Seed</p>
@@ -346,7 +346,7 @@
             <span class="history-marker"></span>
             <div class="history-card__wrap">
               <div class="date">
-                <p>SEPTEMBER 2021</p>
+                <p>NOVEMBER 2021</p>
               </div>
               <div class="history-card__title">
                 <p>Seed round</p>
@@ -360,7 +360,7 @@
             <span class="history-marker"></span>
             <div class="history-card__wrap">
               <div class="date">
-                <p>FEBRUARY 2022</p>
+                <p>APRIL 2022</p>
               </div>
               <div class="history-card__title">
                 <p>Public round</p>
@@ -433,9 +433,9 @@
       <div class="container">
         <div class="my-title" data-aos="fade-up"
              data-aos-duration="1500">
-          <h2 @mousemove="textLighting" @mouseleave="resetTextLighting">
+          <h1 @mousemove="textLighting" @mouseleave="resetTextLighting">
             Amphorium is a combination of simplicity and innovation in the world of logistics.
-          </h2>
+          </h1>
         </div>
         <div class="facts__subtitle" data-aos="fade-up"
              data-aos-duration="1500">
@@ -497,67 +497,67 @@
         </div>
       </div>
     </section>
-    <section class="partners" id="partners">
-      <div class="container">
-        <div class="my-title" data-aos="fade-up"
-             data-aos-duration="1500">
-          <h2 style="width:100%" @mousemove="textLighting" @mouseleave="resetTextLighting">Our Partners</h2>
-        </div>
-        <div class="partners-grid" data-aos="fade"
-             data-aos-duration="1500">
-          <a href="#" class="partners-item">
-            <!-- <img src="@/assets/img/partner-1.svg" alt=""> -->
-            <img src="https://clover.finance/partner/graph.png" alt="">
-          </a>
-          <a href="#" class="partners-item">
-            <!-- <img src="@/assets/img/partner-2.svg" alt=""> -->
-            <img src="https://clover.finance/partner/chainlink.png" alt="">
-          </a>
-          <a href="#" class="partners-item">
-            <!-- <img src="@/assets/img/partner-3.svg" alt=""> -->
-            <img src="https://clover.finance/partner/prosper.png" alt="">
-          </a>
-          <a href="#" class="partners-item">
-            <!-- <img src="@/assets/img/partner-4.svg" alt=""> -->
-            <img src="https://clover.finance/partner/dodo.png" alt="">
-          </a>
-          <a href="#" class="partners-item">
-            <!-- <img src="@/assets/img/partner-5.svg" alt=""> -->
-            <img src="https://clover.finance/partner/polygon.png" alt="">
-          </a>
-          <a href="#" class="partners-item">
-            <img src="https://clover.finance/partner/litentry.png" alt="">
-          </a>
-          <a href="#" class="partners-item">
-            <img src="https://clover.finance/partner/boringdao.png" alt="">
-          </a>
-          <a href="#" class="partners-item">
-            <img src="https://clover.finance/partner/injective.png" alt="">
-          </a>
-          <a href="#" class="partners-item">
-            <img src="https://clover.finance/partner/crust.png" alt="">
-          </a>
-          <a href="#" class="partners-item">
-            <img src="https://clover.finance/partner/showcase.png" alt="">
-          </a>
-          <a href="#" class="partners-item">
-            <img src="https://clover.finance/partner/hedget.png" alt="">
-          </a>
-          <a href="#" class="partners-item">
-            <img src="https://clover.finance/partner/snowswap.png" alt="">
-          </a>
-          <a href="#" class="partners-item">
-            <img src="https://clover.finance/partner/etha_lend.png" alt="">
-          </a>
-          <a href="#" class="partners-item">
-            <img src="https://clover.finance/partner/unilend.png" alt="">
-          </a>
-          <a href="#" class="partners-item">
-            <img src="https://clover.finance/partner/alice.png" alt="">
-          </a>
-        </div>
-      </div>
-    </section>
+<!--    <section class="partners" id="partners">-->
+<!--      <div class="container">-->
+<!--        <div class="my-title" data-aos="fade-up"-->
+<!--             data-aos-duration="1500">-->
+<!--          <h2 style="width:100%" @mousemove="textLighting" @mouseleave="resetTextLighting">Our Partners</h2>-->
+<!--        </div>-->
+<!--        <div class="partners-grid" data-aos="fade"-->
+<!--             data-aos-duration="1500">-->
+<!--          <a href="#" class="partners-item">-->
+<!--            &lt;!&ndash; <img src="@/assets/img/partner-1.svg" alt=""> &ndash;&gt;-->
+<!--            <img src="https://clover.finance/partner/graph.png" alt="">-->
+<!--          </a>-->
+<!--          <a href="#" class="partners-item">-->
+<!--            &lt;!&ndash; <img src="@/assets/img/partner-2.svg" alt=""> &ndash;&gt;-->
+<!--            <img src="https://clover.finance/partner/chainlink.png" alt="">-->
+<!--          </a>-->
+<!--          <a href="#" class="partners-item">-->
+<!--            &lt;!&ndash; <img src="@/assets/img/partner-3.svg" alt=""> &ndash;&gt;-->
+<!--            <img src="https://clover.finance/partner/prosper.png" alt="">-->
+<!--          </a>-->
+<!--          <a href="#" class="partners-item">-->
+<!--            &lt;!&ndash; <img src="@/assets/img/partner-4.svg" alt=""> &ndash;&gt;-->
+<!--            <img src="https://clover.finance/partner/dodo.png" alt="">-->
+<!--          </a>-->
+<!--          <a href="#" class="partners-item">-->
+<!--            &lt;!&ndash; <img src="@/assets/img/partner-5.svg" alt=""> &ndash;&gt;-->
+<!--            <img src="https://clover.finance/partner/polygon.png" alt="">-->
+<!--          </a>-->
+<!--          <a href="#" class="partners-item">-->
+<!--            <img src="https://clover.finance/partner/litentry.png" alt="">-->
+<!--          </a>-->
+<!--          <a href="#" class="partners-item">-->
+<!--            <img src="https://clover.finance/partner/boringdao.png" alt="">-->
+<!--          </a>-->
+<!--          <a href="#" class="partners-item">-->
+<!--            <img src="https://clover.finance/partner/injective.png" alt="">-->
+<!--          </a>-->
+<!--          <a href="#" class="partners-item">-->
+<!--            <img src="https://clover.finance/partner/crust.png" alt="">-->
+<!--          </a>-->
+<!--          <a href="#" class="partners-item">-->
+<!--            <img src="https://clover.finance/partner/showcase.png" alt="">-->
+<!--          </a>-->
+<!--          <a href="#" class="partners-item">-->
+<!--            <img src="https://clover.finance/partner/hedget.png" alt="">-->
+<!--          </a>-->
+<!--          <a href="#" class="partners-item">-->
+<!--            <img src="https://clover.finance/partner/snowswap.png" alt="">-->
+<!--          </a>-->
+<!--          <a href="#" class="partners-item">-->
+<!--            <img src="https://clover.finance/partner/etha_lend.png" alt="">-->
+<!--          </a>-->
+<!--          <a href="#" class="partners-item">-->
+<!--            <img src="https://clover.finance/partner/unilend.png" alt="">-->
+<!--          </a>-->
+<!--          <a href="#" class="partners-item">-->
+<!--            <img src="https://clover.finance/partner/alice.png" alt="">-->
+<!--          </a>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </section>-->
     <section class="audit" id="audit">
       <div class="container">
         <div class="audit__wrap">
@@ -886,17 +886,17 @@ export default {
           amh: '100 000 000'
         },
         {
-          group: 'Private sale 1',
+          group: 'Public sale (round 1)',
           percent: '6.5%',
           amh: '65 000 000'
         },
         {
-          group: 'Private sale 2',
+          group: 'Public sale (round 2)',
           percent: '10%',
           amh: '100 000 000'
         },
         {
-          group: 'Private sale 3',
+          group: 'Public sale (round 3)',
           percent: '3.5%',
           amh: '35 000 000'
         },
