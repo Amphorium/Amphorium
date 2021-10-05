@@ -5,7 +5,7 @@
     <div class="header__wrap">
       <router-link class="logo" to="/"><img src="@/assets/img/logo.svg" alt="logo"></router-link>
       <nav class="main-nav">
-        <ul v-if="$route.name!=='Swap'" class="main-nav__list">
+        <ul v-if="$route.name==='Landing'" class="main-nav__list">
           <li class="main-nav__item">
             <a href="#about" v-smooth-scroll>
               About
@@ -42,7 +42,7 @@
             </a>
           </li>
         </ul>
-        <ul v-if="$route.name==='Swap'" class="main-nav__list">
+        <ul v-if="$route.name!=='Landing' " class="main-nav__list">
           <li class="main-nav__item">
             <router-link :to="'/'">
               About
