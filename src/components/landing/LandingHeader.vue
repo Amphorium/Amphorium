@@ -5,7 +5,7 @@
     <div class="header__wrap">
       <router-link class="logo" to="/"><img src="@/assets/img/logo.svg" alt="logo"></router-link>
       <nav class="main-nav">
-        <ul v-if="$route.name==='Landing'" class="main-nav__list">
+        <ul v-if="$route.name!=='Swap'" class="main-nav__list">
           <li class="main-nav__item">
             <a href="#about" v-smooth-scroll>
               About
@@ -81,7 +81,7 @@
         </ul>
       </nav>
       <div  class="header__btn">
-        <a v-if="$route.name==='Landing'" href="https://amphorium.io/docs/whitepaper" target="_blank" class="my-btn-border"><span>whitepaper</span></a>
+        <a v-if="$route.name!=='Swap'" href="https://amphorium.io/docs/whitepaper" target="_blank" class="my-btn-border"><span>whitepaper</span></a>
 
 <!--        <router-link v-if="$route.name==='Landing'" tag="button" to="/swap" class="my-btn" >-->
 <!--          <span class="my-btn__content">buy amh</span>-->

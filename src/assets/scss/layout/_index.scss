@@ -5048,7 +5048,7 @@ div.swiper-slide{
   margin-bottom: 20px;
 }
 
-.swap-page {
+.swap-page, .page404 {
   background: url("assets/img/swap-bg.svg") no-repeat;
   position: relative;
     .container {
@@ -5348,4 +5348,112 @@ div.swiper-slide{
   line-height: 16px;
   text-transform: uppercase;
   color: #F67D75;
+}
+
+/* Page 404 */
+
+.page404 {
+
+  &:before {
+    @include max-screen(md) {
+      top: 25%;
+    }
+    @include max-screen(sm) {
+      top: 15%;
+    }
+    @include max-screen(xs) {
+     display: none;
+    }
+  }
+
+  &:after {
+    @include max-screen(md) {
+      height: 100px;
+    }
+    @include max-screen(xs) {
+      display: none;
+    }
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  &__img {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    @include max-screen(xs) {
+     margin-top: 80px;
+    }
+
+    img {
+      margin: 0 -120px;
+      position: relative;
+
+      @include max-screen(xl) {
+       width: 428px;
+      }
+      @include max-screen(lg) {
+       width: 400px;
+      }
+      @include max-screen(md) {
+       width: 350px;
+        margin: 0px -95px;
+      }
+      @include max-screen(sm) {
+        width: 270px;
+        margin: 0px -75px;
+      }
+      @include max-screen(xs) {
+        width: 160px;
+        margin: 0px -50px;
+      }
+    }
+
+    span {
+      font-family: $bold;
+      font-size: 495px;
+      line-height: 124px;
+
+      @include max-screen(xl) {
+        font-size: 430px;
+      }
+      @include max-screen(lg) {
+        font-size: 390px;
+      }
+      @include max-screen(md) {
+        font-size: 340px;
+      }
+      @include max-screen(sm) {
+        font-size: 270px;
+      }
+      @include max-screen(xs) {
+        font-size: 170px;
+      }
+    }
+  }
+
+  &__text {
+    font-family: $extra-bold;
+    font-size: 36px;
+    line-height: 38px;
+    text-align: center;
+
+    @include max-screen(sm) {
+      font-size: 28px;
+    }
+    @include max-screen(xs) {
+      font-size: 22px;
+      padding: 0 15px;
+      line-height: 32px;
+    }
+  }
+
+  .main-banner__btn {
+    @include max-screen(xs) {
+     width: 100%;
+    }
+  }
 }
