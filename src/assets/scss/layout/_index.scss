@@ -436,6 +436,15 @@ body {
       font-size: 44px;
       line-height: 40px;
     }
+
+    .h1__row--two {
+      display: inline;
+      margin-left: 135px
+    }
+    .h1__row--three {
+      display: inline;
+      margin-left: 310px
+    }
   }
 
   &__btn {
@@ -790,7 +799,7 @@ body {
   }
   @include max-screen(xl) {
     font-size: 46px;
-    line-height: 37px;
+    line-height: 52px;
     margin-bottom: 30px;
   }
   @include max-screen(lg) {
@@ -3141,49 +3150,44 @@ div.swiper-slide{
 
     &:after {
       transform: rotate(84.04deg);
-      top: -147px;
-      width: 420px;
-      left: -44px;
-      // @include max-screen(xxl) {
-      //   top: -147px;
-      //   width: 391px;
-      //   left: 104px;
-      // }
+      top: -169px;
+      width: 428px;
+      left: -46px;
+
+      @include max-screen(xxl) {
+        top: -154px;
+        width: 397px;
+        left: -32px;
+      }
+      @include max-screen(xl) {
+        top: -154px;
+        width: 398px;
+        left: -33px;
+      }
       @include max-screen(lg) {
-        transform: rotate(
-                        71.04deg
-        );
-        top: -114px;
+        transform: rotate(71.04deg);
+        top: -137px;
         width: 391px;
-        left: 60px;
+        left: -63px;
       }
       @include max-screen(md) {
         top: -136px;
         width: 353px;
         left: -99px;
-        transform: rotate(
-                        82.04deg
-        );
+        transform: rotate(82.04deg);
       }
       @include max-screen(sm) {
         top: -85px;
         width: 268px;
         left: -53px;
-        transform: rotate(
-                        78.04deg
-        );
+        transform: rotate(78.04deg);
       }
        @include max-screen(xs) {
          top: -49px;
          width: 299px;
          left: -85px;
-         transform: rotate(
-                         90.04deg
-         );
+         transform: rotate(90.04deg);
        }
-
-
-
     }
 
     .tokenomics-step__marker {
@@ -3227,18 +3231,22 @@ div.swiper-slide{
 
     &:after {
       transform: rotate(106.04deg);
-      top: -127px;
-      width: 389px;
-      left: 66px;
-      // @include max-screen(xxl) {
-      //   top: -128px;
-      //   width: 365px;
-      //   left: 137px;
-      // }
+      top: -145px;
+      width: 391px;
+      left: 69px;
+
+      @include max-screen(xxl) {
+        top: -132px;
+        width: 376px;
+        left: 74px;
+      }
+      @include max-screen(xl) {
+        top: -132px;
+        width: 376px;
+        left: 74px;
+      }
       @include max-screen(lg) {
-        transform: rotate(
-                        98.04deg
-        );
+        transform: rotate(98.04deg);
         top: -146px;
         width: 375px;
         left: 42px;
@@ -3254,9 +3262,7 @@ div.swiper-slide{
         left: 23px;
       }
       @include max-screen(xs) {
-        transform: rotate(
-                        99.04deg
-        );
+        transform: rotate(99.04deg);
         top: -95px;
         width: 249px;
         left: 46px;
@@ -3305,21 +3311,19 @@ div.swiper-slide{
     }
 
     &:after {
-      transform: rotate(
-                      121.04deg
-      );
-      top: -118px;
-      width: 363px;
-      left: 40px;
+      transform: rotate(121.04deg);
+      top: -117px;
+      width: 371px;
+      left: 34px;
+
       @include max-screen(lg) {
-        transform: rotate(
-                        115.04deg
-        );
-        top: -137px;
+        transform: rotate(119.04deg);
+        top: -120px;
         width: 371px;
-        left: 29px;
+        left: 39px;
       }
       @include max-screen(md) {
+        transform: rotate(115.04deg);
         top: -124px;
         width: 353px;
         left: 32px;
@@ -3327,13 +3331,10 @@ div.swiper-slide{
       @include max-screen(sm) {
         top: -83px;
         width: 266px;
-        left: 53px;
-
+        left: 55px;
       }
       @include max-screen(xs) {
-        transform: rotate(
-                        112.04deg
-        );
+        transform: rotate(112.04deg);
         top: -79px;
         width: 203px;
         left: 24px;
@@ -3344,9 +3345,10 @@ div.swiper-slide{
       display: block;
       margin-top: -301px;
       margin-left: 307px;
+
       @include max-screen(lg) {
-        margin-top: -327px;
-        margin-left: 283px;
+        margin-top: -309px;
+        margin-left: 304px;
       }
       @include max-screen(md) {
         margin-top: -306px;
@@ -3379,25 +3381,21 @@ div.swiper-slide{
     }
 
     &:after {
-      transform: rotate(
-                      128.04deg
-      );
-      top: -91px;
+      transform: rotate(128.04deg);
+      top: -93px;
       width: 324px;
       left: 79px;
+
       @include max-screen(lg) {
-        transform: rotate(
-                        108.04deg
-        );
-        top: -108px;
-        width: 316px;
-        left: 67px;
+        transform: rotate(108.04deg);
+        top: -82px;
+        width: 319px;
+        left: 89px;
       }
       @include max-screen(md) {
         top: -100px;
         width: 288px;
         left: 79px;
-
       }
       @include max-screen(sm) {
         top: -67px;
@@ -3405,9 +3403,7 @@ div.swiper-slide{
         left: 106px;
       }
       @include max-screen(xs) {
-        transform: rotate(
-                        108.04deg
-        );
+        transform: rotate(108.04deg);
         top: -69px;
         width: 190px;
         left: 36px;
@@ -3418,9 +3414,10 @@ div.swiper-slide{
       display: block;
       margin-top: -247px;
       margin-left: 333px;
+
       @include max-screen(lg) {
-        margin-top: -285px;
-        margin-left: 264px;
+        margin-top: -261px;
+        margin-left: 287px;
       }
       @include max-screen(md) {
         margin-top: -262px;
@@ -3454,17 +3451,16 @@ div.swiper-slide{
     }
 
     &:after {
-      transform: rotate(
-                      118.04deg
-      );
+      transform: rotate(118.04deg);
       top: -66px;
       width: 241px;
       left: 100px;
-       @include max-screen(lg) {
-        top: -92px;
-        width: 306px;
-        left: 10px;
-       }
+
+      @include max-screen(lg) {
+        top: -77px;
+        width: 269px;
+        left: 37px;
+      }
       @include max-screen(md) {
         top: -83px;
         width: 243px;
@@ -3478,30 +3474,15 @@ div.swiper-slide{
       @include max-screen(xs) {
         left: -17px;
       }
-      // @include max-screen(sm) {
-      //   top: -35px;
-      //   width: 185px;
-      //   left: 219px;
-      //   transform: rotate(
-      //                   117.04deg
-      //   );
-      // }
-      // @include max-screen(xs) {
-      //   transform: rotate(
-      //                   71.04deg
-      //   );
-      //   top: -45px;
-      //   width: 166px;
-      //   left: 158px;
-      // }
     }
 
     .tokenomics-step__marker {
       display: block;
       margin-top: -201px;
       margin-left: 269px;
+
       @include max-screen(lg) {
-        margin-top: -253px;
+        margin-top: -223px;
         margin-left: 226px;
       }
       @include max-screen(md) {
@@ -3538,21 +3519,26 @@ div.swiper-slide{
     }
 
     &:after {
-      transform: rotate(
-                      118.04deg
-      );
+      transform: rotate(118.04deg);
       top: -73px;
       width: 180px;
       left: 30px;
+
+      @include max-screen(md) {
+        transform: rotate(105.04deg);
+        top: -50px;
+        width: 196px;
+        left: 40px;
+      }
       @include max-screen(sm) {
-        top: -27px;
+        top: -31px;
         width: 157px;
-        left: 193px;
+        left: 64px;
       }
       @include max-screen(xs) {
-        top: -45px;
+        top: -36px;
         width: 143px;
-        left: 2px;
+        left: 20px;
       }
     }
 
@@ -3589,16 +3575,15 @@ div.swiper-slide{
     }
 
     &:after {
-      transform: rotate(
-                      65.04deg
-      );
+      transform: rotate(65.04deg);
       top: -42px;
       width: 175px;
       left: 61px;
+
       @include max-screen(sm) {
-        top: -19px;
+        top: -25px;
         width: 147px;
-        left: 138px;
+        left: 69px;
       }
       @include max-screen(xs) {
         top: -30px;
@@ -3648,37 +3633,37 @@ div.swiper-slide{
     }
 
     &:after {
-      transform: rotate(
-                      105.04deg
-      );
-      top: -68px;
-      width: 219px;
-      left: -62px;
-      // @include max-screen(xxl) {
-      //   transform: rotate(
-      //                   111.04deg
-      //   );
-      //   top: -55px;
-      //   width: 219px;
-      //   left: -70px;
-      // }
-      @include max-screen(md) {
+      transform: rotate(100.04deg);
+      top: -66px;
+      width: 212px;
+      left: -68px;
+
+      @include max-screen(xxl) {
+        transform: rotate(105.04deg);
+        top: -68px;
+        width: 219px;
+        left: -62px;
+      }
+      @include max-screen(lg) {
+        transform: rotate(105.04deg);
         top: -37px;
-        width: 180px;
-        left: -57px;
+        width: 165px;
+        left: -27px;
+      }
+      @include max-screen(md) {
+        top: -43px;
+        width: 175px;
+        left: -42px;
       }
       @include max-screen(sm) {
-        transform: rotate(
-                        125.04deg
-        );
-        top: -32px;
-        width: 196px;
-        left: -43px;
+        top: -37px;
+        width: 169px;
+        left: 0px;
       }
       @include max-screen(xs) {
-        top: -24px;
-        width: 134px;
-        left: 22px;
+        top: -19px;
+        width: 123px;
+        left: 49px;
       }
     }
 
@@ -3686,8 +3671,13 @@ div.swiper-slide{
       display: block;
       margin-top: -198px;
       margin-left: -106px;
+
       @include max-screen(xxl) {
         margin-left: -85px;
+      }
+      @include max-screen(lg) {
+        margin-left: -85px;
+        margin-top: -145px;
       }
       @include max-screen(md) {
         margin-top: -157px;
@@ -3709,6 +3699,7 @@ div.swiper-slide{
     margin-left: -14px;
     text-align: right;
     width: 300px;
+
     @include max-screen(lg) {
       margin-top: 172px;
       margin-left: -1px;
@@ -3731,49 +3722,52 @@ div.swiper-slide{
     }
 
     &:after {
-      transform: rotate(
-                      95.04deg
-      );
-      top: -57px;
+      transform: rotate(92.04deg);
+      top: -66px;
       width: 189px;
-      left: -61px;
-      // @include max-screen(xxl) {
-      //   transform: rotate(
-      //                   102.04deg
-      //   );
-      //   top: -45px;
-      //   width: 189px;
-      //   left: -75px;
-      // }
+      left: -80px;
+
+      @include max-screen(xxl) {
+        transform: rotate(95.04deg);
+        top: -65px;
+        width: 189px;
+        left: -67px;
+      }
+      @include max-screen(lg) {
+        top: -47px;
+        width: 159px;
+        left: -51px;
+      }
       @include max-screen(md) {
-        top: -28px;
-        width: 156px;
-        left: -62px;
+        top: -34px;
+        width: 152px;
+        left: -51px;
       }
       @include max-screen(sm) {
-        transform: rotate(
-                        113.04deg
-        );
+        transform: rotate(113.04deg);
         top: -33px;
         width: 177px;
         left: -55px;
       }
       @include max-screen(xs) {
-        transform: rotate(
-                        123.04deg
-        );
-        top: -14px;
-        width: 115px;
-        left: 18px;
+        transform: rotate(121.04deg);
+        top: -16px;
+        width: 116px;
+        left: 17px;
       }
     }
 
     .tokenomics-step__marker {
       display: block;
-      margin-top: -178px;
+      margin-top: -188px;
       margin-left: -147px;
+
       @include max-screen(xxl) {
-        margin-left: -125px;
+        margin-left: -127px;
+      }
+      @include max-screen(lg) {
+        margin-left: -127px;
+        margin-top: -154px;
       }
       @include max-screen(md) {
         margin-top: -139px;
@@ -3781,7 +3775,7 @@ div.swiper-slide{
       }
       @include max-screen(sm) {
         margin-left: -89px;
-        margin-top: -144px;
+        margin-top: -141px;
       }
       @include max-screen(xs) {
         margin-left: -49px;
@@ -4444,8 +4438,16 @@ div.swiper-slide{
   .my-title {
     max-width: 950px;
     text-align: center;
+    line-height: 82px;
     margin: 0 auto;
+
+    &__text {
+      height: 100%;
+      white-space: normal;
+    }
   }
+
+
 
   &__subtitle {
     font-size: 24px;
@@ -4544,6 +4546,180 @@ div.swiper-slide{
   transform: translateX(-50%);
   filter: opacity(0.3);
 
+}
+
+.faq {
+  min-height: 854px;
+  .my-title {
+    max-height: 80px;
+
+    &__text {
+      width: 100%;
+      text-align: left;
+    }
+  }
+  .faq__wrap {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .faq-questions {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+
+    .item {
+      position: relative;
+      margin-bottom: 20px;
+      border-radius: 20px;
+      background-color: #050508;
+      transition: background-color 0.3s linear;
+
+      &.active {
+        background-color: #2f2c35;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &__header {
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 25px;
+
+        &:after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          border-radius: 20px;
+          padding: 2px;
+          background: linear-gradient(to bottom, #39383B, #060509);
+          -webkit-mask: linear-gradient(#fff 0 0) content-box,
+          linear-gradient(#fff 0 0);
+          -webkit-mask-composite: destination-out;
+          mask-composite: exclude;
+          z-index: 1;
+        }
+
+        &.active:after {
+          background: linear-gradient(to bottom, #39383B, #2f2c35);
+        }
+      }
+      &__question {
+        font-size: 20px;
+        line-height: 29px;
+        font-family: "Inter-Bold", sans-serif;
+        background: linear-gradient(to right, #ffc9b2 0%, #f67d75 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: inline-block;
+        transition: background 0.3s linear;
+
+        &.active {
+          background: linear-gradient(to right, #ffffff 0%, #ffc9b2 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+      }
+      &__caret {
+        color: #343434;
+        font-size: 12px;
+        transform: rotate(0deg);
+        transition: transform 0.3s linear;
+
+        &.reverse {
+          transform: rotate(180deg);
+          transition: transform 0.3s linear;
+        }
+      }
+
+      &__container {
+        transition: all 0.3s linear;
+        overflow: hidden;
+        height: 0;
+        visibility: hidden;
+
+        &.active{
+          visibility: visible;
+        }
+      }
+
+      &__text {
+        color: #fff;
+        font-size: 14px;
+        line-height: 22px;
+        margin-bottom: 20px;
+        padding: 0 25px;
+      }
+    }
+  }
+
+  .faq-ask {
+    position: relative;
+    width: 30%;
+    background-color: #050508e6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 20px;
+      padding: 2px;
+      background: linear-gradient(to bottom, #39383B, #060509);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+      -webkit-mask-composite: destination-out;
+      mask-composite: exclude;
+      z-index: 1;
+    }
+
+    &__img {
+      position: absolute;
+      top: -20px;
+    }
+    &__title {
+      font-size: 42px;
+      line-height: 45px;
+      font-family: "Inter-Bold", sans-serif;
+      background: linear-gradient(to right, #ffc9b2 0%, #f67d75 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-align: center;
+    }
+    &__text {
+      color: #fff;
+      text-align: center;
+      margin: 15px 0;
+    }
+    &__btn {
+      width: 100%;
+
+      button {
+       width: 100%;
+        color: #fff;
+        font-family: "Inter-Bold", sans-serif;
+        background: linear-gradient(to right, #ffc9b2 0%, #f67d75 100%);     
+        text-align: center;
+        padding: 15px 30px;
+        border: none;
+        border-radius: 100px;
+      }
+    }
+  }
 }
 
 .audit {

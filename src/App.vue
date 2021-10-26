@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <connect-wallet v-if="getConnectWalletModalVisible"
-                    @close="setConnectWalletModalVisible(false)"></connect-wallet>
+      @close="setConnectWalletModalVisible(false)">
+    </connect-wallet>
     <error-modal :can-close="false" v-if="isWrongChainId" :message="'Wrong chain network...'"></error-modal>
     <router-view/>
   </div>
@@ -26,7 +27,10 @@
         setConnectWalletModalVisible: 'wallet/setConnectWalletModalVisible'
       })
     },
-    components: {ErrorModal, ConnectWallet}
+    components: {ErrorModal, ConnectWallet},
+    created() {
+      this.$router.replace(this.$route.path)
+    }
   }
 </script>
 

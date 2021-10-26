@@ -63,17 +63,18 @@
       <div class="container">
         <div class="main-banner__wrap">
            <div class="main-banner__title">
-              <div class="h1">
-                <span @mousemove="textLighting" @mouseleave="resetTextLighting">Monitor.</span>
-                <span @mousemove="textLighting" @mouseleave="resetTextLighting">Protect.</span>
-                <span @mousemove="textLighting" @mouseleave="resetTextLighting">Control.</span>
+              <div @mousemove="textLighting" @mouseleave="resetTextLighting" class="h1">
+                Global <br>
+                <div class="h1__row--two" />Logistics <br>
+                <div class="h1__row--three" />Blockchain
               </div>
             </div>
           <div class="main-banner__info">
            
             <ul class="my-list">
               <li class="my-list__item">
-                <p><span>The supply chain remains transparent and optimized through real-time cargo monitoring.</span></p>
+                <p><span>Amphorium is a combination of simplicity and innovation in the world of logistics.</span></p>
+                <!-- <p><span>The supply chain remains transparent and optimized through real-time cargo monitoring.</span></p> -->
                 <!-- <p>In voluptate esse cillum dolore eu fugiat nulla pariatur</p> -->
               </li>
               <li class="my-list__item">
@@ -271,11 +272,11 @@
                 </li>
                 <li>
                   <span class="small-marker small-marker--3"></span>
-                  <p>Reserve</p>
+                  <p>Advisors</p>
                 </li>
                 <li>
                   <span class="small-marker small-marker--4"></span>
-                  <p>Advisors</p>
+                  <p>AirDrop</p>
                 </li>
                 <li>
                   <span class="small-marker small-marker--5"></span>
@@ -373,6 +374,7 @@
         </div>
       </div>
     </section>
+
     <section class="news" id="news">
       <div class="container">
         <div class="my-title" data-aos="fade-up"
@@ -429,11 +431,12 @@
         </div> -->
       </div>
     </section>
+
     <section class="facts" id="facts">
       <div class="container">
         <div class="my-title" data-aos="fade-up"
              data-aos-duration="1500">
-          <h1 @mousemove="textLighting" @mouseleave="resetTextLighting">
+          <h1 class="my-title__text" @mousemove="textLighting" @mouseleave="resetTextLighting">
             Amphorium is a combination of simplicity and innovation in the world of logistics.
           </h1>
         </div>
@@ -497,67 +500,129 @@
         </div>
       </div>
     </section>
-<!--    <section class="partners" id="partners">-->
-<!--      <div class="container">-->
-<!--        <div class="my-title" data-aos="fade-up"-->
-<!--             data-aos-duration="1500">-->
-<!--          <h2 style="width:100%" @mousemove="textLighting" @mouseleave="resetTextLighting">Our Partners</h2>-->
-<!--        </div>-->
-<!--        <div class="partners-grid" data-aos="fade"-->
-<!--             data-aos-duration="1500">-->
-<!--          <a href="#" class="partners-item">-->
-<!--            &lt;!&ndash; <img src="@/assets/img/partner-1.svg" alt=""> &ndash;&gt;-->
-<!--            <img src="https://clover.finance/partner/graph.png" alt="">-->
-<!--          </a>-->
-<!--          <a href="#" class="partners-item">-->
-<!--            &lt;!&ndash; <img src="@/assets/img/partner-2.svg" alt=""> &ndash;&gt;-->
-<!--            <img src="https://clover.finance/partner/chainlink.png" alt="">-->
-<!--          </a>-->
-<!--          <a href="#" class="partners-item">-->
-<!--            &lt;!&ndash; <img src="@/assets/img/partner-3.svg" alt=""> &ndash;&gt;-->
-<!--            <img src="https://clover.finance/partner/prosper.png" alt="">-->
-<!--          </a>-->
-<!--          <a href="#" class="partners-item">-->
-<!--            &lt;!&ndash; <img src="@/assets/img/partner-4.svg" alt=""> &ndash;&gt;-->
-<!--            <img src="https://clover.finance/partner/dodo.png" alt="">-->
-<!--          </a>-->
-<!--          <a href="#" class="partners-item">-->
-<!--            &lt;!&ndash; <img src="@/assets/img/partner-5.svg" alt=""> &ndash;&gt;-->
-<!--            <img src="https://clover.finance/partner/polygon.png" alt="">-->
-<!--          </a>-->
-<!--          <a href="#" class="partners-item">-->
-<!--            <img src="https://clover.finance/partner/litentry.png" alt="">-->
-<!--          </a>-->
-<!--          <a href="#" class="partners-item">-->
-<!--            <img src="https://clover.finance/partner/boringdao.png" alt="">-->
-<!--          </a>-->
-<!--          <a href="#" class="partners-item">-->
-<!--            <img src="https://clover.finance/partner/injective.png" alt="">-->
-<!--          </a>-->
-<!--          <a href="#" class="partners-item">-->
-<!--            <img src="https://clover.finance/partner/crust.png" alt="">-->
-<!--          </a>-->
-<!--          <a href="#" class="partners-item">-->
-<!--            <img src="https://clover.finance/partner/showcase.png" alt="">-->
-<!--          </a>-->
-<!--          <a href="#" class="partners-item">-->
-<!--            <img src="https://clover.finance/partner/hedget.png" alt="">-->
-<!--          </a>-->
-<!--          <a href="#" class="partners-item">-->
-<!--            <img src="https://clover.finance/partner/snowswap.png" alt="">-->
-<!--          </a>-->
-<!--          <a href="#" class="partners-item">-->
-<!--            <img src="https://clover.finance/partner/etha_lend.png" alt="">-->
-<!--          </a>-->
-<!--          <a href="#" class="partners-item">-->
-<!--            <img src="https://clover.finance/partner/unilend.png" alt="">-->
-<!--          </a>-->
-<!--          <a href="#" class="partners-item">-->
-<!--            <img src="https://clover.finance/partner/alice.png" alt="">-->
-<!--          </a>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </section>-->
+    <!--    <section class="partners" id="partners">-->
+    <!--      <div class="container">-->
+    <!--        <div class="my-title" data-aos="fade-up"-->
+    <!--             data-aos-duration="1500">-->
+    <!--          <h2 style="width:100%" @mousemove="textLighting" @mouseleave="resetTextLighting">Our Partners</h2>-->
+    <!--        </div>-->
+    <!--        <div class="partners-grid" data-aos="fade"-->
+    <!--             data-aos-duration="1500">-->
+    <!--          <a href="#" class="partners-item">-->
+    <!--            &lt;!&ndash; <img src="@/assets/img/partner-1.svg" alt=""> &ndash;&gt;-->
+    <!--            <img src="https://clover.finance/partner/graph.png" alt="">-->
+    <!--          </a>-->
+    <!--          <a href="#" class="partners-item">-->
+    <!--            &lt;!&ndash; <img src="@/assets/img/partner-2.svg" alt=""> &ndash;&gt;-->
+    <!--            <img src="https://clover.finance/partner/chainlink.png" alt="">-->
+    <!--          </a>-->
+    <!--          <a href="#" class="partners-item">-->
+    <!--            &lt;!&ndash; <img src="@/assets/img/partner-3.svg" alt=""> &ndash;&gt;-->
+    <!--            <img src="https://clover.finance/partner/prosper.png" alt="">-->
+    <!--          </a>-->
+    <!--          <a href="#" class="partners-item">-->
+    <!--            &lt;!&ndash; <img src="@/assets/img/partner-4.svg" alt=""> &ndash;&gt;-->
+    <!--            <img src="https://clover.finance/partner/dodo.png" alt="">-->
+    <!--          </a>-->
+    <!--          <a href="#" class="partners-item">-->
+    <!--            &lt;!&ndash; <img src="@/assets/img/partner-5.svg" alt=""> &ndash;&gt;-->
+    <!--            <img src="https://clover.finance/partner/polygon.png" alt="">-->
+    <!--          </a>-->
+    <!--          <a href="#" class="partners-item">-->
+    <!--            <img src="https://clover.finance/partner/litentry.png" alt="">-->
+    <!--          </a>-->
+    <!--          <a href="#" class="partners-item">-->
+    <!--            <img src="https://clover.finance/partner/boringdao.png" alt="">-->
+    <!--          </a>-->
+    <!--          <a href="#" class="partners-item">-->
+    <!--            <img src="https://clover.finance/partner/injective.png" alt="">-->
+    <!--          </a>-->
+    <!--          <a href="#" class="partners-item">-->
+    <!--            <img src="https://clover.finance/partner/crust.png" alt="">-->
+    <!--          </a>-->
+    <!--          <a href="#" class="partners-item">-->
+    <!--            <img src="https://clover.finance/partner/showcase.png" alt="">-->
+    <!--          </a>-->
+    <!--          <a href="#" class="partners-item">-->
+    <!--            <img src="https://clover.finance/partner/hedget.png" alt="">-->
+    <!--          </a>-->
+    <!--          <a href="#" class="partners-item">-->
+    <!--            <img src="https://clover.finance/partner/snowswap.png" alt="">-->
+    <!--          </a>-->
+    <!--          <a href="#" class="partners-item">-->
+    <!--            <img src="https://clover.finance/partner/etha_lend.png" alt="">-->
+    <!--          </a>-->
+    <!--          <a href="#" class="partners-item">-->
+    <!--            <img src="https://clover.finance/partner/unilend.png" alt="">-->
+    <!--          </a>-->
+    <!--          <a href="#" class="partners-item">-->
+    <!--            <img src="https://clover.finance/partner/alice.png" alt="">-->
+    <!--          </a>-->
+    <!--        </div>-->
+    <!--      </div>-->
+    <!--    </section>-->
+
+    <section class="faq" id="faq">
+      <div class="container">
+        <div class="my-title" data-aos="fade-up"
+             data-aos-duration="1500">
+          <h1 class="my-title__text" @mousemove="textLighting" @mouseleave="resetTextLighting">FAQ</h1>
+        </div>
+        <div class="faq__wrap" data-aos="fade"
+             data-aos-duration="1500">
+          <div class="faq-questions">
+            <div
+              v-for="item in faq"
+              :key="item.id" 
+              class="item"
+              :class="{ active: item.id === chosenItemId }"
+            >
+              <div
+                class="item__header"
+                :class="{ active: item.id === chosenItemId }"
+                @click.stop="toggleQuestion(item.id)"
+              >
+                <div
+                  class="item__question"
+                  :class="{ active: item.id === chosenItemId }"
+                >
+                  {{ item.title }}
+                </div>
+                <img class="item__caret" src="" alt="">
+              </div>
+              <div
+                :ref="`item${item.id}`"
+                class="item__container"
+                :class="{ active: item.id === chosenItemId }"
+              >
+                <div class="item__text">
+                  {{ item.text1 }}
+                </div>
+                <div v-if=" item.text2" class="item__text">
+                  {{ item.text2 }}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-ask">
+            <div class="faq-ask__img">
+              <img src="@/assets/img/facts-img.svg" alt="">
+            </div>
+            <div class="faq-ask__title">
+              <p>Still have questions?</p>
+            </div>
+            <div class="faq-ask__text">
+              <p>Leave your contacts and we will answer them</p>
+            </div>
+            <div class="faq-ask__btn">
+              <button>ASK A QUESTION</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="audit" id="audit">
       <div class="container">
         <div class="audit__wrap">
@@ -597,7 +662,7 @@
               </div> -->
               <div class="audit-grid__item">
                 <div class="audit-card">
-<!--                  <a target="_blank" href="https://amphorium.io/docs/audit" class="audit-card__link"></a>-->
+                  <!-- <a target="_blank" href="https://amphorium.io/docs/audit" class="audit-card__link"></a> -->
                   <div class="audit-card__wrap">
                     <div class="audit-card__img">
                       <svg width="188" height="48" viewBox="0 0 188 48" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -679,7 +744,6 @@
         </div>
       </div>
     </section>
-
 
     <div class="cursor">
       <div class="cursor__point"></div>
@@ -784,32 +848,38 @@ export default {
       //   focus: false,
       // },
       ],
+      chosenItemId: 0,
       faq: [
         {
+          id: 1,
           title: 'Lorem ipsum dolor sit amet, adipiscing elit',
           text1: 'Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
           text2: 'Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
           isShow: false
         },
         {
+          id: 2,
           title: 'Lorem ipsum dolor sit amet, adipiscing elit',
           text1: 'Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
           text2: 'Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
           isShow: false
         },
         {
+          id: 3,
           title: 'Lorem ipsum dolor sit amet, adipiscing elit',
           text1: 'Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
           text2: 'Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
           isShow: false
         },
         {
+          id: 4,
           title: 'Lorem ipsum dolor sit amet, adipiscing elit',
           text1: 'Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
           text2: 'Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
           isShow: false
         },
         {
+          id: 5,
           title: 'Lorem ipsum dolor sit amet, adipiscing elit',
           text1: 'Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
           text2: 'Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
@@ -901,12 +971,12 @@ export default {
           amh: '35 000 000'
         },
         {
-          group: 'Advisors',
+          group: 'AirDrop',
           percent: '2%',
           amh: '20 000 000'
         },
         {
-          group: 'Reserve',
+          group: 'Advisors',
           percent: '5%',
           amh: '50 000 000'
         },
@@ -1247,8 +1317,27 @@ export default {
         // changeImage()
 
         
-    }
-    
+    },
+
+    toggleQuestion(id) {
+      const selectedName = `item${id}`
+      if (this.chosenItemId === id) {
+        this.chosenItemId = 0
+        const item = this.$refs[selectedName][0]
+        item.style.height = `0px`
+      } else {
+        this.chosenItemId = id
+        for (const key in this.$refs) {
+          if (key === selectedName) {
+            const item = this.$refs[selectedName][0]
+            item.style.height = `${item.scrollHeight}px`
+          } else if (key.includes('item')) {
+            const item = this.$refs[key][0]
+            item.style.height = `0px`
+          }
+        }
+      }
+    }, 
   },
   mounted() {
      this.$nextTick(() => {

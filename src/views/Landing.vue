@@ -22,8 +22,7 @@
     components: {LandingMain, LandingHeader, LandingFooter},
     methods: {
        textLighting(e){
-     
-          // console.log('ev',e);
+        // console.log('ev',e);
         // this.$refs.textGradient.style.backgroundImage=`radial-gradient(circle at ${e.layerX}px ${e.layerY}px, rgb(209, 12, 12) 0%, #fff 6rem)`;
         // this.$refs.textGradient.style.color='transparent'
         if ( e.target){
