@@ -414,19 +414,22 @@ body {
     line-height: 80px;
     font-family: $extra-bold;
     color: #FFFFFF;
+
     @include max-screen(xxl) {
       font-size: 90px;
+      line-height: 90px;
     }
     @include max-screen(xl) {
       font-size: 78px;
+      line-height: 80px;
     }
     @include max-screen(lg) {
       font-size: 70px;
-      line-height: 59px;
+      line-height: 70px;
     }
     @include max-screen(md) {
       font-size: 64px;
-      line-height: 53px;
+      line-height: 58px;
     }
     @include max-screen(sm) {
       font-size: 55px;
@@ -434,16 +437,60 @@ body {
     }
     @include max-screen(xs) {
       font-size: 44px;
-      line-height: 40px;
+      line-height: 46px;
+    }
+
+    .h1 {
+      min-height: 240px;
+
+      @include max-screen(xxl) {
+        min-height: 280px;
+      }
+      @include max-screen(xl) {
+        min-height: 240px;
+      }
+      @include max-screen(lg) {
+        min-height: 210px;
+      }
+      @include max-screen(md) {
+        min-height: 180px;
+      }
+      @include max-screen(sm) {
+        min-height: 150px;
+      }
+      @include max-screen(xs) {
+        min-height: 140px;
+      }
+  
     }
 
     .h1__row--two {
       display: inline;
-      margin-left: 135px
+      margin-left: 135px;
+
+      @include max-screen(xxl) {
+        margin-left: 90px;
+      }
+      @include max-screen(lg) {
+        margin-left: 65px;
+      }
+      @include max-screen(md) {
+        margin-left: 15%;
+      }
     }
     .h1__row--three {
       display: inline;
-      margin-left: 310px
+      margin-left: 310px;
+
+      @include max-screen(xxl) {
+        margin-left: 190px;
+      }
+      @include max-screen(lg) {
+        margin-left: 150px;
+      }
+      @include max-screen(md) {
+        margin-left: 30%;
+      }
     }
   }
 
@@ -4048,35 +4095,36 @@ div.swiper-slide{
   height:   100px;
   justify-content: center;
   margin:   100px 0 50px;
+
   @include max-screen(md) {
     // margin-top: 0px;
-      // img{
-        // background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFEAAABRCAYAAACqj0o2AAAD70lEQVR4nO2d7bGrIBCGU0JKsARLsISUkBJSgh1YgiVYgiWkBEqghOf+QKLXExNF3EXNO8OcjzlzWB4XWFgkl0tCAq5ABuTADbiPStGVTNvWJNQBK4ASaIEnYFkmAzTd/yi02ySiDty9g7YU2Fw1wF27rdGF87hmQ3CfgBba7Q8WzutuuG6qrSd7806c56UAb6z0YeJm1VaX0yy1pDbD47puhfyYt1YPbXaXy+VywcV1jTaNFWqBqybAgv153ztZINcA+OAYAIe6SQM8qu4/gHG0HUjOAdArPkjcmvdsKmICzDneJDJHcWZtXCBtdNuiKhMD4p4D6Vhq1gA800TyTctjSFw3PuM4OCUbArHStjpBVUsAFtrWJqxsLsTfZDKtOkUvNEC9spiNbRzrszd2Rklq+YD9v70aE+C0NyoZBCvWqbhkmLSmHzwuCa6h7+PMtM2tks33KYM0M3RZAMBc0d42NYPAjcW3hUU7ls3GELWXeBY3yy4p2iuqxxiiRGyY4yavYakJ3HKi7z3lm/8rMeE0Y4Mknmo9qtNnC+cvp/6C9A8/G/2+FmiPHVYoNR7aUUNbHMTgvC/O62DgFciGapmvVHLr/97V6btbGQpwAM2HZvnoZwndvBG1YKUG5ylP/30EiH733XQ/G8H2lN4I6Q2HuvsaLVlO35uk29J4A4xwxX3lEYXOYqHVhFhsAFFjH9T4yqUVHNLMACndna0GxFUhzQyI128GxG6PBsRyK4ADkJJranGIBoEDlcgeOBCHeN8a4ACk1ALiNbFILZGMcJHQ00OUiq8eLN8zDC1SW3uvOLEVqjA4DRDQnaVCndpXKDmbbX7AHNnkVeUrldz1eG4M0G9uSOm1iyOddtzslD7yaY5s+PQktSph/wGgdN7cjg0wgpXDBisX5PPmf3Is0ulHS8SXFHGvx0ln/8qxERrbSNFCHnROsmXvDDEKhqwOedA5j/M+ykDnRMHf4xjLIbYKdpdTxkjP0l7BIQ96JzeyT0Zp5CmCQh70jgJ+zg+hM76AG0rGlwl9K7WGoczJD3HuN6i+aV6WEj1v3IO+e+EAZKttbYJalivHrQB+6hX2xin6J1FTUvj1L6R505K0WtZkKfl162gvjp95to63gYxeYKup+NdgcS6Qmx26Okv8uB3AAcgjv8pbIXUBG8eMIbf3wDcgtV6ojC2L5g2f7P/ioSeSt9V9AHlln+Nkg+YFlO+E2yjdg1daUvC+TyLdScficjJped+UcGvuWhVZL4ubBDNtLsHCPX2jAM+wJ8+bI9xGRr0xOIsbTvJDwXunDmjJ+g9zsPSfhHF8cN9E/xksZVcq+guEqq48ur9JBtg/VyyxtK4MKrwAAAAASUVORK5CYII)
-        // no-repeat center;
-        // height:   81px;
-        // width: 81px;  
-      // }
+    // img{
+    // background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFEAAABRCAYAAACqj0o2AAAD70lEQVR4nO2d7bGrIBCGU0JKsARLsISUkBJSgh1YgiVYgiWkBEqghOf+QKLXExNF3EXNO8OcjzlzWB4XWFgkl0tCAq5ABuTADbiPStGVTNvWJNQBK4ASaIEnYFkmAzTd/yi02ySiDty9g7YU2Fw1wF27rdGF87hmQ3CfgBba7Q8WzutuuG6qrSd7806c56UAb6z0YeJm1VaX0yy1pDbD47puhfyYt1YPbXaXy+VywcV1jTaNFWqBqybAgv153ztZINcA+OAYAIe6SQM8qu4/gHG0HUjOAdArPkjcmvdsKmICzDneJDJHcWZtXCBtdNuiKhMD4p4D6Vhq1gA800TyTctjSFw3PuM4OCUbArHStjpBVUsAFtrWJqxsLsTfZDKtOkUvNEC9spiNbRzrszd2Rklq+YD9v70aE+C0NyoZBCvWqbhkmLSmHzwuCa6h7+PMtM2tks33KYM0M3RZAMBc0d42NYPAjcW3hUU7ls3GELWXeBY3yy4p2iuqxxiiRGyY4yavYakJ3HKi7z3lm/8rMeE0Y4Mknmo9qtNnC+cvp/6C9A8/G/2+FmiPHVYoNR7aUUNbHMTgvC/O62DgFciGapmvVHLr/97V6btbGQpwAM2HZvnoZwndvBG1YKUG5ylP/30EiH733XQ/G8H2lN4I6Q2HuvsaLVlO35uk29J4A4xwxX3lEYXOYqHVhFhsAFFjH9T4yqUVHNLMACndna0GxFUhzQyI128GxG6PBsRyK4ADkJJranGIBoEDlcgeOBCHeN8a4ACk1ALiNbFILZGMcJHQ00OUiq8eLN8zDC1SW3uvOLEVqjA4DRDQnaVCndpXKDmbbX7AHNnkVeUrldz1eG4M0G9uSOm1iyOddtzslD7yaY5s+PQktSph/wGgdN7cjg0wgpXDBisX5PPmf3Is0ulHS8SXFHGvx0ln/8qxERrbSNFCHnROsmXvDDEKhqwOedA5j/M+ykDnRMHf4xjLIbYKdpdTxkjP0l7BIQ96JzeyT0Zp5CmCQh70jgJ+zg+hM76AG0rGlwl9K7WGoczJD3HuN6i+aV6WEj1v3IO+e+EAZKttbYJalivHrQB+6hX2xin6J1FTUvj1L6R505K0WtZkKfl162gvjp95to63gYxeYKup+NdgcS6Qmx26Okv8uB3AAcgjv8pbIXUBG8eMIbf3wDcgtV6ojC2L5g2f7P/ioSeSt9V9AHlln+Nkg+YFlO+E2yjdg1daUvC+TyLdScficjJped+UcGvuWhVZL4ubBDNtLsHCPX2jAM+wJ8+bI9xGRr0xOIsbTvJDwXunDmjJ+g9zsPSfhHF8cN9E/xksZVcq+guEqq48ur9JBtg/VyyxtK4MKrwAAAAASUVORK5CYII)
+    // no-repeat center;
+    // height:   81px;
+    // width: 81px;  
+    // }
     will-change: unset;
-        -webkit-backface-visibility: hidden; 
-      -ms-transform: translateZ(0); /* IE 9 */
-      -webkit-transform: translateZ(0); /* Chrome, Safari, Opera */
-      transform: translateZ(0);
-       filter: none; 
-        -webkit-filter: blur(0px); 
-        -moz-filter: blur(0px); 
-        -ms-filter: blur(0px);
-        filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='0');
-      -ms-interpolation-mode: nearest-neighbor;
-      image-rendering: crisp-edges;
-      image-rendering: -webkit-optimize-contrast;
+    -webkit-backface-visibility: hidden; 
+    -ms-transform: translateZ(0); /* IE 9 */
+    -webkit-transform: translateZ(0); /* Chrome, Safari, Opera */
+    transform: translateZ(0);
+    filter: none; 
+    -webkit-filter: blur(0px); 
+    -moz-filter: blur(0px); 
+    -ms-filter: blur(0px);
+    filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='0');
+    -ms-interpolation-mode: nearest-neighbor;
+    image-rendering: crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
 
-        /* antialiasing */
-      outline: 1px solid transparent;
-      -webkit-backface-visibility: hidden;
-      transform: translateZ(0);
-      -webkit-perspective: 1000;
-      backface-visibility: hidden;
-      -webkit-font-smoothing: subpixel-antialiased;
+    /* antialiasing */
+    outline: 1px solid transparent;
+    -webkit-backface-visibility: hidden;
+    transform: translateZ(0);
+    -webkit-perspective: 1000;
+    backface-visibility: hidden;
+    -webkit-font-smoothing: subpixel-antialiased;
   }
 
   @include max-screen(sm) {
@@ -4087,23 +4135,25 @@ div.swiper-slide{
   }
 
   img{
+    display: none;
+
     max-width: unset;
     -webkit-font-smoothing: subpixel-antialiased;
     will-change: unset;
     backface-visibility: hidden;
-     -webkit-backface-visibility: hidden; 
+    -webkit-backface-visibility: hidden; 
     -ms-transform: translateZ(0); /* IE 9 */
     -webkit-transform: translateZ(0); /* Chrome, Safari, Opera */
     transform: translateZ(0);
-     filter: none; 
-      -webkit-filter: blur(0px); 
-      -moz-filter: blur(0px); 
-      -ms-filter: blur(0px);
-      filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='0');
+    filter: none; 
+    -webkit-filter: blur(0px); 
+    -moz-filter: blur(0px); 
+    -ms-filter: blur(0px);
+    filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='0');
     -ms-interpolation-mode: nearest-neighbor;
     image-rendering: pixelated;
 
-        /* antialiasing */
+      /* antialiasing */
     outline: 1px solid transparent;
     -webkit-backface-visibility: hidden;
     transform: translateZ(0);
@@ -4121,6 +4171,46 @@ div.swiper-slide{
   svg {
     width: 80px;
     height: 80px;
+  }
+
+  &.animation-in {
+    img {
+      display: block;
+      width: 150px;
+      animation: logoAnimation-in 1.2s ease-out;
+    }
+  }
+  &.animation-out {
+    img {
+      display: block;
+      width: 0;
+      animation: logoAnimation-out 1.2s ease-in;
+    }
+  }
+}
+
+@keyframes logoAnimation-in {
+  from {
+    opacity: 0;
+    width: 200%;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    width: 150px;
+    transform: translateY(0px);
+  }
+}
+@keyframes logoAnimation-out {
+  from {
+    opacity: 1;
+    width: 150px;
+    transform: translateY(0px);
+  }
+  to {
+    opacity: 0;
+    width: 200%;
+    transform: translateY(100px);
   }
 }
 
@@ -4550,6 +4640,12 @@ div.swiper-slide{
 
 .faq {
   min-height: 854px;
+
+  @include max-screen(xl) {
+    min-height: auto;
+
+  }
+
   .my-title {
     max-height: 80px;
 
@@ -4563,9 +4659,13 @@ div.swiper-slide{
     justify-content: space-between;
   }
   .faq-questions {
-    width: 60%;
+    width: 65%;
     display: flex;
     flex-direction: column;
+
+    @include max-screen(lg) {
+      width: 100%;
+    }
 
     .item {
       position: relative;
@@ -4612,9 +4712,9 @@ div.swiper-slide{
         }
       }
       &__question {
-        font-size: 20px;
-        line-height: 29px;
-        font-family: "Inter-Bold", sans-serif;
+        font-size: 18px;
+        line-height: 28px;
+        font-family: $bold;
         background: linear-gradient(to right, #ffc9b2 0%, #f67d75 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -4632,6 +4732,7 @@ div.swiper-slide{
         font-size: 12px;
         transform: rotate(0deg);
         transition: transform 0.3s linear;
+        margin-left: 25px;
 
         &.reverse {
           transform: rotate(180deg);
@@ -4651,9 +4752,10 @@ div.swiper-slide{
       }
 
       &__text {
-        color: #fff;
+        color: #b5b4b5;
         font-size: 14px;
         line-height: 22px;
+        font-family: $medium;
         margin-bottom: 20px;
         padding: 0 25px;
       }
@@ -4662,13 +4764,19 @@ div.swiper-slide{
 
   .faq-ask {
     position: relative;
-    width: 30%;
+    width: 420px;
+    max-height: 420px;
     background-color: #050508e6;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 20px;
+    padding: 120px 60px 20px;
+    margin-left: 40px;
+
+    @include max-screen(lg) {
+      margin: 100px auto 0;
+    }
 
     &:after {
       content: "";
@@ -4689,32 +4797,40 @@ div.swiper-slide{
 
     &__img {
       position: absolute;
-      top: -20px;
+      width: 160px;
+      top: -60px;
+      z-index: 2;
     }
     &__title {
-      font-size: 42px;
-      line-height: 45px;
-      font-family: "Inter-Bold", sans-serif;
+      font-size: 48px;
+      line-height: 52px;
+      font-family: $bold;
       background: linear-gradient(to right, #ffc9b2 0%, #f67d75 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       text-align: center;
     }
     &__text {
-      color: #fff;
+      font-size: 22px;
+      line-height: 28px;
+      font-family: $light;
+      color: #b5b4b5;
       text-align: center;
       margin: 15px 0;
     }
     &__btn {
       width: 100%;
+      font-size: 18px;
+      line-height: 20px;
 
       button {
-       width: 100%;
+        width: 100%;
         color: #fff;
-        font-family: "Inter-Bold", sans-serif;
+        font-family: $extra-bold;
         background: linear-gradient(to right, #ffc9b2 0%, #f67d75 100%);     
         text-align: center;
-        padding: 15px 30px;
+        letter-spacing: 0.2em;
+        padding: 20px 30px;
         border: none;
         border-radius: 100px;
       }
@@ -5161,19 +5277,25 @@ div.swiper-slide{
 }
 .point-circle{
   position: absolute;
-  z-index:1;
-  top:0;
-  margin: auto;
-  left:0;
-  width:50px;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 50px;
   height: 50px;
+  margin: auto;
+  overflow: visible;
+  border-radius: 50%;
+  transition: box-shadow 0.2s ease;
+
   @include max-screen(md) {
     height: 20px;
     width: 20px;
   }
-  /* transform: translateX(-50%) translateY(-50%); */
-}
 
+  &:hover {
+    box-shadow: 0px 0px 20px 10px rgba(250, 153, 140, 0.5);
+  }
+}
 
 // animation
 @media screen and (max-width:768px){

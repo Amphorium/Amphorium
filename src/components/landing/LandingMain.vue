@@ -157,7 +157,7 @@
     </section>
     <section class="calendar" id="roadmap" data-aos="fade"
              data-aos-duration="1500">
-      <div id="cont" data-pct="100" ref="cont" @wheel="wheel" >
+      <div id="cont" data-pct="100" ref="cont">
         <svg @load="slider()" id="svg" width="200" height="200" viewPort="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin meet">
           <circle ref="barBg" r="275" cx="282.5" cy="282.5" fill="transparent" stroke-dasharray="0" stroke-dashoffset="0"></circle>
           <!-- <circle id="bar" ref="bar" r="48%" cx="50%" cy="50%" fill="transparent" stroke-dasharray="1728" stroke-dashoffset="0"></circle> -->
@@ -176,33 +176,37 @@
             <p v-if="point.focus">{{point.date.year}}</p>
           </div>
           <div class="calendar-slide__btn">
-              <span class="scroll-btn">
-                <span class="scroll-btn__circle"></span>
-                <span class="scroll-btn__circle"></span>
-                <span class="scroll-btn__circle"></span>
-                <span class="scroll-btn__arrow"></span>
-              </span>
-           </div>
-           <div class="slider-content"
-           v-for="(road,index) of roadMap" :key="index+'roadM'">
-
-            <div class="calendar-info__drop"
-            :class="{active: road.focus}">
-                <div class="calendar-item">
-                  <div class="calendar-item__wrap">
-                    <div class="date">
-                      <p>{{ quarters[index].date }}</p>
-                    </div>
-                    <div class="calendar-item__title">
-                      <p>{{ quarters[index].title }}</p>
-                    </div>
-                    <div class="calendar-item__text">
-                      <p>{{ quarters[index].text }} </p>
-                    </div>
+            <span class="scroll-btn">
+              <span class="scroll-btn__circle"></span>
+              <span class="scroll-btn__circle"></span>
+              <span class="scroll-btn__circle"></span>
+              <span class="scroll-btn__arrow"></span>
+            </span>
+          </div>
+          <div
+            class="slider-content"
+            v-for="(road,index) of roadMap"
+            :key="index+'roadM'"
+          >
+            <div
+              class="calendar-info__drop"
+              :class="{active: road.focus}"
+            >
+              <div class="calendar-item">
+                <div class="calendar-item__wrap">
+                  <div class="date">
+                    <p>{{ quarters[index].date }}</p>
+                  </div>
+                  <div class="calendar-item__title">
+                    <p>{{ quarters[index].title }}</p>
+                  </div>
+                  <div class="calendar-item__text">
+                    <p>{{ quarters[index].text }} </p>
                   </div>
                 </div>
               </div>
-           </div>
+            </div>
+          </div>
             
 
       </div>
@@ -588,7 +592,12 @@
                 >
                   {{ item.title }}
                 </div>
-                <img class="item__caret" src="" alt="">
+                <img
+                  class="item__caret"
+                  :class="{ reverse: item.id === chosenItemId }"
+                  src="@/assets/img/faq-arrow.svg"
+                  alt=""
+                >
               </div>
               <div
                 :ref="`item${item.id}`"
@@ -607,7 +616,7 @@
 
           <div class="faq-ask">
             <div class="faq-ask__img">
-              <img src="@/assets/img/facts-img.svg" alt="">
+              <img src="@/assets/img/coin-4.svg" alt="">
             </div>
             <div class="faq-ask__title">
               <p>Still have questions?</p>
@@ -852,7 +861,7 @@ export default {
       faq: [
         {
           id: 1,
-          title: 'Lorem ipsum dolor sit amet, adipiscing elit',
+          title: 'Lorem ipsum dolor',
           text1: 'Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
           text2: 'Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
           isShow: false
@@ -866,7 +875,7 @@ export default {
         },
         {
           id: 3,
-          title: 'Lorem ipsum dolor sit amet, adipiscing elit',
+          title: ' Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, exercitation ullamco laboris nisi ut aliquip.',
           text1: 'Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
           text2: 'Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
           isShow: false
@@ -880,7 +889,7 @@ export default {
         },
         {
           id: 5,
-          title: 'Lorem ipsum dolor sit amet, adipiscing elit',
+          title: 'Why?',
           text1: 'Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
           text2: 'Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
           isShow: false
@@ -1138,7 +1147,6 @@ export default {
      const points =  document.body.querySelectorAll('.point-circle');
      for (let i = 0; i < points.length; i++){
        if (e.target.closest('.point-circle') ===points[i]){
-         console.log(i);
           this.initialCounter=i-1;
           if (i === 0) this.initialCounter=points.length-1
           this.setActiveSlide();
@@ -1243,14 +1251,40 @@ export default {
     changeStep(idx) {
       this.activeStep = idx;
     },
+    logoAnimation() {
+      let logoDiv = this.$refs.logoSection; 
+      let logoDivTwo = this.$refs.logoSectionTwo;
+      let options = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.2,
+      }
+
+      const callback = (entries) => {
+        entries.forEach(entry => {
+          if(entry.isIntersecting) {
+            if(entry.target.offsetTop < window.pageYOffset) {
+              entry.target.classList.add('animation-in')
+            }else if(entry.target.offsetTop > window.pageYOffset) {
+              entry.target.classList.add('animation-out')
+            }
+          } else {
+            entry.target.classList.remove('animation-in')
+            entry.target.classList.remove('animation-out')
+          }
+        })
+      };
+      const observer = new IntersectionObserver(callback, options);
+
+      observer.observe(logoDiv)
+      observer.observe(logoDivTwo)
+    },
     overlay(){
       let logoDiv = this.$refs.logoSection; 
       let logoDivTwo = this.$refs.logoSectionTwo;
       let next = this.$refs.nextSection;
       let nextTwo = this.$refs.nextSectionTwo;
-      // console.log(document.documentElement.clientHeight,'documentElement.clientHeight');
       let screenHeight = document.documentElement.clientHeight;
-      // console.log(logoDiv);
       
       overlayLogo(logoDiv,next)
       overlayLogo(logoDivTwo,nextTwo)
@@ -1264,11 +1298,16 @@ export default {
             let k = 0.2 
             let pos = window.pageYOffset + screenHeight - logoDivTop -150; //150 - bottom offset
             if (k*pos<1) pos=1/k;
-            // if(logo) logo.style.transform=`scale(${pos*k}) translateY(${pos*0.02}%) translateZ(0)`
-            // console.log(logo.childNodes[0]);
-            // logo.childNodes[0].style.transform=`scale(${pos*k}) translateY(${pos*0.02}%) translateZ(0)`
-            logo.childNodes[0].style.transform=`translateY(${pos*0.02}%) translateZ(0)`
-            logo.childNodes[0].style.width=`${pos*k*100}px`
+            // // if(logo) logo.style.transform=`scale(${pos*k}) translateY(${pos*0.02}%) translateZ(0)`
+            // // logo.childNodes[0].style.transform=`scale(${pos*k}) translateY(${pos*0.02}%) translateZ(0)`
+
+            logo.childNodes[0].style.transform =`translateY(${pos*0.02}%) translateZ(0)`
+            logo.childNodes[0].style.width =`${pos*k*100}px`
+
+            // logo.childNodes[0].style.width =`${pos*k*20}px`
+            // logo.childNodes[0].style.minWidth =`150px`
+            // logo.childNodes[0].style.opacity=`${(1 - pos * 0.002).toFixed(1)}`
+
             // if(logo) logo.childNodes[0].style.height=`auto`
           }else{
             // if (logo) logo.childNodes[0].style.width=`${100}px`
@@ -1345,12 +1384,13 @@ export default {
          this.setActiveSlide();
          setTimeout(() => {
            if (!this.isMob){
-             this.overlay()
+            //  this.overlay()
+             this.logoAnimation()
            }
             this.slider()
             this.amphorInit()
 
-            document.body.querySelector('#cont').addEventListener('click',this.chooseSlide)
+            document.body.querySelector('#cont').addEventListener('mouseover',this.chooseSlide)
          }, 30);
       });
   },
