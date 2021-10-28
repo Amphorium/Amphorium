@@ -72,9 +72,8 @@
     position: absolute;
     top: 0;
     left: 0;
-    transform: translate(-10px, 10px);
+    transform: translate(0px, 0px);
     z-index: 1;
-    display: none;
     transition: all .2s ease;
   }
 
@@ -98,7 +97,7 @@
   &:hover {
 
     &:before {
-      display: block;
+      transform: translate(-10px, 10px);
     }
 
     &:after {

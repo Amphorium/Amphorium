@@ -213,12 +213,19 @@
       <!-- <label for="percent">Type a percent!</label>
       <input id="percent" name="percent" ref="percent"> -->
     </section>
-    <div class="logo-section" ref="logoSection" style="text-align: center; position:relative" >
-      <img style="position:absolute" src="@/assets/img/logo-icon1.svg" alt="">
+    <div class="logo-animation" ref="logoSection">
+      <img src="@/assets/img/logo-icon.svg" data-type="shadow" alt="" @click="bubleAnimation">
+      <div class="logo-animation__back logo-animation__back_one"></div>
+      <div class="logo-animation__back logo-animation__back_two"></div>
+      <!-- <button data-type="shadow" @click="bubleAnimation">Кнопка</button>
+      <button data-type="logo" @click="bubleAnimation">Кнопка</button> -->
+    </div>
+    <!-- <div class="logo-section" ref="logoSection" style="text-align: center; position:relative" >
+      <img style="position:absolute" src="@/assets/img/logo-icon1.svg" alt=""> -->
       <!-- <svg width="81" height="81" viewBox="0 0 81 81" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin none" x="0px" y="0px">
       <path shape-rendering="geometricPrecision" fill-rule="evenodd" clip-rule="evenodd" d="M40.9375 80.5817C63.0289 80.5817 80.9375 62.6731 80.9375 40.5817C80.9375 18.4903 63.0289 0.581665 40.9375 0.581665C18.8461 0.581665 0.9375 18.4903 0.9375 40.5817C0.9375 62.6731 18.8461 80.5817 40.9375 80.5817ZM49.3375 23.5817L47.3699 28.6817H34.5051L32.5375 23.5817H49.3375ZM54.9375 43.0973L47.3699 29.815H34.5051L26.9375 43.0973H54.9375ZM54.9375 44.2993L47.3699 57.5817H34.5051L26.9375 44.2993H54.9375ZM52.5532 35.7911L49.2486 30.0258L54.9321 30.0498L52.5532 35.7911ZM29.3244 35.8058L32.6373 30.0261L26.9395 30.0501L29.3244 35.8058Z" fill="white"/>
       </svg> -->
-    </div>
+    <!-- </div> -->
     <div class="white-background" id="white-section" >
       <section class="tokenomics" id="tokenomics" ref="nextSection">
         <div class="container">
@@ -310,7 +317,12 @@
           </div>
         </div>
       </section>
-        <div class="logo-section" ref="logoSectionTwo" style="position:relative">
+      <div class="logo-animation" ref="logoSectionTwo">
+        <img class="logo-img" src="@/assets/img/logo-icon2.svg" alt="" @click.prevent="bubleAnimation">
+        <div class="logo-animation__back logo-animation__back_black logo-animation__back_one"></div>
+        <div class="logo-animation__back logo-animation__back_black logo-animation__back_two"></div>
+      </div>
+        <!-- <div class="logo-section" ref="logoSectionTwo" style="position:relative"> -->
           <!-- <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="40" cy="40" r="40" fill="#15121D"/>
             <path d="M46.4324 28.1H33.5676L31.6 23H48.4L46.4324 28.1Z" fill="white"/>
@@ -319,8 +331,8 @@
             <path d="M51.6157 35.2094L48.3111 29.4442L53.9946 29.4681L51.6157 35.2094Z" fill="white"/>
             <path d="M31.6998 29.4445L28.3869 35.2241L26.002 29.4684L31.6998 29.4445Z" fill="white"/>
           </svg> -->
-          <img style="position:absolute" src="@/assets/img/logo-icon2.svg" alt="">
-        </div>
+          <!-- <img style="position:absolute" src="@/assets/img/logo-icon2.svg" alt="">
+        </div> -->
     </div>
     <section class="history" id="history" ref="nextSectionTwo">
       <div class="history-bg">
@@ -625,7 +637,9 @@
               <p>Leave your contacts and we will answer them</p>
             </div>
             <div class="faq-ask__btn">
-              <button>ASK A QUESTION</button>
+              <button @click="openMailForm" class="my-btn autoclose">
+                <span class="my-btn__arrow"></span> <span class="my-btn__content">Ask a question</span>
+              </button>
             </div>
           </div>
         </div>
@@ -861,37 +875,33 @@ export default {
       faq: [
         {
           id: 1,
-          title: 'Lorem ipsum dolor',
-          text1: 'Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-          text2: 'Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+          title: 'What is Amphorium system designed for?',
+          text1: 'The Amphorium system is designed to analyze and distribute information from the port to stakeholders in order to optimize the use of the available resources of service logistics. Thus, at the moment, ports become a “weak pocket” of logistics operations, and the amount of such operations grows daily.',
+          // text2: '',
           isShow: false
         },
         {
           id: 2,
-          title: 'Lorem ipsum dolor sit amet, adipiscing elit',
-          text1: 'Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-          text2: 'Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+          title: 'What are Amphorium advantages ?',
+          text1: 'Logistics cheapening, data falsification exclusion, unnecessary intermediaries exclusion, fraud activities prevention, reduction of time needed for a document flow. The use of blockchain in shipping logistics is a promising direction, which makes it possible to increase the efficiency of international shipment, minimize risks and reduce costs. With usage of this platform, shipment reliability and transparency are increased and inaccuracies of documents are avoided.',
           isShow: false
         },
         {
           id: 3,
-          title: ' Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, exercitation ullamco laboris nisi ut aliquip.',
-          text1: 'Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-          // text2: 'Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+          title: ' Who are potential clients of Amphorium?',
+          text1: 'The Amphorium project intends to work with a network of shippers, freight forwarders, ocean carriers, ports and customs authorities to build a brand new product for the digitization of global trade.',
           isShow: false
         },
         {
           id: 4,
-          title: 'Lorem ipsum dolor sit amet, adipiscing elit',
-          text1: 'Consectetur adipiscing elit',
-          text2: 'Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+          title: 'What is a total emission of AMH tokens ?',
+          text1: 'Taking into account the potential size of the market, user activity and the growth rate of the industry, we decided to set a total emission size of 1,000,000,000 tokens. This size of the issue will provide the necessary conditions for the harmonious development and improvement of the project at the time of launch and in the future.',
           isShow: false
         },
         {
           id: 5,
-          title: 'Why?',
-          text1: 'Consectetur, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-          text2: 'Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+          title: 'Why do we need our own token?',
+          text1: 'Why can\'t we just use Ether for each transaction within these applications? Why do we need a separate currency for each project? The answer is quite simple: even in real life, we often use some form of token instead of cash. For example, tokens in an amusement park, coupons for a free lunch, shopping inside the game. All the businesses here are dApp, your money is ETH, and the bonuses inside are token. Using tokens to perform certain functions in a smart contract makes the process easier and understandable. Plus, tokens also have an impact on the overall value of ETH.',
           isShow: false
         }
       ],
@@ -1251,6 +1261,94 @@ export default {
     changeStep(idx) {
       this.activeStep = idx;
     },
+    bubleAnimation(e) {
+      console.log(e)
+      //   // e.target.classList.add('buble-animation')
+      // let logo = this.$refs.logoSection
+      // function pop (e) {
+      //   let amount = 10;
+      //   switch (e.target.dataset.type) {
+      //     case 'shadow':
+      //     case 'line':
+      //     amount = 10;
+      //     break;
+      //   }
+      //   if (e.clientX === 0 && e.clientY === 0) {
+      //     const bbox = e.target.getBoundingClientRect();
+      //     const x = bbox.left + bbox.width / 2;
+      //     const y = bbox.top + bbox.height / 2;
+      //     for (let i = 0; i < 10; i++) {
+      //         createParticle(x, y, e.target.dataset.type);
+      //     }
+      //     } else {
+      //     for (let i = 0; i < amount; i++) {
+      //         createParticle(e.clientX, e.clientY, e.target.dataset.type);
+      //     }
+      //   }
+      // }
+      // function createParticle (x, y, type) {
+      //   const particle = document.createElement('particle');
+      //   logo.appendChild(particle);
+      //   let width = Math.floor(Math.random() * 30 + 8);
+      //   let height = width;
+      //   let destinationX = (Math.random() - 0.5) * 300;
+      //   let destinationY = (Math.random() - 0.5) * 300;
+      //   let rotation = Math.random() * 520;
+      //   let delay = Math.random() * 200;
+      //   switch (type) {
+      //     case 'square':
+      //     particle.style.background = `hsl(${Math.random() * 50 + 200}, 70%, 60%)`; // Цвет квадратов
+      //     particle.style.border = '1px solid white'; // Бордюр квадратов
+      //     break;
+      //     case 'symbol':
+      //     particle.innerHTML = ['&#9884;','&#9731;','&#10084;','&#10052;','&#10054;','&#9733;','&#9787;'][Math.floor(Math.random() * 7)]; // Символы
+      //     particle.style.color = `hsl(${Math.random() * 50 + 200}, 70%, 60%)`; // Цвет символов
+      //     particle.style.fontSize = `${Math.random() * 24 + 10}px`; // Размер символов
+      //     width = height = 'auto';
+      //     break;
+      //     case 'logo':
+      //     particle.style.backgroundImage = 'url(https://atuin.ru/images/favicon.png)'; // Ссылка на картинку
+      //     break;
+      //     case 'shadow':
+      //     var color = `hsl(${Math.random() * 50 + 200}, 70%, 50%)`; // Цвет 
+      //     particle.style.boxShadow = `0 0 ${Math.floor(Math.random() * 10 + 10)}px ${color}`; // Тень
+      //     particle.style.background = color;
+      //     particle.style.borderRadius = '50%'; // Радиус
+      //     width = height = Math.random() * 5 + 4; // Размеры
+      //     break;
+      //     case 'line':
+      //     particle.style.background = `hsl(${Math.random() * 50 + 200}, 70%, 50%)`; // Цвет линий
+      //     height = 1; // Размер
+      //     rotation += 1000;
+      //     delay = Math.random() * 1000;
+      //     break;
+      //     }
+      //     particle.style.width = `${width}px`;
+      //     particle.style.height = `${height}px`;
+      //     const animation = particle.animate([
+      //         {
+      //             transform: `translate(-50%, -50%) translate(${x}px, ${y}px) rotate(0deg)`,
+      //             opacity: 1
+      //         },
+      //         {
+      //             transform: `translate(-50%, -50%) translate(${x + destinationX}px, ${y + destinationY}px) rotate(${rotation}deg)`,
+      //             opacity: 0
+      //         }
+      //         ], {
+      //         duration: Math.random() * 1000 + 5000, // Продолжительность всех эффектов
+      //         easing: 'cubic-bezier(0, .9, .57, 1)',
+      //         delay: delay
+      //     });
+      //     animation.onfinish = removeParticle;
+      // }
+      // function removeParticle (e) {
+      //     e.srcElement.effect.target.remove();
+      // }
+      // if (logo.animate) {
+      //     logo.addEventListener('click', pop);
+      // }
+    },
+  
     logoAnimation() {
       let logoDiv = this.$refs.logoSection; 
       let logoDivTwo = this.$refs.logoSectionTwo;
@@ -1262,15 +1360,21 @@ export default {
 
       const callback = (entries) => {
         entries.forEach(entry => {
+          // if(entry.isIntersecting) {
+          //   if(entry.target.offsetTop < window.pageYOffset) {
+          //     entry.target.classList.add('animation-in')
+          //   }else if(entry.target.offsetTop > window.pageYOffset) {
+          //     entry.target.classList.add('animation-out')
+          //   }
+          // } else {
+          //   entry.target.classList.remove('animation-in')
+          //   entry.target.classList.remove('animation-out')
+          // }
+
           if(entry.isIntersecting) {
-            if(entry.target.offsetTop < window.pageYOffset) {
-              entry.target.classList.add('animation-in')
-            }else if(entry.target.offsetTop > window.pageYOffset) {
-              entry.target.classList.add('animation-out')
-            }
+            entry.target.classList.add('animation')
           } else {
-            entry.target.classList.remove('animation-in')
-            entry.target.classList.remove('animation-out')
+            entry.target.classList.remove('animation')
           }
         })
       };
@@ -1357,7 +1461,9 @@ export default {
 
         
     },
-
+    openMailForm() {
+      window.location.href = "mailto:user@example.com"
+    },
     toggleQuestion(id) {
       const selectedName = `item${id}`
       if (this.chosenItemId === id) {
