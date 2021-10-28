@@ -4135,8 +4135,6 @@ div.swiper-slide{
   }
 
   img{
-    display: none;
-
     max-width: unset;
     -webkit-font-smoothing: subpixel-antialiased;
     will-change: unset;
@@ -4159,6 +4157,11 @@ div.swiper-slide{
     transform: translateZ(0);
     // will-change: transform;
     -webkit-perspective: 1000;
+
+    display: none;
+    @include max-screen(md) {
+      display: block;
+    }
   }
   &--padding {
     padding-bottom: 200px;
@@ -4531,6 +4534,10 @@ div.swiper-slide{
     line-height: 82px;
     margin: 0 auto;
 
+    @include max-screen(sm) {
+      line-height: 42px;
+    }
+
     &__text {
       height: 100%;
       white-space: normal;
@@ -4734,6 +4741,10 @@ div.swiper-slide{
         transition: transform 0.3s linear;
         margin-left: 25px;
 
+        @include max-screen(xs) {
+          margin-left: 10px;
+        }
+
         &.reverse {
           transform: rotate(180deg);
           transition: transform 0.3s linear;
@@ -4776,6 +4787,9 @@ div.swiper-slide{
 
     @include max-screen(lg) {
       margin: 100px auto 0;
+    }
+    @include max-screen(xs) {
+      width: 100%;
     }
 
     &:after {
