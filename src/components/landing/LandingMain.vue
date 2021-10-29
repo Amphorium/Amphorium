@@ -185,6 +185,7 @@
           </div>
           <div
             class="slider-content"
+            :class="`slider-content-${index+1}`"
             v-for="(road,index) of roadMap"
             :key="index+'roadM'"
           >
@@ -214,11 +215,9 @@
       <input id="percent" name="percent" ref="percent"> -->
     </section>
     <div class="logo-animation" ref="logoSection">
-      <img src="@/assets/img/logo-icon.svg" data-type="shadow" alt="" @click="bubleAnimation">
+      <img src="@/assets/img/logo-icon.svg" alt="">
       <div class="logo-animation__back logo-animation__back_one"></div>
       <div class="logo-animation__back logo-animation__back_two"></div>
-      <!-- <button data-type="shadow" @click="bubleAnimation">Кнопка</button>
-      <button data-type="logo" @click="bubleAnimation">Кнопка</button> -->
     </div>
     <!-- <div class="logo-section" ref="logoSection" style="text-align: center; position:relative" >
       <img style="position:absolute" src="@/assets/img/logo-icon1.svg" alt=""> -->
@@ -318,7 +317,7 @@
         </div>
       </section>
       <div class="logo-animation" ref="logoSectionTwo">
-        <img class="logo-img" src="@/assets/img/logo-icon2.svg" alt="" @click.prevent="bubleAnimation">
+        <img class="logo-img" src="@/assets/img/logo-icon2.svg" alt="">
         <div class="logo-animation__back logo-animation__back_black logo-animation__back_one"></div>
         <div class="logo-animation__back logo-animation__back_black logo-animation__back_two"></div>
       </div>
@@ -1205,42 +1204,36 @@ export default {
             }
           }
           function setPoint(value, i){
-              let a = percentToRad(value)
-              let leftPos =  2*barWidth/2 * Math.pow(Math.cos((Math.PI - ( (Math.PI/2) -a) )/2 ),2); 
-              let topPos =  2*barWidth/2 * Math.cos((Math.PI-a)/2) * Math.cos( ( (Math.PI-a)/2 ) );
+            let a = percentToRad(value)
+            let leftPos =  2*barWidth/2 * Math.pow(Math.cos((Math.PI - ( (Math.PI/2) -a) )/2 ),2); 
+            let topPos =  2*barWidth/2 * Math.cos((Math.PI-a)/2) * Math.cos( ( (Math.PI-a)/2 ) );
             points[i].style.left = leftPos +'px';
-             points[i].style.top =topPos + 'px';
-             const title = document.body.querySelectorAll('.calendar-info__drop');
+            points[i].style.top =topPos + 'px';
+            const title = document.body.querySelectorAll('.calendar-info__drop');
              if (value<25){
                 points[i].style.left = leftPos - Math.sqrt(2*pointWidth*pointWidth)/4+'px';
                 points[i].style.top = topPos - Math.sqrt(2*pointWidth*pointWidth)/4 +'px';
-                // console.log( pointWidth);
                 title[i-1].style.transform= `translate(-100%, -100%)`
-             }else if (value<50){
-
+             } else if (value<50){
                 points[i].style.left = leftPos - Math.sqrt(2*pointWidth*pointWidth)/4+'px';
                 points[i].style.top = topPos - Math.sqrt(2*pointWidth*pointWidth)/2  +'px';
                 title[i-1].style.transform= `translate(-80%, 80%)`
-             }else if (value<75){
-
+             } else if (value<75){
               points[i].style.left = leftPos - Math.sqrt(2*pointWidth*pointWidth)/2+'px';
                 points[i].style.top = topPos - Math.sqrt(2*pointWidth*pointWidth)/2 +'px';
                  title[i-1].style.transform= `translate(120%, 100%)`;
-             }else if (value<100){
+             } else if (value<100){
                 points[i].style.left = leftPos - (Math.sqrt(2*pointWidth*pointWidth)/2 )-7+'px';
                 points[i].style.top = topPos - (Math.sqrt(2*pointWidth*pointWidth)/2) +7 +'px';
-
-                title[i-1].style.transform= `translate(120%, -150%)`;
+                title[i-1].style.transform= `translate(120%, -180%)`;
              }
-            
-             if(val===100){
-                title[i].style.transform= `translate(40%, -220%)`;
-             }
+            if(val===100){
+              title[i].style.transform= `translate(40%, -220%)`;
+            }
           }
           function percentToRad(perc){
             return (perc*2*Math.PI)/100
           }
-      // });
     },
     toSlide(idx) {
       this.initialCounter = idx;
@@ -1260,93 +1253,6 @@ export default {
     },
     changeStep(idx) {
       this.activeStep = idx;
-    },
-    bubleAnimation(e) {
-      console.log(e)
-      //   // e.target.classList.add('buble-animation')
-      // let logo = this.$refs.logoSection
-      // function pop (e) {
-      //   let amount = 10;
-      //   switch (e.target.dataset.type) {
-      //     case 'shadow':
-      //     case 'line':
-      //     amount = 10;
-      //     break;
-      //   }
-      //   if (e.clientX === 0 && e.clientY === 0) {
-      //     const bbox = e.target.getBoundingClientRect();
-      //     const x = bbox.left + bbox.width / 2;
-      //     const y = bbox.top + bbox.height / 2;
-      //     for (let i = 0; i < 10; i++) {
-      //         createParticle(x, y, e.target.dataset.type);
-      //     }
-      //     } else {
-      //     for (let i = 0; i < amount; i++) {
-      //         createParticle(e.clientX, e.clientY, e.target.dataset.type);
-      //     }
-      //   }
-      // }
-      // function createParticle (x, y, type) {
-      //   const particle = document.createElement('particle');
-      //   logo.appendChild(particle);
-      //   let width = Math.floor(Math.random() * 30 + 8);
-      //   let height = width;
-      //   let destinationX = (Math.random() - 0.5) * 300;
-      //   let destinationY = (Math.random() - 0.5) * 300;
-      //   let rotation = Math.random() * 520;
-      //   let delay = Math.random() * 200;
-      //   switch (type) {
-      //     case 'square':
-      //     particle.style.background = `hsl(${Math.random() * 50 + 200}, 70%, 60%)`; // Цвет квадратов
-      //     particle.style.border = '1px solid white'; // Бордюр квадратов
-      //     break;
-      //     case 'symbol':
-      //     particle.innerHTML = ['&#9884;','&#9731;','&#10084;','&#10052;','&#10054;','&#9733;','&#9787;'][Math.floor(Math.random() * 7)]; // Символы
-      //     particle.style.color = `hsl(${Math.random() * 50 + 200}, 70%, 60%)`; // Цвет символов
-      //     particle.style.fontSize = `${Math.random() * 24 + 10}px`; // Размер символов
-      //     width = height = 'auto';
-      //     break;
-      //     case 'logo':
-      //     particle.style.backgroundImage = 'url(https://atuin.ru/images/favicon.png)'; // Ссылка на картинку
-      //     break;
-      //     case 'shadow':
-      //     var color = `hsl(${Math.random() * 50 + 200}, 70%, 50%)`; // Цвет 
-      //     particle.style.boxShadow = `0 0 ${Math.floor(Math.random() * 10 + 10)}px ${color}`; // Тень
-      //     particle.style.background = color;
-      //     particle.style.borderRadius = '50%'; // Радиус
-      //     width = height = Math.random() * 5 + 4; // Размеры
-      //     break;
-      //     case 'line':
-      //     particle.style.background = `hsl(${Math.random() * 50 + 200}, 70%, 50%)`; // Цвет линий
-      //     height = 1; // Размер
-      //     rotation += 1000;
-      //     delay = Math.random() * 1000;
-      //     break;
-      //     }
-      //     particle.style.width = `${width}px`;
-      //     particle.style.height = `${height}px`;
-      //     const animation = particle.animate([
-      //         {
-      //             transform: `translate(-50%, -50%) translate(${x}px, ${y}px) rotate(0deg)`,
-      //             opacity: 1
-      //         },
-      //         {
-      //             transform: `translate(-50%, -50%) translate(${x + destinationX}px, ${y + destinationY}px) rotate(${rotation}deg)`,
-      //             opacity: 0
-      //         }
-      //         ], {
-      //         duration: Math.random() * 1000 + 5000, // Продолжительность всех эффектов
-      //         easing: 'cubic-bezier(0, .9, .57, 1)',
-      //         delay: delay
-      //     });
-      //     animation.onfinish = removeParticle;
-      // }
-      // function removeParticle (e) {
-      //     e.srcElement.effect.target.remove();
-      // }
-      // if (logo.animate) {
-      //     logo.addEventListener('click', pop);
-      // }
     },
   
     logoAnimation() {
