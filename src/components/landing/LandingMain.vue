@@ -165,12 +165,13 @@
           <!-- <div class="year"  >
             {{point.date.year}}
           </div> -->
-        
         </svg>
+
         <svg ref="point" v-for="(point,index) of roadMap" :key="index+'road'" class="point-circle" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
           <circle cx="20" cy="20" r="20" fill="white"/>
           <circle cx="20.0003" cy="20" r="9.14286" fill="#FAA091"/>
         </svg>
+
           <p class="roadmap-title" style="pointer-events:none">Roadmap</p>
           <div class="year" style="pointer-events:none" v-for="(point,index) of roadMap" :key="index+'year'">
             <p v-if="point.focus">{{point.date.year}}</p>
@@ -1391,20 +1392,21 @@ export default {
     }, 
   },
   mounted() {
-     this.$nextTick(() => {
-       
-         this.setActiveSlide();
-         setTimeout(() => {
-           if (!this.isMob){
-            //  this.overlay()
-             this.logoAnimation()
-           }
-            this.slider()
-            this.amphorInit()
+    this.$nextTick(() => {
+      this.setActiveSlide();
+      setTimeout(() => {
+        if (!this.isMob){
+        //  this.overlay()
+          this.logoAnimation()
+        }
+        this.slider()
+        this.amphorInit()
 
-            document.body.querySelector('#cont').addEventListener('mouseover',this.chooseSlide)
-         }, 30);
-      });
+        document.body.querySelector('#cont').addEventListener('mouseover',this.chooseSlide)
+      }, 30);
+    });
+
+    window.addEventListener("resize", () => this.slider())
   },
   
 }
