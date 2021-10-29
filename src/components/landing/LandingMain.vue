@@ -48,16 +48,16 @@
     <section class="main-banner">
       <div class="main-banner-img">
         <div class="main-banner-img__item main-banner-img__item--one flying-el-reverse">
-          <img src="@/assets/img/coin-1.svg" alt="">
+          <img src="@/assets/img/coin-1.png" alt="">
         </div>
         <div class="main-banner-img__item main-banner-img__item--two flying-el">
-          <img src="@/assets/img/coin-2.svg" alt="">
+          <img src="@/assets/img/coin-2.png" alt="">
         </div>
         <div class="main-banner-img__item main-banner-img__item--three flying-el">
-          <img src="@/assets/img/coin-3.svg" alt="">
+          <img src="@/assets/img/coin-3.png" alt="">
         </div>
         <div class="main-banner-img__item main-banner-img__item--four flying-el-reverse">
-          <img src="@/assets/img/coin-4.svg" alt="">
+          <img src="@/assets/img/coin-4.png" alt="">
         </div>
       </div>
       <div class="container">
@@ -255,7 +255,7 @@
               </ul>
             </div>
             <div class="tokenomics__img">
-              <img src="@/assets/img/schedule.svg" alt="">
+              <img src="@/assets/img/schedule.png" alt="">
               <div class="tokenomics-step" :class="`active--${activeStep}`">
                 <p>{{tokenInfo[activeStep].group}} - {{tokenInfo[activeStep].percent}}</p>
                 <div class="tokenomics-step__marker"></div>
@@ -627,7 +627,7 @@
 
           <div class="faq-ask">
             <div class="faq-ask__img">
-              <img src="@/assets/img/coin-4.svg" alt="">
+              <img src="@/assets/img/coin-4.png" alt="">
             </div>
             <div class="faq-ask__title">
               <p>Still have questions?</p>
