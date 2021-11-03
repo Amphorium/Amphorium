@@ -5305,17 +5305,62 @@ div.swiper-slide{
   }
 }
 
+@media only screen and (min-width: 1440px) {
+  .slider-content-6 {
+    .calendar-info__drop.active{
+      transform: translateY(70%);
+    }
+  }
+  .slider-content-7 {
+    .calendar-info__drop.active{
+      transform: translate(120%, 80%) !important;
+    }
+  }
+}
+
 .slider-content-9 {
   .calendar-info__drop.active{
     transform: translate(120%, -160%);
   }
 }
+
+@include max-screen(xl) {
+  .slider-content-5,
+  .slider-content-7 {
+    .calendar-info__drop.active{
+      transform: translate(160%, 60%) !important;
+    }
+  }
+  .slider-content-6 {
+    .calendar-info__drop.active{
+      transform: translate(160%, 90%) !important;
+    }
+  }
+  .slider-content-8 {
+    .calendar-info__drop.active{
+      transform: translate(157%, -197%) !important;
+    }
+  }
+  .slider-content-9 {
+    .calendar-info__drop.active{
+      transform: translate(157%, -167%) !important;
+    }
+  }
+}
+
 @include max-screen(lg) {
   .slider-content-3,
   .slider-content-5,
   .slider-content-9 {
     .calendar-info__drop.active{
       transform: translateY(204%) !important;
+    }
+  }
+  .slider-content-6,
+  .slider-content-7,
+  .slider-content-8 {
+    .calendar-info__drop.active{
+      transform: translateY(235%) !important;
     }
   }
 }
