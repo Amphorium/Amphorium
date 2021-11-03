@@ -2048,6 +2048,8 @@ div.swiper-slide{
     line-height: 26px;
     font-family: $hair-line;
     color: #FFFFFF;
+    white-space: pre-wrap;
+
     @include max-screen(xl) {
       font-size: 16px;
       line-height: 23px;
@@ -5303,37 +5305,74 @@ div.swiper-slide{
   }
 }
 
-.slider-content-10 {
+.slider-content-9 {
   .calendar-info__drop.active{
-    @include max-screen(lg) {
-      transform: translateY(205%) !important ;
+    transform: translate(120%, -160%);
+  }
+}
+
+@include max-screen(md) {
+  .slider-content-3 {
+    .calendar-info__drop.active{
+      transform: translateY(108%) !important;
     }
-    @include max-screen(md) {
+  }
+  .slider-content-4 {
+    .calendar-info__drop.active{
+      transform: translateY(108%) !important;
+    }
+  }
+  .slider-content-5 {
+    .calendar-info__drop.active{
+      transform: translateY(108%) !important;
+    }
+  }
+  .slider-content-7 {
+    .calendar-info__drop.active{
+      transform: translateY(108%) !important;
+    }
+  }
+  .slider-content-8 {
+    .calendar-info__drop.active{
+      transform: translateY(125%) !important;
+    }
+  }
+  .slider-content-9 {
+    .calendar-info__drop.active{
       transform: translateY(95%) !important ;
     }
-    @include max-screen(sm) {
-      transform: translateY(118%) !important ;
-    }
   }
 }
-.slider-content-5 {
-  .calendar-info__drop.active{
-    @include max-screen(md) {
-      transform: translateY(108%) !important ;
-    }
-    @include max-screen(sm) {
-      transform: translateY(160%) !important ;
-    }
 
-  }
-}
-.slider-content-8 {
-  .calendar-info__drop.active{
-    @include max-screen(md) {
-      transform: translateY(108%) !important ;
+@include max-screen(sm) {
+  .slider-content-3 {
+    .calendar-info__drop.active{
+      transform: translateY(135%) !important;
     }
-    @include max-screen(sm) {
-      transform: translateY(135%) !important ;
+  }
+  .slider-content-4 {
+    .calendar-info__drop.active{
+      transform: translateY(135%) !important;
+    }
+  }
+  .slider-content-5 {
+    .calendar-info__drop.active{
+      transform: translateY(135%) !important;
+    }
+  }
+  .slider-content-7 {
+    .calendar-info__drop.active{
+      transform: translateY(135%) !important;
+    }
+  }
+  .slider-content-8 {
+    .calendar-info__drop.active{
+      transform: translateY(160%) !important;
+    }
+  }
+  .slider-content-9 {
+    .calendar-info__drop.active{
+      transform: translateY(118%) !important;
     }
   }
 }

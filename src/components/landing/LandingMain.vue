@@ -186,7 +186,7 @@
           </div>
           <div
             class="slider-content"
-            :class="`slider-content-${index+1}`"
+            :class="`slider-content-${index}`"
             v-for="(road,index) of roadMap"
             :key="index+'roadM'"
           >
@@ -810,7 +810,7 @@ export default {
         {
           date: {
             month: 'july',
-            year: '2020'
+            year: '2021'
           },
           focus: false,
         },
@@ -823,8 +823,8 @@ export default {
         },
         {
           date: {
-            month: 'month',
-            year: '2021'
+            month: 'november',
+            year: '2022'
           },
           focus: false,
         },
@@ -913,28 +913,28 @@ export default {
         },
         {
           date: '2020',
-          title: 'Q2',
+          title: 'Q4',
           text: 'First visible concept and team formation'
         },
         {
-          date: '2020',
-          title: 'Q4',
+          date: '2021',
+          title: 'Q1',
           text: 'First releases and whitepaper creation'
         },
         {
           date: '2021',
-          title: 'Q3',
-          text: 'Seed round (10% token\'s)'
-        },
-        {
-          date: '2021',
           title: 'Q4',
-          text: 'Release of the beta version Android / iOS application.'
+          text: 'Airdrop (1% token\'s) - community\nSeed round (10% token\'s)'
         },
         {
           date: '2022',
           title: 'Q1',
-          text: 'Round A/B/C Token sale (20% token\'s)'
+          text: 'Release of the beta version blockchain and Android / iOS application.'
+        },
+        {
+          date: '2022',
+          title: 'Q2',
+          text: 'Airdrop (1% token\'s) - bugbounty\nRound A/B/C Token sale (20% token\'s)'
         },
         {
           date: '2022',
@@ -949,7 +949,7 @@ export default {
         {
           date: '2023',
           title: 'Q2',
-          text: 'Moving to our own blockchain'
+          text: 'Release of the cargo software'
         },
         {
           date: '2024',
@@ -1157,8 +1157,8 @@ export default {
      const points =  document.body.querySelectorAll('.point-circle');
      for (let i = 0; i < points.length; i++){
        if (e.target.closest('.point-circle') ===points[i]){
-          this.initialCounter=i-1;
-          if (i === 0) this.initialCounter=points.length-1
+          this.initialCounter=i;
+          if (i === -1) this.initialCounter=points.length-1
           this.setActiveSlide();
           this.slider()
        }
@@ -1170,7 +1170,7 @@ export default {
       let maxStep = this.roadMap.length;
       let step = 100/maxStep;
       let barWidth = this.$refs.cont.offsetWidth;
-        var val = step*(this.initialCounter+1);
+        var val = step*(this.initialCounter);
         var $circle = bar;
           
         if (window.innerWidth< 600){
@@ -1182,59 +1182,57 @@ export default {
           barBg.setAttribute('cy',barWidth/2);
           bar.setAttribute('stroke-dasharray',(2 * Math.PI * bar.getAttribute('r')));
         }
-        // }
-        // else{
-          var r = $circle.getAttribute('r');
-          var c = Math.PI*(r*2);
-        
-          if (val < 0) { val = 0;}
-          if (val > 100) { val = 100;}
-          
-          var pct = ((100-val)/100)*c;
-            $circle.style.strokeDashoffset= pct;
-          // }
-          
-          let points = document.querySelectorAll('.point-circle');//count length from roadmap
-         let centerX = barWidth/2;
-          points[0].style.left=centerX -points[0].getBoundingClientRect().width/2+'px'; 
-          let pointWidth = points[0].getBoundingClientRect().width;
-          if (points.length){
-            for (let i = 1; i< points.length; i++){
-              setPoint(step*i,i);
-             
+
+        var r = $circle.getAttribute('r');
+        var c = Math.PI*(r*2);
+
+        if (val < 0) { val = 0;}
+        if (val > 100) { val = 100;}
+
+        var pct = ((100-val)/100)*c;
+          $circle.style.strokeDashoffset= pct;
+
+        let points = document.querySelectorAll('.point-circle');//count length from roadmap
+        let centerX = barWidth/2;
+        points[0].style.left=centerX -points[0].getBoundingClientRect().width/2+'px'; 
+        let pointWidth = points[0].getBoundingClientRect().width;
+        if (points.length){
+          for (let i = 1; i< points.length; i++){
+            setPoint(step*i,i);
+          }
+        }
+        function setPoint(value, i){
+           let a = percentToRad(value)
+          let leftPos =  2*barWidth/2 * Math.pow(Math.cos((Math.PI - ( (Math.PI/2) -a) )/2 ),2); 
+          let topPos =  2*barWidth/2 * Math.cos((Math.PI-a)/2) * Math.cos( ( (Math.PI-a)/2 ) );
+          points[i].style.left = leftPos +'px';
+          points[i].style.top =topPos + 'px';
+          const title = document.body.querySelectorAll('.calendar-info__drop');
+
+            if (value<35){
+              points[i].style.left = leftPos - Math.sqrt(2*pointWidth*pointWidth)/4+'px';
+              points[i].style.top = topPos - Math.sqrt(2*pointWidth*pointWidth)/4 +'px';
+              title[i-1].style.transform= `translate(-80%, -170%)`
+            } else if (value<55){
+              points[i].style.left = leftPos - Math.sqrt(2*pointWidth*pointWidth)/4+'px';
+              points[i].style.top = topPos - Math.sqrt(2*pointWidth*pointWidth)/2  +'px';
+              title[i-1].style.transform= `translate(-80%, 70%)`
+            } else if (value<75){
+            points[i].style.left = leftPos - Math.sqrt(2*pointWidth*pointWidth)/2+'px';
+              points[i].style.top = topPos - Math.sqrt(2*pointWidth*pointWidth)/2 +'px';
+                title[i-1].style.transform= `translate(120%, 100%)`;
+            } else if (value<100){
+              points[i].style.left = leftPos - (Math.sqrt(2*pointWidth*pointWidth)/2 )-7+'px';
+              points[i].style.top = topPos - (Math.sqrt(2*pointWidth*pointWidth)/2) +7 +'px';
+              title[i-1].style.transform= `translate(120%, -180%)`;
             }
+          if(val===100){
+            title[i].style.transform= `translate(40%, -220%)`;
           }
-          function setPoint(value, i){
-            let a = percentToRad(value)
-            let leftPos =  2*barWidth/2 * Math.pow(Math.cos((Math.PI - ( (Math.PI/2) -a) )/2 ),2); 
-            let topPos =  2*barWidth/2 * Math.cos((Math.PI-a)/2) * Math.cos( ( (Math.PI-a)/2 ) );
-            points[i].style.left = leftPos +'px';
-            points[i].style.top =topPos + 'px';
-            const title = document.body.querySelectorAll('.calendar-info__drop');
-             if (value<25){
-                points[i].style.left = leftPos - Math.sqrt(2*pointWidth*pointWidth)/4+'px';
-                points[i].style.top = topPos - Math.sqrt(2*pointWidth*pointWidth)/4 +'px';
-                title[i-1].style.transform= `translate(-100%, -100%)`
-             } else if (value<50){
-                points[i].style.left = leftPos - Math.sqrt(2*pointWidth*pointWidth)/4+'px';
-                points[i].style.top = topPos - Math.sqrt(2*pointWidth*pointWidth)/2  +'px';
-                title[i-1].style.transform= `translate(-80%, 80%)`
-             } else if (value<75){
-              points[i].style.left = leftPos - Math.sqrt(2*pointWidth*pointWidth)/2+'px';
-                points[i].style.top = topPos - Math.sqrt(2*pointWidth*pointWidth)/2 +'px';
-                 title[i-1].style.transform= `translate(120%, 100%)`;
-             } else if (value<100){
-                points[i].style.left = leftPos - (Math.sqrt(2*pointWidth*pointWidth)/2 )-7+'px';
-                points[i].style.top = topPos - (Math.sqrt(2*pointWidth*pointWidth)/2) +7 +'px';
-                title[i-1].style.transform= `translate(120%, -180%)`;
-             }
-            if(val===100){
-              title[i].style.transform= `translate(40%, -220%)`;
-            }
-          }
-          function percentToRad(perc){
-            return (perc*2*Math.PI)/100
-          }
+        }
+        function percentToRad(perc){
+          return (perc*2*Math.PI)/100
+        }
     },
     toSlide(idx) {
       this.initialCounter = idx;
