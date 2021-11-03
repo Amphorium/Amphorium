@@ -1217,7 +1217,7 @@ export default {
               points[i].style.left = leftPos - Math.sqrt(2*pointWidth*pointWidth)/4+'px';
               points[i].style.top = topPos - Math.sqrt(2*pointWidth*pointWidth)/2  +'px';
               title[i-1].style.transform= `translate(-80%, 70%)`
-            } else if (value<75){
+            } else if (value<85){
             points[i].style.left = leftPos - Math.sqrt(2*pointWidth*pointWidth)/2+'px';
               points[i].style.top = topPos - Math.sqrt(2*pointWidth*pointWidth)/2 +'px';
                 title[i-1].style.transform= `translate(120%, 100%)`;

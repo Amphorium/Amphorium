@@ -5310,6 +5310,15 @@ div.swiper-slide{
     transform: translate(120%, -160%);
   }
 }
+@include max-screen(lg) {
+  .slider-content-3,
+  .slider-content-5,
+  .slider-content-9 {
+    .calendar-info__drop.active{
+      transform: translateY(204%) !important;
+    }
+  }
+}
 
 @include max-screen(md) {
   .slider-content-3 {
