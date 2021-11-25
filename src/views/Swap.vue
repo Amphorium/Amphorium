@@ -18,7 +18,7 @@
 
         <div class="swap__coin">
           <div class="coin">
-            <div class="coin__balance" v-if="getCurrentConnectionInfo.balance">
+            <div class="coin__balance" >
               <div class="coin__type">
                 <div class="coin__icon eth-icon">
                   <svg width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
