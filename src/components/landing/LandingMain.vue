@@ -179,33 +179,9 @@
              data-aos-duration="1500">Seed round</div>
         <div class="subtitle">Official Launches</div>
 
-        <div class="timer">
-            <div class="timer__block">
-                <div class="timer__num">19</div>
-              <div class="timer__text">days</div>
-            </div>
-
-          <span class="timer__separator">:</span>
-
-          <div class="timer__block">
-            <div class="timer__num">19</div>
-            <div class="timer__text">hours</div>
-          </div>
-
-          <span class="timer__separator">:</span>
-
-          <div class="timer__block">
-            <div class="timer__num">19</div>
-            <div class="timer__text">minutes</div>
-          </div>
-
-          <span class="timer__separator">:</span>
-
-          <div class="timer__block">
-            <div class="timer__num">19</div>
-            <div class="timer__text">seconds</div>
-          </div>
-        </div>
+        <timer starttime="Nov 25, 2021 18:00:00"
+               endtime="Dec 13, 2021 00:00:00"
+        ></timer>
       </div>
     </section>
 
@@ -835,12 +811,14 @@
 <script>
 import { Swiper, SwiperSlide } from '@mscalessio/vue2-swiper';
 import 'swiper/swiper.scss';
+import timer from "../timer";
 
 export default {
   name: 'LandingMain',
   components: {
       Swiper,
       SwiperSlide,
+      timer
   },
   data() {
     return {
@@ -1167,8 +1145,9 @@ export default {
             spaceBetween:50
           }
         }
-      }
+      },
     }
+
   },
   computed: {
     tokenInfo(){
@@ -1459,6 +1438,7 @@ export default {
     });
 
     window.addEventListener("resize", () => this.slider())
+
   },
   
 }
