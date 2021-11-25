@@ -2770,6 +2770,292 @@ div.swiper-slide{
   }
 }
 
+.tokensale {
+  margin-top: 150px;
+  padding-bottom: 90px;
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  @include max-screen(md) {
+    margin-top: 50px;
+    padding-top: 100px;
+  }
+  @include max-screen(xs) {
+    padding-top: 140px;
+  }
+
+  &--left, .tokensale--right {
+    position: absolute;
+    background: url("assets/img/calendar-bg.svg") no-repeat;
+    background-position: center;
+
+    @include max-screen(xxl) {
+      background-size: 100% 100%;
+    }
+
+  }
+
+  &--left {
+    left: 0;
+    width: 25%;
+    height: 400px;
+
+    @include max-screen(lg) {
+      height: 100%;
+    }
+    @include max-screen(md) {
+      height: 300px;
+      top: -50px;
+      width: 30%;
+    }
+    @include max-screen(xs) {
+      width: 50%;
+      top: -80px;
+    }
+  }
+
+  &--right {
+    right: 0;
+    width: 25%;
+    height: 430px;
+
+    @include max-screen(lg) {
+      height: 100%;
+    }
+    @include max-screen(md) {
+      height: 300px;
+      width: 30%;
+      bottom: -100px;
+    }
+    @include max-screen(sm) {
+      bottom: -120px;
+    }
+    @include max-screen(xs) {
+     width: 50%;
+      bottom: -140px;
+    }
+  }
+
+  &__coin {
+    position: absolute;
+  }
+
+  &__coin-1 {
+    right: -80px;
+
+    @include max-screen(xxl) {
+      right: -40px;
+      width: 200px;
+    }
+    @include max-screen(xl) {
+      right: -60px;
+      width: 170px;
+      top: 30px;
+    }
+    @include max-screen(lg) {
+      right: -10%;
+      width: 120px;
+    }
+    @include max-screen(sm) {
+      right: -10%;
+      width: 80px;
+      top: 55px;
+    }
+  }
+
+  &__coin-2 {
+    bottom: -45px;
+
+    @include max-screen(xl) {
+      bottom: 37px;
+      left: 12%;
+      width: 130px;
+    }
+    @include max-screen(lg) {
+      width: 100px;
+    }
+    @include max-screen(sm) {
+      width: 70px;
+      bottom: 20%;
+    }
+  }
+
+  &__coin-3 {
+    right: 140px;
+
+    @include max-screen(xl) {
+      right: 100px;
+      width: 130px;
+      top: 50px;
+    }
+    @include max-screen(lg) {
+      right: 30%;
+      width: 90px;
+    }
+    @include max-screen(sm) {
+      top: 23%;
+      width: 70px;
+    }
+  }
+
+  &__coin-4 {
+    bottom: -20px;
+    left: -100px;
+
+    @include max-screen(xxl) {
+      width: 150px;
+      bottom: 0px;
+      left: -70px;
+    }
+    @include max-screen(xl) {
+      width: 135px;
+      bottom: 67px;
+      left: -50px;
+    }
+    @include max-screen(lg) {
+      width: 90px;
+      bottom: 18%;
+      left: -10%;
+    }
+    @include max-screen(sm) {
+      width: 65px;
+      bottom: 25%;
+      left: -20%;
+    }
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .my-title {
+    margin-bottom: 30px;
+    line-height: 42px;
+    font-size: 96px;
+
+    @include max-screen(xl) {
+      font-size: 86px;
+    }
+    @include max-screen(lg) {
+      font-size: 66px;
+      margin-bottom: 10px;
+    }
+    @include max-screen(md) {
+     transform: none;
+      z-index: 5;
+
+    }
+    @include max-screen(sm) {
+      font-size: 53px;
+      margin-bottom: 0px;
+    }
+    @include max-screen(xs) {
+      font-size: 45px;
+    }
+  }
+
+  .subtitle {
+    font-size: 30px;
+    line-height: 74px;
+    text-align: center;
+    color: #747474;
+
+    @include max-screen(lg) {
+      font-size: 25px;
+      line-height: 59px;
+    }
+    @include max-screen(md) {
+      font-size: 22px;
+    }
+    @include max-screen(sm) {
+      font-size: 19px;
+    }
+    @include max-screen(xs) {
+      font-size: 17px;
+      line-height: 50px;
+    }
+  }
+}
+
+.timer {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+
+  &__block {
+    filter: drop-shadow(0px 4px 234px #000000);
+    border-radius: 20px;
+    width: 118px;
+    height: 118px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: double 2px transparent;
+    background-image:linear-gradient(180deg, #07060A 0%, rgba(77, 74, 87, 0) 100%), linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 102.92%);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    position: relative;
+
+    flex-direction: column;
+
+    @include max-screen(lg) {
+      width: 95px;
+      height: 95px;
+    }
+    @include max-screen(xs) {
+      width: 65px;
+      height: 65px;
+    }
+  }
+
+  &__num {
+    font-family: $extra-bold;
+    font-size: 60px;
+    line-height: 74px;
+
+    background: linear-gradient(0deg, #FFC9B3 35.05%, #F67D75 79.73%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    @include max-screen(lg) {
+      font-size: 46px;
+      line-height: 57px;
+    }
+    @include max-screen(xs) {
+      font-size: 30px;
+      line-height: 39px;
+    }
+  }
+
+  &__text {
+    font-family: $extra-bold;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    @include max-screen(xs) {
+      font-size: 9px;
+    }
+  }
+
+  &__separator {
+    margin: 0 18px;
+    font-size: 28px;
+
+    @include max-screen(lg) {
+      margin: 0 10px;
+    }
+    @include max-screen(xs) {
+      margin: 0 7px;
+      font-size: 19px;
+    }
+  }
+}
+
 .tokenomics {
   margin-top: 200px;
   padding-top: 250px;;

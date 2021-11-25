@@ -155,6 +155,60 @@
         </div>
       </div>
     </section>
+
+    <section class="tokensale">
+
+      <div class="tokensale--left">
+          <div class="tokensale__coin tokensale__coin-1">
+            <img src="@/assets/img/coin-5.png" alt="">
+          </div>
+          <div class="tokensale__coin tokensale__coin-2">
+            <img src="@/assets/img/coin-3.png" alt="">
+          </div>
+      </div>
+      <div class="tokensale--right">
+        <div class="tokensale__coin tokensale__coin-3">
+          <img src="@/assets/img/coin-2.png" alt="">
+        </div>
+        <div class="tokensale__coin tokensale__coin-4">
+          <img src="@/assets/img/coin-6.png" alt="">
+        </div>
+      </div>
+      <div class="container">
+        <div class="my-title" data-aos="fade-up"
+             data-aos-duration="1500">Seed round</div>
+        <div class="subtitle">Official Launches</div>
+
+        <div class="timer">
+            <div class="timer__block">
+                <div class="timer__num">19</div>
+              <div class="timer__text">days</div>
+            </div>
+
+          <span class="timer__separator">:</span>
+
+          <div class="timer__block">
+            <div class="timer__num">19</div>
+            <div class="timer__text">hours</div>
+          </div>
+
+          <span class="timer__separator">:</span>
+
+          <div class="timer__block">
+            <div class="timer__num">19</div>
+            <div class="timer__text">minutes</div>
+          </div>
+
+          <span class="timer__separator">:</span>
+
+          <div class="timer__block">
+            <div class="timer__num">19</div>
+            <div class="timer__text">seconds</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="calendar" id="roadmap" data-aos="fade"
              data-aos-duration="1500">
       <div id="cont" data-pct="100" ref="cont">
