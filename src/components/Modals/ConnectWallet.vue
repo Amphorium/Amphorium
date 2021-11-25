@@ -60,9 +60,6 @@
             </button>
           </div>
 
-          <p>New to Ethereum?</p>
-
-          <a href="#" target="_blank" class="link">Learn more about wallets</a>
         </div>
       </div>
     </div>

@@ -20,7 +20,7 @@
           </div>
 
          <div class="popup-waiting__text">
-           Buying 0.000300317 ETH for 1 AMH
+           Buying 0.000300317 BNB for 1 AMH
          </div>
 
           <div class="popup-connect__text">Confirm this transaction in your wallet</div>

@@ -94,7 +94,7 @@
       </div>
       <div v-if="$route.name==='Swap' && getCurrentConnectionInfo.walletName" class="header__account account">
         <div class="account__amount">
-          {{(Number(getCurrentConnectionInfo.balance) / Math.pow(10, 18)).toFixed(8)}} ETH
+          {{(Number(getCurrentConnectionInfo.balance) / Math.pow(10, 18)).toFixed(8)}} BNB
         </div>
         <div class="account__id" @click="accountVisible = true">
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -135,7 +135,7 @@
 
           <div v-if="getCurrentConnectionInfo.walletName" class="account">
             <div class="account__amount">
-              {{(Number(getCurrentConnectionInfo.balance) / Math.pow(10, 18)).toFixed(8)}} ETH
+              {{(Number(getCurrentConnectionInfo.balance) / Math.pow(10, 18)).toFixed(8)}} BNB
             </div>
             <div class="account__id" @click="isOpenMobMenu = false;accountVisible = true">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
