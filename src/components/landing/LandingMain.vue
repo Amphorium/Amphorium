@@ -180,7 +180,7 @@
         <div class="subtitle">Official Launches</div>
 
         <timer starttime="Nov 25, 2021 18:00:00"
-               endtime="Dec 13, 2021 00:00:00"
+               endtime="Dec 24, 2021 00:00:00"
         ></timer>
       </div>
     </section>
