@@ -66,17 +66,34 @@
         <div class="swap__coin">
           <div class="coin">
             <div class="coin__balance" >
-              <div class="coin__type">
-                <div class="coin__icon eth-icon">
-                  <svg width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="15" cy="15.5" r="15" fill="#F3BA2F"/>
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M15.003 10.5697L11.5085 14.0642L9.47147 12.0315L15.003 6.5L20.5345 12.0358L18.5018 14.0685L15.003 10.5697ZM8.03561 13.4673L6.00293 15.5L8.03561 17.5327L10.0683 15.5L8.03561 13.4673ZM15.003 20.4304L11.5085 16.9359L9.46714 18.9642L9.47147 18.9686L15.003 24.5001L20.5388 18.9642L18.5018 16.9316L15.003 20.4304ZM21.966 13.4673L19.9333 15.5L21.966 17.5327L23.9987 15.5L21.966 13.4673ZM15.0026 13.437L17.0656 15.5L15.0026 17.5629L12.9397 15.5043L12.9375 15.5021L13.2986 15.141L13.4759 14.9637L15.0026 13.437ZM12.9375 15.5021L12.9353 15.5V15.5043L12.9375 15.5021Z" fill="white"/>
-                  </svg>
-
-
+              <div class="coin__type" @click="isOpenCoinSelect = !isOpenCoinSelect">
+                <div class="coin__icon">
+                  <img :src="currentCoinIcon" alt="">
                 </div>
 
-               BNB
+                {{currentCoinName}}
+
+                <div class="coin__drop-icon" :class="{active: isOpenCoinSelect}">
+                  <svg width="16" height="11" viewBox="0 0 16 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8.11362 10.7996L0.249512 2.48619L2.79514 0.078125L8.10678 5.69329L13.3869 0.0815468L15.9391 2.48277L8.11362 10.7996Z" fill="#FFFFFF"/>
+                  </svg>
+
+                </div>
+              </div>
+
+              <div class="coin__drop" v-show="isOpenCoinSelect" >
+                <ul class="coin__drop-list">
+                  <li v-for="(item, index) in coinMap" :key="index">
+                    <div class="coin__type" @click="currentCoinName = item.name, currentCoinIcon = item.img, isOpenCoinSelect = false">
+                      <div class="coin__icon ">
+                        <img :src="item.img" alt="">
+                      </div>
+                      {{item.name}}
+                    </div>
+
+                  </li>
+
+                </ul>
               </div>
 
               <span>Balance: {{(Number(getCurrentConnectionInfo.balance) / Math.pow(10, 18)).toFixed(8)}} BNB</span>
@@ -161,7 +178,32 @@
       buyConfirmVisible: false,
       accountVisible: false,
       ethCoin: null,
-      amhCoin: null
+      amhCoin: null,
+      isOpenCoinSelect: false,
+      currentCoinIcon: require('@/assets/img/BNB.svg'),
+      currentCoinName:  'BNB',
+      coinMap: [
+        {
+          img: require('@/assets/img/BNB.svg'),
+          name: 'BNB'
+        },
+        {
+          img: require('@/assets/img/USDT.svg'),
+          name: 'USDT'
+        },
+        {
+          img: require('@/assets/img/USDC.svg'),
+          name: 'USDC'
+        },
+        {
+          img: require('@/assets/img/BUSD.svg'),
+          name: 'BUSD'
+        },
+        {
+          img: require('@/assets/img/DAI.svg'),
+          name: 'DAI'
+        }
+      ]
     }),
     computed: {
       ...mapGetters({
@@ -174,6 +216,13 @@
         this.waitConfirmVisible = true;
       }
     },
-    components: {BuyConfirm, WaitConfirm, ConnectWallet, LandingHeader, LandingFooter}
+    components: {BuyConfirm, WaitConfirm, ConnectWallet, LandingHeader, LandingFooter},
+    mounted() {
+      document.body.addEventListener('click',(e)=>{
+        if (!e.target.closest('.coin__type')){
+          this.isOpenCoinSelect = false;
+      }
+      })
+    }
   }
 </script>
