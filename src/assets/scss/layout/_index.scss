@@ -6193,6 +6193,9 @@ div.swiper-slide{
     font-size: 24px;
     line-height: 36px;
     color: #FFFFFF;
+    text-align: right;
+  //  border-bottom: 1px solid rgba(116, 116, 116, 0.38);
+    cursor: text !important;
 
     &::placeholder {
       font-family: $semi-bold;
