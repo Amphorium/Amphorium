@@ -45,6 +45,7 @@
           <img class="hover" src="@/assets/img/up-btn-hover.svg" alt="">
         </a>
     </div>
+
     <section class="main-banner">
       <div class="main-banner-img">
         <div class="main-banner-img__item main-banner-img__item--one flying-el-reverse">

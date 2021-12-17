@@ -234,7 +234,7 @@ body {
   font-size: 14px;
   line-height: 17px;
   text-transform: uppercase;
-  width: 300px;
+  width: 315px;
   margin-left: 15px;
 
   @include max-screen(lg) {
@@ -247,7 +247,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0 20px;
+    padding: 0 5px;
     width: 50%;
   }
 
@@ -268,7 +268,7 @@ body {
 .main-nav {
   margin-left: 65px;
   @include max-screen(xxl) {
-    margin-left: 55px;
+    margin-left: 30px;
   }
   @include max-screen(lg) {
     display: none;
@@ -5890,6 +5890,31 @@ div.swiper-slide{
     }
     @include max-screen(xs) {
       height: 50px;
+    }
+  }
+}
+
+.swap-page {
+  background: url("assets/img/swap-bg.png") no-repeat;
+  background-size: 100%;
+  position: relative;
+  overflow-x: hidden;
+  padding-bottom: 0;
+
+  &:before {
+    top: 25%;
+
+    @include max-screen(sm) {
+      display: none;
+    }
+  }
+
+  &:after {
+    bottom: 45%;
+
+    @include max-screen(md) {
+      bottom: 33%;
+      right: 0%;
     }
   }
 }

@@ -317,11 +317,9 @@
     border-radius: 20px;
    display: flex;
     padding: 20px;
+    width: 100%;
+    justify-content: space-between;
 
-    @include max-screen(sm) {
-     width: 100%;
-      justify-content: space-between;
-    }
     @include max-screen(xs) {
      position: relative;
     }

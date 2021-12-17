@@ -35,11 +35,11 @@
                   {{copied ? 'Copied' : 'Copy Address'}}
                 </button>
 
-                <a class="view-btn" target="_blank" :href="`https://etherscan.io/address/${this.getCurrentConnectionInfo.account}`">
+                <a class="view-btn" target="_blank" :href="`https://bscscan.com/address/${this.getCurrentConnectionInfo.account}`">
                   <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M6.9395 2L0.48425 8.45525L1.54475 9.51575L8 3.0605V8.75H9.5V0.5H1.25V2H6.9395Z" fill="#747474"/>
                   </svg>
-                  View on Explorer
+                  View on BscScan
                 </a>
               </div>
             </div>
