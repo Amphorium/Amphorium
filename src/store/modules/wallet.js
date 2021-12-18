@@ -18,13 +18,13 @@ export default {
             state.connectWalletModalVisible = payload;
         },
         setIsMetamaskInstalled(state, payload) {
-          state.isMetamaskInstalled = payload
+            state.isMetamaskInstalled = payload
         },
-        setCurrentConnectionInfo(state, obj){
-            if(obj.account) state.currentConnectionInfo.account = obj.account
+        setCurrentConnectionInfo(state, obj) {
+            if (obj.account) state.currentConnectionInfo.account = obj.account
             if (obj.balance) state.currentConnectionInfo.balance = obj.balance;
             if (obj.chainId) state.currentConnectionInfo.chainId = obj.chainId;
-            if (obj.walletName){
+            if (obj.walletName) {
                 state.currentConnectionInfo.walletName = obj.walletName;
                 localStorage.setItem('usedWalletName', obj.walletName)
             }
@@ -41,11 +41,11 @@ export default {
     actions: {
         async setChain({commit}, provider) {
             const chainId = await window.web3.eth.getChainId();
-            if(chainId!==3 && chainId !== '0x3') {
+            if (chainId !== 56 && chainId !== '0x38') {
                 try {
                     await provider.request({
                         method: 'wallet_switchEthereumChain',
-                        params: [{ chainId: '0x3' }],
+                        params: [{chainId: '0x38'}],
                     });
                 } catch (switchError) {
                     // This error code indicates that the chain has not been added to MetaMask.
@@ -53,22 +53,26 @@ export default {
                         try {
                             await provider.request({
                                 method: 'wallet_addEthereumChain',
-                                params: [{ chainId: '0x3', rpcUrls: ['https://bsc-dataseed.binance.org/'], chainName: 'BNB' }]
+                                params: [{
+                                    chainId: '0x38',
+                                    rpcUrls: ['https://bsc-dataseed.binance.org/'],
+                                    chainName: 'BNB'
+                                }]
                             });
                             await provider.request({
                                 method: 'wallet_switchEthereumChain',
-                                params: [{ chainId: '0x38' }],
+                                params: [{chainId: '0x38'}],
                             });
 
                         } catch (addError) {
                             console.log(addError)
-                            commit('setCurrentConnectionInfo',{
+                            commit('setCurrentConnectionInfo', {
                                 chainId: await window.web3.eth.getChainId()
                             })
                         }
                     } else { // handle other "switch" errors
                         console.log('handle another errors')
-                        commit('setCurrentConnectionInfo',{
+                        commit('setCurrentConnectionInfo', {
                             chainId: await window.web3.eth.getChainId()
                         })
                     }
@@ -78,43 +82,41 @@ export default {
         async connectWallet({commit, dispatch}, walletName) {
             console.log('used wallet', walletName)
             let provider = null;
-            if(walletName === 'walletConnect') {
-                 provider = new WalletConnectProvider({
-                     rpc: {
-                       56: 'https://bsc-dataseed.binance.org/'
-                     },
+            if (walletName === 'walletConnect') {
+                provider = new WalletConnectProvider({
+                    rpc: {
+                        56: 'https://bsc-dataseed.binance.org/'
+                    },
                     qrcodeModalOptions: {
                         mobileLinks: [
                             'metamask'
                         ]
                     }
                 })
-                try{ 
+                try {
                     await provider.enable();
                     window.web3 = new Web3(provider);
                     console.log('web3', window.web3);
                     console.info('wallet connect web3 init');
-                }catch(e){
+                } catch (e) {
                     console.log(e);
                 }
-                
-                
-            }
-            else {
+
+
+            } else {
                 const isMetamaskInstalled = () => {
-                    const { ethereum } = window;
+                    const {ethereum} = window;
                     return Boolean(ethereum && ethereum.isMetaMask)
                 }
-                if(!isMetamaskInstalled()) {
+                if (!isMetamaskInstalled()) {
                     commit('setIsMetamaskInstalled', false)
-                }
-                else {
+                } else {
                     try {
-                        await window.ethereum.request({ method: 'eth_requestAccounts' });
+                        await window.ethereum.request({method: 'eth_requestAccounts'});
                         window.web3 = new Web3(window.ethereum)
-                        provider= window.ethereum;
+                        provider = window.ethereum;
                         dispatch('setChain', provider)
-                    } catch(e){
+                    } catch (e) {
                         throw new Error('Check your wallet!')
                     }
                 }
@@ -126,22 +128,22 @@ export default {
             console.log('balance', balance);
             console.log('chain id', chainId);
 
-            console.log('window.ethereum',!!window.ethereum,'provider',!!provider);
+            console.log('window.ethereum', !!window.ethereum, 'provider', !!provider);
 
-            provider.on("chainChanged", async (res)=>{
-               commit('setCurrentConnectionInfo',{
-                   chainId: res,
-                   balance: await window.web3.eth.getBalance(accounts[0])
-               })
-               dispatch('setChain', provider)
+            provider.on("chainChanged", async (res) => {
+                commit('setCurrentConnectionInfo', {
+                    chainId: res,
+                    balance: await window.web3.eth.getBalance(accounts[0])
+                })
+                dispatch('setChain', provider)
             })
-            provider.on('accountsChanged',  async (acs)=> {
+            provider.on('accountsChanged', async (acs) => {
                 console.log('Account has been changed...', acs)
-                if(!acs.length) {
+                if (!acs.length) {
                     commit('unsetWallet');
                 }
-                commit('setCurrentConnectionInfo',{
-                    account:acs[0],
+                commit('setCurrentConnectionInfo', {
+                    account: acs[0],
                     balance: await window.web3.eth.getBalance(acs[0]),
                     chainId: await window.web3.eth.getChainId()
                 })
@@ -152,7 +154,7 @@ export default {
                 chainId,
                 walletName
             })
-            provider.on('connect', () =>commit('setWalletName', walletName))
+            provider.on('connect', () => commit('setWalletName', walletName))
             provider.on('disconnect', () => commit('unsetWallet'))
             return {
                 account: accounts[0],
@@ -164,15 +166,16 @@ export default {
     },
     getters: {
         getConnectWalletModalVisible: state => state.connectWalletModalVisible,
-        getCurrentConnectionInfo: state =>  state.currentConnectionInfo,
-        isWrongChainId: state=>{
-           if (state.currentConnectionInfo.chainId){
-               console.log(state.currentConnectionInfo.chainId)
-               if ( (state.currentConnectionInfo.chainId!==3 && state.currentConnectionInfo.chainId !== '0x3')){
-                   console.log('chain id', state.currentConnectionInfo.chainId);
+        getCurrentConnectionInfo: state => state.currentConnectionInfo,
+        getAccount: state => state.currentConnectionInfo.account,
+        isWrongChainId: state => {
+            if (state.currentConnectionInfo.chainId) {
+                console.log(state.currentConnectionInfo.chainId)
+                if ((state.currentConnectionInfo.chainId !== 56 && state.currentConnectionInfo.chainId !== '0x38')) {
+                    console.log('chain id', state.currentConnectionInfo.chainId);
                     return true
-                }else return false
-            }else{
+                } else return false
+            } else {
                 return undefined
             }
         },

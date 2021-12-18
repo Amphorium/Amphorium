@@ -66,12 +66,12 @@
         <div class="swap__coin">
           <div class="coin">
             <div class="coin__balance" >
-              <div class="coin__type" @click="isOpenCoinSelect = !isOpenCoinSelect">
+              <div class="coin__type" @click="isOpenCoinSelect = !isOpenCoinSelect;">
                 <div class="coin__icon">
-                  <img :src="currentCoinIcon" alt="">
+                  <img :src="currentCoin.img" alt="">
                 </div>
 
-                {{currentCoinName}}
+                {{currentCoin.name}}
 
                 <div class="coin__drop-icon" :class="{active: isOpenCoinSelect}">
                   <svg width="16" height="11" viewBox="0 0 16 11" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -84,7 +84,7 @@
               <div class="coin__drop" v-show="isOpenCoinSelect" >
                 <ul class="coin__drop-list">
                   <li v-for="(item, index) in coinMap" :key="index">
-                    <div class="coin__type" @click="currentCoinName = item.name, currentCoinIcon = item.img, isOpenCoinSelect = false">
+                    <div class="coin__type" @click="currentCoin = item;isOpenCoinSelect = false">
                       <div class="coin__icon ">
                         <img :src="item.img" alt="">
                       </div>
@@ -100,8 +100,8 @@
             </div>
 
             <div class="coin__amount">
-              <input type="number" v-model="ethCoin" class="coin__input" placeholder="0.000300317">
-              <span class="coin__trans">$ 0.997661</span>
+              <input type="number" v-model="coinAmount" @input="inputCoinAmount" class="coin__input" placeholder="0.000300317">
+<!--              <span class="coin__trans">$ 0.997661</span>-->
             </div>
           </div>
 
@@ -127,8 +127,8 @@
             </div>
 
             <div class="coin__amount">
-              <input type="number" v-model="amhCoin" class="coin__input" placeholder="0.000300317">
-              <span class="coin__trans">$ 0.997661  <span class="coin__trans-green">(0.221%)</span></span>
+              <input type="number" v-model="amhAmount" class="coin__input" @input="inputAmhAmount" placeholder="0.000300317">
+<!--              <span class="coin__trans">$ 0.997661  <span class="coin__trans-green">(0.221%)</span></span>-->
             </div>
           </div>
 
@@ -142,7 +142,7 @@
 
 
 
-        <div class="swap__amount">1 AMH = 0.0030003 BNB </div>
+        <div class="swap__amount">1 AMH = {{pricePerAmh}} {{currentCoin.name}} </div>
 
         <div class="my-btn" @click="buyConfirmVisible = true">
 
@@ -153,12 +153,23 @@
 
 
 
-    <connect-wallet @close="connectWalletVisible = false;" v-if="connectWalletVisible"></connect-wallet>
-    <wait-confirm @close="waitConfirmVisible = false;" v-if="waitConfirmVisible"></wait-confirm>
+    <connect-wallet @close="connectWalletVisible = false;"
+                    v-if="connectWalletVisible"/>
+    <wait-confirm @close="waitConfirmVisible = false;"
+                  :amh-amount="amhAmount"
+                  :coin-amount="coinAmount"
+                  :current-coin="currentCoin"
+                  v-if="waitConfirmVisible"/>
     <buy-confirm @confirmed="buyTokens"
-                 @close="buyConfirmVisible = false;" v-if="buyConfirmVisible"></buy-confirm>
+                 :amh-amount="amhAmount"
+                 :current-coin="currentCoin"
+                 :coin-amount="coinAmount"
+                 @close="buyConfirmVisible = false;"
+                 v-if="buyConfirmVisible"/>
 
-
+    <error-modal v-if="error"
+                 :message="error"
+                  @close="error = null"/>
     <LandingFooter/>
   </div>
 </template>
@@ -170,54 +181,136 @@
   import LandingHeader from "../components/landing/LandingHeader";
   import LandingFooter from "../components/landing/LandingFooter";
   import {mapGetters} from "vuex";
+  import api from "../contract/api";
+  import ErrorModal from "../components/Modals/ErrorModal";
   export default {
     name: 'Swap',
     data: () => ({
+      error: null,
       connectWalletVisible: false,
       waitConfirmVisible: false,
       buyConfirmVisible: false,
       accountVisible: false,
-      ethCoin: null,
-      amhCoin: null,
+      coinAmount: null,
+      amhAmount: null,
       isOpenCoinSelect: false,
-      currentCoinIcon: require('@/assets/img/BNB.svg'),
-      currentCoinName:  'BNB',
       coinMap: [
         {
           img: require('@/assets/img/BNB.svg'),
-          name: 'BNB'
+          name: 'BNB',
+          amhPerUnit: 30000,
+          contract: '0xB8c77482e45F1F44dE1745F52C74426C631bDD52',
+          abiName: 'abiBnb'
         },
         {
           img: require('@/assets/img/USDT.svg'),
-          name: 'USDT'
+          name: 'USDT',
+          amhPerUnit: 50,
+          contract: '0x55d398326f99059ff775485246999027b3197955',
+          abiName: 'abiUsdt'
         },
         {
           img: require('@/assets/img/USDC.svg'),
-          name: 'USDC'
+          name: 'USDC',
+          amhPerUnit: 50,
+          contract: '0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d',
+          abiName: 'abiUsdc'
         },
         {
           img: require('@/assets/img/BUSD.svg'),
-          name: 'BUSD'
+          name: 'BUSD',
+          amhPerUnit: 50,
+          contract: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
+          abiName: 'abiBusd'
         },
         {
           img: require('@/assets/img/DAI.svg'),
-          name: 'DAI'
+          name: 'DAI',
+          contract: '0x1af3f329e8be154074d8769d1ffa4ee058b1dbc3',
+          amhPerUnit: 50,
+          abiName: 'abiDai'
         }
-      ]
+      ],
+      currentCoin: {
+        img: require('@/assets/img/BNB.svg'),
+        name: 'BNB',
+        amhPerUnit: 30000,
+        contract: '0xB8c77482e45F1F44dE1745F52C74426C631bDD52',
+        abiName: 'abiBnb'
+      },
     }),
-    computed: {
-      ...mapGetters({
-        getCurrentConnectionInfo: 'wallet/getCurrentConnectionInfo'
-      })
-    },
-    methods: {
-      buyTokens() {
-        this.buyConfirmVisible = false;
-        this.waitConfirmVisible = true;
+    watch: {
+      getAccount(val) {
+        if(val) {
+          this.initWeb3();
+        }
+      },
+      'currentCoin.name'() {
+        this.inputCoinAmount();
       }
     },
-    components: {BuyConfirm, WaitConfirm, ConnectWallet, LandingHeader, LandingFooter},
+    computed: {
+      ...mapGetters({
+        getCurrentConnectionInfo: 'wallet/getCurrentConnectionInfo',
+        getAccount: 'wallet/getAccount'
+      }),
+      pricePerAmh() {
+        return (1 / this.currentCoin.amhPerUnit).toFixed(8);
+      }
+    },
+    methods: {
+      inputCoinAmount() {
+        this.amhAmount = this.coinAmount * this.currentCoin.amhPerUnit;
+      },
+      inputAmhAmount() {
+        this.coinAmount = this.amhAmount / this.currentCoin.amhPerUnit
+      },
+      async allowance() {
+        try {
+          return await api.allowance();
+        } catch (e) {
+          console.log(e);
+        }
+      },
+      async buyTokens() {
+        try {
+          this.buyConfirmVisible = false;
+          this.waitConfirmVisible = true;
+          this.initWeb3();
+          if(this.currentCoin.name !== 'BNB') {
+            let allowance = await this.allowance();
+            if(allowance === undefined || Number(this.coinAmount) > allowance) {
+              await api.approve(this.coinAmount);
+            }
+          }
+          if(this.currentCoin.name === 'BNB') {
+            await api.buyAmhTokenByBnb(this.coinAmount);
+          } else {
+            await api.buyAmhTokenByToken(this.coinAmount, this.currentCoin.contract);
+          }
+        } catch (e) {
+          console.log(e.message);
+          if(e.message.includes('err: insufficient funds for transfer:')) {
+            this.error = 'Insufficient funds for transfer'
+          } else {
+            this.error = e.message;
+          }
+          this.waitConfirmVisible = false;
+        }
+      },
+      initWeb3() {
+        try {
+          api.initWeb3Methods(this.currentCoin.abiName, this.currentCoin.contract, this.getAccount);
+        } catch (e) {
+          console.log(e)
+        }
+      }
+    },
+    components: {ErrorModal, BuyConfirm, WaitConfirm, ConnectWallet, LandingHeader, LandingFooter},
     mounted() {
+      if(this.getAccount) {
+        this.initWeb3()
+      }
       document.body.addEventListener('click',(e)=>{
         if (!e.target.closest('.coin__type')){
           this.isOpenCoinSelect = false;

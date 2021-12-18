@@ -12,7 +12,7 @@
 <script>
 
   import ConnectWallet from "@/components/Modals/ConnectWallet";
-  import {mapGetters, mapMutations} from "vuex";
+  import {mapActions, mapGetters, mapMutations} from "vuex";
   import ErrorModal from "@/components/Modals/ErrorModal";
   export default {
     name: "App",
@@ -23,13 +23,20 @@
       })
     },
     methods: {
+      ...mapActions({
+        connectWallet: 'wallet/connectWallet'
+      }),
       ...mapMutations({
         setConnectWalletModalVisible: 'wallet/setConnectWalletModalVisible'
       })
     },
     components: {ErrorModal, ConnectWallet},
     created() {
-      this.$router.replace(this.$route.path)
+      this.$router.replace(this.$route.path);
+      let wallet = localStorage.getItem('usedWalletName');
+      if(wallet) {
+        this.connectWallet(wallet);
+      }
     }
   }
 </script>

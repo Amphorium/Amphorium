@@ -20,7 +20,7 @@
           </div>
 
          <div class="popup-waiting__text">
-           Buying 0.000300317 BNB for 1 AMH
+           Buying {{amhAmount}} AMH for {{coinAmount}} {{currentCoin.name}}
          </div>
 
           <div class="popup-connect__text">Confirm this transaction in your wallet</div>
@@ -33,6 +33,20 @@
 <script>
   export default {
     name: 'WaitConfirm',
+    props: {
+      coinAmount: {
+        type: String,
+        required: true
+      },
+      amhAmount: {
+        type: String,
+        required: true,
+      },
+      currentCoin: {
+        type: Object,
+        required: true
+      }
+    },
     methods: {
       close() {
         this.$emit('close')

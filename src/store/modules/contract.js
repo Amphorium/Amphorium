@@ -1,13 +1,10 @@
-import abi from '@/util/abi';
 
 export default {
     namespaced: true,
     state: {
-        contractAddress: '',
-        abi: abi
+        contractAddress: '0x5b985bd6017263c5f8e4f072d85e7bc061e8d586'
     },
     getters: {
-        getContractAddress: state => state.contractAddress,
-        getABI: state=>state.abi
+        getContractAddress: state => state.contractAddress
     }
 }
