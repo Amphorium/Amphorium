@@ -96,7 +96,7 @@
                 </ul>
               </div>
 
-              <span>Balance: {{(Number(getCurrentConnectionInfo.balance) / Math.pow(10, 18)).toFixed(8)}} BNB</span>
+              <span>Balance: {{currentCoin.name === 'BNB' ? (Number(getCurrentConnectionInfo.balance) / Math.pow(10, 18)).toFixed(8) : Number(coinBalance.toFixed(8))}} {{currentCoin.name}}</span>
             </div>
 
             <div class="coin__amount">
@@ -123,7 +123,7 @@
                 AMH
               </div>
 
-              <span>Balance: 0 AMH</span>
+              <span>Balance: {{Number(amhBalance.toFixed(8))}} AMH</span>
             </div>
 
             <div class="coin__amount">
@@ -140,7 +140,7 @@
           </div>
         </div>
 
-        <div class="swap-error">
+        <div class="swap-error" v-if="labelError">
           <div class="swap-error__icon">
             <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M10.9964 0C6.66849 0 3.14718 3.59265 3.14062 7.99332C3.14062 12.394 6.66194 15.9933 10.9833 16C15.3111 16.0067 18.839 12.4274 18.8521 8.02003C18.8652 3.60601 15.3308 0 10.9964 0ZM10.9898 14.3973C7.53407 14.3907 4.7144 11.5192 4.7144 8C4.7144 4.46745 7.54063 1.59599 11.0095 1.59599C14.4652 1.60267 17.2849 4.46745 17.2849 7.99332C17.2849 11.5259 14.4587 14.404 10.9898 14.3973Z" fill="#F67D75"/>
@@ -153,7 +153,7 @@
           </div>
 
           <div class="swap-error__msg">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit
+            {{ labelError }}
           </div>
         </div>
 
@@ -202,6 +202,8 @@
     name: 'Swap',
     data: () => ({
       error: null,
+      amhBalance: 0,
+      coinBalance: 0,
       connectWalletVisible: false,
       waitConfirmVisible: false,
       buyConfirmVisible: false,
@@ -209,6 +211,7 @@
       coinAmount: null,
       amhAmount: null,
       isOpenCoinSelect: false,
+      labelError: null,
       coinMap: [
         {
           img: require('@/assets/img/BNB.svg'),
@@ -260,8 +263,9 @@
           this.initWeb3();
         }
       },
-      'currentCoin.name'() {
+      async 'currentCoin.name'() {
         this.inputCoinAmount();
+        await this.initWeb3();
       }
     },
     computed: {
@@ -270,7 +274,7 @@
         getAccount: 'wallet/getAccount'
       }),
       pricePerAmh() {
-        return (1 / this.currentCoin.amhPerUnit).toFixed(8);
+        return Number((1 / this.currentCoin.amhPerUnit).toFixed(8));
       }
     },
     methods: {
@@ -287,11 +291,27 @@
           console.log(e);
         }
       },
+      async balanceOfAmh() {
+        try {
+          this.amhBalance = await api.balanceOfAmh();
+        } catch (e) {
+          console.log(e)
+        }
+      },
+      async balanceOfCoin() {
+        try {
+          if(this.currentCoin.name !== 'BNB') {
+            this.coinBalance = await api.balanceOfCoin();
+          }
+        } catch (e) {
+          console.log(e)
+        }
+      },
       async buyTokens() {
         try {
           this.buyConfirmVisible = false;
           this.waitConfirmVisible = true;
-          this.initWeb3();
+          await this.initWeb3();
           if(this.currentCoin.name !== 'BNB') {
             let allowance = await this.allowance();
             if(allowance === undefined || Number(this.coinAmount) > allowance) {
@@ -299,9 +319,20 @@
             }
           }
           if(this.currentCoin.name === 'BNB') {
-            await api.buyAmhTokenByBnb(this.coinAmount);
+            let available = await api.getAvailableBuyAmountByBnb()
+            if(available >= Number(this.coinAmount)) {
+              await api.buyAmhTokenByBnb(this.coinAmount);
+            } else {
+              this.labelError = 'Max amount for purchase 500 000 AMH'
+            }
           } else {
-            await api.buyAmhTokenByToken(this.coinAmount, this.currentCoin.contract);
+            let available = await api.getAvailableBuyAmountByBnb();
+            if(available >= Number(this.coinAmount)) {
+              await api.buyAmhTokenByToken(this.coinAmount, this.currentCoin.contract);
+            } else {
+              this.labelError = 'Max amount for purchase 500 000 AMH'
+            }
+
           }
         } catch (e) {
           console.log(e.message);
@@ -313,9 +344,11 @@
           this.waitConfirmVisible = false;
         }
       },
-      initWeb3() {
+      async initWeb3() {
         try {
           api.initWeb3Methods(this.currentCoin.abiName, this.currentCoin.contract, this.getAccount);
+          await this.balanceOfAmh();
+          await this.balanceOfCoin();
         } catch (e) {
           console.log(e)
         }

@@ -1,18 +1,14 @@
 import abi from "@/util/abi";
 import store from '@/store'
-//import Web3 from "web3";
 let methods = null;
 let account = null;
 let amhMethods = null;
+let amhBalanceOfMethods = null;
 
 const initWeb3Methods = (abiName, contractAddress, walletAddress) => {
-    // const web3_1 = new Web3('https://bsc-dataseed.binance.org/');
-    // const web3_2 = new Web3('https://bsc-dataseed.binance.org/');
-    //console.log(contractAddress)
     methods = new window.web3.eth.Contract(abi[abiName], contractAddress).methods;
     amhMethods = new window.web3.eth.Contract(abi['abiBsc'], store.getters['contract/getContractAddress']).methods;
-    // console.log(methods)
-    // console.log(amhMethods)
+    amhBalanceOfMethods = new window.web3.eth.Contract(abi['abiAmh'], '0x5f4c449F342441a85E649C662934Ab8357B983C1').methods;
     account = walletAddress;
 }
 
@@ -22,7 +18,6 @@ const formatPrice = (price) => {
 }
 
 const approve = amount => {
-    console.log(amount)
     return new Promise((resolve, reject) => {
         methods.approve(store.getters['contract/getContractAddress'], formatPrice(amount))
             .send({
@@ -44,9 +39,65 @@ const approve = amount => {
 }
 
 const allowance = () => {
-    console.log(account, store.getters['contract/getContractAddress'])
     return new Promise((resolve, reject) => {
         methods.allowance(account, store.getters['contract/getContractAddress'])
+            .call({
+                from: account
+            }, (err, res) => {
+                if(err) {
+                    reject(err)
+                }
+                resolve(res / 1e18)
+            })
+    })
+}
+
+const balanceOfCoin = () => {
+    return new Promise((resolve, reject) => {
+        methods.balanceOf(account)
+            .call({
+                from: account
+            }, (err, res) => {
+                if(err) {
+                    reject(err)
+                }
+                resolve(res / 1e18)
+            })
+    })
+}
+
+const balanceOfAmh = () => {
+    return new Promise((resolve, reject) => {
+        amhBalanceOfMethods.balanceOf(account)
+            .call({
+                from: account
+            }, (err, res) => {
+                if(err) {
+                    reject(err)
+                }
+                resolve(res / 1e6)
+            })
+    })
+}
+
+const getAvailableBuyAmountByBnb = () => {
+    return new Promise((resolve, reject) => {
+        console.log(amhMethods)
+        amhMethods.getAvailabeBuyAmountByBnb(account)
+            .call({
+                from: account
+            }, (err, res) => {
+                if(err) {
+                    reject(err)
+                }
+                resolve(res / 1e18)
+            })
+    })
+}
+
+const getAvailableBuyAmountByTokens = () => {
+    return new Promise((resolve, reject) => {
+        amhMethods.getAvailabeBuyAmountByTokens(account)
             .call({
                 from: account
             }, (err, res) => {
@@ -73,7 +124,6 @@ const buyAmhTokenByToken = (tokenQuantity, contractAddress) => {
 }
 
 const buyAmhTokenByBnb = (tokenQuantity) => {
-    console.log(formatPrice(tokenQuantity))
     return new Promise((resolve, reject) => {
         amhMethods.buyAmhTokenByBnb()
             .call({
@@ -81,7 +131,7 @@ const buyAmhTokenByBnb = (tokenQuantity) => {
                 from: account
             }, (err, res) => {
                 if(err) {
-                    console.log('sdlskfjsldkfjslkdfjslkdfj', err)
+                    console.log(err)
                     reject(err)
                 }
                 resolve(res)
@@ -94,5 +144,9 @@ export default {
     allowance,
     approve,
     buyAmhTokenByToken,
-    buyAmhTokenByBnb
+    buyAmhTokenByBnb,
+    balanceOfCoin,
+    balanceOfAmh,
+    getAvailableBuyAmountByBnb,
+    getAvailableBuyAmountByTokens
 }
