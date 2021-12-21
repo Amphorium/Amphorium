@@ -5998,7 +5998,7 @@ div.swiper-slide{
     font-family: $semi-bold;
     font-size: 24px;
     line-height: 36px;
-    margin: 27px 0 28px;
+    margin: 18px 0 28px;
 
     @include max-screen(xs) {
       font-size: 21px;
@@ -6008,6 +6008,27 @@ div.swiper-slide{
 
 }
 
+.swap-error {
+  margin-top: 17px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  &__icon {
+    margin-right: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__msg {
+    font-family: $semi-bold;
+    font-size: 12px;
+
+    color: #F67D75;
+    text-align: center;
+  }
+}
 
 .settings-btn {
   border: none;
