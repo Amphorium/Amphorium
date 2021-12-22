@@ -96,7 +96,7 @@
                 </ul>
               </div>
 
-              <span>Balance: {{currentCoin.name === 'BNB' ? (Number(getCurrentConnectionInfo.balance) / Math.pow(10, 18)).toFixed(8) : Number(coinBalance.toFixed(8))}} {{currentCoin.name}}</span>
+              <span>Balance: {{currentCoin.name === 'BNB' ? (Number(getCurrentConnectionInfo.balance) / Math.pow(10, 18)).toFixed(8) : Number(coinBalance.toFixed(2))}} {{currentCoin.name}}</span>
             </div>
 
             <div class="coin__amount">

@@ -13,7 +13,7 @@ const routes = [
     component: Landing
   },
   {
-    path: '/swap',
+    path: '/sale',
     name: 'Swap',
     component: Swap
   },
