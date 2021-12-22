@@ -83,7 +83,7 @@
       <div  class="header__btn">
         <a v-if="$route.name!=='Swap'" href="https://amphorium.io/docs/whitepaper" target="_blank" class="my-btn-border"><span>whitepaper</span></a>
 
-        <router-link v-if="$route.name==='Landing'" tag="button" to="/swap" class="my-btn" >
+        <router-link v-if="$route.name==='Landing' && getBtnVisible" tag="button" to="/sale" class="my-btn">
           <span class="my-btn__content">buy amh</span>
         </router-link>
       </div>
@@ -167,7 +167,8 @@ import {mapGetters, mapMutations} from "vuex";
     },
     computed: {
       ...mapGetters({
-        getCurrentConnectionInfo: 'wallet/getCurrentConnectionInfo'
+        getCurrentConnectionInfo: 'wallet/getCurrentConnectionInfo',
+        getBtnVisible: 'general/getBtnVisible'
       })
     },
     filters: {
@@ -211,4 +212,4 @@ import {mapGetters, mapMutations} from "vuex";
     max-height: 100vh;
     overflow: auto;
   }
-</style> 
+</style>

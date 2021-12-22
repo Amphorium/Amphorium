@@ -71,7 +71,7 @@
               </div>
             </div>
           <div class="main-banner__info">
-           
+
             <ul class="my-list">
               <li class="my-list__item">
                 <p><span>Amphorium is a combination of simplicity and innovation in the world of logistics.</span></p>
@@ -102,12 +102,12 @@
                :key="img"
                :style="{visibility: img===1?'visible':'hidden'}"
                >
-                 <img 
-                 :src="require(`@/assets/img/amphor/${img}-min.png`)" 
+                 <img
+                 :src="require(`@/assets/img/amphor/${img}-min.png`)"
                  alt="">
               </div>
 
-          </div>           
+          </div>
           <!-- </div> -->
         </div>
       </div>
@@ -116,9 +116,9 @@
       <div class="container">
         <div class="about__wrap">
           <div class="about__img" >
-            <div 
-            :class="`about__img__img about__img__img--${img}`" 
-            v-for="img in 20" 
+            <div
+            :class="`about__img__img about__img__img--${img}`"
+            v-for="img in 20"
             :key="img"
             :style="{visibility: img===1?'visible':'hidden'}">
               <img :src="require(`@/assets/img/earth/${img}-min.png`)" alt="">
@@ -241,7 +241,7 @@
               </div>
             </div>
           </div>
-            
+
 
       </div>
       <!-- <label for="percent">Type a percent!</label>
@@ -426,7 +426,7 @@
     <section class="news" id="news">
       <div class="container">
         <div class="my-title" data-aos="fade-up"
-             data-aos-duration="1500" 
+             data-aos-duration="1500"
            >
           <h2 @mousemove="textLighting" @mouseleave="resetTextLighting">Our News</h2>
         </div>
@@ -464,13 +464,13 @@
           </swiper>
           <!-- <vue-scroll :ops="ops"> -->
           <div class="news__wrap-content">
-           
+
           </div>
           <!-- </vue-scroll> -->
         </div>
         <!-- <div class="news__link" data-aos="fade-up"
              data-aos-duration="1500">
-          <a href="#" class="read-all"><span 
+          <a href="#" class="read-all"><span
             @mousemove="textLighting"
             @mouseleave="resetTextLighting"
             >Read All News
@@ -621,7 +621,7 @@
           <div class="faq-questions">
             <div
               v-for="item in faq"
-              :key="item.id" 
+              :key="item.id"
               class="item"
               :class="{ active: item.id === chosenItemId }"
             >
@@ -1207,7 +1207,7 @@ export default {
       let barWidth = this.$refs.cont.offsetWidth;
         var val = step*(this.initialCounter);
         var $circle = bar;
-          
+
         if (window.innerWidth< 600){
           bar.setAttribute('r',barWidth/2-7);
           bar.setAttribute('cx',barWidth/2);
@@ -1229,7 +1229,7 @@ export default {
 
         let points = document.querySelectorAll('.point-circle');//count length from roadmap
         let centerX = barWidth/2;
-        points[0].style.left=centerX -points[0].getBoundingClientRect().width/2+'px'; 
+        points[0].style.left=centerX -points[0].getBoundingClientRect().width/2+'px';
         let pointWidth = points[0].getBoundingClientRect().width;
         if (points.length){
           for (let i = 1; i< points.length; i++){
@@ -1238,7 +1238,7 @@ export default {
         }
         function setPoint(value, i){
            let a = percentToRad(value)
-          let leftPos =  2*barWidth/2 * Math.pow(Math.cos((Math.PI - ( (Math.PI/2) -a) )/2 ),2); 
+          let leftPos =  2*barWidth/2 * Math.pow(Math.cos((Math.PI - ( (Math.PI/2) -a) )/2 ),2);
           let topPos =  2*barWidth/2 * Math.cos((Math.PI-a)/2) * Math.cos( ( (Math.PI-a)/2 ) );
           points[i].style.left = leftPos +'px';
           points[i].style.top =topPos + 'px';
@@ -1288,9 +1288,9 @@ export default {
     changeStep(idx) {
       this.activeStep = idx;
     },
-  
+
     logoAnimation() {
-      let logoDiv = this.$refs.logoSection; 
+      let logoDiv = this.$refs.logoSection;
       let logoDivTwo = this.$refs.logoSectionTwo;
       let options = {
         root: null,
@@ -1324,12 +1324,12 @@ export default {
       observer.observe(logoDivTwo)
     },
     overlay(){
-      let logoDiv = this.$refs.logoSection; 
+      let logoDiv = this.$refs.logoSection;
       let logoDivTwo = this.$refs.logoSectionTwo;
       let next = this.$refs.nextSection;
       let nextTwo = this.$refs.nextSectionTwo;
       let screenHeight = document.documentElement.clientHeight;
-      
+
       overlayLogo(logoDiv,next)
       overlayLogo(logoDivTwo,nextTwo)
 
@@ -1339,7 +1339,7 @@ export default {
           let nextTop = nextSection?.offsetTop
           if ((window.pageYOffset + screenHeight )> logoDivTop
           && window.pageYOffset<nextTop-500){
-            let k = 0.2 
+            let k = 0.2
             let pos = window.pageYOffset + screenHeight - logoDivTop -150; //150 - bottom offset
             if (k*pos<1) pos=1/k;
             // // if(logo) logo.style.transform=`scale(${pos*k}) translateY(${pos*0.02}%) translateZ(0)`
@@ -1363,9 +1363,9 @@ export default {
       }
     },
     amphorInit(){
-      
+
         // const mainImage = document.getElementById('main-img');
-     
+
         let counter = 0;
                 changeImage(19,'#main-img', '.main-banner__img');//first img
                 changeImage(20,'.about__img', '.about__img__img');//first img
@@ -1377,7 +1377,7 @@ export default {
             }
 
 
-      
+
 
         function changeImage(quantityImages, imgWrapSelector, imgSelector) {
                const wrapper = document.body.querySelector(imgWrapSelector);
@@ -1387,7 +1387,7 @@ export default {
                   counter =   (window.pageYOffset*quantityImages) / (top + height*3||1000);
                   wrapper.querySelectorAll(`${imgSelector}`).forEach(item=>{
                     item.style.display="none";
-                     
+
                     })
                 if (counter<1) counter = 1;
                 if (counter >= quantityImages){
@@ -1395,11 +1395,11 @@ export default {
                 }
                 wrapper.querySelector(`${imgSelector}--${Math.round(counter)}`).style.display="block";
                 wrapper.querySelector(`${imgSelector}--${Math.round(counter)}`).style.visibility="visible";
-                
+
         }
         // changeImage()
 
-        
+
     },
     openMailForm() {
       window.location.href = "mailto:user@example.com"
@@ -1422,7 +1422,7 @@ export default {
           }
         }
       }
-    }, 
+    },
   },
   mounted() {
     this.$nextTick(() => {
@@ -1442,13 +1442,13 @@ export default {
     window.addEventListener("resize", () => this.slider())
 
   },
-  
+
 }
 </script>
 <style lang="scss">
   .main-banner__title{
-     h1{ 
-       color: #fff;    
+     h1{
+       color: #fff;
        background-clip: text;
       //  background-image: radial-gradient(circle at 170px 40px, rgb(209, 12, 12) 0%, #fff 6rem);
      }

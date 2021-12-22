@@ -12,8 +12,12 @@ const initWeb3Methods = (abiName, contractAddress, walletAddress) => {
     account = walletAddress;
 }
 
-const formatPrice = (price) => {
-    return Math.round(price * 1e18)
+const formatPrice = (price, currency) => {
+    let coef = 1e18;
+    if(currency) {
+        coef = 1e6
+    }
+    return Math.round((price * coef))
         .toLocaleString('fullwide', {useGrouping: false});
 }
 
@@ -52,6 +56,37 @@ const allowance = () => {
     })
 }
 
+const convertAmhToBnb = amount => {
+    return new Promise((resolve, reject) => {
+        amhMethods.convertAmhToBnb(formatPrice(amount, 'AMH'))
+            .call({
+                from: account
+            }, (err, res) => {
+                if(err) {
+                    reject(err)
+                }
+                console.log(res)
+                // eslint-disable-next-line no-undef
+                res = BigInt(res) + BigInt(1);
+                resolve(res.toString())
+            })
+    })
+}
+
+const convertAmhToStableToken = amount => {
+    return new Promise((resolve, reject) => {
+        amhMethods.convertAmhToStableToken(formatPrice(amount, 'AMH'))
+            .call({
+                from: account
+            }, (err, res) => {
+                if(err) {
+                    reject(err)
+                }
+                resolve(res)
+            })
+    })
+}
+
 const balanceOfCoin = () => {
     return new Promise((resolve, reject) => {
         methods.balanceOf(account)
@@ -82,7 +117,6 @@ const balanceOfAmh = () => {
 
 const getAvailableBuyAmountByBnb = () => {
     return new Promise((resolve, reject) => {
-        console.log(amhMethods)
         amhMethods.getAvailabeBuyAmountByBnb(account)
             .call({
                 from: account
@@ -90,6 +124,7 @@ const getAvailableBuyAmountByBnb = () => {
                 if(err) {
                     reject(err)
                 }
+                console.log(res)
                 resolve(res / 1e18)
             })
     })
@@ -111,14 +146,21 @@ const getAvailableBuyAmountByTokens = () => {
 
 const buyAmhTokenByToken = (tokenQuantity, contractAddress) => {
     return new Promise((resolve, reject) => {
-        amhMethods.buyAmhTokenByToken(formatPrice(tokenQuantity), contractAddress)
-            .call({
+        amhMethods.buyAmhTokenByToken(tokenQuantity, contractAddress)
+            .send({
                 from: account
-            }, (err, res) => {
+            }, err => {
                 if(err) {
                     reject(err)
                 }
-                resolve(res)
+            })
+            .once('confirmation', (confirmationNumber, receipt) => {
+                if(receipt.status === true) {
+                    resolve()
+                }
+                else {
+                    reject();
+                }
             })
     })
 }
@@ -126,15 +168,21 @@ const buyAmhTokenByToken = (tokenQuantity, contractAddress) => {
 const buyAmhTokenByBnb = (tokenQuantity) => {
     return new Promise((resolve, reject) => {
         amhMethods.buyAmhTokenByBnb()
-            .call({
-                value: formatPrice(tokenQuantity),
-                from: account
-            }, (err, res) => {
+            .send({
+                from: account,
+                value: tokenQuantity
+            }, err => {
                 if(err) {
-                    console.log(err)
                     reject(err)
                 }
-                resolve(res)
+            })
+            .once('confirmation', (confirmationNumber, receipt) => {
+                if(receipt.status === true) {
+                    resolve()
+                }
+                else {
+                    reject();
+                }
             })
     })
 }
@@ -148,5 +196,7 @@ export default {
     balanceOfCoin,
     balanceOfAmh,
     getAvailableBuyAmountByBnb,
-    getAvailableBuyAmountByTokens
+    getAvailableBuyAmountByTokens,
+    convertAmhToStableToken,
+    convertAmhToBnb
 }

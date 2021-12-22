@@ -29,6 +29,8 @@
 </template>
 
 <script>
+import {mapMutations} from "vuex";
+
 export default {
   name: "timer",
   props: ['starttime','endtime'],
@@ -46,6 +48,9 @@ export default {
     };
   },
   methods: {
+    ...mapMutations({
+      setBtnVisible: 'general/setBtnVisible'
+    }),
     timerCount: function(start,end){
       // Get todays date and time
       let now = new Date().getTime();
@@ -77,8 +82,13 @@ export default {
     this.start = new Date(this.starttime).getTime();
     this.end = new Date(this.endtime).getTime();
     // Update the count down every 1 second
+    console.log(this.start, this.end)
     this.timerCount(this.start,this.end);
     this.interval = setInterval(() => {
+      console.log(Date.now() - this.end)
+      if(Date.now() - this.end >= 0) {
+        this.setBtnVisible(true);
+      }
       this.timerCount(this.start,this.end);
     }, 1000);
   },

@@ -185,6 +185,9 @@
     <error-modal v-if="error"
                  :message="error"
                   @close="error = null"/>
+    <success-modal v-if="success"
+                  :message="success"
+                  @close="success"/>
     <LandingFooter/>
   </div>
 </template>
@@ -198,9 +201,11 @@
   import {mapGetters} from "vuex";
   import api from "../contract/api";
   import ErrorModal from "../components/Modals/ErrorModal";
+  import SuccessModal from "../components/Modals/SuccessModal";
   export default {
     name: 'Swap',
     data: () => ({
+      success: null,
       error: null,
       amhBalance: 0,
       coinBalance: 0,
@@ -308,6 +313,10 @@
         }
       },
       async buyTokens() {
+        if(this.amhAmount < 2500) {
+          this.error = 'Min AMH amount is 2500';
+          return;
+        }
         try {
           this.buyConfirmVisible = false;
           this.waitConfirmVisible = true;
@@ -321,18 +330,24 @@
           if(this.currentCoin.name === 'BNB') {
             let available = await api.getAvailableBuyAmountByBnb()
             if(available >= Number(this.coinAmount)) {
-              await api.buyAmhTokenByBnb(this.coinAmount);
+              const converted = await api.convertAmhToBnb(this.amhAmount)
+              await api.buyAmhTokenByBnb(converted);
             } else {
+              this.waitConfirmVisible = false;
               this.labelError = 'Max amount for purchase 500 000 AMH'
             }
+            this.success = 'Purchase completed';
+            this.waitConfirmVisible = false;
           } else {
             let available = await api.getAvailableBuyAmountByBnb();
             if(available >= Number(this.coinAmount)) {
-              await api.buyAmhTokenByToken(this.coinAmount, this.currentCoin.contract);
+              const converted = await api.convertAmhToStableToken(this.amhAmount)
+              await api.buyAmhTokenByToken(converted, this.currentCoin.contract);
             } else {
               this.labelError = 'Max amount for purchase 500 000 AMH'
             }
-
+            this.success = 'Purchase completed';
+            this.waitConfirmVisible = false;
           }
         } catch (e) {
           console.log(e.message);
@@ -354,7 +369,7 @@
         }
       }
     },
-    components: {ErrorModal, BuyConfirm, WaitConfirm, ConnectWallet, LandingHeader, LandingFooter},
+    components: {SuccessModal, ErrorModal, BuyConfirm, WaitConfirm, ConnectWallet, LandingHeader, LandingFooter},
     mounted() {
       if(this.getAccount) {
         this.initWeb3()
