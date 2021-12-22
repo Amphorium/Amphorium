@@ -187,7 +187,7 @@
                   @close="error = null"/>
     <success-modal v-if="success"
                   :message="success"
-                  @close="success"/>
+                  @close="success = null"/>
     <LandingFooter/>
   </div>
 </template>
@@ -339,7 +339,7 @@
             this.success = 'Purchase completed';
             this.waitConfirmVisible = false;
           } else {
-            let available = await api.getAvailableBuyAmountByBnb();
+            let available = await api.getAvailableBuyAmountByTokens();
             if(available >= Number(this.coinAmount)) {
               const converted = await api.convertAmhToStableToken(this.amhAmount)
               await api.buyAmhTokenByToken(converted, this.currentCoin.contract);

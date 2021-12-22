@@ -74,6 +74,7 @@ const convertAmhToBnb = amount => {
 }
 
 const convertAmhToStableToken = amount => {
+    console.log(formatPrice(amount, 'AMH'))
     return new Promise((resolve, reject) => {
         amhMethods.convertAmhToStableToken(formatPrice(amount, 'AMH'))
             .call({
