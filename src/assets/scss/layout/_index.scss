@@ -6192,8 +6192,15 @@ div.swiper-slide{
     flex-direction: column;
 
     font-family: $semi-bold;
-    font-size: 24px;
+    font-size: 22px;
     line-height: 36px;
+
+    span {
+      max-width: 240px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
 
     @include max-screen(sm) {
       font-size: 20px;
@@ -6206,7 +6213,7 @@ div.swiper-slide{
 
   &__input {
     border: none;
-    width: 170px;
+    width: 250px;
     padding: 0 5px;
     outline: none;
     background: transparent;
