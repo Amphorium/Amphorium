@@ -284,10 +284,10 @@
     },
     methods: {
       inputCoinAmount() {
-        this.amhAmount = this.coinAmount * this.currentCoin.amhPerUnit;
+        this.amhAmount = Number((this.coinAmount * this.currentCoin.amhPerUnit).toFixed(8));
       },
       inputAmhAmount() {
-        this.coinAmount = this.amhAmount / this.currentCoin.amhPerUnit
+        this.coinAmount = Number((this.amhAmount / this.currentCoin.amhPerUnit).toFixed(8));
       },
       async allowance() {
         try {
