@@ -22,7 +22,7 @@
             </a>
           </li>
           <li class="social__item">
-            <a target="_blank" href="https://amphorium.medium.com/"><img class="default" src="@/assets/img/social-3.svg" alt="">
+            <a target="_blank" href="https://medium.com/amphorium"><img class="default" src="@/assets/img/social-3.svg" alt="">
               <img class="hover" src="@/assets/img/social-3-hover.svg" alt="">
               <img class="dark" src="@/assets/img/social-3-dark.svg" alt="">
             </a>
@@ -177,8 +177,6 @@
         </div>
       </div>
     </div>
-
-
 
     <connect-wallet @close="connectWalletVisible = false;"
                     v-if="connectWalletVisible"/>
