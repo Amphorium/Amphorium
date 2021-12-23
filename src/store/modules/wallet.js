@@ -82,8 +82,10 @@ export default {
         async connectWallet({commit, dispatch}, walletName) {
             console.log('used wallet', walletName)
             let provider = null;
-            if (walletName === 'walletConnect') {
+            if (walletName === 'walletConnect' || walletName === 'trustWallet') {
                 provider = new WalletConnectProvider({
+                    infuraId: '01cdefb326e1414bbe68a590adf3ee03',
+                    chainId: 56,
                     rpc: {
                         56: 'https://bsc-dataseed.binance.org/'
                     },
