@@ -100,7 +100,13 @@
             </div>
 
             <div class="coin__amount">
-              <input type="number" v-model="coinAmount" @input="inputCoinAmount" class="coin__input" placeholder="1">
+              <input type="number"
+                     v-model="coinAmount"
+                     @input="inputCoinAmount"
+                     class="coin__input"
+                     :placeholder="inputPlaceholder"
+                     @focus="inputPlaceholder = ''"
+              >
 <!--              <span class="coin__trans">$ 0.997661</span>-->
             </div>
           </div>
@@ -127,7 +133,13 @@
             </div>
 
             <div class="coin__amount">
-              <input type="number" v-model="amhAmount" class="coin__input" @input="inputAmhAmount" placeholder="0.000300317">
+              <input type="number"
+                     v-model="amhAmount"
+                     class="coin__input"
+                     @input="inputAmhAmount"
+                     :placeholder="inputPlaceholder"
+                    @focus="inputPlaceholder = ''"
+              >
 <!--              <span class="coin__trans">$ 0.997661  <span class="coin__trans-green">(0.221%)</span></span>-->
             </div>
           </div>
@@ -217,6 +229,7 @@
       amhAmount: null,
       isOpenCoinSelect: false,
       labelError: null,
+      inputPlaceholder: '1',
       coinMap: [
         {
           img: require('@/assets/img/BNB.svg'),
