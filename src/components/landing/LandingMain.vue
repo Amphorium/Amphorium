@@ -157,7 +157,7 @@
       </div>
     </section>
 
-    <section class="tokensale">
+    <section class="tokensale" id="timer">
 
       <div class="tokensale--left">
           <div class="tokensale__coin tokensale__coin-1">
@@ -175,7 +175,7 @@
           <img src="@/assets/img/coin-6.png" alt="">
         </div>
       </div>
-      <div class="container">
+      <div class="container" >
         <div class="my-title" data-aos="fade-up"
              data-aos-duration="1500">Seed round</div>
         <div class="subtitle">Official Launches</div>
