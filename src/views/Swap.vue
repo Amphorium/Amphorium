@@ -100,7 +100,7 @@
             </div>
 
             <div class="coin__amount">
-              <input type="number" v-model="coinAmount" @input="inputCoinAmount" class="coin__input" placeholder="0.000300317">
+              <input type="number" v-model="coinAmount" @input="inputCoinAmount" class="coin__input" placeholder="1">
 <!--              <span class="coin__trans">$ 0.997661</span>-->
             </div>
           </div>
