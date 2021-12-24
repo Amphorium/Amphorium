@@ -397,6 +397,7 @@
     },
     components: {SuccessModal, ErrorModal, BuyConfirm, WaitConfirm, ConnectWallet, LandingHeader, LandingFooter},
     mounted() {
+      window.scrollTo(0,0);
       if(this.getAccount) {
         this.initWeb3()
       }

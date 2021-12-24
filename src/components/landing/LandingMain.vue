@@ -187,10 +187,9 @@
              data-aos-duration="1500">Seed round</div>
         <div class="subtitle">Official Launches</div>
 
-        <timer starttime="Nov 25, 2021 18:00:00"
-               endtime="Dec 24, 2021 02:00:00"
-
-        ></timer>
+        <router-link tag="button" to="/sale" class="my-btn">
+          <span class="my-btn__content">buy amh</span>
+        </router-link>
       </div>
     </section>
 
@@ -820,14 +819,12 @@
 <script>
 import { Swiper, SwiperSlide } from '@mscalessio/vue2-swiper';
 import 'swiper/swiper.scss';
-import timer from "../timer";
 
 export default {
   name: 'LandingMain',
   components: {
       Swiper,
       SwiperSlide,
-      timer
   },
   data() {
     return {
