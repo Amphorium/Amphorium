@@ -41,6 +41,13 @@
               <img class="dark" src="@/assets/img/social-5-dark.svg" alt="">
             </a>
           </li>
+          <li class="social__item">
+            <a target="_blank" href="https://coinmarketcap.com/currencies/amphorium/">
+              <img class="default" src="@/assets/img/social-6.svg" alt="">
+              <img class="hover" src="@/assets/img/social-6-hover.svg" alt="">
+              <img class="dark" src="@/assets/img/social-6-dark.svg" alt="">
+            </a>
+          </li>
         </ul>
       </div>
       <a href="#header" class="up-btn" v-smooth-scroll>
@@ -175,6 +182,14 @@
 
           <span class="my-btn__content">BUY AMH</span>
         </div>
+      </div>
+
+      <div class="swap-wrap swap__info">
+        <div class="swap__head">
+          <div class="title">Allocation per person</div>
+        </div>
+          <div class="swap__amount">Min 2.500AMH</div>
+          <div class="swap__amount">Max 500.000AMH</div>
       </div>
     </div>
 
