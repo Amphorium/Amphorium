@@ -5877,6 +5877,10 @@ div.swiper-slide{
       display: flex;
       align-items: center;
       justify-content: center;
+
+      @include max-screen(xl) {
+        flex-direction: column;
+      }
     }
   background-size: cover;
   padding-bottom: 150px;
@@ -5953,10 +5957,36 @@ div.swiper-slide{
    margin-top: 90px;
   }
   @include max-screen(xl) {
-    width: 595px;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 100%;
+    max-width: 595px;
   }
   @include max-screen(xs) {
     padding: 20px 15px 35px;
+  }
+
+  &.swap__info {
+    width: 315px;
+    margin-left: 20px;
+    margin-top: 20px;
+    align-items: start;
+
+    .swap {
+      &__head .title {
+        text-align: center;
+      }
+      &__amount {
+        margin: 10px 0 0;
+      }
+    }
+
+    @include max-screen(xl) {
+      margin-left: 20px;
+      margin-right: 20px;
+      width: 100%;
+      max-width: 595px;
+    }
   }
 
   .my-btn {
