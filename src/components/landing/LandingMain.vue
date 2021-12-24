@@ -18,7 +18,7 @@
             </a>
           </li>
           <li class="social__item">
-            <a target="_blank" href="https://amphorium.medium.com/"><img class="default" src="@/assets/img/social-3.svg" alt="">
+            <a target="_blank" href="https://medium.com/amphorium"><img class="default" src="@/assets/img/social-3.svg" alt="">
               <img class="hover" src="@/assets/img/social-3-hover.svg" alt="">
               <img class="dark" src="@/assets/img/social-3-dark.svg" alt="">
             </a>
@@ -311,7 +311,7 @@
                </li>
                 <li>
                   <span class="small-marker small-marker--2"></span>
-                  <p>Stacking</p>
+                  <p>Reserve</p>
                 </li>
                 <li>
                   <span class="small-marker small-marker--3"></span>
@@ -928,14 +928,14 @@ export default {
         },
         {
           id: 4,
-          title: 'What is a total emission of AMH tokens ?',
+          title: 'What is a total emission of Amphorium ecosystem?',
           text1: 'Taking into account the potential size of the market, user activity and the growth rate of the industry, we decided to set a total emission size of 1,000,000,000 tokens. This size of the issue will provide the necessary conditions for the harmonious development and improvement of the project at the time of launch and in the future.',
           isShow: false
         },
         {
           id: 5,
           title: 'Why do we need our own token?',
-          text1: 'Why can\'t we just use Ether for each transaction within these applications? Why do we need a separate currency for each project? The answer is quite simple: even in real life, we often use some form of token instead of cash. For example, tokens in an amusement park, coupons for a free lunch, shopping inside the game. All the businesses here are dApp, your money is ETH, and the bonuses inside are token. Using tokens to perform certain functions in a smart contract makes the process easier and understandable. Plus, tokens also have an impact on the overall value of ETH.',
+          text1: 'Why can\'t we just use BNB for each transaction within these applications? Why do we need a separate currency for each project? The answer is quite simple: even in real life, we often use some form of token instead of cash. For example, tokens in an amusement park, coupons for a free lunch, shopping inside the game. All the businesses here are dApp, your money is BNB, and the bonuses inside are token. Using tokens to perform certain functions in a smart contract makes the process easier and understandable. Plus, tokens also have an impact on the overall value of BNB.',
           isShow: false
         }
       ],
@@ -1034,7 +1034,7 @@ export default {
           amh: '50 000 000'
         },
         {
-          group: 'Stacking rewards',
+          group: 'Reserve',
           percent: '3%',
           amh: '30 000 000'
         },
