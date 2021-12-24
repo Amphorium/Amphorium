@@ -135,7 +135,7 @@
             <span class="my-btn__content">buy amh</span>
           </a>
 
-          <button v-if="$route.name==='Swap' && !getCurrentConnectionInfo.walletName" class="my-btn-border my-btn-border--white">
+          <button @click="setConnectWalletModalVisible(true)" v-if="$route.name==='Swap' && !getCurrentConnectionInfo.walletName" class="my-btn-border my-btn-border--white">
             <span>connect wallet</span>
           </button>
 
