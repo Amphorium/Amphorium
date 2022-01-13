@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Landing from "../views/Landing";
-import Swap from "../views/Swap";
+// import Swap from "../views/Swap";
 import Page404 from "../views/Page404";
 
 Vue.use(VueRouter)
@@ -12,11 +12,11 @@ const routes = [
     name: 'Landing',
     component: Landing
   },
-  {
-    path: '/sale',
-    name: 'Swap',
-    component: Swap
-  },
+  // {
+  //   path: '/sale',
+  //   name: 'Swap',
+  //   component: Swap
+  // },
   {
     path: '*',
     name: 'Page404',

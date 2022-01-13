@@ -83,12 +83,12 @@
       <div  class="header__btn">
         <a v-if="$route.name!=='Swap'" href="https://amphorium.io/docs/whitepaper" target="_blank" class="my-btn-border"><span>whitepaper</span></a>
 
-        <router-link v-if="$route.name==='Landing' && getBtnVisible" tag="button" to="/sale" class="my-btn">
-          <span class="my-btn__content">buy amh</span>
-        </router-link>
-        <a v-if="$route.name==='Landing' && !getBtnVisible" href="#timer" v-smooth-scroll class="my-btn">
-          <span class="my-btn__content">buy amh</span>
-        </a>
+<!--        <router-link v-if="$route.name==='Landing' && getBtnVisible" tag="button" to="/sale" class="my-btn">-->
+<!--          <span class="my-btn__content">buy amh</span>-->
+<!--        </router-link>-->
+<!--        <a v-if="$route.name==='Landing' && !getBtnVisible" href="#timer" v-smooth-scroll class="my-btn">-->
+<!--          <span class="my-btn__content">buy amh</span>-->
+<!--        </a>-->
       </div>
       <div class="header__btn" >
         <button style="width: 185px" @click="setConnectWalletModalVisible(true)" v-if="$route.name==='Swap' && !getCurrentConnectionInfo.walletName" class="my-btn-border" >
@@ -128,12 +128,12 @@
             <span>whitepaper</span>
           </a>
 
-          <router-link v-if="$route.name==='Landing' && getBtnVisible" tag="button" to="/sale" class="my-btn mb-3" style="height: 60px">
-            <span class="my-btn__content" >buy amh</span>
-          </router-link>
-          <a v-if="$route.name==='Landing' && !getBtnVisible" href="#timer" v-smooth-scroll class="my-btn mb-3" style="height: 60px; width: 100%">
-            <span class="my-btn__content">buy amh</span>
-          </a>
+<!--          <router-link v-if="$route.name==='Landing' && getBtnVisible" tag="button" to="/sale" class="my-btn mb-3" style="height: 60px">-->
+<!--            <span class="my-btn__content" >buy amh</span>-->
+<!--          </router-link>-->
+<!--          <a v-if="$route.name==='Landing' && !getBtnVisible" href="#timer" v-smooth-scroll class="my-btn mb-3" style="height: 60px; width: 100%">-->
+<!--            <span class="my-btn__content">buy amh</span>-->
+<!--          </a>-->
 
           <button @click="setConnectWalletModalVisible(true)" v-if="$route.name==='Swap' && !getCurrentConnectionInfo.walletName" class="my-btn-border my-btn-border--white">
             <span>connect wallet</span>

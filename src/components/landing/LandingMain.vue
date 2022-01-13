@@ -164,34 +164,34 @@
       </div>
     </section>
 
-    <section class="tokensale" id="timer">
+<!--    <section class="tokensale" id="timer">-->
 
-      <div class="tokensale--left">
-          <div class="tokensale__coin tokensale__coin-1">
-            <img src="@/assets/img/coin-5.png" alt="">
-          </div>
-          <div class="tokensale__coin tokensale__coin-2">
-            <img src="@/assets/img/coin-3.png" alt="">
-          </div>
-      </div>
-      <div class="tokensale--right">
-        <div class="tokensale__coin tokensale__coin-3">
-          <img src="@/assets/img/coin-2.png" alt="">
-        </div>
-        <div class="tokensale__coin tokensale__coin-4">
-          <img src="@/assets/img/coin-6.png" alt="">
-        </div>
-      </div>
-      <div class="container" >
-        <div class="my-title" data-aos="fade-up"
-             data-aos-duration="1500">Seed round</div>
-        <div class="subtitle">Official Launches</div>
+<!--      <div class="tokensale&#45;&#45;left">-->
+<!--          <div class="tokensale__coin tokensale__coin-1">-->
+<!--            <img src="@/assets/img/coin-5.png" alt="">-->
+<!--          </div>-->
+<!--          <div class="tokensale__coin tokensale__coin-2">-->
+<!--            <img src="@/assets/img/coin-3.png" alt="">-->
+<!--          </div>-->
+<!--      </div>-->
+<!--      <div class="tokensale&#45;&#45;right">-->
+<!--        <div class="tokensale__coin tokensale__coin-3">-->
+<!--          <img src="@/assets/img/coin-2.png" alt="">-->
+<!--        </div>-->
+<!--        <div class="tokensale__coin tokensale__coin-4">-->
+<!--          <img src="@/assets/img/coin-6.png" alt="">-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="container" >-->
+<!--        <div class="my-title" data-aos="fade-up"-->
+<!--             data-aos-duration="1500">Seed round</div>-->
+<!--        <div class="subtitle">Official Launches</div>-->
 
-        <router-link tag="button" to="/sale" class="my-btn">
-          <span class="my-btn__content">buy amh</span>
-        </router-link>
-      </div>
-    </section>
+<!--        <router-link tag="button" to="/sale" class="my-btn">-->
+<!--          <span class="my-btn__content">buy amh</span>-->
+<!--        </router-link>-->
+<!--      </div>-->
+<!--    </section>-->
 
     <section class="calendar" id="roadmap" data-aos="fade"
              data-aos-duration="1500">
